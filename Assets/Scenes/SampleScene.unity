@@ -387,7 +387,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c7edc6b6c508d3f4b878e76d2ae713c0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a3826a07b09f7af4f8cfbc2760998d0a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileManager: {fileID: 2000082241}
-  BPM: 87
+  BPM: 145
   secPerBeat: 0
   songPosition: 0
   songPositionInBeats: 0
@@ -808,7 +808,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -987,6 +987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba14d96d427d2041ab0fb487bb53abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 100
   rb: {fileID: 0}
 --- !u!4 &1078107487 stripped
 Transform:

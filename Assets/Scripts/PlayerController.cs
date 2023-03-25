@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    float speed = 120f;
+    public float speed = 200f;
     public Rigidbody rb;
 
     float rotationAmount = 10f;
-    float laneChangeSpeed = 100f;
+    float laneChangeSpeed = 10f;
 
     enum Lane {Left, Middle, Right};
     Lane lane;
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         if(lane == Lane.Left)
         {
             targetPosition = new Vector3(-15f, rb.position.y, rb.position.z);
-            targetRotation = Quaternion.Euler(0f, 0f, rotationAmount);
+            targetRotation = Quaternion.Euler(0f, 0f, -rotationAmount);
         }
         else if(lane == Lane.Middle)
         {
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
         else if(lane == Lane.Right)
         {
             targetPosition = new Vector3(15f, rb.position.y, rb.position.z);
-            targetRotation = Quaternion.Euler(0f, 0f, -rotationAmount);
+            targetRotation = Quaternion.Euler(0f, 0f, rotationAmount);
         }
 
         // Calculate the position to move the player towards using Vector3.Lerp
