@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public AudioManager audio;
     public float speed = 200f;
     public Rigidbody rb;
 
-    float rotationAmount = 10f;
+    float rotationAmount = 100f;
     float laneChangeSpeed = 10f;
-
-    enum Lane {Left, Middle, Right};
-    Lane lane;
+    float horizontalInput, verticalInput;
 
     Vector3 targetPosition;
     Quaternion targetRotation;
@@ -20,60 +19,32 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
-        lane = Lane.Middle;
+        speed = audio.BPM;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-        //Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime;
+        Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime;
+        Vector3 verticalMove = transform.up * verticalInput * speed * Time.fixedDeltaTime;
 
-        // Use Mathf.Clamp to limit the horizontal position
-        //float clampedHorizontalPosition = Mathf.Clamp(rb.position.x + horizontalMove.x, -maxHorizontalPosition, maxHorizontalPosition);
+        //Use Mathf.Clamp to limit the horizontal position
+        float clampedHorizontalPosition = Mathf.Clamp(rb.position.x + horizontalMove.x, -30f, 30f);
+        float clampedVerticalPosition = Mathf.Clamp(rb.position.y + verticalMove.y, -30f, 30f);
         //horizontalMove = new Vector3(clampedHorizontalPosition - rb.position.x, 0f, 0f);
+        //verticalMove = new Vector3(0f, clampedVerticalPosition - rb.position.y, 0f);
 
         rb.MovePosition(rb.position + forwardMove);
 
-        if(lane == Lane.Left)
-        {
-            targetPosition = new Vector3(-15f, rb.position.y, rb.position.z);
-            targetRotation = Quaternion.Euler(0f, 0f, -rotationAmount);
-        }
-        else if(lane == Lane.Middle)
-        {
-            targetPosition = new Vector3(0f, rb.position.y, rb.position.z);
-            targetRotation = Quaternion.Euler(0f, 0f, 0f);
-        }
-        else if(lane == Lane.Right)
-        {
-            targetPosition = new Vector3(15f, rb.position.y, rb.position.z);
-            targetRotation = Quaternion.Euler(0f, 0f, rotationAmount);
-        }
-
-        // Calculate the position to move the player towards using Vector3.Lerp
-        Vector3 newPosition = Vector3.Lerp(rb.position, targetPosition + forwardMove, Time.deltaTime * laneChangeSpeed);
-
-        // Set the y and z positions to the current position to keep the same height and depth
-        newPosition.y = rb.position.y;
-        newPosition.z = rb.position.z;
-
-        // Move the player to the new position
-        rb.MovePosition(newPosition);
-
-        // Rotate the player's rigidbody
-        rb.MoveRotation(Quaternion.Lerp(rb.rotation, targetRotation, 10f * Time.fixedDeltaTime)); // Lerp the rotation to the target rotation
+        // Rotate player based on input
+        transform.Rotate(Vector3.back * horizontalInput * rotationAmount * Time.fixedDeltaTime);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A)) {
-            if(lane == Lane.Right) lane = Lane.Middle;
-            else if(lane == Lane.Middle) lane = Lane.Left;
-        } else if (Input.GetKeyDown(KeyCode.D)) {
-            if(lane == Lane.Left) lane = Lane.Middle;
-            else if(lane == Lane.Middle) lane = Lane.Right;
-        }
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
     }
 }
 

@@ -8,7 +8,7 @@ public class TileManager : MonoBehaviour
     public GameObject instObjects;
     public Transform player;
 
-    public float zSpawn = 0f;
+    public float zSpawn = 30f;
     public float tileLength = 30f;
     public float numTiles = 200f;
 
@@ -20,24 +20,25 @@ public class TileManager : MonoBehaviour
         List<GameObject> list1 = new List<GameObject>();
         List<GameObject> list2 = new List<GameObject>();
         List<GameObject> list3 = new List<GameObject>();
+        List<GameObject> list4 = new List<GameObject>();
         activeTiles.Add(list1);
         activeTiles.Add(list2);
         activeTiles.Add(list3);
+        activeTiles.Add(list4);
 
         for(int i = 0; i <= numTiles; i++)
         {
-            SpawnGround();
+            //SpawnGround();
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(player.position.z > zSpawn - (numTiles * tileLength))
-        {
-            SpawnGround();
-            DeleteGround();
-        }
+        //if(player.position.z > zSpawn - tileLength);
+        //{
+            //zSpawn += tileLength;
+        //}
     }
 
     public void SpawnGround()
@@ -54,10 +55,11 @@ public class TileManager : MonoBehaviour
         activeTiles[0].RemoveAt(0);
     }
 
-    public void SpawnTile(int id) 
+    public void SpawnTile(int id, float noteOffset) 
     {
         // execute block of code here
-        GameObject newTile = Instantiate(tiles[id], transform.forward * zSpawn, transform.rotation);
+        GameObject newTile = Instantiate(tiles[id], new Vector3(0f, 0f, player.position.z) + (transform.forward * 60f * noteOffset), transform.rotation);
+        print(newTile.transform.position.z);
         newTile.transform.parent = instObjects.transform;
         activeTiles[id].Add(newTile);
 
