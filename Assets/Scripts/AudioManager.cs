@@ -5,11 +5,12 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public TileManager tileManager;
+    public WormholeController worm;
     AudioSource audioData;
     public float BPM;
     public float secPerBeat;
     public float songPosition;
-    public float songPositionInBeats;
+    public int songPositionInBeats;
     public float[] notes = new float[] {};
     private float circleIndex = 24f;
     private float barrierIndex = 0.5f;
@@ -38,7 +39,7 @@ public class AudioManager : MonoBehaviour
         songPosition = (float) (AudioSettings.dspTime - dspSongTime);
 
         //calculate the position in beats
-        songPositionInBeats = (songPosition / secPerBeat);
+        songPositionInBeats = (int)(songPosition / secPerBeat);
         //print(songPositionInBeats);
         if (nextIndex < notes.Length && notes[nextIndex] - noteOffset <= songPositionInBeats)
         {
@@ -58,6 +59,12 @@ public class AudioManager : MonoBehaviour
                 tileManager.SpawnTile(1, noteOffset);
             }
             circleIndex++;
+        }
+
+        if (songPositionInBeats == 64)
+        {
+            worm.SetDetail1(1.2f);
+            worm.SetDetail2(1.2f);
         }
 
         //if (barrierIndex <= songPositionInBeats)

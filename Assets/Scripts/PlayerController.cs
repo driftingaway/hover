@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody>();
         speed = audio.BPM;
+        rotationAmount = audio.BPM;
     }
 
     // Update is called once per frame
