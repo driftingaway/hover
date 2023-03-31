@@ -24,7 +24,6 @@ public class WormholeController : MonoBehaviour
 
     public void SetDetail2(float speed)
     {
-        print("FIRING");
         worm.SetFloat("_Details_2_scroll_speed", speed);
     }
 }

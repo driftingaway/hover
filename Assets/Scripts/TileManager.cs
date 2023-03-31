@@ -21,10 +21,12 @@ public class TileManager : MonoBehaviour
         List<GameObject> list2 = new List<GameObject>();
         List<GameObject> list3 = new List<GameObject>();
         List<GameObject> list4 = new List<GameObject>();
+        List<GameObject> list5 = new List<GameObject>();
         activeTiles.Add(list1);
         activeTiles.Add(list2);
         activeTiles.Add(list3);
         activeTiles.Add(list4);
+        activeTiles.Add(list5);
 
         for(int i = 0; i <= numTiles; i++)
         {
@@ -59,7 +61,7 @@ public class TileManager : MonoBehaviour
     {
         // execute block of code here
         GameObject newTile = Instantiate(tiles[id], new Vector3(0f, 0f, player.position.z) + (transform.forward * 60f * noteOffset), transform.rotation);
-        print(newTile.transform.position.z);
+        //print(newTile.transform.position.z);
         newTile.transform.parent = instObjects.transform;
         activeTiles[id].Add(newTile);
 
