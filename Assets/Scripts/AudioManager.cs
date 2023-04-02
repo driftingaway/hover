@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
     public float BPM;
     public float secPerBeat;
     public float songPosition;
-    public int songPositionInBeats;
+    public int songPositionInBeats, prevSongPositionInBeats = 0;
     public float songPositionInBeatsPrecise;
 
     public float[] notes = new float[] {};
@@ -24,7 +24,7 @@ public class AudioManager : MonoBehaviour
     int spawnIndex = 0;
     int noteIndex = 0;
     bool validInput = true;
-    float timingThreshold = 0.2f;
+    float timingThreshold = 0.3f;
 
     //How many seconds have passed since the song started
     public float dspSongTime;
@@ -32,8 +32,8 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         //calculate how many seconds is one beat
-        //we will see the declaration of bpm later
         secPerBeat = 60f / BPM;
+        print(secPerBeat);
     
         //record the time when the song starts
         dspSongTime = (float) AudioSettings.dspTime;
@@ -89,7 +89,12 @@ public class AudioManager : MonoBehaviour
             validInput = true;
         }
 
-        print(noteIndex);
+        // color pulsing to the beat
+        if(songPositionInBeats != prevSongPositionInBeats)
+        {
+            prevSongPositionInBeats = songPositionInBeats;
+            StartCoroutine(worm.Pulse(1f, 0f, secPerBeat / 2));
+        }
 
         //if (circleIndex <= songPositionInBeats)
         //{
@@ -105,11 +110,11 @@ public class AudioManager : MonoBehaviour
         //    circleIndex++;
         //}
 
-        if (songPositionInBeats == 64)
-        {
-            worm.SetDetail1(1.2f);
-            worm.SetDetail2(1.2f);
-        }
+        //if (songPositionInBeats == 64)
+        //{
+        //    worm.SetDetail1(1.2f);
+        //    worm.SetDetail2(1.2f);
+        //}
 
         //if (barrierIndex <= songPositionInBeats)
         //{

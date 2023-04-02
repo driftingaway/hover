@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
 
     float rotationAmount = 100f;
-    float laneChangeSpeed = 10f;
     float horizontalInput, verticalInput;
 
     Vector3 targetPosition;
