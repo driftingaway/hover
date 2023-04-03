@@ -54,11 +54,11 @@ public class AudioManager : MonoBehaviour
 
         if (spawnIndex < notes.Count && notes[spawnIndex].beat - noteOffset <= songPositionInBeatsPrecise)
         {
-            if (notes[spawnIndex].type == "L")
+            if (notes[spawnIndex].type == "Wall")
             {
                 tileManager.SpawnTile(1, noteOffset, notes[spawnIndex].rotation);
             }
-            else if (notes[spawnIndex].type == "R")
+            else if (notes[spawnIndex].type == "Score")
             {
                 tileManager.SpawnTile(3, noteOffset, notes[spawnIndex].rotation);
             }
@@ -69,13 +69,7 @@ public class AudioManager : MonoBehaviour
         // if timing is close enough to a note, check input for a potential hit 
         if((Mathf.Abs(songPositionInBeatsPrecise - notes[noteIndex].beat)) < timingThreshold)
         {
-            if (notes[noteIndex].type == "L" && Input.GetKeyDown(KeyCode.Mouse0) && validInput)
-            {
-                validInput = false;
-                score.IncreaseScore();
-            } 
-
-            if (notes[noteIndex].type == "R" && Input.GetKeyDown(KeyCode.Mouse1) && validInput)
+            if (notes[noteIndex].type == "Score" && Input.GetKeyDown(KeyCode.Space) && validInput)
             {
                 validInput = false;
                 score.IncreaseScore();
