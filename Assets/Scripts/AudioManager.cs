@@ -14,9 +14,6 @@ public class AudioManager : MonoBehaviour
     public float songPosition;
     public int songPositionInBeats, prevSongPositionInBeats = 0;
     public float songPositionInBeatsPrecise;
-
-    public float[] notes = new float[] {};
-    public string[] noteTypes = new string[] {};
     
     private float circleIndex = 24f;
     private float barrierIndex = 0.5f;
@@ -25,6 +22,8 @@ public class AudioManager : MonoBehaviour
     int noteIndex = 0;
     bool validInput = true;
     float timingThreshold = 0.3f;
+
+    private List<Note> notes;
 
     //How many seconds have passed since the song started
     public float dspSongTime;
@@ -36,7 +35,8 @@ public class AudioManager : MonoBehaviour
         print(secPerBeat);
     
         //record the time when the song starts
-        dspSongTime = (float) AudioSettings.dspTime;
+        dspSongTime = (float) AudioSettings.dspTime; 
+        notes = tileManager.notes;
 
         //start the song
         GetComponent<AudioSource>().Play();
@@ -52,38 +52,38 @@ public class AudioManager : MonoBehaviour
         songPositionInBeats = (int)songPositionInBeatsPrecise;
         //print(songPositionInBeatsPrecise);
 
-        if (spawnIndex < notes.Length && notes[spawnIndex] - noteOffset <= songPositionInBeatsPrecise)
+        if (spawnIndex < notes.Count && notes[spawnIndex].beat - noteOffset <= songPositionInBeatsPrecise)
         {
-            if (noteTypes[spawnIndex] == "L")
+            if (notes[spawnIndex].type == "L")
             {
-                tileManager.SpawnTile(1, noteOffset);
+                tileManager.SpawnTile(1, noteOffset, notes[spawnIndex].rotation);
             }
-            else if (noteTypes[spawnIndex] == "R")
+            else if (notes[spawnIndex].type == "R")
             {
-                tileManager.SpawnTile(3, noteOffset);
+                tileManager.SpawnTile(3, noteOffset, notes[spawnIndex].rotation);
             }
             //print("spawning at: " + songPositionInBeats);
             spawnIndex++;
         }
 
         // if timing is close enough to a note, check input for a potential hit 
-        if((Mathf.Abs(songPositionInBeatsPrecise - notes[noteIndex])) < timingThreshold)
+        if((Mathf.Abs(songPositionInBeatsPrecise - notes[noteIndex].beat)) < timingThreshold)
         {
-            if (noteTypes[noteIndex] == "L" && Input.GetKeyDown(KeyCode.Q) && validInput)
+            if (notes[noteIndex].type == "L" && Input.GetKeyDown(KeyCode.Mouse0) && validInput)
             {
                 validInput = false;
                 score.IncreaseScore();
             } 
 
-            if (noteTypes[noteIndex] == "R" && Input.GetKeyDown(KeyCode.E) && validInput)
+            if (notes[noteIndex].type == "R" && Input.GetKeyDown(KeyCode.Mouse1) && validInput)
             {
                 validInput = false;
                 score.IncreaseScore();
             } 
         }
 
-        // if timing is close enough to the next note, shift indicies and reenable input
-        if(noteIndex < notes.Length - 1 && notes[noteIndex + 1] - songPositionInBeatsPrecise < timingThreshold)
+        // if timing is close enough to the next note, shift indicies and re-enable input
+        if(noteIndex < notes.Count - 1 && notes[noteIndex + 1].beat - songPositionInBeatsPrecise < timingThreshold)
         {
             noteIndex++;
             validInput = true;

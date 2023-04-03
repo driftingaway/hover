@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable] public struct Note
+{
+    public float beat;
+    public string type;
+    public float rotation;
+}
+
 public class TileManager : MonoBehaviour
 {
     public GameObject[] tiles;
@@ -13,6 +20,8 @@ public class TileManager : MonoBehaviour
     public float numTiles = 200f;
 
     private List<List<GameObject>> activeTiles = new List<List<GameObject>>();
+
+    public List<Note> notes = new List<Note>();
 
     // Start is called before the first frame update
     void Start()
@@ -57,10 +66,10 @@ public class TileManager : MonoBehaviour
         activeTiles[0].RemoveAt(0);
     }
 
-    public void SpawnTile(int id, float noteOffset) 
+    public void SpawnTile(int id, float noteOffset, float rotation) 
     {
         // execute block of code here
-        GameObject newTile = Instantiate(tiles[id], new Vector3(0f, 0f, player.position.z) + (transform.forward * 60f * noteOffset), transform.rotation);
+        GameObject newTile = Instantiate(tiles[id], new Vector3(0f, 0f, player.position.z) + (transform.forward * 60f * noteOffset), Quaternion.Euler(new Vector3(0f, 0f, rotation)));
         //print(newTile.transform.position.z);
         newTile.transform.parent = instObjects.transform;
         activeTiles[id].Add(newTile);
