@@ -21,7 +21,7 @@ public class CollisionDetect : MonoBehaviour
         print("u hella dead");
         if (col.gameObject.tag == "Player")
         {
-            Application.LoadLevel(Application.loadedLevel);
+            //Application.LoadLevel(Application.loadedLevel);
         }
     }
 }

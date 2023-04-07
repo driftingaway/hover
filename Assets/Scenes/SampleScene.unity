@@ -297,7 +297,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ba9de9af51b5a0045b2cde04e8c8fbaf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 145d6348945545d459a87038e5560c9f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -398,7 +398,7 @@ MonoBehaviour:
   tileManager: {fileID: 2000082241}
   worm: {fileID: 2121735293}
   score: {fileID: 1417051559}
-  BPM: 128
+  BPM: 160
   secPerBeat: 0
   songPosition: 0
   songPositionInBeats: 0
