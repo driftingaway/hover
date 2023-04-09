@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public AudioManager audio;
+    public AudioManager am;
     public float speed = 200f;
     public Rigidbody rb;
 
@@ -18,8 +18,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
-        speed = audio.BPM;
-        rotationAmount = audio.BPM;
+        speed = am.BPM;
+        rotationAmount = am.BPM;
     }
 
     // Update is called once per frame

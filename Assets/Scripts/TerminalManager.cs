@@ -28,6 +28,7 @@ public class TerminalManager : MonoBehaviour
     //OpenShutter openShutter;
 
     Interpreter interpreter;
+    public UIManager ui;
 
     private void Start()
     {
@@ -165,8 +166,11 @@ public class TerminalManager : MonoBehaviour
                 }
             }
             // Refocus input field
-            terminalInput.ActivateInputField();
-            terminalInput.Select();
+            if(ui.isUIEnabled)
+            {
+                terminalInput.ActivateInputField();
+                terminalInput.Select();
+            }
         }
     }
 

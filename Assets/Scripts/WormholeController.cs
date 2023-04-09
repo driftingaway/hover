@@ -5,12 +5,12 @@ using UnityEngine;
 public class WormholeController : MonoBehaviour
 {
     public Material worm;
-    public AudioManager audio;
+    public AudioManager am;
     
     // Start is called before the first frame update
     void Start()
     {
-        float temp = (audio.BPM/200) * 1.5f;
+        float temp = (am.BPM/200) * 1.5f;
         worm.SetFloat("_Details_1_scroll_speed", temp);
         worm.SetFloat("_Details_2_scroll_speed", temp);
     }

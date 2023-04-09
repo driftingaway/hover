@@ -15,8 +15,8 @@ public class AudioManager : MonoBehaviour
     public int songPositionInBeats, prevSongPositionInBeats = 0;
     public float songPositionInBeatsPrecise;
     
-    private float circleIndex = 24f;
-    private float barrierIndex = 0.5f;
+    //private float circleIndex = 24f;
+    //private float barrierIndex = 0.5f;
     private float noteOffset = 8f;
     int spawnIndex = 0;
     int noteIndex = 0;

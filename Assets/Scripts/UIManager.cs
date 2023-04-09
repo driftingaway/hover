@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour
     public Camera firstPersonCamera;
     public Camera UICamera;
     public GameObject player;
-    private bool isUIEnabled = false;
+    public bool isUIEnabled = false;
     public TMP_InputField terminalInput;
     public GameObject HUD;
 

@@ -13,6 +13,8 @@ public class FPSController : MonoBehaviour {
 	bool grounded;
 	Vector3 moveAmount;
 	Vector3 smoothMoveVelocity;
+	Vector3 moveDir;
+	float verticalInput, horizontalInput;
 	float verticalLookRotation;
 	Transform cameraTransform;
 	Rigidbody rb;
@@ -34,17 +36,13 @@ public class FPSController : MonoBehaviour {
 		cameraTransform.localEulerAngles = Vector3.left * verticalLookRotation;
 		
 		// Calculate movement:
-		float inputX = Input.GetAxisRaw("Horizontal");
-		float inputY = Input.GetAxisRaw("Vertical");
-		
-		Vector3 moveDir = new Vector3(inputX,0, inputY).normalized;
-		Vector3 targetMoveAmount = moveDir * walkSpeed;
-		moveAmount = Vector3.SmoothDamp(moveAmount,targetMoveAmount,ref smoothMoveVelocity,.15f);
+	    horizontalInput = Input.GetAxisRaw("Horizontal");
+		verticalInput = Input.GetAxisRaw("Vertical");
 	}
 	
 	void FixedUpdate() {
 		// Apply movement to rigidbody
-		Vector3 localMove = transform.TransformDirection(moveAmount) * Time.fixedDeltaTime;
-		rb.MovePosition(rb.position + localMove);
+		moveDir = transform.forward * verticalInput + transform.right * horizontalInput;
+		rb.AddForce(moveDir.normalized * walkSpeed);
 	}
 }
