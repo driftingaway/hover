@@ -113,7 +113,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Rotation: 0
-    - _RotationSpeed: 2
+    - _RotationSpeed: 1
     - _Rotationn: 1
     - _SkyboxExtended: 1
     - _SmoothnessTextureChannel: 0
@@ -126,5 +126,5 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Tex_HDR: {r: 1, g: 1, b: 0, a: 0}
-    - _TintColor: {r: 0.2652901, g: 0.7185889, b: 0.8679245, a: 1}
+    - _TintColor: {r: 0.25952294, g: 0.7026364, b: 0.8490566, a: 1}
   m_BuildTextureStacks: []

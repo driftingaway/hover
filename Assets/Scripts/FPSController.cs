@@ -8,7 +8,6 @@ public class FPSController : MonoBehaviour {
 	public float mouseSensitivityY = 1;
 	public float walkSpeed = 6;
 	public float jumpForce = 220;
-	public LayerMask groundedMask;
 	
 	// System vars
 	bool grounded;
@@ -16,7 +15,7 @@ public class FPSController : MonoBehaviour {
 	Vector3 smoothMoveVelocity;
 	float verticalLookRotation;
 	Transform cameraTransform;
-	Rigidbody rigidbody;
+	Rigidbody rb;
     Camera cam;
 	
 	void Awake() {
@@ -24,11 +23,10 @@ public class FPSController : MonoBehaviour {
 		Cursor.visible = false;
         cam = GetComponentInChildren<Camera>();
 		cameraTransform = cam.transform;
-		rigidbody = GetComponent<Rigidbody>();
+		rb = GetComponent<Rigidbody>();
 	}
 	
 	void Update() {
-		
 		// Look rotation:
 		transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * mouseSensitivityX);
 		verticalLookRotation += Input.GetAxis("Mouse Y") * mouseSensitivityY;
@@ -42,30 +40,11 @@ public class FPSController : MonoBehaviour {
 		Vector3 moveDir = new Vector3(inputX,0, inputY).normalized;
 		Vector3 targetMoveAmount = moveDir * walkSpeed;
 		moveAmount = Vector3.SmoothDamp(moveAmount,targetMoveAmount,ref smoothMoveVelocity,.15f);
-		
-		// Jump
-		if (Input.GetButtonDown("Jump")) {
-			if (grounded) {
-				rigidbody.AddForce(transform.up * jumpForce);
-			}
-		}
-		
-		// Grounded check
-		Ray ray = new Ray(transform.position, -transform.up);
-		RaycastHit hit;
-		
-		if (Physics.Raycast(ray, out hit, 1 + .1f, groundedMask)) {
-			grounded = true;
-		}
-		else {
-			grounded = false;
-		}
-		
 	}
 	
 	void FixedUpdate() {
 		// Apply movement to rigidbody
 		Vector3 localMove = transform.TransformDirection(moveAmount) * Time.fixedDeltaTime;
-		rigidbody.MovePosition(rigidbody.position + localMove);
+		rb.MovePosition(rb.position + localMove);
 	}
 }
