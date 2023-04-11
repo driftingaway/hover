@@ -53,5 +53,11 @@ public class WormholeController : MonoBehaviour
         }
     }
 
+    public void InitColor(Color color)
+    {
+        worm.SetColor("_Details_1_colour", color*5);
+        worm.SetColor("_Details_2_colour", color*5);
+    }
+
     
 }

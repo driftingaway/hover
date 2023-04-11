@@ -1,14 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
-[System.Serializable] public struct Note
-{
-    public float beat;
-    public string type;
-    public float rotation;
-}
-
+[System.Serializable]
 public class TileManager : MonoBehaviour
 {
     public GameObject[] tiles;
@@ -20,8 +15,6 @@ public class TileManager : MonoBehaviour
     public float numTiles = 200f;
 
     private List<List<GameObject>> activeTiles = new List<List<GameObject>>();
-
-    public List<Note> notes = new List<Note>();
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +29,11 @@ public class TileManager : MonoBehaviour
         activeTiles.Add(list3);
         activeTiles.Add(list4);
         activeTiles.Add(list5);
+
+        //List<Note> song1 = new List<Note>();
+        //song1.Add(new Note { beat = 16f, type = "Score", rotation = 0f });
+
+        //songs.Add(song1);
 
         for(int i = 0; i <= numTiles; i++)
         {

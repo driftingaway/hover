@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
     public WormholeController worm;
     public ScoreManager score;
 
-    AudioSource audioData;
+    public int songIndex = 0;
     public float BPM;
     public float secPerBeat;
     public float songPosition;
@@ -23,21 +23,26 @@ public class AudioManager : MonoBehaviour
     bool validInput = true;
     float timingThreshold = 0.3f;
 
-    private List<Note> notes;
+    public List<Song> songs = new List<Song>();
+    Song currentSong;
 
     //How many seconds have passed since the song started
     public float dspSongTime;
 
     void Start()
     {
+        currentSong = songs[songIndex];
+        BPM = currentSong.BPM;
+
         //calculate how many seconds is one beat
         secPerBeat = 60f / BPM;
-        print(secPerBeat);
+
+        worm.InitColor(currentSong.color);
     
         //record the time when the song starts
         dspSongTime = (float) AudioSettings.dspTime; 
-        notes = tileManager.notes;
 
+        GetComponent<AudioSource>().clip = currentSong.audioClip;
         //start the song
         GetComponent<AudioSource>().Play();
     }
@@ -52,24 +57,24 @@ public class AudioManager : MonoBehaviour
         songPositionInBeats = (int)songPositionInBeatsPrecise;
         //print(songPositionInBeatsPrecise);
 
-        if (spawnIndex < notes.Count && notes[spawnIndex].beat - noteOffset <= songPositionInBeatsPrecise)
+        if (spawnIndex < currentSong.song.Count && currentSong.song[spawnIndex].beat - noteOffset <= songPositionInBeatsPrecise)
         {
-            if (notes[spawnIndex].type == "Wall")
+            if (currentSong.song[spawnIndex].type == "Wall")
             {
-                tileManager.SpawnTile(1, noteOffset, notes[spawnIndex].rotation);
+                tileManager.SpawnTile(1, noteOffset, currentSong.song[spawnIndex].rotation);
             }
-            else if (notes[spawnIndex].type == "Score")
+            else if (currentSong.song[spawnIndex].type == "Score")
             {
-                tileManager.SpawnTile(3, noteOffset, notes[spawnIndex].rotation);
+                tileManager.SpawnTile(3, noteOffset, currentSong.song[spawnIndex].rotation);
             }
             //print("spawning at: " + songPositionInBeats);
             spawnIndex++;
         }
 
         // if timing is close enough to a note, check input for a potential hit 
-        if((Mathf.Abs(songPositionInBeatsPrecise - notes[noteIndex].beat)) < timingThreshold)
+        if((Mathf.Abs(songPositionInBeatsPrecise - currentSong.song[noteIndex].beat)) < timingThreshold)
         {
-            if (notes[noteIndex].type == "Score" && Input.GetKeyDown(KeyCode.Space) && validInput)
+            if (currentSong.song[noteIndex].type == "Score" && Input.GetKeyDown(KeyCode.Space) && validInput)
             {
                 validInput = false;
                 score.IncreaseScore();
@@ -77,7 +82,7 @@ public class AudioManager : MonoBehaviour
         }
 
         // if timing is close enough to the next note, shift indicies and re-enable input
-        if(noteIndex < notes.Count - 1 && notes[noteIndex + 1].beat - songPositionInBeatsPrecise < timingThreshold)
+        if(noteIndex < currentSong.song.Count - 1 && currentSong.song[noteIndex + 1].beat - songPositionInBeatsPrecise < timingThreshold)
         {
             noteIndex++;
             validInput = true;
@@ -87,7 +92,7 @@ public class AudioManager : MonoBehaviour
         if(songPositionInBeats != prevSongPositionInBeats)
         {
             prevSongPositionInBeats = songPositionInBeats;
-            StartCoroutine(worm.Pulse(1f, 0f, secPerBeat / 2));
+            StartCoroutine(worm.Pulse(1f, 0f, secPerBeat));
         }
 
         //if (circleIndex <= songPositionInBeats)
