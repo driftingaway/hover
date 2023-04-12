@@ -16,18 +16,91 @@ MonoBehaviour:
   - beat: 16
     type: Score
     rotation: 0
-  - beat: 20
+    turn: Left
+  - beat: 18
     type: Wall
     rotation: 90
-  - beat: 0
+    turn: 
+  - beat: 18.5
+    type: Wall
+    rotation: 100
+    turn: 
+  - beat: 19
+    type: Wall
+    rotation: 110
+    turn: 
+  - beat: 19.5
+    type: Wall
+    rotation: 120
+    turn: 
+  - beat: 20
+    type: Score
+    rotation: 120
+    turn: Left
+  - beat: 22
+    type: Wall
+    rotation: 150
+    turn: 
+  - beat: 22.25
+    type: Wall
+    rotation: 155
+    turn: 
+  - beat: 22.5
+    type: Wall
+    rotation: 160
+    turn: 
+  - beat: 22.75
+    type: Wall
+    rotation: 165
+    turn: 
+  - beat: 23
+    type: Wall
+    rotation: 170
+    turn: 
+  - beat: 23.25
+    type: Wall
+    rotation: 175
+    turn: 
+  - beat: 23.5
+    type: Wall
+    rotation: 180
+    turn: 
+  - beat: 23.75
+    type: Wall
+    rotation: 185
+    turn: 
+  - beat: 24
+    type: Score
+    rotation: 200
+    turn: 
+  - beat: 24.5
     type: 
-    rotation: 0
-  - beat: 0
-    type: 
-    rotation: 0
-  - beat: 0
-    type: 
-    rotation: 0
+    rotation: 200
+    turn: Right
+  - beat: 25
+    type: Wall
+    rotation: 160
+    turn: 
+  - beat: 25.5
+    type: Wall
+    rotation: 150
+    turn: 
+  - beat: 26
+    type: Wall
+    rotation: 140
+    turn: 
+  - beat: 26.5
+    type: Wall
+    rotation: 130
+    turn: 
+  - beat: 27
+    type: Wall
+    rotation: 120
+    turn: 
+  - beat: 27.5
+    type: Wall
+    rotation: 110
+    turn: 
   audioClip: {fileID: 8300000, guid: ba9de9af51b5a0045b2cde04e8c8fbaf, type: 3}
   BPM: 128
   color: {r: 0.9245283, g: 0.012210703, b: 0.012210703, a: 0}

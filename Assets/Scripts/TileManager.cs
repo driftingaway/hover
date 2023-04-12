@@ -24,11 +24,15 @@ public class TileManager : MonoBehaviour
         List<GameObject> list3 = new List<GameObject>();
         List<GameObject> list4 = new List<GameObject>();
         List<GameObject> list5 = new List<GameObject>();
+        List<GameObject> list6 = new List<GameObject>();
+        List<GameObject> list7 = new List<GameObject>();
         activeTiles.Add(list1);
         activeTiles.Add(list2);
         activeTiles.Add(list3);
         activeTiles.Add(list4);
         activeTiles.Add(list5);
+        activeTiles.Add(list6);
+        activeTiles.Add(list7);
 
         //List<Note> song1 = new List<Note>();
         //song1.Add(new Note { beat = 16f, type = "Score", rotation = 0f });

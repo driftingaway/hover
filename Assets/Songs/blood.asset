@@ -13,21 +13,50 @@ MonoBehaviour:
   m_Name: blood
   m_EditorClassIdentifier: 
   song:
-  - beat: 16
+  - beat: 32
     type: Score
     rotation: 0
-  - beat: 20
+    turn: Left
+  - beat: 36
     type: Wall
     rotation: 90
-  - beat: 0
-    type: 
+    turn: 
+  - beat: 40
+    type: Score
     rotation: 0
-  - beat: 0
-    type: 
+    turn: Right
+  - beat: 48
+    type: Score
     rotation: 0
-  - beat: 0
-    type: 
+    turn: 
+  - beat: 52
+    type: Wall
     rotation: 0
+    turn: 
+  - beat: 56
+    type: Score
+    rotation: 0
+    turn: 
+  - beat: 64
+    type: Wall
+    rotation: 90
+    turn: 
+  - beat: 68
+    type: Wall
+    rotation: 180
+    turn: 
+  - beat: 72
+    type: Wall
+    rotation: 270
+    turn: 
+  - beat: 76
+    type: Wall
+    rotation: 0
+    turn: 
+  - beat: 76
+    type: Wall
+    rotation: 0
+    turn: 
   audioClip: {fileID: 8300000, guid: 145d6348945545d459a87038e5560c9f, type: 3}
   BPM: 160
   color: {r: 1, g: 1, b: 1, a: 0}

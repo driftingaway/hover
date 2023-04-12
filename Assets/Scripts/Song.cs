@@ -7,6 +7,7 @@ public struct Note
     public float beat;
     public string type;
     public float rotation;
+    public string turn;
 }
 
 [System.Serializable]

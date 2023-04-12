@@ -37,6 +37,7 @@ public class AudioManager : MonoBehaviour
         //calculate how many seconds is one beat
         secPerBeat = 60f / BPM;
 
+        //init wormhole color from song
         worm.InitColor(currentSong.color);
     
         //record the time when the song starts
@@ -63,10 +64,20 @@ public class AudioManager : MonoBehaviour
             {
                 tileManager.SpawnTile(1, noteOffset, currentSong.song[spawnIndex].rotation);
             }
-            else if (currentSong.song[spawnIndex].type == "Score")
+            if (currentSong.song[spawnIndex].type == "Score")
             {
                 tileManager.SpawnTile(3, noteOffset, currentSong.song[spawnIndex].rotation);
             }
+
+            if (currentSong.song[spawnIndex].turn == "Left")
+            {
+                tileManager.SpawnTile(6, noteOffset, 0);
+            }
+            if (currentSong.song[spawnIndex].turn == "Right")
+            {
+                tileManager.SpawnTile(5, noteOffset, 0);
+            }
+            
             //print("spawning at: " + songPositionInBeats);
             spawnIndex++;
         }
