@@ -36,7 +36,7 @@ MonoBehaviour:
   - beat: 20
     type: Score
     rotation: 120
-    turn: Left
+    turn: 
   - beat: 22
     type: Wall
     rotation: 150
@@ -76,31 +76,63 @@ MonoBehaviour:
   - beat: 24.5
     type: 
     rotation: 200
-    turn: Right
+    turn: 
   - beat: 25
     type: Wall
-    rotation: 160
+    rotation: 210
     turn: 
   - beat: 25.5
     type: Wall
-    rotation: 150
+    rotation: 220
     turn: 
   - beat: 26
     type: Wall
-    rotation: 140
+    rotation: 230
     turn: 
   - beat: 26.5
     type: Wall
-    rotation: 130
+    rotation: 240
     turn: 
   - beat: 27
     type: Wall
-    rotation: 120
+    rotation: 250
     turn: 
   - beat: 27.5
     type: Wall
-    rotation: 110
+    rotation: 260
+    turn: 
+  - beat: 28
+    type: Score
+    rotation: 260
+    turn: 
+  - beat: 29
+    type: Wall
+    rotation: 300
+    turn: 
+  - beat: 29.5
+    type: Wall
+    rotation: 310
+    turn: 
+  - beat: 30
+    type: Wall
+    rotation: 320
+    turn: 
+  - beat: 30.5
+    type: Wall
+    rotation: 330
+    turn: 
+  - beat: 31
+    type: Wall
+    rotation: 340
+    turn: 
+  - beat: 31.5
+    type: Wall
+    rotation: 350
+    turn: 
+  - beat: 32
+    type: Score
+    rotation: 0
     turn: 
   audioClip: {fileID: 8300000, guid: ba9de9af51b5a0045b2cde04e8c8fbaf, type: 3}
   BPM: 128
-  color: {r: 0.9245283, g: 0.012210703, b: 0.012210703, a: 0}
+  color: {r: 1, g: 1, b: 1, a: 0}

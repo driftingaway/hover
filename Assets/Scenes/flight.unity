@@ -500,7 +500,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876421726}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.2, y: 3.96, z: -13.03}
+  m_LocalPosition: {x: -11.7, y: 5.26, z: -14.98}
   m_LocalScale: {x: 0.01, y: 0.010000001, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -573,7 +573,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 3000
-  field of view: 160
+  field of view: 150
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -748,6 +748,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7411436076756011554, guid: 1db69eee8dd84ee4698f669c898424cd,
         type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 919dd825c62d6e34c83ce1e712909214, type: 2}
+    - target: {fileID: 7411436076756011554, guid: 1db69eee8dd84ee4698f669c898424cd,
+        type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: dfdc89067e687be499bc944884bf2d19, type: 2}
@@ -863,7 +868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_StraightDistance: 50
-  m_VerticalCurvature: 1.5
+  m_VerticalCurvature: 1.9
   m_HorizontalCurvature: 0
 --- !u!4 &1677077238
 Transform:
@@ -1067,7 +1072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tiles:
   - {fileID: 3597874461473875378, guid: b8ebe65bff5ae444eb15667489567aa1, type: 3}
-  - {fileID: 6402780262542131585, guid: a401cf7c8e5cf334c8aaf39442952242, type: 3}
+  - {fileID: 2393683567878966226, guid: 459ef0c8c6039f84f997a545d905f2be, type: 3}
   - {fileID: 6086988685920006767, guid: ab9ed0c4fe40b45459e1847b4dc4094a, type: 3}
   - {fileID: 5245754685462649979, guid: 2ea0bf94e0af8d84f87651b9184df406, type: 3}
   - {fileID: 6342775223680785524, guid: 2587b2181821c7a47a52890ed57b100a, type: 3}
