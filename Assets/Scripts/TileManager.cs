@@ -26,6 +26,7 @@ public class TileManager : MonoBehaviour
         List<GameObject> list5 = new List<GameObject>();
         List<GameObject> list6 = new List<GameObject>();
         List<GameObject> list7 = new List<GameObject>();
+        List<GameObject> list8 = new List<GameObject>();
         activeTiles.Add(list1);
         activeTiles.Add(list2);
         activeTiles.Add(list3);
@@ -33,25 +34,22 @@ public class TileManager : MonoBehaviour
         activeTiles.Add(list5);
         activeTiles.Add(list6);
         activeTiles.Add(list7);
+        activeTiles.Add(list8);
 
-        //List<Note> song1 = new List<Note>();
-        //song1.Add(new Note { beat = 16f, type = "Score", rotation = 0f });
-
-        //songs.Add(song1);
-
-        for(int i = 0; i <= numTiles; i++)
-        {
-            //SpawnGround();
-        }
+        //for(int i = 0; i <= numTiles; i++)
+        //{
+        //    SpawnGround();
+        //}
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if(player.position.z > zSpawn - tileLength);
-        //{
-            //zSpawn += tileLength;
-        //}
+        if(player.position.z > zSpawn - tileLength * numTiles)
+        { 
+            //SpawnGround();
+            //DeleteGround();
+        }
     }
 
     public void SpawnGround()

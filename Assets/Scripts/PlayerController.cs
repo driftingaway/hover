@@ -10,9 +10,12 @@ public class PlayerController : MonoBehaviour
 
     float rotationAmount = 100f;
     float horizontalInput, verticalInput;
+    public bool charging = false;
 
     Vector3 targetPosition;
     Quaternion targetRotation;
+
+    public ParticleSystem chargeParticles;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +23,7 @@ public class PlayerController : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
         speed = am.BPM;
         rotationAmount = am.BPM;
+        chargeParticles = gameObject.GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -46,5 +50,15 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         //print(rb.rotation);
+
+        //var emissionModule = chargeParticles.emission;
+        if(charging)
+        {
+            chargeParticles.Play();
+        }
+        else
+        {
+            chargeParticles.Stop();
+        }
     }
 }

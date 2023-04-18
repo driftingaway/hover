@@ -6,7 +6,7 @@ namespace AIEngineTest
     {
         private static CurveController s_Instance = null;
 
-        private const float k_StraightDistanceClamp = 50f;
+        private const float k_StraightDistanceClamp = 100f;
         private const float k_CurvatureClamp = 10f;
 
         [SerializeField] [Range(0f, k_StraightDistanceClamp)] private float m_StraightDistance = 10f;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public TileManager tileManager;
+    public PlayerController playerController;
     public WormholeController worm;
     public ScoreManager score;
 
@@ -50,6 +51,7 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
+        print(validInput);
         //calculate the position in seconds
         songPosition = (float) (AudioSettings.dspTime - dspSongTime);
 
@@ -68,6 +70,10 @@ public class AudioManager : MonoBehaviour
             {
                 tileManager.SpawnTile(3, noteOffset, currentSong.song[spawnIndex].rotation);
             }
+            if (currentSong.song[spawnIndex].type == "Death")
+            {
+                tileManager.SpawnTile(7, noteOffset, currentSong.song[spawnIndex].rotation);
+            }
 
             if (currentSong.song[spawnIndex].turn == "Left")
             {
@@ -85,11 +91,25 @@ public class AudioManager : MonoBehaviour
         // if timing is close enough to a note, check input for a potential hit 
         if((Mathf.Abs(songPositionInBeatsPrecise - currentSong.song[noteIndex].beat)) < timingThreshold)
         {
-            if (currentSong.song[noteIndex].type == "Score" && Input.GetKeyDown(KeyCode.Space) && validInput)
+            if (currentSong.song[noteIndex].type == "Score" && Input.GetKeyDown(KeyCode.Space) && validInput && !playerController.charging)
             {
                 validInput = false;
+                playerController.charging = true;
+            } 
+
+            if (currentSong.song[noteIndex].type == "Score" && Input.GetKeyUp(KeyCode.Space) && validInput && playerController.charging)
+            {
+                validInput = false;
+                playerController.charging = false;
                 score.IncreaseScore();
             } 
+        } else
+        {
+            if(playerController.charging && Input.GetKeyUp(KeyCode.Space))
+            {
+                print("dumbass u suck");
+                playerController.charging = false;
+            }
         }
 
         // if timing is close enough to the next note, shift indicies and re-enable input
