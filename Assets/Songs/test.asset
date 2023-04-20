@@ -21,8 +21,12 @@ MonoBehaviour:
     type: Score
     rotation: 0
     turn: 
-  - beat: 24
+  - beat: 21
     type: Death
+    rotation: 0
+    turn: 
+  - beat: 22
+    type: Score
     rotation: 0
     turn: 
   audioClip: {fileID: 0}

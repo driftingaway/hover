@@ -101,9 +101,21 @@ public class AudioManager : MonoBehaviour
             {
                 validInput = false;
                 playerController.charging = false;
-                score.IncreaseScore();
+                if(currentSong.song[noteIndex + 1].type == "Death")
+                {
+                    tileManager.DestroyWall();
+                }
             } 
-        } else
+            else
+            {
+                if(playerController.charging && Input.GetKeyUp(KeyCode.Space))
+                {
+                    print("dumbass u suck");
+                    playerController.charging = false;
+                }
+            }
+        } 
+        else
         {
             if(playerController.charging && Input.GetKeyUp(KeyCode.Space))
             {

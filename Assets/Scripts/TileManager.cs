@@ -80,4 +80,10 @@ public class TileManager : MonoBehaviour
             activeTiles[id].RemoveAt(0);
         }
     } 
+
+    public void DestroyWall()
+    {
+        Destroy(activeTiles[7][0]);
+        activeTiles[7].RemoveAt(0);
+    }
 }

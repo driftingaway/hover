@@ -25,4 +25,9 @@ public class ScoreManager : MonoBehaviour
         ding.Play();
     }
 
+    public void BreakWall()
+    {
+        
+    }
+
 }
