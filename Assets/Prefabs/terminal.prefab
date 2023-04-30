@@ -67,8 +67,8 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 4ec8e9a74dc4c1d4cbcf6388c4be6a0a, type: 2}
-  - {fileID: 2100000, guid: 5e1e67e9c46df6c4298f03afd9f52d54, type: 2}
   - {fileID: 2100000, guid: 89b26283ce10f44409736f736d0d7d16, type: 2}
+  - {fileID: 2100000, guid: 5e1e67e9c46df6c4298f03afd9f52d54, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -141,7 +141,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.022094727}
+  m_AnchoredPosition: {x: 0, y: -0.026184082}
   m_SizeDelta: {x: 1138, y: 133.33875}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &3353664939695987854
@@ -1571,8 +1571,8 @@ MonoBehaviour:
   histIndex: 0
   ChipSlot1: {fileID: 3353664940420701347}
   ChipSlot2: {fileID: 3353664940748583656}
-  shutter: {fileID: 0}
   shutterStatus: 1
+  ui: {fileID: 0}
 --- !u!114 &3353664941471210534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1585,6 +1585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2919c19869ccb048ae0436ff107bf7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  load: {fileID: 0}
 --- !u!1 &3353664941680178112
 GameObject:
   m_ObjectHideFlags: 0

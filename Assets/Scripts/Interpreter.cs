@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Interpreter : MonoBehaviour
 {
+    public LoadLevel load;
     TerminalManager terminalManager;
     List<string> response = new List<string>();
 
@@ -65,6 +66,12 @@ public class Interpreter : MonoBehaviour
                     response.Add(device);
                 }
             }
+        }
+
+        else if(args[0] == "jump")
+        {
+            response.Add("Jumping!");
+            load.LoadScene("flight");
         }
 
         else if(args[0] == "clear")
