@@ -9,6 +9,7 @@ public class TileManager : MonoBehaviour
     public GameObject[] tiles;
     public GameObject instObjects;
     public Transform player;
+    public GameObject following;
 
     public float zSpawn = 30f;
     public float tileLength = 30f;
@@ -50,6 +51,9 @@ public class TileManager : MonoBehaviour
             //SpawnGround();
             //DeleteGround();
         }
+        Vector3 p = following.transform.position;
+        p.z = player.position.z;
+        following.transform.position = p;
     }
 
     public void SpawnGround()

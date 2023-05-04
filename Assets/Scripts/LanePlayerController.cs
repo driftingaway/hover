@@ -6,12 +6,11 @@ public class LanePlayerController : MonoBehaviour
 {
     public AudioManager am;
     public Camera trailingCam, overheadCam;
-    public GameObject floor, worm;
     public float speed = 200f;
     public Rigidbody rb;
 
-    float rotationAmount = 10f;
-    float laneChangeSpeed = 10f;
+    float rotationAmount = -10f;
+    float laneChangeSpeed = 25f;
 
     enum Lane {Left, Middle, Right};
     Lane lane;
@@ -20,7 +19,7 @@ public class LanePlayerController : MonoBehaviour
     State state;
 
     Vector3 targetPosition;
-    Quaternion targetRotation;
+    Quaternion targetRotation, overheadTargetRotation;
 
     // Start is called before the first frame update
     void Start()
@@ -47,16 +46,19 @@ public class LanePlayerController : MonoBehaviour
         {
             targetPosition = new Vector3(-15f, rb.position.y, rb.position.z);
             targetRotation = Quaternion.Euler(0f, 0f, -rotationAmount);
+            overheadTargetRotation = Quaternion.Euler(0f, 0f, -rotationAmount / 10);
         }
         else if(lane == Lane.Middle)
         {
             targetPosition = new Vector3(0f, rb.position.y, rb.position.z);
             targetRotation = Quaternion.Euler(0f, 0f, 0f);
+            overheadTargetRotation = Quaternion.Euler(0f, 0f, 0f);
         }
         else if(lane == Lane.Right)
         {
             targetPosition = new Vector3(15f, rb.position.y, rb.position.z);
             targetRotation = Quaternion.Euler(0f, 0f, rotationAmount);
+            overheadTargetRotation = Quaternion.Euler(0f, 0f, rotationAmount / 10);
         }
 
         // Calculate the position to move the player towards using Vector3.Lerp
@@ -69,8 +71,16 @@ public class LanePlayerController : MonoBehaviour
         // Move the player to the new position
         rb.MovePosition(newPosition);
 
-        // Rotate the player's rigidbody
-        rb.MoveRotation(Quaternion.Lerp(rb.rotation, targetRotation, 10f * Time.fixedDeltaTime)); // Lerp the rotation to the target rotation
+        if(state == State.Trailing)
+        {
+            // Rotate the player's rigidbody
+            rb.MoveRotation(Quaternion.Lerp(rb.rotation, targetRotation, 100f * Time.fixedDeltaTime)); // Lerp the rotation to the target rotation
+        }
+        else if(state == State.Overhead)
+        {
+            // Rotate the player's rigidbody
+            rb.MoveRotation(Quaternion.Lerp(rb.rotation, overheadTargetRotation, 100f * Time.fixedDeltaTime)); // Lerp the rotation to the target rotation
+        }
     }
 
     void Update()
