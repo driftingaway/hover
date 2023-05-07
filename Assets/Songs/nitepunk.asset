@@ -10,30 +10,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 486308d83d1f68146b74a34747d44483, type: 3}
-  m_Name: test
+  m_Name: nitepunk
   m_EditorClassIdentifier: 
   song:
-  - beat: 16
-    type: Score
+  - beat: 11
+    type: Wall
     rotation: 0
-    lane: Left
+    lane: L
+    turn: 
+  - beat: 13
+    type: Wall
+    rotation: 0
+    lane: M
+    turn: 
+  - beat: 14
+    type: Wall
+    rotation: 0
+    lane: R
+    turn: 
+  - beat: 15
+    type: Wall
+    rotation: 0
+    lane: M
     turn: 
   - beat: 20
     type: Score
     rotation: 0
-    lane: Right
+    lane: L
     turn: 
-  - beat: 21
-    type: Death
-    rotation: 0
-    lane: Right
-    turn: 
-  - beat: 22
+  - beat: 28
     type: Score
+    rotation: 0
+    lane: R
+    turn: 
+  - beat: 30
+    type: Switch
     rotation: 0
     lane: 
     turn: 
+  - beat: 40
+    type: Wall
+    rotation: 0
+    lane: L
+    turn: 
   audioClip: {fileID: 0}
-  BPM: 145
-  color1: {r: 1, g: 0, b: 0, a: 0}
+  BPM: 147
+  color1: {r: 1, g: 0.069811285, b: 0.069811285, a: 0}
   color2: {r: 1, g: 1, b: 1, a: 0}

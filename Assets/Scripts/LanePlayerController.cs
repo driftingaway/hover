@@ -12,7 +12,7 @@ public class LanePlayerController : MonoBehaviour
     float rotationAmount = -10f;
     float laneChangeSpeed = 25f;
 
-    enum Lane {Left, Middle, Right};
+    enum Lane {L, M, R};
     Lane lane;
 
     enum State {Trailing, Overhead};
@@ -21,13 +21,17 @@ public class LanePlayerController : MonoBehaviour
     Vector3 targetPosition;
     Quaternion targetRotation, overheadTargetRotation;
 
+    public bool charging = false;
+    public ParticleSystem chargeParticles;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
-        lane = Lane.Middle;
+        lane = Lane.M;
         speed = am.BPM;
         state = State.Trailing;
+        chargeParticles = gameObject.GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -42,19 +46,19 @@ public class LanePlayerController : MonoBehaviour
 
         rb.MovePosition(rb.position + forwardMove);
 
-        if(lane == Lane.Left)
+        if(lane == Lane.L)
         {
             targetPosition = new Vector3(-15f, rb.position.y, rb.position.z);
             targetRotation = Quaternion.Euler(0f, 0f, -rotationAmount);
             overheadTargetRotation = Quaternion.Euler(0f, 0f, -rotationAmount / 10);
         }
-        else if(lane == Lane.Middle)
+        else if(lane == Lane.M)
         {
             targetPosition = new Vector3(0f, rb.position.y, rb.position.z);
             targetRotation = Quaternion.Euler(0f, 0f, 0f);
             overheadTargetRotation = Quaternion.Euler(0f, 0f, 0f);
         }
-        else if(lane == Lane.Right)
+        else if(lane == Lane.R)
         {
             targetPosition = new Vector3(15f, rb.position.y, rb.position.z);
             targetRotation = Quaternion.Euler(0f, 0f, rotationAmount);
@@ -86,27 +90,57 @@ public class LanePlayerController : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.A)) {
-            if(lane == Lane.Right) lane = Lane.Middle;
-            else if(lane == Lane.Middle) lane = Lane.Left;
+            if(charging)
+            {
+                lane = Lane.L;
+                charging = false;
+            }
+            else
+            {
+                if(lane == Lane.R) lane = Lane.M;
+                else if(lane == Lane.M) lane = Lane.L;
+            }
         } else if (Input.GetKeyDown(KeyCode.D)) {
-            if(lane == Lane.Left) lane = Lane.Middle;
-            else if(lane == Lane.Middle) lane = Lane.Right;
+            if(charging)
+            {
+                lane = Lane.R;
+                charging = false;
+            }
+            else
+            {
+                if(lane == Lane.L) lane = Lane.M;
+                else if(lane == Lane.M) lane = Lane.R;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.G))
         {
-            if(state == State.Trailing)
-            {
-                state = State.Overhead;
-                trailingCam.enabled = false;
-                overheadCam.enabled = true;
-            }
-            else if(state == State.Overhead)
-            {
-                state = State.Trailing;
-                trailingCam.enabled = true;
-                overheadCam.enabled = false;
-            }
+            Switch();
+        }
+
+        if(charging)
+        {
+            chargeParticles.Play();
+        }
+        else
+        {
+            chargeParticles.Stop();
+        }
+    }
+
+    public void Switch()
+    {
+        if(state == State.Trailing)
+        {
+            state = State.Overhead;
+            trailingCam.enabled = false;
+            overheadCam.enabled = true;
+        }
+        else if(state == State.Overhead)
+        {
+            state = State.Trailing;
+            trailingCam.enabled = true;
+            overheadCam.enabled = false;
         }
     }
 }

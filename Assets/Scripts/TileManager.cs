@@ -70,10 +70,19 @@ public class TileManager : MonoBehaviour
         activeTiles[0].RemoveAt(0);
     }
 
-    public void SpawnTile(int id, float noteOffset, float rotation) 
+    public void SpawnTile(int id, float noteOffset, float rotation, string lane) 
     {
+        float laneOffset = 0f;
+        if(lane == "L")
+        {
+            laneOffset = -15f;
+        }
+        else if(lane == "R")
+        {
+            laneOffset = 15f;
+        }
         // execute block of code here
-        GameObject newTile = Instantiate(tiles[id], new Vector3(0f, 0f, player.position.z) + (transform.forward * 60f * noteOffset), Quaternion.Euler(new Vector3(0f, 0f, rotation)));
+        GameObject newTile = Instantiate(tiles[id], new Vector3(laneOffset, 0f, player.position.z) + (transform.forward * 60f * noteOffset), Quaternion.Euler(new Vector3(0f, 0f, rotation)));
         //print(newTile.transform.position.z);
         newTile.transform.parent = instObjects.transform;
         activeTiles[id].Add(newTile);

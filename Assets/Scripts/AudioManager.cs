@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public TileManager tileManager;
-    public PlayerController playerController;
+    public LanePlayerController playerController;
     public WormholeController worm;
     public ScoreManager score;
 
@@ -19,6 +19,7 @@ public class AudioManager : MonoBehaviour
     //private float circleIndex = 24f;
     //private float barrierIndex = 0.5f;
     private float noteOffset = 8f;
+    private float noteGap = 0.25f;
     int spawnIndex = 0;
     int noteIndex = 0;
     bool validInput = true;
@@ -39,7 +40,7 @@ public class AudioManager : MonoBehaviour
         secPerBeat = 60f / BPM;
 
         //init wormhole color from song
-        worm.InitColor(currentSong.color);
+        worm.InitColor(currentSong.color1, currentSong.color2);
     
         //record the time when the song starts
         dspSongTime = (float) AudioSettings.dspTime; 
@@ -60,28 +61,53 @@ public class AudioManager : MonoBehaviour
         songPositionInBeats = (int)songPositionInBeatsPrecise;
         //print(songPositionInBeatsPrecise);
 
-        if (spawnIndex < currentSong.song.Count && currentSong.song[spawnIndex].beat - noteOffset <= songPositionInBeatsPrecise)
+        // alternative case for timing camera switch
+        if (spawnIndex < currentSong.song.Count && currentSong.song[spawnIndex].beat <= songPositionInBeatsPrecise && currentSong.song[spawnIndex].type == "Switch")
+        {
+            playerController.Switch();
+            spawnIndex++;
+        }
+
+        if (spawnIndex < currentSong.song.Count && currentSong.song[spawnIndex].beat - noteOffset <= songPositionInBeatsPrecise && currentSong.song[spawnIndex].type != "Switch")
         {
             if (currentSong.song[spawnIndex].type == "Wall")
             {
-                tileManager.SpawnTile(1, noteOffset, currentSong.song[spawnIndex].rotation);
+                string lane = currentSong.song[spawnIndex].lane;
+                if(lane == "L")
+                {
+                    tileManager.SpawnTile(2, noteOffset - noteGap, currentSong.song[spawnIndex].rotation, "L");
+                    tileManager.SpawnTile(4, noteOffset + noteGap, currentSong.song[spawnIndex].rotation, "M");
+                    tileManager.SpawnTile(4, noteOffset + noteGap, currentSong.song[spawnIndex].rotation, "R");
+                }
+                else if(lane == "M")
+                {
+                    tileManager.SpawnTile(4, noteOffset + noteGap, currentSong.song[spawnIndex].rotation, "L");
+                    tileManager.SpawnTile(2, noteOffset - noteGap, currentSong.song[spawnIndex].rotation, "M");
+                    tileManager.SpawnTile(4, noteOffset + noteGap, currentSong.song[spawnIndex].rotation, "R");
+                }
+                else if(lane == "R")
+                {
+                    tileManager.SpawnTile(4, noteOffset + noteGap, currentSong.song[spawnIndex].rotation, "L");
+                    tileManager.SpawnTile(4, noteOffset + noteGap, currentSong.song[spawnIndex].rotation, "M");
+                    tileManager.SpawnTile(2, noteOffset - noteGap, currentSong.song[spawnIndex].rotation, "R");
+                }
             }
             if (currentSong.song[spawnIndex].type == "Score")
             {
-                tileManager.SpawnTile(3, noteOffset, currentSong.song[spawnIndex].rotation);
+                tileManager.SpawnTile(3, noteOffset, currentSong.song[spawnIndex].rotation, currentSong.song[spawnIndex].lane);
             }
             if (currentSong.song[spawnIndex].type == "Death")
             {
-                tileManager.SpawnTile(7, noteOffset, currentSong.song[spawnIndex].rotation);
+                tileManager.SpawnTile(7, noteOffset, currentSong.song[spawnIndex].rotation, currentSong.song[spawnIndex].lane);
             }
 
-            if (currentSong.song[spawnIndex].turn == "Left")
+            if (currentSong.song[spawnIndex].turn == "L")
             {
-                tileManager.SpawnTile(6, noteOffset, 0);
+                tileManager.SpawnTile(6, noteOffset, 0, currentSong.song[spawnIndex].lane);
             }
-            if (currentSong.song[spawnIndex].turn == "Right")
+            if (currentSong.song[spawnIndex].turn == "R")
             {
-                tileManager.SpawnTile(5, noteOffset, 0);
+                tileManager.SpawnTile(5, noteOffset, 0, currentSong.song[spawnIndex].lane);
             }
             
             //print("spawning at: " + songPositionInBeats);
