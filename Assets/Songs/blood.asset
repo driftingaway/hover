@@ -14,49 +14,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   song:
   - beat: 32
-    type: Score
-    rotation: 0
-    turn: Left
-  - beat: 36
     type: Wall
-    rotation: 90
-    turn: 
+    rotation: 0
+    lane: L
   - beat: 40
-    type: Score
-    rotation: 0
-    turn: Right
-  - beat: 48
-    type: Score
-    rotation: 0
-    turn: 
-  - beat: 52
     type: Wall
     rotation: 0
-    turn: 
-  - beat: 56
-    type: Score
+    lane: M
+  - beat: 48
+    type: Wall
     rotation: 0
-    turn: 
+    lane: R
+  - beat: 56
+    type: Wall
+    rotation: 0
+    lane: M
   - beat: 64
     type: Wall
-    rotation: 90
-    turn: 
+    rotation: 0
+    lane: L
+  - beat: 65
+    type: Wall
+    rotation: 0
+    lane: M
+  - beat: 66
+    type: Wall
+    rotation: 0
+    lane: L
+  - beat: 67
+    type: Wall
+    rotation: 0
+    lane: M
   - beat: 68
     type: Wall
-    rotation: 180
-    turn: 
-  - beat: 72
-    type: Wall
-    rotation: 270
-    turn: 
-  - beat: 76
+    rotation: 0
+    lane: R
+  - beat: 69
     type: Wall
     rotation: 0
-    turn: 
-  - beat: 76
+    lane: M
+  - beat: 70
     type: Wall
     rotation: 0
-    turn: 
+    lane: L
+  - beat: 71
+    type: Wall
+    rotation: 0
+    lane: M
   audioClip: {fileID: 8300000, guid: 145d6348945545d459a87038e5560c9f, type: 3}
   BPM: 160
-  color: {r: 0.9339623, g: 0.17093267, b: 0.77331525, a: 0}
+  color1: {r: 1, g: 0, b: 0, a: 0}
+  color2: {r: 1, g: 1, b: 1, a: 0}

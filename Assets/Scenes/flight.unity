@@ -170,7 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 140291567}
   m_Layer: 0
-  m_Name: FollowingObjects
+  m_Name: StaticObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -223,7 +223,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 326091226}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.5, y: 0, z: 0}
+  m_LocalPosition: {x: 22.5, y: -3, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 200}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -525,7 +525,7 @@ MonoBehaviour:
   playerController: {fileID: 1887498126}
   worm: {fileID: 2121735293}
   score: {fileID: 1417051559}
-  songIndex: 3
+  songIndex: 1
   BPM: 147
   secPerBeat: 0
   songPosition: 0
@@ -985,7 +985,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146036777}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.5000005, y: 0, z: 0}
+  m_LocalPosition: {x: -7.5000005, y: -3, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 200}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1068,7 +1068,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385382502}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.5, y: 0, z: 0}
+  m_LocalPosition: {x: 7.5, y: -3, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 200}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1397,7 +1397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_StraightDistance: 100
-  m_VerticalCurvature: 0.5
+  m_VerticalCurvature: 2.27
   m_HorizontalCurvature: 0
 --- !u!4 &1677077238
 Transform:
@@ -1525,23 +1525,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1887498117}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1887498120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1887498118}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 432c390a2d08e124e8ba499dcc1af06c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  am: {fileID: 435850311}
-  speed: 200
-  rb: {fileID: 1887498121}
-  charging: 0
-  chargeParticles: {fileID: 0}
 --- !u!54 &1887498121
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1637,7 +1620,7 @@ MonoBehaviour:
   - {fileID: 8100526297114485193, guid: 9545162b16d67944880bfe54835f4f06, type: 3}
   instObjects: {fileID: 28894595}
   player: {fileID: 1887498119}
-  following: {fileID: 140291566}
+  am: {fileID: 435850311}
   zSpawn: 0
   tileLength: 1
   numTiles: 280
@@ -6494,7 +6477,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029889192}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22.5, y: 0, z: 0}
+  m_LocalPosition: {x: -22.5, y: -3, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 200}
   m_ConstrainProportionsScale: 0
   m_Children: []

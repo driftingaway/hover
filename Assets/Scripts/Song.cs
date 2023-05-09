@@ -8,7 +8,6 @@ public struct Note
     public string type;
     public float rotation;
     public string lane;
-    public string turn;
 }
 
 [System.Serializable]

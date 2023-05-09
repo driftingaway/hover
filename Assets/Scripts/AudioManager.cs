@@ -16,8 +16,6 @@ public class AudioManager : MonoBehaviour
     public int songPositionInBeats, prevSongPositionInBeats = 0;
     public float songPositionInBeatsPrecise;
     
-    //private float circleIndex = 24f;
-    //private float barrierIndex = 0.5f;
     private float noteOffset = 8f;
     private float noteGap = 0.25f;
     int spawnIndex = 0;
@@ -52,7 +50,6 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
-        print(validInput);
         //calculate the position in seconds
         songPosition = (float) (AudioSettings.dspTime - dspSongTime);
 
@@ -100,15 +97,6 @@ public class AudioManager : MonoBehaviour
             {
                 tileManager.SpawnTile(7, noteOffset, currentSong.song[spawnIndex].rotation, currentSong.song[spawnIndex].lane);
             }
-
-            if (currentSong.song[spawnIndex].turn == "L")
-            {
-                tileManager.SpawnTile(6, noteOffset, 0, currentSong.song[spawnIndex].lane);
-            }
-            if (currentSong.song[spawnIndex].turn == "R")
-            {
-                tileManager.SpawnTile(5, noteOffset, 0, currentSong.song[spawnIndex].lane);
-            }
             
             //print("spawning at: " + songPositionInBeats);
             spawnIndex++;
@@ -127,10 +115,6 @@ public class AudioManager : MonoBehaviour
             {
                 validInput = false;
                 playerController.charging = false;
-                if(currentSong.song[noteIndex + 1].type == "Death")
-                {
-                    tileManager.DestroyWall();
-                }
             } 
             else
             {
@@ -163,31 +147,5 @@ public class AudioManager : MonoBehaviour
             prevSongPositionInBeats = songPositionInBeats;
             StartCoroutine(worm.Pulse(1f, 0f, secPerBeat));
         }
-
-        //if (circleIndex <= songPositionInBeats)
-        //{
-        //    if (circleIndex % 4f == 0)
-        //    {
-        //        tileManager.SpawnTile(3, noteOffset);
-        //        tileManager.SpawnTile(4, noteOffset);
-        //    }
-        //    else
-        //    {
-        //        tileManager.SpawnTile(1, noteOffset);
-        //    }
-        //    circleIndex++;
-        //}
-
-        //if (songPositionInBeats == 64)
-        //{
-        //    worm.SetDetail1(1.2f);
-        //    worm.SetDetail2(1.2f);
-        //}
-
-        //if (barrierIndex <= songPositionInBeats)
-        //{
-        //    tileManager.SpawnTile(2);
-        //    barrierIndex += 0.5f;
-        //}
     }
 }

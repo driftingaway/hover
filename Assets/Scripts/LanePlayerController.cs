@@ -37,15 +37,6 @@ public class LanePlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-        //Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime;
-
-        // Use Mathf.Clamp to limit the horizontal position
-        //float clampedHorizontalPosition = Mathf.Clamp(rb.position.x + horizontalMove.x, -maxHorizontalPosition, maxHorizontalPosition);
-        //horizontalMove = new Vector3(clampedHorizontalPosition - rb.position.x, 0f, 0f);
-
-        rb.MovePosition(rb.position + forwardMove);
-
         if(lane == Lane.L)
         {
             targetPosition = new Vector3(-15f, rb.position.y, rb.position.z);
@@ -66,7 +57,7 @@ public class LanePlayerController : MonoBehaviour
         }
 
         // Calculate the position to move the player towards using Vector3.Lerp
-        Vector3 newPosition = Vector3.Lerp(rb.position, targetPosition + forwardMove, Time.deltaTime * laneChangeSpeed);
+        Vector3 newPosition = Vector3.Lerp(rb.position, targetPosition, Time.deltaTime * laneChangeSpeed);
 
         // Set the y and z positions to the current position to keep the same height and depth
         newPosition.y = rb.position.y;
