@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionDetect : MonoBehaviour
 {
@@ -19,9 +20,9 @@ public class CollisionDetect : MonoBehaviour
     void OnCollisionEnter(Collision col)
     {
         print("u hella dead");
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Obstacle")
         {
-            //Application.LoadLevel(Application.loadedLevel);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

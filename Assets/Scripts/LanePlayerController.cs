@@ -5,7 +5,7 @@ using UnityEngine;
 public class LanePlayerController : MonoBehaviour
 {
     public AudioManager am;
-    public Camera trailingCam, overheadCam;
+    public Camera trailingCam, overheadCam, backwardsCam;
     public float speed = 200f;
     public Rigidbody rb;
 
@@ -15,7 +15,7 @@ public class LanePlayerController : MonoBehaviour
     enum Lane {L, M, R};
     Lane lane;
 
-    enum State {Trailing, Overhead};
+    enum State {Trailing, Overhead, Backwards};
     State state;
 
     Vector3 targetPosition;
@@ -66,7 +66,7 @@ public class LanePlayerController : MonoBehaviour
         // Move the player to the new position
         rb.MovePosition(newPosition);
 
-        if(state == State.Trailing)
+        if(state == State.Trailing || state == State.Backwards)
         {
             // Rotate the player's rigidbody
             rb.MoveRotation(Quaternion.Lerp(rb.rotation, targetRotation, 100f * Time.fixedDeltaTime)); // Lerp the rotation to the target rotation
@@ -81,26 +81,60 @@ public class LanePlayerController : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.A)) {
-            if(charging)
+            if(state != State.Backwards)
             {
-                lane = Lane.L;
-                charging = false;
+                if(charging)
+                {
+                    lane = Lane.L;
+                    charging = false;
+                }
+                else
+                {
+                    if(lane == Lane.R) lane = Lane.M;
+                    else if(lane == Lane.M) lane = Lane.L;
+                }
+            }    
+            else
+            {
+                if(charging)
+                {
+                    lane = Lane.R;
+                    charging = false;
+                }
+                else
+                {
+                    if(lane == Lane.L) lane = Lane.M;
+                    else if(lane == Lane.M) lane = Lane.R;
+                }
+            }
+        }
+    
+        else if (Input.GetKeyDown(KeyCode.D)) {
+            if(state != State.Backwards)
+            {
+                if(charging)
+                {
+                    lane = Lane.R;
+                    charging = false;
+                }
+                else
+                {
+                    if(lane == Lane.L) lane = Lane.M;
+                    else if(lane == Lane.M) lane = Lane.R;
+                }
             }
             else
             {
-                if(lane == Lane.R) lane = Lane.M;
-                else if(lane == Lane.M) lane = Lane.L;
-            }
-        } else if (Input.GetKeyDown(KeyCode.D)) {
-            if(charging)
-            {
-                lane = Lane.R;
-                charging = false;
-            }
-            else
-            {
-                if(lane == Lane.L) lane = Lane.M;
-                else if(lane == Lane.M) lane = Lane.R;
+                if(charging)
+                {
+                    lane = Lane.L;
+                    charging = false;
+                }
+                else
+                {
+                    if(lane == Lane.R) lane = Lane.M;
+                    else if(lane == Lane.M) lane = Lane.L;
+                }
             }
         }
 
@@ -126,12 +160,21 @@ public class LanePlayerController : MonoBehaviour
             state = State.Overhead;
             trailingCam.enabled = false;
             overheadCam.enabled = true;
+            backwardsCam.enabled = false;
         }
         else if(state == State.Overhead)
+        {
+            state = State.Backwards;
+            trailingCam.enabled = false;
+            overheadCam.enabled = false;
+            backwardsCam.enabled = true;
+        }
+        else if(state == State.Backwards)
         {
             state = State.Trailing;
             trailingCam.enabled = true;
             overheadCam.enabled = false;
+            backwardsCam.enabled = false;
         }
     }
 }

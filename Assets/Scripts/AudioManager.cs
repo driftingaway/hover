@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
     public float songPositionInBeatsPrecise;
     
     private float noteOffset = 8f;
-    private float noteGap = 0.25f;
+    private float noteGap = 0.3f;
     int spawnIndex = 0;
     int noteIndex = 0;
     bool validInput = true;
@@ -39,6 +39,8 @@ public class AudioManager : MonoBehaviour
 
         //init wormhole color from song
         worm.InitColor(currentSong.color1, currentSong.color2);
+        worm.SetSpeed(currentSong.speed1, currentSong.speed2);
+        worm.SetTiling(currentSong.tiling_x1, currentSong.tiling_y1, currentSong.tiling_x2, currentSong.tiling_y2);
     
         //record the time when the song starts
         dspSongTime = (float) AudioSettings.dspTime; 

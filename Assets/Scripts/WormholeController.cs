@@ -7,33 +7,19 @@ public class WormholeController : MonoBehaviour
     public Material worm;
     public Material player;
     public AudioManager am;
-    
-    // Start is called before the first frame update
-    void Start()
+
+    public void SetSpeed(float speed1, float speed2)
     {
-        float temp = (am.BPM/200) * 1.5f;
-        worm.SetFloat("_Details_1_scroll_speed", temp);
-        worm.SetFloat("_Details_2_scroll_speed", temp);
-        player.SetFloat("_Details_1_scroll_speed", temp);
-        player.SetFloat("_Details_2_scroll_speed", temp);
+        worm.SetFloat("_Details_1_scroll_speed", speed1);
+        worm.SetFloat("_Details_2_scroll_speed", speed2);
+        player.SetFloat("_Details_1_scroll_speed", speed1);
+        player.SetFloat("_Details_2_scroll_speed", speed2);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetTiling(float tiling_x1, float tiling_y1, float tiling_x2, float tiling_y2)
     {
-        
-    }
-
-    public void SetDetail1(float speed)
-    {
-        worm.SetFloat("_Details_1_scroll_speed", speed);
-        player.SetFloat("_Details_1_scroll_speed", speed);
-    }
-
-    public void SetDetail2(float speed)
-    {
-        worm.SetFloat("_Details_2_scroll_speed", speed);
-        player.SetFloat("_Details_2_scroll_speed", speed);
+        worm.SetVector("_Details_1_tiling", new Vector2(tiling_x1, tiling_y1));
+        worm.SetVector("_Details_2_tiling", new Vector2(tiling_x2, tiling_y2));
     }
 
     public IEnumerator Pulse(float start, float end, float duration)

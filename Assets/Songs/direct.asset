@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486308d83d1f68146b74a34747d44483, type: 3}
+  m_Name: direct
+  m_EditorClassIdentifier: 
+  song:
+  - beat: 0
+    type: 
+    rotation: 0
+    lane: 
+  audioClip: {fileID: 8300000, guid: 07f1ddad0a31e95449bc2afe5531b6ee, type: 3}
+  BPM: 127
+  color1: {r: 0.15021354, g: 0.803649, b: 0.8207547, a: 0}
+  color2: {r: 0.1830188, g: 0.3362764, b: 1, a: 0}
+  speed1: 0.5
+  speed2: 0.5
+  tiling_x1: 1
+  tiling_y1: 0.1
+  tiling_x2: 50
+  tiling_y2: 15
