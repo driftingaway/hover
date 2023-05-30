@@ -13,10 +13,44 @@ MonoBehaviour:
   m_Name: direct
   m_EditorClassIdentifier: 
   song:
-  - beat: 0
-    type: 
-    rotation: 0
-    lane: 
+  - beat: 16
+    type: Wall
+    lane: L
+  - beat: 32
+    type: Wall
+    lane: R
+  updates:
+  - beat: 80
+    state: 1
+    color1: {r: 0.21933071, g: 0.9528302, b: 0.9528302, a: 0}
+    color2: {r: 0.21498753, g: 0.33918494, b: 0.9339623, a: 0}
+    speed1: 0.5
+    speed2: 0.5
+    tiling_x1: 10
+    tiling_y1: 1
+    tiling_x2: 5
+    tiling_y2: 5
+  - beat: 96
+    state: 2
+    color1: {r: 1, g: 1, b: 1, a: 0}
+    color2: {r: 0.27666426, g: 0.3604438, b: 0.9339623, a: 0}
+    speed1: 0.5
+    speed2: 0.5
+    tiling_x1: 10
+    tiling_y1: 1
+    tiling_x2: 5
+    tiling_y2: 5
+  - beat: 104
+    state: 0
+    color1: {r: 0.30776075, g: 0.7563236, b: 0.8962264, a: 0}
+    color2: {r: 0.14901958, g: 0.67724997, b: 0.9137255, a: 0}
+    speed1: 0.5
+    speed2: 0.5
+    tiling_x1: 10
+    tiling_y1: 1
+    tiling_x2: 10
+    tiling_y2: 10
+  songTitle: same thing
   audioClip: {fileID: 8300000, guid: 07f1ddad0a31e95449bc2afe5531b6ee, type: 3}
   BPM: 127
   color1: {r: 0.15021354, g: 0.803649, b: 0.8207547, a: 0}

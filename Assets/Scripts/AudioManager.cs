@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class AudioManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class AudioManager : MonoBehaviour
     public LanePlayerController playerController;
     public WormholeController worm;
     public ScoreManager score;
+    public TMP_Text text;
 
     public int songIndex = 0;
     public float BPM;
@@ -18,13 +20,15 @@ public class AudioManager : MonoBehaviour
     
     private float noteOffset = 8f;
     private float noteGap = 0.3f;
-    int spawnIndex = 0;
+    int spawnIndex, updateSpawnIndex = 0;
     int noteIndex = 0;
     bool validInput = true;
     float timingThreshold = 0.3f;
 
     public List<Song> songs = new List<Song>();
     Song currentSong;
+    Note note;
+    Updates updates;
 
     //How many seconds have passed since the song started
     public float dspSongTime;
@@ -41,6 +45,9 @@ public class AudioManager : MonoBehaviour
         worm.InitColor(currentSong.color1, currentSong.color2);
         worm.SetSpeed(currentSong.speed1, currentSong.speed2);
         worm.SetTiling(currentSong.tiling_x1, currentSong.tiling_y1, currentSong.tiling_x2, currentSong.tiling_y2);
+
+        //set song title
+        text.SetText(currentSong.songTitle);
     
         //record the time when the song starts
         dspSongTime = (float) AudioSettings.dspTime; 
@@ -59,48 +66,60 @@ public class AudioManager : MonoBehaviour
         songPositionInBeatsPrecise = songPosition / secPerBeat;
         songPositionInBeats = (int)songPositionInBeatsPrecise;
         //print(songPositionInBeatsPrecise);
-
-        // alternative case for timing camera switch
-        if (spawnIndex < currentSong.song.Count && currentSong.song[spawnIndex].beat <= songPositionInBeatsPrecise && currentSong.song[spawnIndex].type == "Switch")
+        if(spawnIndex != currentSong.song.Count)
         {
-            playerController.Switch();
-            spawnIndex++;
+            note = currentSong.song[spawnIndex];
+        }
+        if(updateSpawnIndex != currentSong.updates.Count)
+        {
+            updates = currentSong.updates[updateSpawnIndex];
         }
 
-        if (spawnIndex < currentSong.song.Count && currentSong.song[spawnIndex].beat - noteOffset <= songPositionInBeatsPrecise && currentSong.song[spawnIndex].type != "Switch")
+        // alternative case for timing camera switches and visual updates
+        if (updateSpawnIndex < currentSong.updates.Count && updates.beat <= songPositionInBeatsPrecise)
         {
-            if (currentSong.song[spawnIndex].type == "Wall")
+            print("yea");
+            playerController.Switch(updates.state);
+            worm.SetSpeed(updates.speed1, updates.speed2);
+            worm.InitColor(updates.color1, updates.color2);
+            worm.SetTiling(updates.tiling_x1, updates.tiling_y1, updates.tiling_x2, updates.tiling_y2);
+
+            updateSpawnIndex++;
+        }
+
+        if (spawnIndex < currentSong.song.Count && note.beat - noteOffset <= songPositionInBeatsPrecise && note.type != "Update")
+        {
+            if (note.type == "Wall")
             {
-                string lane = currentSong.song[spawnIndex].lane;
+                string lane = note.lane;
                 if(lane == "L")
                 {
-                    tileManager.SpawnTile(2, noteOffset - noteGap, currentSong.song[spawnIndex].rotation, "L");
-                    tileManager.SpawnTile(4, noteOffset + noteGap, currentSong.song[spawnIndex].rotation, "M");
-                    tileManager.SpawnTile(4, noteOffset + noteGap, currentSong.song[spawnIndex].rotation, "R");
+                    tileManager.SpawnTile(2, noteOffset - noteGap, "L");
+                    tileManager.SpawnTile(4, noteOffset + noteGap, "M");
+                    tileManager.SpawnTile(4, noteOffset + noteGap, "R");
                 }
                 else if(lane == "M")
                 {
-                    tileManager.SpawnTile(4, noteOffset + noteGap, currentSong.song[spawnIndex].rotation, "L");
-                    tileManager.SpawnTile(2, noteOffset - noteGap, currentSong.song[spawnIndex].rotation, "M");
-                    tileManager.SpawnTile(4, noteOffset + noteGap, currentSong.song[spawnIndex].rotation, "R");
+                    tileManager.SpawnTile(4, noteOffset + noteGap, "L");
+                    tileManager.SpawnTile(2, noteOffset - noteGap, "M");
+                    tileManager.SpawnTile(4, noteOffset + noteGap, "R");
                 }
                 else if(lane == "R")
                 {
-                    tileManager.SpawnTile(4, noteOffset + noteGap, currentSong.song[spawnIndex].rotation, "L");
-                    tileManager.SpawnTile(4, noteOffset + noteGap, currentSong.song[spawnIndex].rotation, "M");
-                    tileManager.SpawnTile(2, noteOffset - noteGap, currentSong.song[spawnIndex].rotation, "R");
+                    tileManager.SpawnTile(4, noteOffset + noteGap, "L");
+                    tileManager.SpawnTile(4, noteOffset + noteGap, "M");
+                    tileManager.SpawnTile(2, noteOffset - noteGap, "R");
                 }
             }
-            if (currentSong.song[spawnIndex].type == "Score")
+            if (note.type == "Score")
             {
-                tileManager.SpawnTile(3, noteOffset, currentSong.song[spawnIndex].rotation, currentSong.song[spawnIndex].lane);
+                tileManager.SpawnTile(3, noteOffset, note.lane);
             }
-            if (currentSong.song[spawnIndex].type == "Death")
+            if (note.type == "Death")
             {
-                tileManager.SpawnTile(7, noteOffset, currentSong.song[spawnIndex].rotation, currentSong.song[spawnIndex].lane);
+                tileManager.SpawnTile(7, noteOffset, note.lane);
             }
             
-            //print("spawning at: " + songPositionInBeats);
             spawnIndex++;
         }
 
@@ -147,7 +166,7 @@ public class AudioManager : MonoBehaviour
         if(songPositionInBeats != prevSongPositionInBeats)
         {
             prevSongPositionInBeats = songPositionInBeats;
-            StartCoroutine(worm.Pulse(1f, 0f, secPerBeat));
+            StartCoroutine(worm.Pulse(1f, 0.5f, secPerBeat));
         }
     }
 }

@@ -15,7 +15,7 @@ public class LanePlayerController : MonoBehaviour
     enum Lane {L, M, R};
     Lane lane;
 
-    enum State {Trailing, Overhead, Backwards};
+    public enum State {Trailing, Overhead, Backwards};
     State state;
 
     Vector3 targetPosition;
@@ -140,7 +140,17 @@ public class LanePlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.G))
         {
-            Switch();
+            Switch(0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            Switch(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            Switch(2);
         }
 
         if(charging)
@@ -153,28 +163,28 @@ public class LanePlayerController : MonoBehaviour
         }
     }
 
-    public void Switch()
+    public void Switch(int newState)
     {
-        if(state == State.Trailing)
-        {
-            state = State.Overhead;
-            trailingCam.enabled = false;
-            overheadCam.enabled = true;
-            backwardsCam.enabled = false;
-        }
-        else if(state == State.Overhead)
-        {
-            state = State.Backwards;
-            trailingCam.enabled = false;
-            overheadCam.enabled = false;
-            backwardsCam.enabled = true;
-        }
-        else if(state == State.Backwards)
+        if(newState == 0)
         {
             state = State.Trailing;
             trailingCam.enabled = true;
             overheadCam.enabled = false;
             backwardsCam.enabled = false;
+        }
+        else if(newState == 1)
+            {
+            state = State.Overhead;
+            trailingCam.enabled = false;
+            overheadCam.enabled = true;
+            backwardsCam.enabled = false;
+        }
+        else if(newState == 2)
+        {
+            state = State.Backwards;
+            trailingCam.enabled = false;
+            overheadCam.enabled = false;
+            backwardsCam.enabled = true;
         }
     }
 }

@@ -106,10 +106,10 @@ Material:
     - _USE_MANUAL_TIME: 0
     m_Colors:
     - _Colour: {r: 0.34117648, g: 0.854902, b: 0.9176471, a: 1}
-    - _Details_1_colour: {r: 0.7510677, g: 4.018245, b: 4.1037736, a: 0.8966999}
-    - _Details_1_tiling: {r: 1, g: 0.1, b: 0, a: 0}
-    - _Details_2_colour: {r: 0.915094, g: 1.6813821, b: 5, a: 0.8966999}
-    - _Details_2_tiling: {r: 50, g: 15, b: 0, a: 0}
+    - _Details_1_colour: {r: 1.5388037, g: 3.7816179, b: 4.481132, a: 0.67883986}
+    - _Details_1_tiling: {r: 10, g: 1, b: 0, a: 0}
+    - _Details_2_colour: {r: 0.74509794, g: 3.3862498, b: 4.5686274, a: 0.67883986}
+    - _Details_2_tiling: {r: 10, g: 10, b: 0, a: 0}
     - _Details_colour: {r: 0.7924528, g: 0.20558919, b: 0.20558919, a: 1}
     - _Noise_tiling: {r: 1, g: 1, b: 0, a: 0}
     - _Wormhole_colour: {r: 0, g: 0, b: 0, a: 1}
