@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7608503519208540968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f1b38e21cfa474185b8f9ade2e0bab, type: 3}
+  m_Name: Bozo
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  settings:
+    Event: 550
+    blitMaterial: {fileID: 2100000, guid: 3d0c670964aaaf4419a0f851ab352873, type: 2}
+    blitMaterialPassIndex: 0
+    destination: 0
+    textureId: _BlitPassTexture
 --- !u!114 &-180106399911769046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,7 +51,9 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: -180106399911769046}
   - {fileID: 8877427094550783882}
-  m_RendererFeatureMap: 2a0c7cfb2e2280fd8aa7206ae8f4327b
+  - {fileID: -7608503519208540968}
+  - {fileID: 3802334677639885965}
+  m_RendererFeatureMap: 2a0c7cfb2e2280fd8aa7206ae8f4327bd8f443615c2a69968df4df613e9bc434
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -73,6 +94,25 @@ MonoBehaviour:
   m_ClusteredRendering: 0
   m_TileSize: 32
   m_IntermediateTextureMode: 1
+--- !u!114 &3802334677639885965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f1b38e21cfa474185b8f9ade2e0bab, type: 3}
+  m_Name: Bozo2
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  settings:
+    Event: 550
+    blitMaterial: {fileID: 2100000, guid: 8ccf85b5ab4872446962b683cb2bd047, type: 2}
+    blitMaterialPassIndex: 0
+    destination: 0
+    textureId: _BlitPassTexture
 --- !u!114 &6547898631616015114
 MonoBehaviour:
   m_ObjectHideFlags: 0

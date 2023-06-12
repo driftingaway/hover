@@ -35,6 +35,8 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
+        UniversalRenderPipelineUtils.SetRendererFeatureActive("Bozo", false);
+
         currentSong = songs[songIndex];
         BPM = currentSong.BPM;
 

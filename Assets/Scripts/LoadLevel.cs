@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class LoadLevel : MonoBehaviour
 {
+    public AudioSource a;
+    public AudioClip[] clip;
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -30,13 +32,34 @@ public class LoadLevel : MonoBehaviour
         // a sceneBuildIndex of 1 as shown in Build Settings.
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene);
+        asyncLoad.allowSceneActivation = false;
 
         // Wait until the asynchronous scene fully loads
-        while (!asyncLoad.isDone)
+        while (asyncLoad.progress < 0.9f)
         {
             yield return null;
         }
+        
+        a.PlayOneShot(clip[0]);
+        yield return new WaitForSeconds(1.0f);
+        a.PlayOneShot(clip[1]);
+        yield return new WaitForSeconds(1.0f);
+        a.PlayOneShot(clip[2]);
+        yield return new WaitForSeconds(1.0f);
+        a.PlayOneShot(clip[3]);
+        yield return new WaitForSeconds(1.0f);
+        a.PlayOneShot(clip[4]);
+        yield return new WaitForSeconds(1.0f);
+        a.PlayOneShot(clip[5]);
+        yield return new WaitForSeconds(0.5f);
+        a.PlayOneShot(clip[6]);
+        UniversalRenderPipelineUtils.SetRendererFeatureActive("Bozo2", true);
+        yield return new WaitForSeconds(0.5f);
+        UniversalRenderPipelineUtils.SetRendererFeatureActive("Bozo2", false);
+        UniversalRenderPipelineUtils.SetRendererFeatureActive("Bozo", true);
+        yield return new WaitForSeconds(0.5f);
 
-        print("Loaded");
+        // switch scenes
+        asyncLoad.allowSceneActivation = true;
     }
 }

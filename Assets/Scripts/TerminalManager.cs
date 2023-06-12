@@ -9,6 +9,8 @@ public class TerminalManager : MonoBehaviour
 {
     public GameObject directoryLine;
     public GameObject responseLine;
+    public AudioSource a;
+    public AudioClip clip;
 
     public TMP_InputField terminalInput;
     public GameObject userInputLine;
@@ -39,6 +41,11 @@ public class TerminalManager : MonoBehaviour
 
     private void OnGUI()
     {
+        if(terminalInput.isFocused && Input.anyKeyDown)
+        {
+            a.PlayOneShot(clip);
+        }
+
         if(terminalInput.isFocused && terminalInput.text != "" && Input.GetKeyDown(KeyCode.Return))
         { 
             // Store typed msg
@@ -162,6 +169,7 @@ public class TerminalManager : MonoBehaviour
 
                     // Set response line to returned interpreter string
                     yield return new WaitForSeconds(randomVals[waitTime]);
+                    a.PlayOneShot(clip);
                     res.GetComponentInChildren<TMP_Text>().text = res.GetComponentInChildren<TMP_Text>().text + c;
                 }
             }
