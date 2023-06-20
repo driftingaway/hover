@@ -11,11 +11,10 @@ public class AudioManager : MonoBehaviour
     public ScoreManager score;
     public TMP_Text text;
 
-    public int songIndex = 0;
     public float BPM;
     public float secPerBeat;
     public float songPosition;
-    public int songPositionInBeats, prevSongPositionInBeats = 0;
+    public int songPositionInt, songPositionInBeats, prevSongPositionInBeats = 0;
     public float songPositionInBeatsPrecise;
     
     private float noteOffset = 8f;
@@ -32,12 +31,13 @@ public class AudioManager : MonoBehaviour
 
     //How many seconds have passed since the song started
     public float dspSongTime;
+    FMOD.Studio.EventInstance eventInstance;
 
     void Start()
     {
         UniversalRenderPipelineUtils.SetRendererFeatureActive("Bozo", false);
 
-        currentSong = songs[songIndex];
+        currentSong = songs[GameValues.songIndex];
         BPM = currentSong.BPM;
 
         //calculate how many seconds is one beat
@@ -51,18 +51,16 @@ public class AudioManager : MonoBehaviour
         //set song title
         text.SetText(currentSong.songTitle);
     
-        //record the time when the song starts
-        dspSongTime = (float) AudioSettings.dspTime; 
-
-        GetComponent<AudioSource>().clip = currentSong.audioClip;
-        //start the song
-        GetComponent<AudioSource>().Play();
+        // set up fmod instance
+        eventInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/" + GameValues.songName);
+        eventInstance.start();
     }
 
     void Update()
     {
         //calculate the position in seconds
-        songPosition = (float) (AudioSettings.dspTime - dspSongTime);
+        eventInstance.getTimelinePosition(out songPositionInt); 
+        songPosition = (float) songPositionInt / 1000f;
 
         //calculate the position in beats
         songPositionInBeatsPrecise = songPosition / secPerBeat;

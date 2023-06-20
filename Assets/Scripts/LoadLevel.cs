@@ -7,6 +7,10 @@ public class LoadLevel : MonoBehaviour
 {
     public AudioSource a;
     public AudioClip[] clip;
+
+    [FMODUnity.EventRef]
+    public string Event = "";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,26 +44,12 @@ public class LoadLevel : MonoBehaviour
             yield return null;
         }
         
-        a.PlayOneShot(clip[0]);
-        yield return new WaitForSeconds(1.0f);
-        a.PlayOneShot(clip[1]);
-        yield return new WaitForSeconds(1.0f);
-        a.PlayOneShot(clip[2]);
-        yield return new WaitForSeconds(1.0f);
-        a.PlayOneShot(clip[3]);
-        yield return new WaitForSeconds(1.0f);
-        a.PlayOneShot(clip[4]);
-        yield return new WaitForSeconds(1.0f);
-        a.PlayOneShot(clip[5]);
-        yield return new WaitForSeconds(0.5f);
-        a.PlayOneShot(clip[6]);
-        UniversalRenderPipelineUtils.SetRendererFeatureActive("Bozo2", true);
-        yield return new WaitForSeconds(0.5f);
-        UniversalRenderPipelineUtils.SetRendererFeatureActive("Bozo2", false);
-        UniversalRenderPipelineUtils.SetRendererFeatureActive("Bozo", true);
-        yield return new WaitForSeconds(0.5f);
+        FMODUnity.RuntimeManager.PlayOneShot(Event, transform.position);
+        yield return new WaitForSeconds(6f);
 
         // switch scenes
+        GameValues.songIndex = 4;
+        GameValues.songName = "Direct";
         asyncLoad.allowSceneActivation = true;
     }
 }

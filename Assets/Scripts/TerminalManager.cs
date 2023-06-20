@@ -25,30 +25,29 @@ public class TerminalManager : MonoBehaviour
     public GameObject ChipSlot1;
     public GameObject ChipSlot2;
 
+    [FMODUnity.EventRef]
+    public string TickEvent = "";
+    public string KeyEvent = "";
+
     //public GameObject shutter;
     public bool shutterStatus = true;
     //OpenShutter openShutter;
 
     Interpreter interpreter;
     public UIManager ui;
-    bool flip, flop = true;
+    bool flip = true;
 
     private void Start()
     {
         interpreter = GetComponent<Interpreter>();
         //openShutter = shutter.GetComponent<OpenShutter>();
         List<GameObject> history = new List<GameObject>();
-        terminalInput.onValueChanged.AddListener(delegate {ValueChangeCheck(); });
+        terminalInput.onValueChanged.AddListener(delegate {ValueChangeCheck(KeyEvent); });
     }
 
-    private void ValueChangeCheck()
+    private void ValueChangeCheck(string Event)
     {
-        a.clip = clip;
-        a.pitch = (Random.Range(0.9f, 1.1f));
-        a.volume = (Random.Range(0.4f, 1.0f));
-        a.Play();
-        print(a.pitch);
-        print("L");
+        FMODUnity.RuntimeManager.PlayOneShot(Event, transform.position);
     }
 
     private void OnGUI()
@@ -177,18 +176,11 @@ public class TerminalManager : MonoBehaviour
                     // Set response line to returned interpreter string
                     yield return new WaitForSeconds(randomVals[waitTime]);
 
-                    /*
                     if(flip)
                     {
-                        if(flop)
-                        {
-                            ValueChangeCheck();
-                        }
-                        flop = !flop;
+                        ValueChangeCheck(TickEvent);
                     }
                     flip = !flip;
-                    */
-                    ValueChangeCheck();
                     res.GetComponentInChildren<TMP_Text>().text = res.GetComponentInChildren<TMP_Text>().text + c;
                 }
             }
