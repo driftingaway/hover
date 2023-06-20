@@ -31,21 +31,28 @@ public class TerminalManager : MonoBehaviour
 
     Interpreter interpreter;
     public UIManager ui;
+    bool flip, flop = true;
 
     private void Start()
     {
         interpreter = GetComponent<Interpreter>();
         //openShutter = shutter.GetComponent<OpenShutter>();
         List<GameObject> history = new List<GameObject>();
+        terminalInput.onValueChanged.AddListener(delegate {ValueChangeCheck(); });
+    }
+
+    private void ValueChangeCheck()
+    {
+        a.clip = clip;
+        a.pitch = (Random.Range(0.9f, 1.1f));
+        a.volume = (Random.Range(0.4f, 1.0f));
+        a.Play();
+        print(a.pitch);
+        print("L");
     }
 
     private void OnGUI()
     {
-        if(terminalInput.isFocused && Input.anyKeyDown)
-        {
-            a.PlayOneShot(clip);
-        }
-
         if(terminalInput.isFocused && terminalInput.text != "" && Input.GetKeyDown(KeyCode.Return))
         { 
             // Store typed msg
@@ -141,7 +148,7 @@ public class TerminalManager : MonoBehaviour
                 int count = 0;
 
                 // generate random interval speeds to type at
-                List<float> randomVals = new List<float>{0.0f, 0.01f, 0.015f, 0.045f};
+                List<float> randomVals = new List<float>{0.02f, 0.03f, 0.04f, 0.05f};
                 int waitTime = Random.Range(0, 4);
                 foreach (char c in interpretation[i])
                 {
@@ -169,7 +176,19 @@ public class TerminalManager : MonoBehaviour
 
                     // Set response line to returned interpreter string
                     yield return new WaitForSeconds(randomVals[waitTime]);
-                    a.PlayOneShot(clip);
+
+                    /*
+                    if(flip)
+                    {
+                        if(flop)
+                        {
+                            ValueChangeCheck();
+                        }
+                        flop = !flop;
+                    }
+                    flip = !flip;
+                    */
+                    ValueChangeCheck();
                     res.GetComponentInChildren<TMP_Text>().text = res.GetComponentInChildren<TMP_Text>().text + c;
                 }
             }

@@ -1673,7 +1673,7 @@ PrefabInstance:
         type: 3}
       propertyPath: clip
       value: 
-      objectReference: {fileID: 8300000, guid: 38af2e103cd066b479111e8f201f6301, type: 3}
+      objectReference: {fileID: 8300000, guid: a8576626ea100764e8dca5ad66bb3b0b, type: 3}
     - target: {fileID: 3353664941471210553, guid: 2502ab2e35c68bd41bf220b56911abb8,
         type: 3}
       propertyPath: responseLine
@@ -1686,6 +1686,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 934945852861964265, guid: dac8d10091ff9744f8e8c0ee3c9b60a2,
         type: 3}
+    - target: {fileID: 3353664941471210553, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: clip.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353664941471210553, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: clip.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: a8576626ea100764e8dca5ad66bb3b0b, type: 3}
+    - target: {fileID: 3353664941471210553, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: clip.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: a8576626ea100764e8dca5ad66bb3b0b, type: 3}
     - target: {fileID: 4128404336954381068, guid: 2502ab2e35c68bd41bf220b56911abb8,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -1855,8 +1870,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: a8576626ea100764e8dca5ad66bb3b0b, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1864,7 +1879,7 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
