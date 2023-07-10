@@ -106,9 +106,9 @@ Material:
     - _USE_MANUAL_TIME: 0
     m_Colors:
     - _Colour: {r: 0.34117648, g: 0.854902, b: 0.9176471, a: 1}
-    - _Details_1_colour: {r: 50, g: 50, b: 50, a: 0.7992078}
+    - _Details_1_colour: {r: 50, g: 50, b: 50, a: 0.9214797}
     - _Details_1_tiling: {r: 1, g: 1, b: 0, a: 0}
-    - _Details_2_colour: {r: 50, g: 50, b: 50, a: 0.7992078}
+    - _Details_2_colour: {r: 50, g: 50, b: 50, a: 0.9214797}
     - _Details_2_tiling: {r: 1, g: 2.32, b: 0, a: 0}
     - _Details_colour: {r: 0.7924528, g: 0.20558919, b: 0.20558919, a: 1}
     - _Noise_tiling: {r: 3, g: 1, b: 0, a: 0}

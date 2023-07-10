@@ -5,16 +5,20 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public AudioManager am;
+    public Camera trailingCam, overheadCam, backwardsCam;
     public float speed = 200f;
     public Rigidbody rb;
 
     float rotationAmount = 100f;
-    float horizontalInput, verticalInput;
-    public bool charging = false;
+    float horizontalInput;
+
+    public enum State {Trailing, Overhead, Backwards};
+    State state;
 
     Vector3 targetPosition;
-    Quaternion targetRotation;
+    Quaternion targetRotation, overheadTargetRotation;
 
+    public bool charging = false;
     public ParticleSystem chargeParticles;
 
     // Start is called before the first frame update
@@ -22,36 +26,38 @@ public class PlayerController : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody>();
         speed = am.BPM;
-        rotationAmount = am.BPM;
+        state = State.Trailing;
         chargeParticles = gameObject.GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-        Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime;
-        Vector3 verticalMove = transform.up * verticalInput * speed * Time.fixedDeltaTime;
-
-        //Use Mathf.Clamp to limit the horizontal position
-        float clampedHorizontalPosition = Mathf.Clamp(rb.position.x + horizontalMove.x, -30f, 30f);
-        float clampedVerticalPosition = Mathf.Clamp(rb.position.y + verticalMove.y, -30f, 30f);
-        //horizontalMove = new Vector3(clampedHorizontalPosition - rb.position.x, 0f, 0f);
-        //verticalMove = new Vector3(0f, clampedVerticalPosition - rb.position.y, 0f);
-
-        rb.MovePosition(rb.position + forwardMove);
-
-        // Rotate player based on input
-        transform.Rotate(Vector3.back * horizontalInput * rotationAmount * Time.fixedDeltaTime);
+        if (state != State.Overhead) 
+        {
+            transform.Rotate(Vector3.back * horizontalInput * rotationAmount * Time.fixedDeltaTime);
+        }
     }
 
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-        //print(rb.rotation);
 
-        //var emissionModule = chargeParticles.emission;
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            Switch(0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            Switch(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            Switch(2);
+        }
+
         if(charging)
         {
             chargeParticles.Play();
@@ -59,6 +65,32 @@ public class PlayerController : MonoBehaviour
         else
         {
             chargeParticles.Stop();
+        }
+    }
+
+    public void Switch(int newState)
+    {
+        if(newState == 0)
+        {
+            state = State.Trailing;
+            trailingCam.enabled = true;
+            overheadCam.enabled = false;
+            backwardsCam.enabled = false;
+        }
+        else if(newState == 1)
+        {
+            state = State.Overhead;
+            trailingCam.enabled = false;
+            overheadCam.enabled = true;
+            backwardsCam.enabled = false;
+            transform.rotation = Quaternion.identity;
+        }
+        else if(newState == 2)
+        {
+            state = State.Backwards;
+            trailingCam.enabled = false;
+            overheadCam.enabled = false;
+            backwardsCam.enabled = true;
         }
     }
 }

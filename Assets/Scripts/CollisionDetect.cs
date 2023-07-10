@@ -22,7 +22,7 @@ public class CollisionDetect : MonoBehaviour
         print("u hella dead");
         if (col.gameObject.tag == "Obstacle")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

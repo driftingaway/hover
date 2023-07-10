@@ -6,7 +6,7 @@ using TMPro;
 public class AudioManager : MonoBehaviour
 {
     public TileManager tileManager;
-    public LanePlayerController playerController;
+    public PlayerController playerController;
     public WormholeController worm;
     public ScoreManager score;
     public TMP_Text text;
@@ -18,7 +18,6 @@ public class AudioManager : MonoBehaviour
     public float songPositionInBeatsPrecise;
     
     private float noteOffset = 8f;
-    private float noteGap = 0.3f;
     int spawnIndex, updateSpawnIndex = 0;
     int noteIndex = 0;
     bool validInput = true;
@@ -91,33 +90,15 @@ public class AudioManager : MonoBehaviour
         {
             if (note.type == "Wall")
             {
-                string lane = note.lane;
-                if(lane == "L")
-                {
-                    tileManager.SpawnTile(2, noteOffset - noteGap, "L");
-                    tileManager.SpawnTile(4, noteOffset + noteGap, "M");
-                    tileManager.SpawnTile(4, noteOffset + noteGap, "R");
-                }
-                else if(lane == "M")
-                {
-                    tileManager.SpawnTile(4, noteOffset + noteGap, "L");
-                    tileManager.SpawnTile(2, noteOffset - noteGap, "M");
-                    tileManager.SpawnTile(4, noteOffset + noteGap, "R");
-                }
-                else if(lane == "R")
-                {
-                    tileManager.SpawnTile(4, noteOffset + noteGap, "L");
-                    tileManager.SpawnTile(4, noteOffset + noteGap, "M");
-                    tileManager.SpawnTile(2, noteOffset - noteGap, "R");
-                }
+                tileManager.SpawnTile(2, noteOffset);
             }
             if (note.type == "Score")
             {
-                tileManager.SpawnTile(3, noteOffset, note.lane);
+                tileManager.SpawnTile(3, noteOffset);
             }
             if (note.type == "Death")
             {
-                tileManager.SpawnTile(7, noteOffset, note.lane);
+                tileManager.SpawnTile(7, noteOffset);
             }
             
             spawnIndex++;
@@ -126,34 +107,13 @@ public class AudioManager : MonoBehaviour
         // if timing is close enough to a note, check input for a potential hit 
         if((Mathf.Abs(songPositionInBeatsPrecise - currentSong.song[noteIndex].beat)) < timingThreshold)
         {
-            if (currentSong.song[noteIndex].type == "Score" && Input.GetKeyDown(KeyCode.Space) && validInput && !playerController.charging)
+            if (currentSong.song[noteIndex].type == "Score" && Input.GetKeyDown(KeyCode.Space) && validInput)
             {
+                score.IncreaseScore();
                 validInput = false;
-                playerController.charging = true;
+                print("+1");
             } 
-
-            if (currentSong.song[noteIndex].type == "Score" && Input.GetKeyUp(KeyCode.Space) && validInput && playerController.charging)
-            {
-                validInput = false;
-                playerController.charging = false;
-            } 
-            else
-            {
-                if(playerController.charging && Input.GetKeyUp(KeyCode.Space))
-                {
-                    print("dumbass u suck");
-                    playerController.charging = false;
-                }
-            }
         } 
-        else
-        {
-            if(playerController.charging && Input.GetKeyUp(KeyCode.Space))
-            {
-                print("dumbass u suck");
-                playerController.charging = false;
-            }
-        }
 
         // if timing is close enough to the next note, shift indicies and re-enable input
         if(noteIndex < currentSong.song.Count - 1 && currentSong.song[noteIndex + 1].beat - songPositionInBeatsPrecise < timingThreshold)

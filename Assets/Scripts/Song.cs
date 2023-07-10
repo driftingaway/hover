@@ -6,7 +6,6 @@ public struct Note
 {
     public float beat;
     public string type;
-    public string lane;
 }
 
 [System.Serializable]

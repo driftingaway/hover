@@ -31,20 +31,10 @@ public class TileManager : MonoBehaviour
         instObjects.transform.position = instObjects.transform.position - forwardMove;
     }
 
-    public void SpawnTile(int id, float noteOffset, string lane) 
+    public void SpawnTile(int id, float noteOffset) 
     {
-        float laneOffset = 0f;
-        if(lane == "L")
-        {
-            laneOffset = -15f;
-        }
-        else if(lane == "R")
-        {
-            laneOffset = 15f;
-        }
-
         // spawn tile
-        GameObject newTile = Instantiate(tiles[id], new Vector3(laneOffset, 0f, player.position.z) + (transform.forward * 60f * noteOffset), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
+        GameObject newTile = Instantiate(tiles[id], new Vector3(0f, 0f, player.position.z) + (transform.forward * 60f * noteOffset), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
         newTile.transform.parent = instObjects.transform;
         activeTiles.Add(newTile);
 

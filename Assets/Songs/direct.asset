@@ -14,11 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   song:
   - beat: 16
-    type: Wall
-    lane: L
+    type: Score
   - beat: 32
-    type: Wall
-    lane: R
+    type: Score
   updates:
   - beat: 80
     state: 1
