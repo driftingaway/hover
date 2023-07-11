@@ -14,54 +14,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   song:
   - beat: 32
-    type: Wall
-    rotation: 0
-    lane: L
   - beat: 40
-    type: Wall
-    rotation: 0
-    lane: M
   - beat: 48
-    type: Wall
-    rotation: 0
-    lane: R
   - beat: 56
-    type: Wall
-    rotation: 0
-    lane: M
   - beat: 64
-    type: Wall
-    rotation: 0
-    lane: L
   - beat: 65
-    type: Wall
-    rotation: 0
-    lane: M
   - beat: 66
-    type: Wall
-    rotation: 0
-    lane: L
   - beat: 67
-    type: Wall
-    rotation: 0
-    lane: M
   - beat: 68
-    type: Wall
-    rotation: 0
-    lane: R
   - beat: 69
-    type: Wall
-    rotation: 0
-    lane: M
   - beat: 70
-    type: Wall
-    rotation: 0
-    lane: L
   - beat: 71
-    type: Wall
-    rotation: 0
-    lane: M
-  audioClip: {fileID: 8300000, guid: 145d6348945545d459a87038e5560c9f, type: 3}
-  BPM: 160
-  color1: {r: 1, g: 0, b: 0, a: 0}
+  updates:
+  - beat: 64
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 0}
+    color2: {r: 1, g: 1, b: 1, a: 0}
+    speed1: 1
+    speed2: 1
+    tiling_x1: 10
+    tiling_y1: 1
+    tiling_x2: 5
+    tiling_y2: 5
+  projectiles: []
+  songTitle: Song
+  BPM: 164
+  color1: {r: 0, g: 0, b: 0, a: 0}
   color2: {r: 1, g: 1, b: 1, a: 0}
+  speed1: 0.3
+  speed2: 0.3
+  tiling_x1: 1
+  tiling_y1: 1
+  tiling_x2: 1
+  tiling_y2: 1

@@ -810,15 +810,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edbb6f3434b7a0f44b9d2fa85642492e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  a: {fileID: 0}
-  clip:
-  - {fileID: 8300000, guid: 19f38a1d8ead81c4cb9a749a855ee0af, type: 3}
-  - {fileID: 8300000, guid: b42694e614db073498fd3a616a4f4067, type: 3}
-  - {fileID: 8300000, guid: 9ea0b9b9ba3431a4d8986f35528e4207, type: 3}
-  - {fileID: 8300000, guid: 8c9d4987af39dd6468499b9bd89f3395, type: 3}
-  - {fileID: 8300000, guid: 7c40b012321027e41b808e07b5a42758, type: 3}
-  - {fileID: 8300000, guid: 1febf34be149903459aed15fb022a74b, type: 3}
-  - {fileID: 8300000, guid: 913b89b4a517bf245a5697df4a651f8f, type: 3}
+  songIndex: 0
+  musicDatabase:
+  - blood
   Event:
     Guid:
       Data1: 364926395

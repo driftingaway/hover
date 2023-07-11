@@ -5,15 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class LoadLevel : MonoBehaviour
 {
-    public AudioSource a;
-    public AudioClip[] clip;
+    public int songIndex;
+    public List<string> musicDatabase = new List<string>();
 
     public FMODUnity.EventReference Event;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+
     }
 
     // Update is called once per frame
@@ -47,8 +47,8 @@ public class LoadLevel : MonoBehaviour
         yield return new WaitForSeconds(6f);
 
         // switch scenes
-        GameValues.songIndex = 5;
-        GameValues.songName = "Blood_cut";
+        GameValues.songIndex = songIndex;
+        GameValues.songName = musicDatabase[songIndex];
         asyncLoad.allowSceneActivation = true;
     }
 }
