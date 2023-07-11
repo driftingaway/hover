@@ -7,7 +7,7 @@ using UnityEditor;
 public class TileManager : MonoBehaviour
 {
     public GameObject[] tiles;
-    public GameObject instObjects;
+    public GameObject instObjects, backInstObjects;
     public Transform player;
     public AudioManager am;
     float speed;
@@ -28,14 +28,24 @@ public class TileManager : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 forwardMove = instObjects.transform.forward * speed * Time.fixedDeltaTime;
+        Vector3 backwardMove = backInstObjects.transform.forward * speed * Time.fixedDeltaTime;
         instObjects.transform.position = instObjects.transform.position - forwardMove;
+        backInstObjects.transform.position = backInstObjects.transform.position + backwardMove;
     }
 
-    public void SpawnTile(int id, float noteOffset) 
+    public void SpawnTile(int id, float noteOffset, float xOffset) 
     {
         // spawn tile
-        GameObject newTile = Instantiate(tiles[id], new Vector3(0f, 0f, player.position.z) + (transform.forward * 60f * noteOffset), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
-        newTile.transform.parent = instObjects.transform;
+        GameObject newTile = Instantiate(tiles[id], new Vector3(xOffset, 0f, player.position.z) + (transform.forward * 60f * noteOffset), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
+        if(id == 2)
+        {
+            newTile.transform.parent = backInstObjects.transform;
+        }
+        else
+        {
+            newTile.transform.parent = instObjects.transform;
+        }
+
         activeTiles.Add(newTile);
 
         if(activeTiles.Count > 50)

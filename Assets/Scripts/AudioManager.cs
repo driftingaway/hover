@@ -18,7 +18,7 @@ public class AudioManager : MonoBehaviour
     public float songPositionInBeatsPrecise;
     
     private float noteOffset = 8f;
-    int spawnIndex, updateSpawnIndex = 0;
+    int spawnIndex, updateSpawnIndex, projectileSpawnIndex = 0;
     int noteIndex = 0;
     bool validInput = true;
     float timingThreshold = 0.25f;
@@ -27,6 +27,7 @@ public class AudioManager : MonoBehaviour
     Song currentSong;
     Note note;
     Updates updates;
+    Projectiles projectiles;
 
     //How many seconds have passed since the song started
     public float dspSongTime;
@@ -74,6 +75,10 @@ public class AudioManager : MonoBehaviour
         {
             updates = currentSong.updates[updateSpawnIndex];
         }
+        if(projectileSpawnIndex != currentSong.projectiles.Count)
+        {
+            projectiles = currentSong.projectiles[projectileSpawnIndex];
+        }
 
         // alternative case for timing camera switches and visual updates
         if (updateSpawnIndex < currentSong.updates.Count && updates.beat <= songPositionInBeatsPrecise)
@@ -87,31 +92,32 @@ public class AudioManager : MonoBehaviour
             updateSpawnIndex++;
         }
 
+        // spawn note
         if (spawnIndex < currentSong.song.Count && note.beat - noteOffset <= songPositionInBeatsPrecise)
         {
-            if (note.type == "Note")
+            if(spawnIndex % 2 == 0)
             {
-                if(spawnIndex % 2 == 0)
-                {
-                    tileManager.SpawnTile(0, noteOffset);
-                }
-                else
-                {
-                    tileManager.SpawnTile(1, noteOffset);
-                }
+                tileManager.SpawnTile(0, noteOffset, 0);
             }
-            if (note.type == "Shot")
+            else
             {
-                tileManager.SpawnTile(2, noteOffset);
+                tileManager.SpawnTile(1, noteOffset, 0);
             }
-            
             spawnIndex++;
+        }
+
+        // spawn projectile
+        if (projectileSpawnIndex < currentSong.projectiles.Count && projectiles.beat <= songPositionInBeatsPrecise)
+        {
+            tileManager.SpawnTile(2, -1, -5f);
+            tileManager.SpawnTile(2, -1, 5f);
+            projectileSpawnIndex++;
         }
 
         // if timing is close enough to a note, check input for a potential hit 
         if((Mathf.Abs(songPositionInBeatsPrecise - currentSong.song[noteIndex].beat)) < timingThreshold)
         {
-            if (currentSong.song[noteIndex].type == "Note" && validInput &&
+            if (validInput &&
             ((Input.GetKeyDown(KeyCode.A) && noteIndex % 2 == 0) || (Input.GetKeyDown(KeyCode.D) && noteIndex % 2 == 1)))
             {
                 FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);

@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public struct Note
 {
     public float beat;
-    public string type;
 }
 
 [System.Serializable]
@@ -18,11 +17,18 @@ public struct Updates
 }
 
 [System.Serializable]
+public struct Projectiles
+{
+    public float beat;
+}
+
+[System.Serializable]
 [CreateAssetMenu]
 public class Song : ScriptableObject
 {
     public List<Note> song = new List<Note>();
     public List<Updates> updates = new List<Updates>();
+    public List<Projectiles> projectiles = new List<Projectiles>();
     public string songTitle = "Song";
     public float BPM = 100;
     public Color color1, color2;
