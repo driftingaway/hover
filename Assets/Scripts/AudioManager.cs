@@ -21,7 +21,7 @@ public class AudioManager : MonoBehaviour
     int spawnIndex, updateSpawnIndex = 0;
     int noteIndex = 0;
     bool validInput = true;
-    float timingThreshold = 0.3f;
+    float timingThreshold = 0.25f;
 
     public List<Song> songs = new List<Song>();
     Song currentSong;
@@ -31,6 +31,7 @@ public class AudioManager : MonoBehaviour
     //How many seconds have passed since the song started
     public float dspSongTime;
     FMOD.Studio.EventInstance eventInstance;
+    public FMODUnity.EventReference NoteEvent;
 
     void Start()
     {
@@ -86,19 +87,22 @@ public class AudioManager : MonoBehaviour
             updateSpawnIndex++;
         }
 
-        if (spawnIndex < currentSong.song.Count && note.beat - noteOffset <= songPositionInBeatsPrecise && note.type != "Update")
+        if (spawnIndex < currentSong.song.Count && note.beat - noteOffset <= songPositionInBeatsPrecise)
         {
-            if (note.type == "Wall")
+            if (note.type == "Note")
+            {
+                if(spawnIndex % 2 == 0)
+                {
+                    tileManager.SpawnTile(0, noteOffset);
+                }
+                else
+                {
+                    tileManager.SpawnTile(1, noteOffset);
+                }
+            }
+            if (note.type == "Shot")
             {
                 tileManager.SpawnTile(2, noteOffset);
-            }
-            if (note.type == "Score")
-            {
-                tileManager.SpawnTile(3, noteOffset);
-            }
-            if (note.type == "Death")
-            {
-                tileManager.SpawnTile(7, noteOffset);
             }
             
             spawnIndex++;
@@ -107,8 +111,10 @@ public class AudioManager : MonoBehaviour
         // if timing is close enough to a note, check input for a potential hit 
         if((Mathf.Abs(songPositionInBeatsPrecise - currentSong.song[noteIndex].beat)) < timingThreshold)
         {
-            if (currentSong.song[noteIndex].type == "Score" && Input.GetKeyDown(KeyCode.Space) && validInput)
+            if (currentSong.song[noteIndex].type == "Note" && validInput &&
+            ((Input.GetKeyDown(KeyCode.A) && noteIndex % 2 == 0) || (Input.GetKeyDown(KeyCode.D) && noteIndex % 2 == 1)))
             {
+                FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);
                 score.IncreaseScore();
                 validInput = false;
                 print("+1");

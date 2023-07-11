@@ -25,9 +25,8 @@ public class TerminalManager : MonoBehaviour
     public GameObject ChipSlot1;
     public GameObject ChipSlot2;
 
-    [FMODUnity.EventRef]
-    public string TickEvent = "";
-    public string KeyEvent = "";
+    public FMODUnity.EventReference TickEvent;
+    public FMODUnity.EventReference KeyEvent;
 
     //public GameObject shutter;
     public bool shutterStatus = true;
@@ -45,7 +44,7 @@ public class TerminalManager : MonoBehaviour
         terminalInput.onValueChanged.AddListener(delegate {ValueChangeCheck(KeyEvent); });
     }
 
-    private void ValueChangeCheck(string Event)
+    private void ValueChangeCheck(FMODUnity.EventReference Event)
     {
         FMODUnity.RuntimeManager.PlayOneShot(Event, transform.position);
     }

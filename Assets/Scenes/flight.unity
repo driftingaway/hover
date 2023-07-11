@@ -403,7 +403,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c683ffda49740be4691ad594ca7f7559, type: 2}
   - {fileID: 11400000, guid: 6a60378930cb1ea43a391fd1785baf5c, type: 2}
   - {fileID: 11400000, guid: 7c383225ab4e8304f817fd2fbea4a6cf, type: 2}
+  - {fileID: 11400000, guid: 70a55ee3e70bb7945ab0891b1916fa59, type: 2}
   dspSongTime: 0
+  NoteEvent:
+    Guid:
+      Data1: -247514976
+      Data2: 1186714760
+      Data3: 34099343
+      Data4: -392080975
+    Path: event:/UI/Note
 --- !u!4 &435850312
 Transform:
   m_ObjectHideFlags: 0
@@ -1902,14 +1910,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiles:
-  - {fileID: 3597874461473875378, guid: b8ebe65bff5ae444eb15667489567aa1, type: 3}
-  - {fileID: 2393683567878966226, guid: 459ef0c8c6039f84f997a545d905f2be, type: 3}
-  - {fileID: 6194662080441475392, guid: a40face96995145488b900dff4a95609, type: 3}
   - {fileID: 5245754685462649979, guid: 2ea0bf94e0af8d84f87651b9184df406, type: 3}
-  - {fileID: 6194662080441475392, guid: 3db2475d3b5f39a45873536a68eff34b, type: 3}
-  - {fileID: 4230041626639198679, guid: 3b6f7595db356a24bb83826fa75142fb, type: 3}
-  - {fileID: 889109076614643530, guid: 94b0dfe8374319a409bdfdf25cd66624, type: 3}
-  - {fileID: 8100526297114485193, guid: 9545162b16d67944880bfe54835f4f06, type: 3}
+  - {fileID: 5245754685462649979, guid: aad83979ce33eaf419772ea8493437d7, type: 3}
   instObjects: {fileID: 28894595}
   player: {fileID: 1887498119}
   am: {fileID: 435850311}

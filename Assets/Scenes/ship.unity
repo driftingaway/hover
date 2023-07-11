@@ -819,7 +819,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7c40b012321027e41b808e07b5a42758, type: 3}
   - {fileID: 8300000, guid: 1febf34be149903459aed15fb022a74b, type: 3}
   - {fileID: 8300000, guid: 913b89b4a517bf245a5697df4a651f8f, type: 3}
-  Event: event:/Ambience/Jump
+  Event:
+    Guid:
+      Data1: 364926395
+      Data2: 1097977397
+      Data3: -784109640
+      Data4: 870822105
+    Path: event:/Ambience/Jump
 --- !u!4 &1035266766
 Transform:
   m_ObjectHideFlags: 0
@@ -1698,10 +1704,20 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 3353664941471210553, guid: 2502ab2e35c68bd41bf220b56911abb8,
         type: 3}
+      propertyPath: KeyEvent.Path
+      value: event:/UI/Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353664941471210553, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
       propertyPath: directoryLine
       value: 
       objectReference: {fileID: 934945852861964265, guid: dac8d10091ff9744f8e8c0ee3c9b60a2,
         type: 3}
+    - target: {fileID: 3353664941471210553, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: TickEvent.Path
+      value: event:/UI/Tick
+      objectReference: {fileID: 0}
     - target: {fileID: 3353664941471210553, guid: 2502ab2e35c68bd41bf220b56911abb8,
         type: 3}
       propertyPath: clip.Array.size
@@ -1717,6 +1733,46 @@ PrefabInstance:
       propertyPath: clip.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: a8576626ea100764e8dca5ad66bb3b0b, type: 3}
+    - target: {fileID: 3353664941471210553, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: KeyEvent.Guid.Data1
+      value: 1818046195
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353664941471210553, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: KeyEvent.Guid.Data2
+      value: 1271138419
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353664941471210553, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: KeyEvent.Guid.Data3
+      value: -1757957454
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353664941471210553, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: KeyEvent.Guid.Data4
+      value: 1058938482
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353664941471210553, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: TickEvent.Guid.Data1
+      value: -615123116
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353664941471210553, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: TickEvent.Guid.Data2
+      value: 1168956903
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353664941471210553, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: TickEvent.Guid.Data3
+      value: -347934321
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353664941471210553, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: TickEvent.Guid.Data4
+      value: -274954845
+      objectReference: {fileID: 0}
     - target: {fileID: 4128404336954381068, guid: 2502ab2e35c68bd41bf220b56911abb8,
         type: 3}
       propertyPath: m_Materials.Array.data[1]

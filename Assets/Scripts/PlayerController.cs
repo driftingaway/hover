@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (state != State.Overhead) 
+        if (state == State.Backwards) 
         {
             transform.Rotate(Vector3.back * horizontalInput * rotationAmount * Time.fixedDeltaTime);
         }

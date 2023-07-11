@@ -8,8 +8,7 @@ public class LoadLevel : MonoBehaviour
     public AudioSource a;
     public AudioClip[] clip;
 
-    [FMODUnity.EventRef]
-    public string Event = "";
+    public FMODUnity.EventReference Event;
 
     // Start is called before the first frame update
     void Start()
@@ -48,8 +47,8 @@ public class LoadLevel : MonoBehaviour
         yield return new WaitForSeconds(6f);
 
         // switch scenes
-        GameValues.songIndex = 4;
-        GameValues.songName = "Direct";
+        GameValues.songIndex = 5;
+        GameValues.songName = "Blood_cut";
         asyncLoad.allowSceneActivation = true;
     }
 }

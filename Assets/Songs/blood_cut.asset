@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486308d83d1f68146b74a34747d44483, type: 3}
+  m_Name: blood_cut
+  m_EditorClassIdentifier: 
+  song:
+  - beat: 16
+    type: Note
+  - beat: 16.5
+    type: Note
+  - beat: 24
+    type: Note
+  - beat: 24.5
+    type: Note
+  updates: []
+  songTitle: blood
+  BPM: 164
+  color1: {r: 1, g: 0, b: 0, a: 0}
+  color2: {r: 0.8679245, g: 0.10971874, b: 0.10971874, a: 0}
+  speed1: 1
+  speed2: 1
+  tiling_x1: 1
+  tiling_y1: 1
+  tiling_x2: 1
+  tiling_y2: 1
