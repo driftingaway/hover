@@ -1,96 +1,80 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
-public class PlayerController : MonoBehaviour
-{
-    public AudioManager am;
-    public Camera trailingCam, overheadCam, backwardsCam;
-    public float speed = 200f;
-    public Rigidbody rb;
+[RequireComponent (typeof (GravityBody))]
+public class PlayerController : MonoBehaviour {
+	
+	// public vars
+	public float mouseSensitivityX = 1;
+	public float mouseSensitivityY = 1;
+	public float walkSpeed = 6;
+	public float jumpForce = 220;
+	public LayerMask groundedMask;
+	private GameObject ring;
+	
+	// System vars
+	bool grounded;
+	Vector3 moveAmount;
+	Vector3 smoothMoveVelocity;
+	float verticalLookRotation;
+	Transform cameraTransform;
+	Rigidbody rigidbody;
+    Camera cam;
+	
+	
+	void Awake() {
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
+        cam = GetComponentInChildren<Camera>();
+		cameraTransform = cam.transform;
+		rigidbody = GetComponent<Rigidbody>();
+		ring = GameObject.FindGameObjectWithTag("Planet");
+	}
+	
+	void Update() {
+		
+		// Look rotation:
+		transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * mouseSensitivityX);
+		verticalLookRotation += Input.GetAxis("Mouse Y") * mouseSensitivityY;
+		verticalLookRotation = Mathf.Clamp(verticalLookRotation,-60,60);
+		cameraTransform.localEulerAngles = Vector3.left * verticalLookRotation;
+		
+		// Calculate movement:
+		float inputX = Input.GetAxisRaw("Horizontal");
+		float inputY = Input.GetAxisRaw("Vertical");
+		
+		Vector3 moveDir = new Vector3(inputX,0, inputY).normalized;
+		Vector3 targetMoveAmount = moveDir * walkSpeed;
+		moveAmount = Vector3.SmoothDamp(moveAmount,targetMoveAmount,ref smoothMoveVelocity,.15f);
+		
+		// Jump
+		if (Input.GetButtonDown("Jump")) {
+			if (grounded) {
+				rigidbody.AddForce(transform.up * jumpForce);
+			}
+		}
+		
+		// Grounded check
+		Ray ray = new Ray(transform.position, -transform.up);
+		RaycastHit hit;
+		
+		if (Physics.Raycast(ray, out hit, 1 + .1f, groundedMask)) {
+			grounded = true;
+		}
+		else {
+			grounded = false;
+		}
 
-    float rotationAmount = 100f;
-    float horizontalInput;
-
-    public enum State {Trailing, Overhead, Backwards};
-    State state;
-
-    Vector3 targetPosition;
-    Quaternion targetRotation, overheadTargetRotation;
-
-    public bool charging = false;
-    public ParticleSystem chargeParticles;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = gameObject.GetComponent<Rigidbody>();
-        speed = am.BPM;
-        state = State.Trailing;
-        chargeParticles = gameObject.GetComponentInChildren<ParticleSystem>();
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        if (state == State.Backwards) 
-        {
-            transform.Rotate(Vector3.back * horizontalInput * rotationAmount * Time.fixedDeltaTime);
-        }
-    }
-
-    void Update()
-    {
-        horizontalInput = Input.GetAxis("Horizontal");
-
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            Switch(0);
-        }
-
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            Switch(1);
-        }
-
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            Switch(2);
-        }
-
-        if(charging)
-        {
-            chargeParticles.Play();
-        }
-        else
-        {
-            chargeParticles.Stop();
-        }
-    }
-
-    public void Switch(int newState)
-    {
-        if(newState == 0)
-        {
-            state = State.Trailing;
-            trailingCam.enabled = true;
-            overheadCam.enabled = false;
-            backwardsCam.enabled = false;
-        }
-        else if(newState == 1)
-        {
-            state = State.Overhead;
-            trailingCam.enabled = false;
-            overheadCam.enabled = true;
-            backwardsCam.enabled = false;
-            transform.rotation = Quaternion.identity;
-        }
-        else if(newState == 2)
-        {
-            state = State.Backwards;
-            trailingCam.enabled = false;
-            overheadCam.enabled = false;
-            backwardsCam.enabled = true;
-        }
-    }
+		if(grounded)
+		{
+			transform.parent = ring.transform;
+		}
+		
+	}
+	
+	void FixedUpdate() {
+		// Apply movement to rigidbody
+		Vector3 localMove = transform.TransformDirection(moveAmount) * Time.fixedDeltaTime;
+		rigidbody.MovePosition(rigidbody.position + localMove);
+	}
 }

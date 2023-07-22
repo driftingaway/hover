@@ -28,18 +28,19 @@ public class TerminalManager : MonoBehaviour
     public FMODUnity.EventReference TickEvent;
     public FMODUnity.EventReference KeyEvent;
 
-    //public GameObject shutter;
+    public GameObject shutter;
     public bool shutterStatus = true;
-    //OpenShutter openShutter;
+    OpenShutter openShutter;
+
+    public UIManager ui;
 
     Interpreter interpreter;
-    public UIManager ui;
     bool flip = true;
 
     private void Start()
     {
         interpreter = GetComponent<Interpreter>();
-        //openShutter = shutter.GetComponent<OpenShutter>();
+        openShutter = shutter.GetComponent<OpenShutter>();
         List<GameObject> history = new List<GameObject>();
         terminalInput.onValueChanged.AddListener(delegate {ValueChangeCheck(KeyEvent); });
     }
@@ -234,5 +235,18 @@ public class TerminalManager : MonoBehaviour
         }
 
         return ConnectedDevices;
+    }
+
+    public void ToggleShutter()
+    {
+        shutterStatus = !shutterStatus;
+        if(shutterStatus)
+        {
+            openShutter.ToggleShutter(-1f);
+        }
+        else
+        {
+            openShutter.ToggleShutter(1f);
+        }
     }
 }

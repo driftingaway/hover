@@ -6,7 +6,7 @@ using TMPro;
 public class AudioManager : MonoBehaviour
 {
     public TileManager tileManager;
-    public PlayerController playerController;
+    public ShipController playerController;
     public WormholeController worm;
     public ScoreManager score;
     public TMP_Text text;

@@ -68,6 +68,19 @@ public class Interpreter : MonoBehaviour
             }
         }
 
+        else if(args[0] == "shutter")
+        {
+            if(terminalManager.shutterStatus)
+            {
+                response.Add("Opening shutter");
+            }
+            else
+            {
+                response.Add("Closing shutter");
+            }
+            terminalManager.ToggleShutter();
+        }
+
         else if(args[0] == "jump")
         {
             response.Add("Jumping!");
