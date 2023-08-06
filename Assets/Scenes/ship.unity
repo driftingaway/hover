@@ -1559,6 +1559,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3353664939695987841, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353664939695987841, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353664939695987841, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353664939695987841, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3353664939695987843, guid: 2502ab2e35c68bd41bf220b56911abb8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1682,6 +1702,16 @@ PrefabInstance:
     - target: {fileID: 3353664941140897799, guid: 2502ab2e35c68bd41bf220b56911abb8,
         type: 3}
       propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353664941253553875, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: m_Name
+      value: PROCYON
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353664941253553887, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3353664941318255378, guid: 2502ab2e35c68bd41bf220b56911abb8,
@@ -1815,6 +1845,21 @@ PrefabInstance:
         type: 3}
       propertyPath: TickEvent.Guid.Data4
       value: -274954845
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353664941471210554, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353664941471210555, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353664941471210556, guid: 2502ab2e35c68bd41bf220b56911abb8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4128404336954381068, guid: 2502ab2e35c68bd41bf220b56911abb8,
         type: 3}

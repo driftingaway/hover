@@ -9,8 +9,6 @@ public class TerminalManager : MonoBehaviour
 {
     public GameObject directoryLine;
     public GameObject responseLine;
-    public AudioSource a;
-    public AudioClip clip;
 
     public TMP_InputField terminalInput;
     public GameObject userInputLine;
