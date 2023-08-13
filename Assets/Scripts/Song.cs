@@ -30,6 +30,7 @@ public class Song : ScriptableObject
     public List<Updates> updates = new List<Updates>();
     public List<Projectiles> projectiles = new List<Projectiles>();
     public string songTitle = "Song";
+    public string FMODSongName = "Song";
     public float BPM = 100;
     public Color color1, color2;
     public float speed1 = 1, speed2 = 1, tiling_x1 = 1, tiling_y1 = 1, tiling_x2 = 1, tiling_y2 = 1;

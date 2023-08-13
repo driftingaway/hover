@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class LoadLevel : MonoBehaviour
 {
     public int songIndex;
-    public List<string> musicDatabase = new List<string>();
 
     public FMODUnity.EventReference Event;
 
@@ -48,7 +47,6 @@ public class LoadLevel : MonoBehaviour
 
         // switch scenes
         GameValues.songIndex = songIndex;
-        GameValues.songName = musicDatabase[songIndex];
         asyncLoad.allowSceneActivation = true;
     }
 }

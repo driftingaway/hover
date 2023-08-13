@@ -53,7 +53,7 @@ public class AudioManager : MonoBehaviour
         text.SetText(currentSong.songTitle);
     
         // set up fmod instance
-        eventInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/" + GameValues.songName);
+        eventInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/" + currentSong.FMODSongName);
         eventInstance.start();
     }
 
@@ -138,7 +138,7 @@ public class AudioManager : MonoBehaviour
         if(songPositionInBeats != prevSongPositionInBeats)
         {
             prevSongPositionInBeats = songPositionInBeats;
-            StartCoroutine(worm.Pulse(1f, 0.5f, secPerBeat));
+            StartCoroutine(worm.Pulse(1f, 0.4f, secPerBeat));
         }
     }
 }

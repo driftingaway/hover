@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486308d83d1f68146b74a34747d44483, type: 3}
+  m_Name: gored
+  m_EditorClassIdentifier: 
+  song:
+  - beat: 32
+  updates:
+  - beat: 64
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 0, b: 0, a: 1}
+    speed1: 0.9
+    speed2: 0.9
+    tiling_x1: 10
+    tiling_y1: 1
+    tiling_x2: 10
+    tiling_y2: 1
+  - beat: 128
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 0, b: 0, a: 1}
+    speed1: 1
+    speed2: 1
+    tiling_x1: 1
+    tiling_y1: 10
+    tiling_x2: 1
+    tiling_y2: 10
+  - beat: 260
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 0, b: 0, a: 1}
+    speed1: 1.5
+    speed2: 1.5
+    tiling_x1: 10
+    tiling_y1: 1
+    tiling_x2: 10
+    tiling_y2: 1
+  projectiles: []
+  songTitle: Gored
+  FMODSongName: gored
+  BPM: 153
+  color1: {r: 1, g: 0, b: 0, a: 1}
+  color2: {r: 1, g: 0, b: 0, a: 1}
+  speed1: 0.7
+  speed2: 0.7
+  tiling_x1: 1
+  tiling_y1: 1
+  tiling_x2: 1
+  tiling_y2: 1
