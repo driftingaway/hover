@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace AIEngineTest
@@ -12,6 +14,12 @@ namespace AIEngineTest
         [SerializeField] [Range(0f, k_StraightDistanceClamp)] private float m_StraightDistance = 10f;
         [SerializeField] [Range(-k_CurvatureClamp, k_CurvatureClamp)] private float m_VerticalCurvature = 0f;
         [SerializeField] [Range(-k_CurvatureClamp, k_CurvatureClamp)] private float m_HorizontalCurvature = 0f;
+        [SerializeField] private float horizontalSpeed = 7f;
+        [SerializeField] private float verticalSpeed = 10f;
+
+        private float h, v, timeH, timeV = 0f;
+        private float minH = -10f, minV = -10f;
+        private float maxH = 10f, maxV = 10f;
 
         private static readonly int s_StraightRenderDistanceID = Shader.PropertyToID("_CURVER_STRAIGHT_RENDER_DISTANCE");
         private static readonly int s_HorizontalCurvatureID = Shader.PropertyToID("_CURVER_HORIZONTAL_CURVATURE");
@@ -50,6 +58,39 @@ namespace AIEngineTest
             straightDistance = m_StraightDistance;
             horizontalCurvature = m_HorizontalCurvature;
             verticalCurvature = m_VerticalCurvature;
+        }
+
+        public void SetValues(float h, float v)
+        {
+            horizontalCurvature = h;
+            verticalCurvature = v;
+        }
+
+        void Update()
+        {
+            v = Mathf.Lerp(minV, maxV, timeV);
+            h = Mathf.Lerp(minH, maxH, timeH);
+
+            timeV += Time.deltaTime / verticalSpeed;
+            timeH += Time.deltaTime / horizontalSpeed;
+
+            if(timeV >= 1)
+            {
+                float temp = minV;
+                minV = maxV;
+                maxV = temp;
+                timeV = 0;
+            }
+
+            if(timeH >= 1)
+            {
+                float temp = minH;
+                minH = maxH;
+                maxH = temp;
+                timeH = 0;
+            }
+
+            SetValues(h, v);
         }
 
         public float straightDistance

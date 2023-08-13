@@ -11462,9 +11462,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ae2dcead737c34c90c8834919f388b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StraightDistance: 100
-  m_VerticalCurvature: 2.27
-  m_HorizontalCurvature: -0.5
+  m_StraightDistance: 70
+  m_VerticalCurvature: -10
+  m_HorizontalCurvature: -10
+  horizontalSpeed: 10
+  verticalSpeed: 17
 --- !u!4 &1677077238
 Transform:
   m_ObjectHideFlags: 0
