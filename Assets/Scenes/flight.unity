@@ -1733,7 +1733,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 1, b: 0.8594041, a: 1}
+        key0: {r: 1, g: 1, b: 1, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -5178,6 +5178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 435850312}
   - component: {fileID: 435850311}
+  - component: {fileID: 435850313}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -5202,6 +5203,7 @@ MonoBehaviour:
   worm: {fileID: 2121735293}
   score: {fileID: 1417051559}
   text: {fileID: 641031015}
+  midi: {fileID: 435850313}
   BPM: 147
   secPerBeat: 0
   songPosition: 0
@@ -5210,6 +5212,7 @@ MonoBehaviour:
   prevSongPositionInBeats: 0
   songPositionInBeatsPrecise: 0
   songs:
+  - {fileID: 11400000, guid: 468f884090622cf439c97a573bf770b5, type: 2}
   - {fileID: 11400000, guid: 70a55ee3e70bb7945ab0891b1916fa59, type: 2}
   - {fileID: 11400000, guid: 9dbb0731d1d6b8c42b79bec880e2e86a, type: 2}
   - {fileID: 11400000, guid: f56ce036ba99f1c41abf04c41ef433ef, type: 2}
@@ -5240,6 +5243,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &435850313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435850309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5511e3dcc851dfd439b86c2fcb44d73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &641031014
 GameObject:
   m_ObjectHideFlags: 0
@@ -7095,7 +7110,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 1, b: 0.8594041, a: 1}
+        key0: {r: 1, g: 1, b: 1, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -10749,7 +10764,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 3000
-  field of view: 160
+  field of view: 145
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -10781,7 +10796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camTransform: {fileID: 876421727}
   shakeDuration: 1000
-  shakeAmount: 0.4
+  shakeAmount: 0.3
   decreaseFactor: 1
 --- !u!114 &876421732
 MonoBehaviour:
@@ -11145,17 +11160,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b2df23dbf3b155243a86d626eebd37c9,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 50
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2df23dbf3b155243a86d626eebd37c9,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 50
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2df23dbf3b155243a86d626eebd37c9,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 15
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2df23dbf3b155243a86d626eebd37c9,
         type: 3}
@@ -11463,11 +11478,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ae2dcead737c34c90c8834919f388b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StraightDistance: 80
-  m_VerticalCurvature: -10
-  m_HorizontalCurvature: -10
-  horizontalSpeed: 10
-  verticalSpeed: 17
+  m_StraightDistance: 50
+  m_VerticalCurvature: 1.3
+  m_HorizontalCurvature: 1.3
+  horizontalSpeed: 6
+  verticalSpeed: 10
 --- !u!4 &1677077238
 Transform:
   m_ObjectHideFlags: 0
@@ -16596,6 +16611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   worm: {fileID: 2100000, guid: 919dd825c62d6e34c83ce1e712909214, type: 2}
   player: {fileID: 2100000, guid: 269c20e617408034f82837862a76fee5, type: 2}
+  circle: {fileID: 2100000, guid: c0cea2bda7d6f4f48862599f2a1f14c3, type: 2}
   am: {fileID: 435850311}
 --- !u!4 &2121735294
 Transform:

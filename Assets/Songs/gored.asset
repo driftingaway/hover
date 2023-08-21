@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   song:
   - beat: 32
+  - beat: 40
+  - beat: 48
+  - beat: 56
+  - beat: 57
+  - beat: 58
+  - beat: 59
   updates:
   - beat: 64
     state: 0
@@ -21,30 +27,30 @@ MonoBehaviour:
     color2: {r: 1, g: 0, b: 0, a: 1}
     speed1: 0.9
     speed2: 0.9
-    tiling_x1: 10
-    tiling_y1: 1
-    tiling_x2: 10
-    tiling_y2: 1
+    tiling_x1: 5
+    tiling_y1: 0.1
+    tiling_x2: 5
+    tiling_y2: 0.1
   - beat: 128
     state: 0
     color1: {r: 1, g: 0, b: 0, a: 1}
     color2: {r: 1, g: 0, b: 0, a: 1}
     speed1: 1
     speed2: 1
-    tiling_x1: 1
-    tiling_y1: 10
-    tiling_x2: 1
-    tiling_y2: 10
-  - beat: 260
-    state: 0
-    color1: {r: 1, g: 0, b: 0, a: 1}
-    color2: {r: 1, g: 0, b: 0, a: 1}
-    speed1: 1.5
-    speed2: 1.5
     tiling_x1: 10
     tiling_y1: 1
     tiling_x2: 10
     tiling_y2: 1
+  - beat: 260
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 0, b: 0, a: 1}
+    speed1: 1.7
+    speed2: 1.7
+    tiling_x1: 2
+    tiling_y1: 2
+    tiling_x2: 10
+    tiling_y2: 5
   projectiles: []
   songTitle: Gored
   FMODSongName: gored

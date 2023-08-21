@@ -8,7 +8,7 @@ namespace AIEngineTest
     {
         private static CurveController s_Instance = null;
 
-        private const float k_StraightDistanceClamp = 100f;
+        private const float k_StraightDistanceClamp = 200f;
         private const float k_CurvatureClamp = 10f;
 
         [SerializeField] [Range(0f, k_StraightDistanceClamp)] private float m_StraightDistance = 10f;
@@ -18,8 +18,8 @@ namespace AIEngineTest
         [SerializeField] private float verticalSpeed = 10f;
 
         private float h, v, timeH, timeV = 0f;
-        private float minH = -10f, minV = -10f;
-        private float maxH = 10f, maxV = 10f;
+        private float minH = -1f, minV = -1f;
+        private float maxH = 1f, maxV = 1f;
 
         private static readonly int s_StraightRenderDistanceID = Shader.PropertyToID("_CURVER_STRAIGHT_RENDER_DISTANCE");
         private static readonly int s_HorizontalCurvatureID = Shader.PropertyToID("_CURVER_HORIZONTAL_CURVATURE");

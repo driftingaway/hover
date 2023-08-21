@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public WormholeController worm;
     public ScoreManager score;
     public TMP_Text text;
+    public Midi2Text midi;
 
     public float BPM;
     public float secPerBeat;
@@ -25,7 +26,7 @@ public class AudioManager : MonoBehaviour
 
     public List<Song> songs = new List<Song>();
     Song currentSong;
-    Note note;
+    float note;
     Updates updates;
     Projectiles projectiles;
 
@@ -36,9 +37,10 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        UniversalRenderPipelineUtils.SetRendererFeatureActive("Bozo", false);
+        //UniversalRenderPipelineUtils.SetRendererFeatureActive("Bozo", false);
 
         currentSong = songs[GameValues.songIndex];
+        currentSong.song = midi.readMidi(currentSong.midiPath, currentSong.timeSig);
         BPM = currentSong.BPM;
 
         //calculate how many seconds is one beat
@@ -46,8 +48,8 @@ public class AudioManager : MonoBehaviour
 
         //init wormhole color from song
         worm.InitColor(currentSong.color1, currentSong.color2);
-        worm.SetSpeed(currentSong.speed1, currentSong.speed2);
-        worm.SetTiling(currentSong.tiling_x1, currentSong.tiling_y1, currentSong.tiling_x2, currentSong.tiling_y2);
+        StartCoroutine(worm.SetSpeed(currentSong.speed1, currentSong.speed2, 2));
+        StartCoroutine(worm.SetTiling(currentSong.tiling_x1, currentSong.tiling_y1, currentSong.tiling_x2, currentSong.tiling_y2, 2));
 
         //set song title
         text.SetText(currentSong.songTitle);
@@ -83,17 +85,16 @@ public class AudioManager : MonoBehaviour
         // alternative case for timing camera switches and visual updates
         if (updateSpawnIndex < currentSong.updates.Count && updates.beat <= songPositionInBeatsPrecise)
         {
-            print("yea");
             playerController.Switch(updates.state);
-            worm.SetSpeed(updates.speed1, updates.speed2);
+            StartCoroutine(worm.SetSpeed(updates.speed1, updates.speed2, secPerBeat));
             worm.InitColor(updates.color1, updates.color2);
-            worm.SetTiling(updates.tiling_x1, updates.tiling_y1, updates.tiling_x2, updates.tiling_y2);
+            StartCoroutine(worm.SetTiling(updates.tiling_x1, updates.tiling_y1, updates.tiling_x2, updates.tiling_y2, secPerBeat));
 
             updateSpawnIndex++;
         }
 
         // spawn note
-        if (spawnIndex < currentSong.song.Count && note.beat - noteOffset <= songPositionInBeatsPrecise)
+        if (spawnIndex < currentSong.song.Count && note - noteOffset <= songPositionInBeatsPrecise)
         {
             if(spawnIndex % 2 == 0)
             {
@@ -115,12 +116,12 @@ public class AudioManager : MonoBehaviour
         }
 
         // if timing is close enough to a note, check input for a potential hit 
-        if((Mathf.Abs(songPositionInBeatsPrecise - currentSong.song[noteIndex].beat)) < timingThreshold)
+        if((Mathf.Abs(songPositionInBeatsPrecise - currentSong.song[noteIndex])) < timingThreshold)
         {
             if (validInput &&
             ((Input.GetKeyDown(KeyCode.A) && noteIndex % 2 == 0) || (Input.GetKeyDown(KeyCode.D) && noteIndex % 2 == 1)))
             {
-                FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);
+                //FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);
                 score.IncreaseScore();
                 validInput = false;
                 print("+1");
@@ -128,7 +129,7 @@ public class AudioManager : MonoBehaviour
         } 
 
         // if timing is close enough to the next note, shift indicies and re-enable input
-        if(noteIndex < currentSong.song.Count - 1 && currentSong.song[noteIndex + 1].beat - songPositionInBeatsPrecise < timingThreshold)
+        if(noteIndex < currentSong.song.Count - 1 && currentSong.song[noteIndex + 1] - songPositionInBeatsPrecise < timingThreshold)
         {
             noteIndex++;
             validInput = true;

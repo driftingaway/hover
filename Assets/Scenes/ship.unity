@@ -854,10 +854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edbb6f3434b7a0f44b9d2fa85642492e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songIndex: 1
-  musicDatabase:
-  - blood_cut
-  - gored
+  songIndex: 0
   Event:
     Guid:
       Data1: 364926395
