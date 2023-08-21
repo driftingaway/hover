@@ -26,7 +26,7 @@ public class AudioManager : MonoBehaviour
 
     public List<Song> songs = new List<Song>();
     Song currentSong;
-    float note;
+    float note, timeSig;
     Updates updates;
     Projectiles projectiles;
 
@@ -41,6 +41,7 @@ public class AudioManager : MonoBehaviour
 
         currentSong = songs[GameValues.songIndex];
         currentSong.song = midi.readMidi(currentSong.midiPath, currentSong.timeSig);
+        timeSig = currentSong.timeSig;
         BPM = currentSong.BPM;
 
         //calculate how many seconds is one beat
@@ -135,11 +136,11 @@ public class AudioManager : MonoBehaviour
             validInput = true;
         }
 
-        // color pulsing to the beat
-        if(songPositionInBeats != prevSongPositionInBeats)
+        // color pulsing to each measure
+        if(songPositionInBeats == prevSongPositionInBeats + timeSig)
         {
             prevSongPositionInBeats = songPositionInBeats;
-            StartCoroutine(worm.Pulse(1f, 0.15f, secPerBeat));
+            StartCoroutine(worm.Pulse(1f, 0.15f, secPerBeat * timeSig));
         }
     }
 }
