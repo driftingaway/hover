@@ -48,8 +48,8 @@ public class AudioManager : MonoBehaviour
 
         //init wormhole color from song
         worm.InitColor(currentSong.color1, currentSong.color2);
-        StartCoroutine(worm.SetSpeed(currentSong.speed1, currentSong.speed2, 2));
-        StartCoroutine(worm.SetTiling(currentSong.tiling_x1, currentSong.tiling_y1, currentSong.tiling_x2, currentSong.tiling_y2, 2));
+        StartCoroutine(worm.SetSpeed(currentSong.speed1, currentSong.speed2, 0));
+        StartCoroutine(worm.SetTiling(currentSong.tiling_x1, currentSong.tiling_y1, currentSong.tiling_x2, currentSong.tiling_y2, 0));
 
         //set song title
         text.SetText(currentSong.songTitle);
@@ -119,9 +119,9 @@ public class AudioManager : MonoBehaviour
         if((Mathf.Abs(songPositionInBeatsPrecise - currentSong.song[noteIndex])) < timingThreshold)
         {
             if (validInput &&
-            ((Input.GetKeyDown(KeyCode.A) && noteIndex % 2 == 0) || (Input.GetKeyDown(KeyCode.D) && noteIndex % 2 == 1)))
+            ((Input.GetButtonDown("Left") && noteIndex % 2 == 0) || (Input.GetButtonDown("Right") && noteIndex % 2 == 1)))
             {
-                //FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);
+                FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);
                 score.IncreaseScore();
                 validInput = false;
                 print("+1");
@@ -139,7 +139,7 @@ public class AudioManager : MonoBehaviour
         if(songPositionInBeats != prevSongPositionInBeats)
         {
             prevSongPositionInBeats = songPositionInBeats;
-            StartCoroutine(worm.Pulse(1f, 0.4f, secPerBeat));
+            StartCoroutine(worm.Pulse(1f, 0.15f, secPerBeat));
         }
     }
 }

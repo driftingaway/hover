@@ -31,7 +31,7 @@ public class Midi2Text : MonoBehaviour
             BarBeatTicksTimeSpan musicalTime = note.TimeAs<BarBeatTicksTimeSpan>(tempoMap);
             float fixedTime = timeSig * musicalTime.Bars + musicalTime.Beats;
             retNotes.Add(fixedTime);
-            print(fixedTime);
+            //print(fixedTime);
         }
         return retNotes;
     }

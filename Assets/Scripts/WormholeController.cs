@@ -11,6 +11,14 @@ public class WormholeController : MonoBehaviour
 
     public IEnumerator SetSpeed(float speed1, float speed2, float transitionTime)
     {
+        if (transitionTime == 0) {
+            worm.SetFloat("_Details_1_scroll_speed", speed1);
+            worm.SetFloat("_Details_2_scroll_speed", speed2);
+            player.SetFloat("_Details_1_scroll_speed", speed1);
+            player.SetFloat("_Details_2_scroll_speed", speed2);
+            yield return null;
+        }
+
         float timeElapsed = 0;
         float currentSpeed1 = worm.GetFloat("_Details_1_scroll_speed");
         float currentSpeed2 = worm.GetFloat("_Details_2_scroll_speed");
@@ -32,19 +40,25 @@ public class WormholeController : MonoBehaviour
 
     public IEnumerator SetTiling(float tiling_x1, float tiling_y1, float tiling_x2, float tiling_y2, float transitionTime)
     {
+        if (transitionTime == 0) {
+            worm.SetVector("_Details_1_tiling", new Vector2(tiling_x1, tiling_y1));
+            worm.SetVector("_Details_2_tiling", new Vector2(tiling_x1, tiling_y1));
+            yield return null;
+        }
+
         float timeElapsed = 0;
         Vector2 lerpTiling1, lerpTiling2;
         Vector2 tiling1 = worm.GetVector("_Details_1_tiling");
         Vector2 tiling2 = worm.GetVector("_Details_2_tiling");
         Vector2 newTiling1 = new Vector2(tiling_x1, tiling_y1);
-        Vector2 newTiling2 = new Vector2(tiling_x2, tiling_y2);
+        Vector2 newTiling2 = new Vector2(tiling_x1, tiling_y1);
 
         while(timeElapsed < transitionTime)
         {
             lerpTiling1 = Vector2.Lerp(tiling1, newTiling1, timeElapsed / transitionTime);
             lerpTiling2 = Vector2.Lerp(tiling2, newTiling2, timeElapsed / transitionTime);
             timeElapsed += Time.deltaTime;
-            print(timeElapsed);
+            //print(timeElapsed);
             worm.SetVector("_Details_1_tiling", lerpTiling1);
             worm.SetVector("_Details_2_tiling", lerpTiling2);
             yield return null;
