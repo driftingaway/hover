@@ -28,8 +28,8 @@ public class Midi2Text : MonoBehaviour
         List<float> retNotes = new List<float>();
         TempoMap tempoMap = file.GetTempoMap();
         foreach (Melanchall.DryWetMidi.Interaction.Note note in notes) {
-            BarBeatTicksTimeSpan musicalTime = note.TimeAs<BarBeatTicksTimeSpan>(tempoMap);
-            float fixedTime = timeSig * musicalTime.Bars + musicalTime.Beats;
+            BarBeatFractionTimeSpan musicalTime = note.TimeAs<BarBeatFractionTimeSpan>(tempoMap);
+            float fixedTime = timeSig * musicalTime.Bars + (float)musicalTime.Beats;
             retNotes.Add(fixedTime);
             //print(fixedTime);
         }

@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 486308d83d1f68146b74a34747d44483, type: 3}
   m_Name: really_you
   m_EditorClassIdentifier: 
-  midi: {fileID: 0}
   midiPath: Assets/Audio/midi/really_you.mid
   BPM: 197
   timeSig: 3
@@ -192,6 +191,16 @@ MonoBehaviour:
     tiling_y1: 1
     tiling_x2: 10
     tiling_y2: 1
+  - beat: 508
+    state: 0
+    color1: {r: 0.098039225, g: 0.52156866, b: 0.6039216, a: 1}
+    color2: {r: 0.12941177, g: 0.4431373, b: 0.69803923, a: 1}
+    speed1: 0.7
+    speed2: 0.7
+    tiling_x1: 5
+    tiling_y1: 0.1
+    tiling_x2: 5
+    tiling_y2: 0.1
   projectiles: []
   songTitle: Is It Really You
   FMODSongName: really_you

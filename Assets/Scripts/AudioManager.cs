@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
     int spawnIndex, updateSpawnIndex, projectileSpawnIndex = 0;
     int noteIndex = 0;
     bool validInput = true;
-    float timingThreshold = 0.25f;
+    float timingThreshold = .25f;
 
     public List<Song> songs = new List<Song>();
     Song currentSong;
@@ -35,12 +35,22 @@ public class AudioManager : MonoBehaviour
     FMOD.Studio.EventInstance eventInstance;
     public FMODUnity.EventReference NoteEvent;
 
+    public List<float> beatMap;
+    public List<Updates> updateMap;
+    public List<Projectiles> projectileMap;
+    private bool hit = false;
+
+    private float health = 1;
+
     void Start()
     {
         //UniversalRenderPipelineUtils.SetRendererFeatureActive("Bozo", false);
 
         currentSong = songs[GameValues.songIndex];
         currentSong.song = midi.readMidi(currentSong.midiPath, currentSong.timeSig);
+        beatMap = currentSong.song;
+        updateMap = currentSong.updates;
+        projectileMap = currentSong.projectiles;
         timeSig = currentSong.timeSig;
         BPM = currentSong.BPM;
 
@@ -70,21 +80,21 @@ public class AudioManager : MonoBehaviour
         songPositionInBeatsPrecise = songPosition / secPerBeat;
         songPositionInBeats = (int)songPositionInBeatsPrecise;
         //print(songPositionInBeatsPrecise);
-        if(spawnIndex != currentSong.song.Count)
+        if(spawnIndex != beatMap.Count)
         {
-            note = currentSong.song[spawnIndex];
+            note = beatMap[spawnIndex];
         }
-        if(updateSpawnIndex != currentSong.updates.Count)
+        if(updateSpawnIndex != updateMap.Count)
         {
-            updates = currentSong.updates[updateSpawnIndex];
+            updates = updateMap[updateSpawnIndex];
         }
-        if(projectileSpawnIndex != currentSong.projectiles.Count)
+        if(projectileSpawnIndex != projectileMap.Count)
         {
-            projectiles = currentSong.projectiles[projectileSpawnIndex];
+            projectiles = projectileMap[projectileSpawnIndex];
         }
 
         // alternative case for timing camera switches and visual updates
-        if (updateSpawnIndex < currentSong.updates.Count && updates.beat <= songPositionInBeatsPrecise)
+        if (updateSpawnIndex < updateMap.Count && updates.beat <= songPositionInBeatsPrecise)
         {
             playerController.Switch(updates.state);
             StartCoroutine(worm.SetSpeed(updates.speed1, updates.speed2, secPerBeat));
@@ -95,7 +105,7 @@ public class AudioManager : MonoBehaviour
         }
 
         // spawn note
-        if (spawnIndex < currentSong.song.Count && note - noteOffset <= songPositionInBeatsPrecise)
+        if (spawnIndex < beatMap.Count && note - noteOffset <= songPositionInBeatsPrecise)
         {
             if(spawnIndex % 2 == 0)
             {
@@ -109,7 +119,7 @@ public class AudioManager : MonoBehaviour
         }
 
         // spawn projectile
-        if (projectileSpawnIndex < currentSong.projectiles.Count && projectiles.beat <= songPositionInBeatsPrecise)
+        if (projectileSpawnIndex < projectileMap.Count && projectiles.beat <= songPositionInBeatsPrecise)
         {
             tileManager.SpawnTile(2, -1, -5f);
             tileManager.SpawnTile(2, -1, 5f);
@@ -117,21 +127,30 @@ public class AudioManager : MonoBehaviour
         }
 
         // if timing is close enough to a note, check input for a potential hit 
-        if((Mathf.Abs(songPositionInBeatsPrecise - currentSong.song[noteIndex])) < timingThreshold)
+        if((Mathf.Abs(songPositionInBeatsPrecise - beatMap[noteIndex])) < timingThreshold)
         {
             if (validInput &&
             ((Input.GetButtonDown("Left") && noteIndex % 2 == 0) || (Input.GetButtonDown("Right") && noteIndex % 2 == 1)))
             {
                 FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);
-                score.IncreaseScore();
+                hit = true;
+                if(health < 1f) {
+                    health += .25f;
+                    eventInstance.setParameterByName("Health", health);
+                }
                 validInput = false;
-                print("+1");
             } 
         } 
 
-        // if timing is close enough to the next note, shift indicies and re-enable input
-        if(noteIndex < currentSong.song.Count - 1 && currentSong.song[noteIndex + 1] - songPositionInBeatsPrecise < timingThreshold)
+        // if timing for hitting a note has elapsed, check for miss, move to next note and re-enable input
+        if(noteIndex < beatMap.Count - 1 && (songPositionInBeatsPrecise - beatMap[noteIndex]) > timingThreshold)
         {
+            // check for missed note
+            if (hit == false && health > 0) {
+                health -= .25f;
+                eventInstance.setParameterByName("Health", health);
+            }
+            hit = false;
             noteIndex++;
             validInput = true;
         }

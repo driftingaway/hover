@@ -26,11 +26,10 @@ public struct Projectiles
 [CreateAssetMenu]
 public class Song : ScriptableObject
 {
-    public Midi2Text midi;
     public string midiPath = "Assets/Audio/midi/really_you.mid";
     public float BPM = 100;
     public int timeSig = 4;
-    public List<float> song;
+    public List<float> song = new List<float>();
     public List<Updates> updates = new List<Updates>();
     public List<Projectiles> projectiles = new List<Projectiles>();
     public string songTitle = "Song";
