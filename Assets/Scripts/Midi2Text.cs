@@ -26,6 +26,7 @@ public class Midi2Text : MonoBehaviour
         IEnumerable<Melanchall.DryWetMidi.Interaction.Note> notes = file.GetNotes();
 
         List<float> retNotes = new List<float>();
+        retNotes.Add(0f);
         TempoMap tempoMap = file.GetTempoMap();
         foreach (Melanchall.DryWetMidi.Interaction.Note note in notes) {
             BarBeatFractionTimeSpan musicalTime = note.TimeAs<BarBeatFractionTimeSpan>(tempoMap);

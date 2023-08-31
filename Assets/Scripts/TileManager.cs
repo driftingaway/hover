@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using DG.Tweening;
 
 [System.Serializable]
 public class TileManager : MonoBehaviour
@@ -10,33 +11,58 @@ public class TileManager : MonoBehaviour
     public GameObject instObjects, backInstObjects;
     public Transform player;
     public AudioManager am;
-    float speed;
+    float speed, secPerBeat;
 
-    public float zSpawn = 30f;
-    public float tileLength = 30f;
-    public float numTiles = 200f;
+    float songPos;
+    float songPositionInBeatsPrecise;
 
     private List<GameObject> activeTiles = new List<GameObject>();
+    public List<float> notePos = new List<float>();
+    public List<float> notes = new List<float>();
+    public AnimationCurve curve;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        speed = am.BPM;
+        speed = am.BPM/2;
     }
 
     // move obstacles forward, everything else stays fixed
     void FixedUpdate()
     {
-        Vector3 forwardMove = instObjects.transform.forward * speed * Time.fixedDeltaTime;
-        Vector3 backwardMove = backInstObjects.transform.forward * speed * Time.fixedDeltaTime;
-        instObjects.transform.position = instObjects.transform.position - forwardMove;
-        backInstObjects.transform.position = backInstObjects.transform.position + backwardMove;
+        //Vector3 forwardMove = instObjects.transform.forward * speed * Time.fixedDeltaTime * bezierMult;
+        //Vector3 backwardMove = backInstObjects.transform.forward * speed * Time.fixedDeltaTime;
+        //instObjects.transform.position = instObjects.transform.position - forwardMove;
+        //backInstObjects.transform.position = backInstObjects.transform.position + backwardMove;
+    }
+
+    void Update()
+    {
+        //print(instObjects.transform.position.z);
+    }
+
+    public void Bezier(float pos, float duration) {
+        instObjects.transform.DOMoveZ(pos, duration).SetEase(curve);;
+    }
+
+    public List<float> SpawnNotes(List<float> notes)
+    {
+        foreach(float note in notes)
+        {
+            print(note);
+            print(speed);
+            GameObject newTile = Instantiate(tiles[0], new Vector3(0f, 0f, instObjects.transform.position.z + (note * speed)), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
+            newTile.transform.parent = instObjects.transform;
+            notePos.Add(newTile.transform.position.z);
+            print(newTile.transform.position.z);
+        }
+        return notePos;
     }
 
     public void SpawnTile(int id, float noteOffset, float xOffset) 
     {
         // spawn tile
-        GameObject newTile = Instantiate(tiles[id], new Vector3(xOffset, 0f, player.position.z) + (transform.forward * 60f * noteOffset), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
+        GameObject newTile = Instantiate(tiles[id], new Vector3(xOffset, 0f, instObjects.transform.position.z + (noteOffset * speed)), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
         if(id == 2)
         {
             newTile.transform.parent = backInstObjects.transform;

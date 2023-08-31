@@ -5220,6 +5220,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c683ffda49740be4691ad594ca7f7559, type: 2}
   - {fileID: 11400000, guid: 6a60378930cb1ea43a391fd1785baf5c, type: 2}
   - {fileID: 11400000, guid: 7c383225ab4e8304f817fd2fbea4a6cf, type: 2}
+  currentSong: {fileID: 0}
   dspSongTime: 0
   NoteEvent:
     Guid:
@@ -5231,6 +5232,7 @@ MonoBehaviour:
   beatMap: []
   updateMap: []
   projectileMap: []
+  notePos: []
 --- !u!4 &435850312
 Transform:
   m_ObjectHideFlags: 0
@@ -11821,9 +11823,32 @@ MonoBehaviour:
   backInstObjects: {fileID: 1939377827}
   player: {fileID: 1887498119}
   am: {fileID: 435850311}
-  zSpawn: 0
-  tileLength: 1
-  numTiles: 280
+  notePos: []
+  notes: []
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1.5090612
+      outSlope: 1.5090612
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.059958283
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1.4701394
+      outSlope: 1.4701394
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.043274343
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &2000082242
 Transform:
   m_ObjectHideFlags: 0

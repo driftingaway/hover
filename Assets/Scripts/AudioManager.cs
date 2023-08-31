@@ -18,14 +18,14 @@ public class AudioManager : MonoBehaviour
     public int songPositionInt, songPositionInBeats, prevSongPositionInBeats = 0;
     public float songPositionInBeatsPrecise;
     
-    private float noteOffset = 8f;
-    int spawnIndex, updateSpawnIndex, projectileSpawnIndex = 0;
+    //private float noteOffset = 80000f;
+    int spawnIndex, updateSpawnIndex, projectileSpawnIndex,bezierIndex = 0;
     int noteIndex = 0;
     bool validInput = true;
     float timingThreshold = .25f;
 
     public List<Song> songs = new List<Song>();
-    Song currentSong;
+    public Song currentSong;
     float note, timeSig;
     Updates updates;
     Projectiles projectiles;
@@ -38,6 +38,7 @@ public class AudioManager : MonoBehaviour
     public List<float> beatMap;
     public List<Updates> updateMap;
     public List<Projectiles> projectileMap;
+    public List<float> notePos;
     private bool hit = false;
 
     private float health = 1;
@@ -68,6 +69,8 @@ public class AudioManager : MonoBehaviour
         // set up fmod instance
         eventInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/" + currentSong.FMODSongName);
         eventInstance.start();
+
+        notePos = tileManager.SpawnNotes(beatMap);
     }
 
     void Update()
@@ -105,6 +108,7 @@ public class AudioManager : MonoBehaviour
         }
 
         // spawn note
+        /*
         if (spawnIndex < beatMap.Count && note - noteOffset <= songPositionInBeatsPrecise)
         {
             if(spawnIndex % 2 == 0)
@@ -116,7 +120,7 @@ public class AudioManager : MonoBehaviour
                 tileManager.SpawnTile(1, noteOffset, 0);
             }
             spawnIndex++;
-        }
+        }*/
 
         // spawn projectile
         if (projectileSpawnIndex < projectileMap.Count && projectiles.beat <= songPositionInBeatsPrecise)
@@ -129,14 +133,13 @@ public class AudioManager : MonoBehaviour
         // if timing is close enough to a note, check input for a potential hit 
         if((Mathf.Abs(songPositionInBeatsPrecise - beatMap[noteIndex])) < timingThreshold)
         {
-            if (validInput &&
-            ((Input.GetButtonDown("Left") && noteIndex % 2 == 0) || (Input.GetButtonDown("Right") && noteIndex % 2 == 1)))
+            if (validInput && Input.GetButtonDown("Left")) //&& noteIndex % 2 == 0) || (Input.GetButtonDown("Right") && noteIndex % 2 == 1)))
             {
                 FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);
                 hit = true;
                 if(health < 1f) {
                     health += .25f;
-                    eventInstance.setParameterByName("Health", health);
+                    //eventInstance.setParameterByName("Health", health);
                 }
                 validInput = false;
             } 
@@ -148,7 +151,7 @@ public class AudioManager : MonoBehaviour
             // check for missed note
             if (hit == false && health > 0) {
                 health -= .25f;
-                eventInstance.setParameterByName("Health", health);
+                //eventInstance.setParameterByName("Health", health);
             }
             hit = false;
             noteIndex++;
@@ -160,6 +163,16 @@ public class AudioManager : MonoBehaviour
         {
             prevSongPositionInBeats = songPositionInBeats;
             StartCoroutine(worm.Pulse(1f, 0.15f, secPerBeat * timeSig));
+        }
+
+        // bezier curves
+        if(bezierIndex < beatMap.Count - 1 && beatMap[bezierIndex] <= songPositionInBeatsPrecise) {
+            //print("NOW");
+            //print(notePos[10]);
+            float pos = -notePos[bezierIndex + 1];
+            float duration = (beatMap[bezierIndex + 1] - beatMap[bezierIndex]) * secPerBeat;
+            tileManager.Bezier(pos, duration);
+            bezierIndex++;
         }
     }
 }
