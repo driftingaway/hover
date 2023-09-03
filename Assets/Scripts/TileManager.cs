@@ -38,11 +38,11 @@ public class TileManager : MonoBehaviour
 
     void Update()
     {
-        //print(instObjects.transform.position.z);
+        print(instObjects.transform.position.z);
     }
 
     public void Bezier(float pos, float duration) {
-        instObjects.transform.DOMoveZ(pos, duration).SetEase(curve);;
+        instObjects.transform.DOMoveZ(pos*speed, duration).SetEase(curve);;
     }
 
     public List<float> SpawnNotes(List<float> notes)
@@ -51,7 +51,7 @@ public class TileManager : MonoBehaviour
         {
             print(note);
             print(speed);
-            GameObject newTile = Instantiate(tiles[0], new Vector3(0f, 0f, instObjects.transform.position.z + (note * speed)), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
+            GameObject newTile = Instantiate(tiles[0], new Vector3(0f, 0f, note), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
             newTile.transform.parent = instObjects.transform;
             notePos.Add(newTile.transform.position.z);
             print(newTile.transform.position.z);
@@ -59,10 +59,23 @@ public class TileManager : MonoBehaviour
         return notePos;
     }
 
-    public void SpawnTile(int id, float noteOffset, float xOffset) 
+    public void SpawnNote(float note)
+    {
+        GameObject newTile = Instantiate(tiles[0], new Vector3(0f, 0f, instObjects.transform.position.z + note*speed), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
+        newTile.transform.parent = instObjects.transform;
+        activeTiles.Add(newTile);
+
+        if(activeTiles.Count > 50)
+        {
+            Destroy(activeTiles[0]);
+            activeTiles.RemoveAt(0);
+        }
+    }
+
+    public void SpawnTile(int id, float note, float xOffset) 
     {
         // spawn tile
-        GameObject newTile = Instantiate(tiles[id], new Vector3(xOffset, 0f, instObjects.transform.position.z + (noteOffset * speed)), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
+        GameObject newTile = Instantiate(tiles[id], new Vector3(xOffset, 0f, note * speed), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
         if(id == 2)
         {
             newTile.transform.parent = backInstObjects.transform;

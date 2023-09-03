@@ -18,8 +18,8 @@ namespace AIEngineTest
         [SerializeField] private float verticalSpeed = 10f;
 
         private float h, v, timeH, timeV = 0f;
-        private float minH = -1f, minV = -1f;
-        private float maxH = 1f, maxV = 1f;
+        public float minH = -1f, minV = -1f;
+        public float maxH = 1f, maxV = 1f;
 
         private static readonly int s_StraightRenderDistanceID = Shader.PropertyToID("_CURVER_STRAIGHT_RENDER_DISTANCE");
         private static readonly int s_HorizontalCurvatureID = Shader.PropertyToID("_CURVER_HORIZONTAL_CURVATURE");
