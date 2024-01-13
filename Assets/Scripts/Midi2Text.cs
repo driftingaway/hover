@@ -21,19 +21,37 @@ public class Midi2Text : MonoBehaviour
         
     }
 
-    public List<float> readMidi(string midiPath, int timeSig) {
-        MidiFile file = MidiFile.Read(midiPath);
-        IEnumerable<Melanchall.DryWetMidi.Interaction.Note> notes = file.GetNotes();
+    public List<Note> readMidi(string midiPath, int timeSig) {
+        MidiFile midi = MidiFile.Read(midiPath);
+        IEnumerable<Melanchall.DryWetMidi.Interaction.Note> notes = midi.GetNotes();
+        List<Note> retNotes = new List<Note>();
+        TempoMap tempoMap = midi.GetTempoMap();
 
-        List<float> retNotes = new List<float>();
-        retNotes.Add(0f);
-        TempoMap tempoMap = file.GetTempoMap();
         foreach (Melanchall.DryWetMidi.Interaction.Note note in notes) {
-            BarBeatFractionTimeSpan musicalTime = note.TimeAs<BarBeatFractionTimeSpan>(tempoMap);
-            float fixedTime = timeSig * musicalTime.Bars + (float)musicalTime.Beats;
-            retNotes.Add(fixedTime);
+            BarBeatFractionTimeSpan startTime = note.TimeAs<BarBeatFractionTimeSpan>(tempoMap);
+            BarBeatFractionTimeSpan endTime = startTime + note.LengthAs<BarBeatFractionTimeSpan>(tempoMap);
+            float fixedStartTime = timeSig * startTime.Bars + (float)startTime.Beats;
+            float fixedEndTime = timeSig * endTime.Bars + (float)endTime.Beats;
+
+            if (note.NoteName.ToString() == "C")
+            {
+                retNotes.Add(new Note(fixedStartTime, 0));
+            } 
+            else if (note.NoteName.ToString() == "A")
+            {
+                retNotes.Add(new Note(fixedStartTime, 1));
+            } 
+            else if (note.NoteName.ToString() == "CSharp")
+            {
+                retNotes.Add(new Note(fixedStartTime, 2));
+            } 
+            else if (note.NoteName.ToString() == "ASharp")
+            {
+                retNotes.Add(new Note(fixedStartTime, 3));
+            } 
             //print(fixedTime);
         }
+
         return retNotes;
     }
 }

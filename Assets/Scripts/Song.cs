@@ -5,6 +5,13 @@ using System.Collections.Generic;
 public struct Note
 {
     public float beat;
+    public int type;
+
+    public Note(float beat, int type)
+    {
+        this.beat = beat;
+        this.type = type;
+    }
 }
 
 [System.Serializable]
@@ -29,7 +36,7 @@ public class Song : ScriptableObject
     public string midiPath = "Assets/Audio/midi/really_you.mid";
     public float BPM = 100;
     public int timeSig = 4;
-    public List<float> song = new List<float>();
+    public List<Note> song = new List<Note>();
     public List<Updates> updates = new List<Updates>();
     public List<Projectiles> projectiles = new List<Projectiles>();
     public string songTitle = "Song";

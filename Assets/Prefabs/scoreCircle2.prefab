@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4865992867172566721}
   - component: {fileID: 8370117126432278884}
   - component: {fileID: 6038296204729138606}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: scoreCircle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5245754685462649979}
-  m_Mesh: {fileID: 8280293934256711936, guid: 4ba9013de6eb5b04a9265843f77b5ddc, type: 3}
+  m_Mesh: {fileID: 8280293934256711936, guid: 3fca592753fdb0249969522d19e22593, type: 3}
 --- !u!23 &6038296204729138606
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c0cea2bda7d6f4f48862599f2a1f14c3, type: 2}
+  - {fileID: 2100000, guid: 9d2924b117002d548ac5de6c95f35965, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

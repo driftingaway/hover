@@ -1,0 +1,262 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486308d83d1f68146b74a34747d44483, type: 3}
+  m_Name: Interluden
+  m_EditorClassIdentifier: 
+  midiPath: Assets/Audio/midi/Interluden.mid
+  BPM: 100
+  timeSig: 4
+  song:
+  - beat: 12
+    type: 0
+  - beat: 13
+    type: 0
+  - beat: 14
+    type: 0
+  - beat: 15
+    type: 0
+  - beat: 28
+    type: 0
+  - beat: 29
+    type: 0
+  - beat: 30
+    type: 0
+  - beat: 31
+    type: 0
+  - beat: 32
+    type: 0
+  - beat: 44
+    type: 0
+  - beat: 45
+    type: 0
+  - beat: 46
+    type: 0
+  - beat: 47
+    type: 0
+  - beat: 64
+    type: 0
+  - beat: 65
+    type: 2
+  - beat: 67.5
+    type: 1
+  - beat: 68
+    type: 0
+  - beat: 69
+    type: 2
+  - beat: 70
+    type: 3
+  - beat: 71
+    type: 0
+  - beat: 71.25
+    type: 1
+  - beat: 71.5
+    type: 0
+  - beat: 71.75
+    type: 1
+  - beat: 72
+    type: 0
+  - beat: 73
+    type: 2
+  - beat: 75.5
+    type: 1
+  - beat: 76
+    type: 0
+  - beat: 80
+    type: 0
+  - beat: 81
+    type: 0
+  - beat: 82
+    type: 0
+  - beat: 83
+    type: 3
+  - beat: 84
+    type: 0
+  - beat: 85
+    type: 0
+  - beat: 86
+    type: 0
+  - beat: 87
+    type: 1
+  - beat: 87.25
+    type: 1
+  - beat: 87.5
+    type: 1
+  - beat: 88
+    type: 0
+  - beat: 89
+    type: 1
+  - beat: 90
+    type: 0
+  - beat: 91
+    type: 1
+  - beat: 92
+    type: 0
+  - beat: 93
+    type: 0
+  - beat: 94
+    type: 1
+  - beat: 95
+    type: 1
+  - beat: 96
+    type: 2
+  - beat: 99
+    type: 1
+  - beat: 100
+    type: 2
+  - beat: 103
+    type: 1
+  - beat: 103.5
+    type: 0
+  - beat: 104
+    type: 3
+  - beat: 107
+    type: 0
+  - beat: 108
+    type: 3
+  - beat: 109
+    type: 0
+  - beat: 110
+    type: 2
+  - beat: 111
+    type: 1
+  - beat: 112
+    type: 2
+  - beat: 115
+    type: 1
+  - beat: 116
+    type: 3
+  - beat: 119
+    type: 0
+  - beat: 120
+    type: 2
+  - beat: 123
+    type: 1
+  - beat: 124
+    type: 3
+  - beat: 126
+    type: 2
+  - beat: 129
+    type: 2
+  - beat: 132
+    type: 1
+  - beat: 132.33333
+    type: 0
+  - beat: 132.66667
+    type: 1
+  - beat: 133
+    type: 1
+  - beat: 133.25
+    type: 2
+  - beat: 134
+    type: 0
+  - beat: 134.25
+    type: 1
+  - beat: 134.5
+    type: 0
+  - beat: 134.82292
+    type: 0
+  - beat: 135
+    type: 3
+  - beat: 136
+    type: 1
+  - beat: 136
+    type: 2
+  - beat: 137
+    type: 1
+  - beat: 138
+    type: 1
+  - beat: 139
+    type: 1
+  - beat: 140
+    type: 1
+  - beat: 140.33333
+    type: 0
+  - beat: 140.66667
+    type: 1
+  - beat: 141
+    type: 3
+  - beat: 141
+    type: 0
+  - beat: 142
+    type: 0
+  - beat: 143
+    type: 2
+  - beat: 144
+    type: 0
+  - beat: 144
+    type: 3
+  - beat: 145
+    type: 0
+  - beat: 146
+    type: 0
+  - beat: 147
+    type: 0
+  - beat: 148
+    type: 0
+  - beat: 148.34375
+    type: 0
+  - beat: 148.65625
+    type: 1
+  - beat: 149
+    type: 0
+  - beat: 149.34375
+    type: 0
+  - beat: 149.65625
+    type: 1
+  - beat: 150
+    type: 0
+  - beat: 150.34375
+    type: 1
+  - beat: 150.65625
+    type: 1
+  - beat: 151
+    type: 0
+  - beat: 152
+    type: 1
+  - beat: 152
+    type: 2
+  - beat: 153
+    type: 1
+  - beat: 154
+    type: 1
+  - beat: 155
+    type: 1
+  - beat: 156
+    type: 1
+  - beat: 157
+    type: 1
+  - beat: 158
+    type: 1
+  - beat: 159
+    type: 1
+  - beat: 160
+    type: 1
+  - beat: 172
+    type: 0
+  - beat: 173
+    type: 0
+  - beat: 174
+    type: 0
+  - beat: 175
+    type: 0
+  updates: []
+  projectiles: []
+  songTitle: Interluden
+  FMODSongName: Interluden
+  color1: {r: 1, g: 0, b: 0, a: 1}
+  color2: {r: 1, g: 0.18253316, b: 0.088679194, a: 1}
+  speed1: 0.5
+  speed2: 0.5
+  tiling_x1: 10
+  tiling_y1: 1
+  tiling_x2: 10
+  tiling_y2: 1

@@ -22,46 +22,33 @@ public class TileManager : MonoBehaviour
     public AnimationCurve curve;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        speed = am.BPM/2;
+        speed = am.BPM;
     }
 
     // move obstacles forward, everything else stays fixed
     void FixedUpdate()
     {
-        //Vector3 forwardMove = instObjects.transform.forward * speed * Time.fixedDeltaTime * bezierMult;
+        print(speed);
+        Vector3 forwardMove = instObjects.transform.forward * speed * Time.fixedDeltaTime;
         //Vector3 backwardMove = backInstObjects.transform.forward * speed * Time.fixedDeltaTime;
-        //instObjects.transform.position = instObjects.transform.position - forwardMove;
+        instObjects.transform.position = instObjects.transform.position - forwardMove;
         //backInstObjects.transform.position = backInstObjects.transform.position + backwardMove;
     }
 
     void Update()
     {
-        print(instObjects.transform.position.z);
+        //print(instObjects.transform.position.z);
     }
 
     public void Bezier(float pos, float duration) {
-        instObjects.transform.DOMoveZ(pos*speed, duration).SetEase(curve);;
+        instObjects.transform.DOMoveZ(pos*speed, duration).SetEase(curve);
     }
 
-    public List<float> SpawnNotes(List<float> notes)
+    public void SpawnNote(Note note)
     {
-        foreach(float note in notes)
-        {
-            print(note);
-            print(speed);
-            GameObject newTile = Instantiate(tiles[0], new Vector3(0f, 0f, note), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
-            newTile.transform.parent = instObjects.transform;
-            notePos.Add(newTile.transform.position.z);
-            print(newTile.transform.position.z);
-        }
-        return notePos;
-    }
-
-    public void SpawnNote(float note)
-    {
-        GameObject newTile = Instantiate(tiles[0], new Vector3(0f, 0f, instObjects.transform.position.z + note*speed), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
+        GameObject newTile = Instantiate(tiles[note.type], new Vector3(0f, 0f, 0f) + (transform.forward * 60f * 8f), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
         newTile.transform.parent = instObjects.transform;
         activeTiles.Add(newTile);
 

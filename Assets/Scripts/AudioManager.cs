@@ -26,7 +26,8 @@ public class AudioManager : MonoBehaviour
 
     public List<Song> songs = new List<Song>();
     public Song currentSong;
-    float note, timeSig;
+    float timeSig;
+    Note note;
     Updates updates;
     Projectiles projectiles;
 
@@ -35,10 +36,9 @@ public class AudioManager : MonoBehaviour
     FMOD.Studio.EventInstance eventInstance;
     public FMODUnity.EventReference NoteEvent;
 
-    public List<float> beatMap;
+    public List<Note> beatMap;
     public List<Updates> updateMap;
     public List<Projectiles> projectileMap;
-    public List<float> notePos;
     private bool hit = false;
 
     private float health = 1;
@@ -69,17 +69,6 @@ public class AudioManager : MonoBehaviour
         // set up fmod instance
         eventInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/" + currentSong.FMODSongName);
         eventInstance.start();
-
-        //notePos = tileManager.SpawnNotes(beatMap);
-    }
-
-    List<float> calculateNotes(List<float> beatMap)
-    {
-        foreach(float note in beatMap)
-        {
-            notePos.Add(note * BPM/2);
-        }
-        return notePos;
     }
 
     void Update()
@@ -92,6 +81,7 @@ public class AudioManager : MonoBehaviour
         songPositionInBeatsPrecise = songPosition / secPerBeat;
         songPositionInBeats = (int)songPositionInBeatsPrecise;
         //print(songPositionInBeatsPrecise);
+
         if(spawnIndex != beatMap.Count)
         {
             note = beatMap[spawnIndex];
@@ -117,9 +107,9 @@ public class AudioManager : MonoBehaviour
         }
 
         // spawn note
-        if (spawnIndex < beatMap.Count && note - noteOffset <= songPositionInBeatsPrecise)
+        if (spawnIndex < beatMap.Count && note.beat - noteOffset <= songPositionInBeatsPrecise)
         {
-            tileManager.SpawnNote(beatMap[spawnIndex]);
+            tileManager.SpawnNote(note);
             spawnIndex++;
         }
 
@@ -132,7 +122,7 @@ public class AudioManager : MonoBehaviour
         }
 
         // if timing is close enough to a note, check input for a potential hit 
-        if((Mathf.Abs(songPositionInBeatsPrecise - beatMap[noteIndex])) < timingThreshold)
+        if((Mathf.Abs(songPositionInBeatsPrecise - beatMap[noteIndex].beat)) < timingThreshold)
         {
             if (validInput && Input.GetButtonDown("Left")) //&& noteIndex % 2 == 0) || (Input.GetButtonDown("Right") && noteIndex % 2 == 1)))
             {
@@ -147,7 +137,7 @@ public class AudioManager : MonoBehaviour
         } 
 
         // if timing for hitting a note has elapsed, check for miss, move to next note and re-enable input
-        if(noteIndex < beatMap.Count - 1 && (songPositionInBeatsPrecise - beatMap[noteIndex]) > timingThreshold)
+        if(noteIndex < beatMap.Count - 1 && (songPositionInBeatsPrecise - beatMap[noteIndex].beat) > timingThreshold)
         {
             // check for missed note
             if (hit == false && health > 0) {
@@ -159,21 +149,20 @@ public class AudioManager : MonoBehaviour
             validInput = true;
         }
 
-        // color pulsing to each measure
-        if(songPositionInBeats == prevSongPositionInBeats + timeSig)
+        // color pulsing to each beat
+        if(songPositionInBeats == prevSongPositionInBeats + 1)
         {
             prevSongPositionInBeats = songPositionInBeats;
-            StartCoroutine(worm.Pulse(1f, 0.15f, secPerBeat * timeSig));
+            StartCoroutine(worm.Pulse(.5f, .15f, secPerBeat));
         }
 
         // bezier curves
-        if(bezierIndex < beatMap.Count - 1 && beatMap[bezierIndex] <= songPositionInBeatsPrecise) {
-            //print("NOW");
-            //print(notePos[10]);
-            float pos = -beatMap[bezierIndex + 1];
-            float duration = (beatMap[bezierIndex + 1] - beatMap[bezierIndex]) * secPerBeat;
+        /*
+        if(bezierIndex < beatMap.Count - 1 && beatMap[bezierIndex].beat <= songPositionInBeatsPrecise) {
+            float pos = -beatMap[bezierIndex + 1].beat;
+            float duration = (beatMap[bezierIndex + 1].beat - beatMap[bezierIndex].beat) * secPerBeat;
             tileManager.Bezier(pos, duration);
             bezierIndex++;
-        }
+        }*/
     }
 }
