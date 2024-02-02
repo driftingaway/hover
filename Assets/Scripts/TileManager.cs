@@ -11,6 +11,7 @@ public class TileManager : MonoBehaviour
     public GameObject instObjects, backInstObjects;
     public Transform player;
     public AudioManager am;
+    public Material lineMaterial;
     float speed, secPerBeat;
 
     float songPos;
@@ -30,7 +31,7 @@ public class TileManager : MonoBehaviour
     // move obstacles forward, everything else stays fixed
     void FixedUpdate()
     {
-        print(speed);
+        //print(speed);
         Vector3 forwardMove = instObjects.transform.forward * speed * Time.fixedDeltaTime;
         //Vector3 backwardMove = backInstObjects.transform.forward * speed * Time.fixedDeltaTime;
         instObjects.transform.position = instObjects.transform.position - forwardMove;
@@ -49,6 +50,19 @@ public class TileManager : MonoBehaviour
     public void SpawnNote(Note note)
     {
         GameObject newTile = Instantiate(tiles[note.type], new Vector3(0f, 0f, 0f) + (transform.forward * 60f * 8f), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
+        if(note.type == 2 || note.type == 3)
+        {
+            Debug.Log("LINE TIME!");
+            //draw held note line
+            LineRenderer lRend = newTile.AddComponent<LineRenderer>();
+            lRend.material = lineMaterial;
+            lRend.useWorldSpace = false;
+            lRend.startWidth = 10f;
+            lRend.endWidth = 10f;
+            lRend.SetPosition(0,new Vector3(0, 0, 0));
+            //lRend.SetPosition(1,new Vector3(0, 0, newTile.transform.position.z + (speed * note.end)));
+            lRend.SetPosition(1,new Vector3(0, 0, speed * 2.4f * note.end)); //.6 for 60f and then *4 because .25 scaling idk man shits complicated
+        }
         newTile.transform.parent = instObjects.transform;
         activeTiles.Add(newTile);
 
