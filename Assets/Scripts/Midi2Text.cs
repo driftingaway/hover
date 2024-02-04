@@ -22,6 +22,8 @@ public class Midi2Text : MonoBehaviour
     }
 
     public List<Note> readMidi(string midiPath, int timeSig) {
+        if(midiPath == "") { return new List<Note>{new Note(0, 0, 0)}; }
+
         MidiFile midi = MidiFile.Read(midiPath);
         IEnumerable<Melanchall.DryWetMidi.Interaction.Note> notes = midi.GetNotes();
         List<Note> retNotes = new List<Note>();

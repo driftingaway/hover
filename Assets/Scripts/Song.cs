@@ -22,7 +22,16 @@ public struct Updates
     public float beat;
     public int state;
     public Color color1, color2;
-    public float speed1, speed2, tiling_x1, tiling_y1, tiling_x2, tiling_y2;
+    public Pattern pattern;
+    public Strobe strobe;
+}
+
+[System.Serializable]
+public class Strobe
+{
+    public int count = 0;
+    public float duration = 1;
+    public float strength = 1;
 }
 
 [System.Serializable]
@@ -44,5 +53,5 @@ public class Song : ScriptableObject
     public string songTitle = "Song";
     public string FMODSongName = "Song";
     public Color color1, color2;
-    public float speed1 = 1, speed2 = 1, tiling_x1 = 1, tiling_y1 = 1, tiling_x2 = 1, tiling_y2 = 1;
+    public Pattern pattern;
 }

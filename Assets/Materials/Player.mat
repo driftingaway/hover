@@ -77,13 +77,13 @@ Material:
     - _Details_1_distortion_jiggle_speed: 0.266
     - _Details_1_distortion_magnitude: 0.0263
     - _Details_1_intensity: 0.8
-    - _Details_1_scroll_speed: 0.4
+    - _Details_1_scroll_speed: 1.0375432
     - _Details_2_distortion_frequency: 0.1
     - _Details_2_distortion_jaggedness: 10
     - _Details_2_distortion_jiggle_speed: 0.69
     - _Details_2_distortion_magnitude: 0.0719
     - _Details_2_distortion_wobblyness: 14.5
-    - _Details_2_scroll_speed: 0.4
+    - _Details_2_scroll_speed: 1.0375432
     - _Details_scroll_speed: 0.6
     - _Details_tiling_vertical: 0
     - _Fresnel_power: 6

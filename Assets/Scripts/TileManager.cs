@@ -74,9 +74,9 @@ public class TileManager : MonoBehaviour
         lRend.endWidth = 3f;
         //lRend.alignment = LineAlignment.TransformZ;
 
-        float end = speed * .6f * note.end;
+        float end = speed * 0.6f * note.end;
         lRend.positionCount = 20;
-        Debug.Log(lRend.positionCount);
+        //Debug.Log(lRend.positionCount);
         float increment = end / (lRend.positionCount - 1);
         //Debug.Log(end);
         for(int i = 0; i < lRend.positionCount; i++)

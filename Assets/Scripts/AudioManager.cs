@@ -39,6 +39,7 @@ public class AudioManager : MonoBehaviour
     public List<Note> beatMap;
     public List<Updates> updateMap;
     public List<Projectiles> projectileMap;
+    public int startBeat;
     private bool hit = false;
 
     private float health = 1;
@@ -60,14 +61,14 @@ public class AudioManager : MonoBehaviour
 
         //init wormhole color from song
         worm.InitColor(currentSong.color1, currentSong.color2);
-        StartCoroutine(worm.SetSpeed(currentSong.speed1, currentSong.speed2, 0));
-        StartCoroutine(worm.SetTiling(currentSong.tiling_x1, currentSong.tiling_y1, currentSong.tiling_x2, currentSong.tiling_y2, 0));
+        worm.SetPattern(currentSong.pattern.speed1, currentSong.pattern.speed2, currentSong.pattern.tiling_x1, currentSong.pattern.tiling_y1, currentSong.pattern.tiling_x2, currentSong.pattern.tiling_y2);
 
         //set song title
         text.SetText(currentSong.songTitle);
     
         // set up fmod instance
         eventInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/" + currentSong.FMODSongName);
+        //eventInstance.setTimelinePosition(startBeat);
         eventInstance.start();
     }
 
@@ -96,13 +97,15 @@ public class AudioManager : MonoBehaviour
         }
 
         // alternative case for timing camera switches and visual updates
-        if (updateSpawnIndex < updateMap.Count && updates.beat <= songPositionInBeatsPrecise)
+        if (updateSpawnIndex < updateMap.Count && updates.beat-1 <= songPositionInBeatsPrecise)
         {
             playerController.Switch(updates.state);
-            StartCoroutine(worm.SetSpeed(updates.speed1, updates.speed2, secPerBeat));
+            worm.SetPattern(updates.pattern.speed1, updates.pattern.speed2, updates.pattern.tiling_x1, updates.pattern.tiling_y1, updates.pattern.tiling_x2, updates.pattern.tiling_y2);
             worm.InitColor(updates.color1, updates.color2);
-            StartCoroutine(worm.SetTiling(updates.tiling_x1, updates.tiling_y1, updates.tiling_x2, updates.tiling_y2, secPerBeat));
-
+            if(updates.strobe.count != 0)
+            {
+                worm.Strobe(updates.strobe.count, updates.strobe.duration*secPerBeat, updates.strobe.strength);
+            }
             updateSpawnIndex++;
         }
 
@@ -150,11 +153,12 @@ public class AudioManager : MonoBehaviour
         }
 
         // color pulsing to each beat
+        /*
         if(songPositionInBeats == prevSongPositionInBeats + 1)
         {
             prevSongPositionInBeats = songPositionInBeats;
-            StartCoroutine(worm.Pulse(1f, .5f, secPerBeat));
-        }
+            worm.Flash(1f, 0f, secPerBeat);
+        }*/
 
         // bezier curves
         /*

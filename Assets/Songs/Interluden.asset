@@ -12,21 +12,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 486308d83d1f68146b74a34747d44483, type: 3}
   m_Name: Interluden
   m_EditorClassIdentifier: 
-  midiPath: Assets/Audio/midi/Interluden.mid
+  midiPath: Assets/Audio/midi/Interluden_short.mid
   BPM: 100
   timeSig: 4
   song:
+  - beat: 8
+    type: 0
+    end: 0
+  - beat: 9
+    type: 2
+    end: 2.5
+  - beat: 11.5
+    type: 2
+    end: 0
+  - beat: 11.5
+    type: 1
+    end: 0
   - beat: 12
     type: 0
     end: 0
   - beat: 13
-    type: 0
+    type: 2
+    end: 1
+  - beat: 14
+    type: 2
     end: 0
   - beat: 14
-    type: 0
+    type: 3
+    end: 1
+  - beat: 15
+    type: 3
     end: 0
   - beat: 15
     type: 0
+    end: 0
+  - beat: 15.25
+    type: 1
+    end: 0
+  - beat: 15.5
+    type: 0
+    end: 0
+  - beat: 15.75
+    type: 1
+    end: 0
+  - beat: 16
+    type: 0
+    end: 0
+  - beat: 17
+    type: 2
+    end: 2.5
+  - beat: 19.5
+    type: 2
+    end: 0
+  - beat: 19.5
+    type: 1
+    end: 0
+  - beat: 20
+    type: 0
+    end: 0
+  - beat: 24
+    type: 0
+    end: 0
+  - beat: 25
+    type: 0
+    end: 0
+  - beat: 26
+    type: 0
+    end: 0
+  - beat: 27
+    type: 3
+    end: 1
+  - beat: 28
+    type: 3
     end: 0
   - beat: 28
     type: 0
@@ -38,95 +95,197 @@ MonoBehaviour:
     type: 0
     end: 0
   - beat: 31
-    type: 0
+    type: 1
+    end: 0
+  - beat: 31.25
+    type: 1
+    end: 0
+  - beat: 31.5
+    type: 1
     end: 0
   - beat: 32
     type: 0
     end: 0
-  - beat: 44
-    type: 0
-    end: 0
-  - beat: 45
-    type: 0
-    end: 0
-  - beat: 46
-    type: 0
-    end: 0
-  - beat: 47
-    type: 0
-    end: 0
-  - beat: 64
-    type: 0
-    end: 0
-  - beat: 65
-    type: 2
-    end: 2.5
-  - beat: 67.5
+  - beat: 33
     type: 1
     end: 0
-  - beat: 67.5
+  - beat: 34
+    type: 0
+    end: 0
+  - beat: 35
+    type: 1
+    end: 0
+  - beat: 36
+    type: 0
+    end: 0
+  - beat: 37
+    type: 0
+    end: 0
+  - beat: 38
+    type: 1
+    end: 0
+  - beat: 39
+    type: 1
+    end: 0
+  - beat: 40
+    type: 2
+    end: 3.010418
+  - beat: 43
+    type: 1
+    end: 0
+  - beat: 43.010418
+    type: 2
+    end: 0
+  - beat: 44
+    type: 2
+    end: 3.010418
+  - beat: 47
+    type: 1
+    end: 0
+  - beat: 47.010418
+    type: 2
+    end: 0
+  - beat: 47.5
+    type: 0
+    end: 0
+  - beat: 48
+    type: 3
+    end: 3.010418
+  - beat: 51
+    type: 0
+    end: 0
+  - beat: 51.010418
+    type: 3
+    end: 0
+  - beat: 52
+    type: 3
+    end: 1.0104179
+  - beat: 53
+    type: 0
+    end: 0
+  - beat: 53.010418
+    type: 3
+    end: 0
+  - beat: 54
+    type: 2
+    end: 1.0104179
+  - beat: 55
+    type: 1
+    end: 0
+  - beat: 55.010418
+    type: 2
+    end: 0
+  - beat: 56
+    type: 2
+    end: 3.010418
+  - beat: 59
+    type: 1
+    end: 0
+  - beat: 59.010418
+    type: 2
+    end: 0
+  - beat: 60
+    type: 3
+    end: 3.010418
+  - beat: 63
+    type: 0
+    end: 0
+  - beat: 63.010418
+    type: 3
+    end: 0
+  - beat: 64
+    type: 2
+    end: 3.0104141
+  - beat: 67
+    type: 1
+    end: 0
+  - beat: 67.010414
     type: 2
     end: 0
   - beat: 68
-    type: 0
-    end: 0
-  - beat: 69
-    type: 2
-    end: 1
-  - beat: 70
-    type: 2
-    end: 0
-  - beat: 70
     type: 3
-    end: 1
-  - beat: 71
+    end: 1.0104141
+  - beat: 69.010414
     type: 3
     end: 0
-  - beat: 71
-    type: 0
-    end: 0
-  - beat: 71.25
-    type: 1
-    end: 0
-  - beat: 71.5
-    type: 0
-    end: 0
-  - beat: 71.75
-    type: 1
-    end: 0
-  - beat: 72
-    type: 0
+  - beat: 70
+    type: 2
+    end: 1.0104141
+  - beat: 71.010414
+    type: 2
     end: 0
   - beat: 73
     type: 2
-    end: 2.5
-  - beat: 75.5
-    type: 2
-    end: 0
-  - beat: 75.5
+    end: 3.0104141
+  - beat: 76
     type: 1
     end: 0
-  - beat: 76
+  - beat: 76.010414
+    type: 2
+    end: 0
+  - beat: 76.333336
     type: 0
+    end: 0
+  - beat: 76.666664
+    type: 1
+    end: 0
+  - beat: 77
+    type: 1
+    end: 0
+  - beat: 77.25
+    type: 2
+    end: 0.75
+  - beat: 78
+    type: 2
+    end: 0
+  - beat: 78
+    type: 0
+    end: 0
+  - beat: 78.25
+    type: 1
+    end: 0
+  - beat: 78.5
+    type: 0
+    end: 0
+  - beat: 78.822914
+    type: 0
+    end: 0
+  - beat: 79
+    type: 3
+    end: 0.5
+  - beat: 79.5
+    type: 3
     end: 0
   - beat: 80
-    type: 0
+    type: 1
     end: 0
+  - beat: 80
+    type: 2
+    end: 4
   - beat: 81
-    type: 0
+    type: 1
     end: 0
   - beat: 82
-    type: 0
+    type: 1
     end: 0
   - beat: 83
-    type: 3
-    end: 1
-  - beat: 84
-    type: 3
+    type: 1
     end: 0
   - beat: 84
+    type: 2
+    end: 0
+  - beat: 84
+    type: 1
+    end: 0
+  - beat: 84.333336
     type: 0
     end: 0
+  - beat: 84.666664
+    type: 1
+    end: 0
+  - beat: 85
+    type: 3
+    end: 2
   - beat: 85
     type: 0
     end: 0
@@ -134,316 +293,196 @@ MonoBehaviour:
     type: 0
     end: 0
   - beat: 87
-    type: 1
+    type: 3
     end: 0
-  - beat: 87.25
-    type: 1
-    end: 0
-  - beat: 87.5
-    type: 1
+  - beat: 87
+    type: 2
+    end: 1
+  - beat: 88
+    type: 3
+    end: 4
+  - beat: 88
+    type: 2
     end: 0
   - beat: 88
     type: 0
     end: 0
   - beat: 89
-    type: 1
+    type: 0
     end: 0
   - beat: 90
     type: 0
     end: 0
   - beat: 91
-    type: 1
+    type: 0
+    end: 0
+  - beat: 92
+    type: 3
     end: 0
   - beat: 92
     type: 0
     end: 0
+  - beat: 92.34375
+    type: 0
+    end: 0
+  - beat: 92.65625
+    type: 1
+    end: 0
   - beat: 93
     type: 0
     end: 0
+  - beat: 93.34375
+    type: 0
+    end: 0
+  - beat: 93.65625
+    type: 1
+    end: 0
   - beat: 94
+    type: 0
+    end: 0
+  - beat: 94.34375
+    type: 1
+    end: 0
+  - beat: 94.65625
     type: 1
     end: 0
   - beat: 95
+    type: 0
+    end: 0
+  - beat: 96
     type: 1
     end: 0
   - beat: 96
     type: 2
-    end: 3.0104141
+    end: 7
+  - beat: 97
+    type: 1
+    end: 0
+  - beat: 98
+    type: 1
+    end: 0
   - beat: 99
     type: 1
     end: 0
-  - beat: 99.010414
+  - beat: 100
+    type: 1
+    end: 0
+  - beat: 101
+    type: 1
+    end: 0
+  - beat: 102
+    type: 1
+    end: 0
+  - beat: 103
     type: 2
     end: 0
-  - beat: 100
-    type: 2
-    end: 3.0104141
   - beat: 103
     type: 1
     end: 0
-  - beat: 103.010414
-    type: 2
-    end: 0
-  - beat: 103.5
-    type: 0
-    end: 0
   - beat: 104
-    type: 3
-    end: 3.0104141
-  - beat: 107
-    type: 0
-    end: 0
-  - beat: 107.010414
-    type: 3
-    end: 0
-  - beat: 108
-    type: 3
-    end: 1.0104141
-  - beat: 109
-    type: 0
-    end: 0
-  - beat: 109.010414
-    type: 3
-    end: 0
-  - beat: 110
-    type: 2
-    end: 1.0104141
-  - beat: 111
     type: 1
-    end: 0
-  - beat: 111.010414
-    type: 2
-    end: 0
-  - beat: 112
-    type: 2
-    end: 3.0104141
-  - beat: 115
-    type: 1
-    end: 0
-  - beat: 115.010414
-    type: 2
     end: 0
   - beat: 116
-    type: 3
-    end: 3.0104141
+    type: 0
+    end: 0
+  - beat: 117
+    type: 0
+    end: 0
+  - beat: 118
+    type: 0
+    end: 0
   - beat: 119
     type: 0
     end: 0
-  - beat: 119.010414
-    type: 3
-    end: 0
-  - beat: 120
-    type: 2
-    end: 3.0104141
-  - beat: 123
-    type: 1
-    end: 0
-  - beat: 123.010414
-    type: 2
-    end: 0
-  - beat: 124
-    type: 3
-    end: 1.0104141
-  - beat: 125.010414
-    type: 3
-    end: 0
-  - beat: 126
-    type: 2
-    end: 1.0104141
-  - beat: 127.010414
-    type: 2
-    end: 0
-  - beat: 129
-    type: 2
-    end: 3.0104218
-  - beat: 132
-    type: 1
-    end: 0
-  - beat: 132.01042
-    type: 2
-    end: 0
-  - beat: 132.33333
-    type: 0
-    end: 0
-  - beat: 132.66667
-    type: 1
-    end: 0
-  - beat: 133
-    type: 1
-    end: 0
-  - beat: 133.25
-    type: 2
-    end: 0.75
-  - beat: 134
-    type: 2
-    end: 0
-  - beat: 134
-    type: 0
-    end: 0
-  - beat: 134.25
-    type: 1
-    end: 0
-  - beat: 134.5
-    type: 0
-    end: 0
-  - beat: 134.82292
-    type: 0
-    end: 0
-  - beat: 135
-    type: 3
-    end: 0.5
-  - beat: 135.5
-    type: 3
-    end: 0
-  - beat: 136
-    type: 1
-    end: 0
-  - beat: 136
-    type: 2
-    end: 4
-  - beat: 137
-    type: 1
-    end: 0
-  - beat: 138
-    type: 1
-    end: 0
-  - beat: 139
-    type: 1
-    end: 0
-  - beat: 140
-    type: 2
-    end: 0
-  - beat: 140
-    type: 1
-    end: 0
-  - beat: 140.33333
-    type: 0
-    end: 0
-  - beat: 140.66667
-    type: 1
-    end: 0
-  - beat: 141
-    type: 0
-    end: 0
-  - beat: 141
-    type: 3
-    end: 2
-  - beat: 142
-    type: 0
-    end: 0
-  - beat: 143
-    type: 3
-    end: 0
-  - beat: 143
-    type: 2
-    end: 1
-  - beat: 144
-    type: 2
-    end: 0
-  - beat: 144
-    type: 0
-    end: 0
-  - beat: 144
-    type: 3
-    end: 4
-  - beat: 145
-    type: 0
-    end: 0
-  - beat: 146
-    type: 0
-    end: 0
-  - beat: 147
-    type: 0
-    end: 0
-  - beat: 148
-    type: 0
-    end: 0
-  - beat: 148
-    type: 3
-    end: 0
-  - beat: 148.34375
-    type: 0
-    end: 0
-  - beat: 148.65625
-    type: 1
-    end: 0
-  - beat: 149
-    type: 0
-    end: 0
-  - beat: 149.34375
-    type: 0
-    end: 0
-  - beat: 149.65625
-    type: 1
-    end: 0
-  - beat: 150
-    type: 0
-    end: 0
-  - beat: 150.34375
-    type: 1
-    end: 0
-  - beat: 150.65625
-    type: 1
-    end: 0
-  - beat: 151
-    type: 0
-    end: 0
-  - beat: 152
-    type: 1
-    end: 0
-  - beat: 152
-    type: 2
-    end: 7
-  - beat: 153
-    type: 1
-    end: 0
-  - beat: 154
-    type: 1
-    end: 0
-  - beat: 155
-    type: 1
-    end: 0
-  - beat: 156
-    type: 1
-    end: 0
-  - beat: 157
-    type: 1
-    end: 0
-  - beat: 158
-    type: 1
-    end: 0
-  - beat: 159
-    type: 1
-    end: 0
-  - beat: 159
-    type: 2
-    end: 0
-  - beat: 160
-    type: 1
-    end: 0
-  - beat: 172
-    type: 0
-    end: 0
-  - beat: 173
-    type: 0
-    end: 0
-  - beat: 174
-    type: 0
-    end: 0
-  - beat: 175
-    type: 0
-    end: 0
   updates:
-  - beat: 64
+  - beat: 8
     state: 67
     color1: {r: 0.043137252, g: 0.9454591, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
-    speed1: 1
-    speed2: 0.1
-    tiling_x1: 10
-    tiling_y1: 3
-    tiling_x2: 10
-    tiling_y2: 3
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 0
+      duration: 0
+  - beat: 9
+    state: 67
+    color1: {r: 0.043137252, g: 0.9454591, b: 1, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 16
+      duration: 2.5
+  - beat: 11.75
+    state: 67
+    color1: {r: 1, g: 0.10361839, b: 0.043137252, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 0
+      duration: 0
+  - beat: 12
+    state: 67
+    color1: {r: 0.043137252, g: 1, b: 0.848166, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 0
+      duration: 0
+  - beat: 13
+    state: 67
+    color1: {r: 0.043137252, g: 1, b: 0.848166, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 4
+      duration: 1
+  - beat: 14
+    state: 67
+    color1: {r: 1, g: 0.13937008, b: 0.043137252, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 4
+      duration: 1
+  - beat: 15
+    state: 67
+    color1: {r: 0.043137252, g: 1, b: 0.9323679, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 0
+      duration: 0
+  - beat: 15.25
+    state: 67
+    color1: {r: 1, g: 0.16216326, b: 0.043137252, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 0
+      duration: 0
+  - beat: 15.5
+    state: 67
+    color1: {r: 0.043137252, g: 1, b: 0.8982769, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 0
+      duration: 0
+  - beat: 15.75
+    state: 67
+    color1: {r: 1, g: 0.18794398, b: 0.043137252, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 0
+      duration: 0
+  - beat: 16
+    state: 67
+    color1: {r: 0.043137252, g: 1, b: 0.9734968, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 0
+      duration: 0
   projectiles: []
   songTitle: Interluden
   FMODSongName: Interluden

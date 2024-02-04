@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class WormholeController : MonoBehaviour
 {
@@ -9,97 +10,36 @@ public class WormholeController : MonoBehaviour
     public Material circle;
     public AudioManager am;
 
-    public IEnumerator SetSpeed(float speed1, float speed2, float transitionTime)
+    public void SetPattern(float speed1, float speed2, float tiling_x1, float tiling_y1, float tiling_x2, float tiling_y2)
     {
-        if (transitionTime == 0) {
-            worm.SetFloat("_Details_1_scroll_speed", speed1);
-            worm.SetFloat("_Details_2_scroll_speed", speed2);
-            player.SetFloat("_Details_1_scroll_speed", speed1);
-            player.SetFloat("_Details_2_scroll_speed", speed2);
-            yield return null;
-        }
-
-        float timeElapsed = 0;
-        float currentSpeed1 = worm.GetFloat("_Details_1_scroll_speed");
-        float currentSpeed2 = worm.GetFloat("_Details_2_scroll_speed");
-        float lerpSpeed1, lerpSpeed2;
-
-        while(timeElapsed < transitionTime)
-        {
-            lerpSpeed1 = Mathf.Lerp(currentSpeed1, speed1, timeElapsed / transitionTime);
-            lerpSpeed2 = Mathf.Lerp(currentSpeed2, speed2, timeElapsed / transitionTime);
-            timeElapsed += Time.deltaTime;
-
-            worm.SetFloat("_Details_1_scroll_speed", lerpSpeed1);
-            worm.SetFloat("_Details_2_scroll_speed", lerpSpeed2);
-            player.SetFloat("_Details_1_scroll_speed", lerpSpeed1);
-            player.SetFloat("_Details_2_scroll_speed", lerpSpeed2);
-            yield return null;
-        }
+        worm.SetFloat("_Details_1_scroll_speed", speed1);
+        worm.SetFloat("_Details_2_scroll_speed", speed2);
+        worm.SetVector("_Details_1_tiling", new Vector2(tiling_x1, tiling_y1));
+        worm.SetVector("_Details_2_tiling", new Vector2(tiling_x1, tiling_y1));
     }
 
-    public IEnumerator SetTiling(float tiling_x1, float tiling_y1, float tiling_x2, float tiling_y2, float transitionTime)
+    public void Strobe(int count, float duration, float strength)
     {
-        if (transitionTime == 0) {
-            worm.SetVector("_Details_1_tiling", new Vector2(tiling_x1, tiling_y1));
-            worm.SetVector("_Details_2_tiling", new Vector2(tiling_x1, tiling_y1));
-            yield return null;
-        }
+        Debug.Log(duration);
+        float fixedDuration = duration / count;
+        Debug.Log(fixedDuration);
 
-        float timeElapsed = 0;
-        Vector2 lerpTiling1, lerpTiling2;
-        Vector2 tiling1 = worm.GetVector("_Details_1_tiling");
-        Vector2 tiling2 = worm.GetVector("_Details_2_tiling");
-        Vector2 newTiling1 = new Vector2(tiling_x1, tiling_y1);
-        Vector2 newTiling2 = new Vector2(tiling_x1, tiling_y1);
+        Sequence mySequence = DOTween.Sequence();
+        mySequence.Append(worm.DOFade(strength, "_Details_1_colour", 0));
+        mySequence.Append(worm.DOFade(-strength, "_Details_1_colour", fixedDuration));
 
-        while(timeElapsed < transitionTime)
-        {
-            lerpTiling1 = Vector2.Lerp(tiling1, newTiling1, timeElapsed / transitionTime);
-            lerpTiling2 = Vector2.Lerp(tiling2, newTiling2, timeElapsed / transitionTime);
-            timeElapsed += Time.deltaTime;
-            //print(timeElapsed);
-            worm.SetVector("_Details_1_tiling", lerpTiling1);
-            worm.SetVector("_Details_2_tiling", lerpTiling2);
-            yield return null;
-        }
-    }
+        Sequence mySequence2 = DOTween.Sequence();
+        mySequence2.Append(worm.DOFade(strength, "_Details_2_colour", 0));
+        mySequence2.Append(worm.DOFade(-strength, "_Details_2_colour", fixedDuration));
 
-    public IEnumerator Pulse(float start, float end, float duration)
-    {
-        float timeElapsed = 0;
-        float value;
-        Color color1w, color2w, color1p, color2p;
-
-        while(timeElapsed < duration)
-        {
-            value = Mathf.Lerp(start, end, timeElapsed / duration);
-            timeElapsed += Time.deltaTime;
-
-            color1w = worm.GetColor("_Details_1_colour");
-            color2w = worm.GetColor("_Details_2_colour");
-            color1p = player.GetColor("_Details_1_colour");
-            color2p = player.GetColor("_Details_2_colour");
-            color1w.a = value;
-            color2w.a = value;
-            color1p.a = value;
-            color2p.a = value;
-
-            worm.SetColor("_Details_1_colour", color1w);
-            worm.SetColor("_Details_2_colour", color2w);
-            player.SetColor("_Details_1_colour", color1p);
-            player.SetColor("_Details_2_colour", color2p);
-            yield return null;
-        }
+        mySequence.SetLoops(count, LoopType.Restart);
+        mySequence2.SetLoops(count, LoopType.Restart);
     }
 
     public void InitColor(Color color1, Color color2)
     {
         worm.SetColor("_Details_1_colour", color1*5);
         worm.SetColor("_Details_2_colour", color2*5);
-        //player.SetColor("_Details_1_colour", color*50);
-        //player.SetColor("_Details_2_colour", color*50);
-        circle.SetColor("_Wormhole_colour", color1*5);
     }
 
     

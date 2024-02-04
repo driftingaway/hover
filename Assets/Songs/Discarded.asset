@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486308d83d1f68146b74a34747d44483, type: 3}
+  m_Name: Discarded
+  m_EditorClassIdentifier: 
+  midiPath: 
+  BPM: 75
+  timeSig: 4
+  song:
+  - beat: 0
+    type: 0
+    end: 0
+  updates:
+  - beat: 5
+    state: 0
+    color1: {r: 1, g: 0, b: 0.010097504, a: 0}
+    color2: {r: 1, g: 1, b: 1, a: 0}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 1
+      strength: 5
+  - beat: 5.5
+    state: 0
+    color1: {r: 1, g: 0, b: 0.010097504, a: 0}
+    color2: {r: 1, g: 1, b: 1, a: 0}
+    pattern: {fileID: 11400000, guid: 6891118091c81f5458d124ed88b65e32, type: 2}
+    strobe:
+      count: 1
+      duration: 1
+      strength: 5
+  - beat: 6
+    state: 0
+    color1: {r: 1, g: 0, b: 0.010097504, a: 0}
+    color2: {r: 1, g: 1, b: 1, a: 0}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 1
+      strength: 5
+  - beat: 6.5
+    state: 0
+    color1: {r: 1, g: 0, b: 0.010097504, a: 0}
+    color2: {r: 1, g: 1, b: 1, a: 0}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 6
+      duration: 1.5
+      strength: 15
+  - beat: 8
+    state: 0
+    color1: {r: 1, g: 0.06048584, b: 0, a: 0}
+    color2: {r: 1, g: 1, b: 1, a: 0}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 1
+      strength: 5
+  - beat: 8.5
+    state: 0
+    color1: {r: 1, g: 0.06048584, b: 0, a: 0}
+    color2: {r: 1, g: 1, b: 1, a: 0}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 1
+      strength: 5
+  - beat: 9
+    state: 0
+    color1: {r: 1, g: 0.06048584, b: 0, a: 0}
+    color2: {r: 1, g: 1, b: 1, a: 0}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 1
+      strength: 5
+  - beat: 9.5
+    state: 0
+    color1: {r: 1, g: 0.06048584, b: 0, a: 0}
+    color2: {r: 1, g: 1, b: 1, a: 0}
+    pattern: {fileID: 11400000, guid: 6891118091c81f5458d124ed88b65e32, type: 2}
+    strobe:
+      count: 1
+      duration: 1
+      strength: 5
+  - beat: 10
+    state: 0
+    color1: {r: 1, g: 0.06048584, b: 0, a: 0}
+    color2: {r: 1, g: 1, b: 1, a: 0}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 1
+      strength: 5
+  - beat: 10.5
+    state: 0
+    color1: {r: 1, g: 0.06048584, b: 0, a: 0}
+    color2: {r: 1, g: 1, b: 1, a: 0}
+    pattern: {fileID: 11400000, guid: 6891118091c81f5458d124ed88b65e32, type: 2}
+    strobe:
+      count: 1
+      duration: 1
+      strength: 5
+  - beat: 11
+    state: 0
+    color1: {r: 1, g: 0.06048584, b: 0, a: 0}
+    color2: {r: 1, g: 1, b: 1, a: 0}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 4
+      duration: 1
+      strength: 15
+  - beat: 12
+    state: 0
+    color1: {r: 1, g: 0.06048584, b: 0, a: 0}
+    color2: {r: 1, g: 1, b: 1, a: 0}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 1
+      strength: 5
+  projectiles: []
+  songTitle: Song
+  FMODSongName: Discarded
+  color1: {r: 0, g: 0, b: 0, a: 0}
+  color2: {r: 0, g: 0, b: 0, a: 0}
+  pattern: {fileID: 11400000, guid: 936ad5056018970479b2581e4008d222, type: 2}
