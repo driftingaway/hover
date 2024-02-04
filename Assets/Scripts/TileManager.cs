@@ -52,16 +52,7 @@ public class TileManager : MonoBehaviour
         GameObject newTile = Instantiate(tiles[note.type], new Vector3(0f, 0f, 0f) + (transform.forward * 60f * 8f), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
         if(note.type == 2 || note.type == 3)
         {
-            Debug.Log("LINE TIME!");
-            //draw held note line
-            LineRenderer lRend = newTile.AddComponent<LineRenderer>();
-            lRend.material = lineMaterial;
-            lRend.useWorldSpace = false;
-            lRend.startWidth = 10f;
-            lRend.endWidth = 10f;
-            lRend.SetPosition(0,new Vector3(0, 0, 0));
-            //lRend.SetPosition(1,new Vector3(0, 0, newTile.transform.position.z + (speed * note.end)));
-            lRend.SetPosition(1,new Vector3(0, 0, speed * 2.4f * note.end)); //.6 for 60f and then *4 because .25 scaling idk man shits complicated
+            SpawnLine(newTile, note);
         }
         newTile.transform.parent = instObjects.transform;
         activeTiles.Add(newTile);
@@ -70,6 +61,27 @@ public class TileManager : MonoBehaviour
         {
             Destroy(activeTiles[0]);
             activeTiles.RemoveAt(0);
+        }
+    }
+
+    private void SpawnLine(GameObject newTile, Note note)
+    {
+        //draw held note line
+        LineRenderer lRend = newTile.AddComponent<LineRenderer>();
+        lRend.material = lineMaterial;
+        lRend.useWorldSpace = false;
+        lRend.startWidth = 3f;
+        lRend.endWidth = 3f;
+        //lRend.alignment = LineAlignment.TransformZ;
+
+        float end = speed * .6f * note.end;
+        lRend.positionCount = 20;
+        Debug.Log(lRend.positionCount);
+        float increment = end / (lRend.positionCount - 1);
+        //Debug.Log(end);
+        for(int i = 0; i < lRend.positionCount; i++)
+        {
+            lRend.SetPosition(i, new Vector3(0, 0, i*increment));
         }
     }
 

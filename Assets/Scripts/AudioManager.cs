@@ -153,7 +153,7 @@ public class AudioManager : MonoBehaviour
         if(songPositionInBeats == prevSongPositionInBeats + 1)
         {
             prevSongPositionInBeats = songPositionInBeats;
-            StartCoroutine(worm.Pulse(1f, 0f, secPerBeat));
+            StartCoroutine(worm.Pulse(1f, .5f, secPerBeat));
         }
 
         // bezier curves

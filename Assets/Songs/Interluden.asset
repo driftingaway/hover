@@ -436,14 +436,14 @@ MonoBehaviour:
   updates:
   - beat: 64
     state: 67
-    color1: {r: 1, g: 0.04150939, b: 0.04150939, a: 1}
-    color2: {r: 1, g: 0, b: 0, a: 1}
-    speed1: 0.7
-    speed2: 0.7
+    color1: {r: 0.043137252, g: 0.9454591, b: 1, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    speed1: 1
+    speed2: 0.1
     tiling_x1: 10
-    tiling_y1: 1
+    tiling_y1: 3
     tiling_x2: 10
-    tiling_y2: 1
+    tiling_y2: 3
   projectiles: []
   songTitle: Interluden
   FMODSongName: Interluden

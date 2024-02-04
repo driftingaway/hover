@@ -18,8 +18,9 @@ namespace AIEngineTest
         [SerializeField] private float verticalSpeed = 10f;
 
         private float h, v, timeH, timeV = 0f;
-        public float minH = -1f, minV = -1f;
-        public float maxH = 1f, maxV = 1f;
+        public float minH = -.1f, minV = -.1f;
+        public float maxH = .1f, maxV = .1f;
+        public Transform camera;
 
         private static readonly int s_StraightRenderDistanceID = Shader.PropertyToID("_CURVER_STRAIGHT_RENDER_DISTANCE");
         private static readonly int s_HorizontalCurvatureID = Shader.PropertyToID("_CURVER_HORIZONTAL_CURVATURE");
@@ -64,6 +65,7 @@ namespace AIEngineTest
         {
             horizontalCurvature = h;
             verticalCurvature = v;
+            //camera.rotation = Quaternion.Euler(camera.eulerAngles.x, camera.eulerAngles.y, h*20);
         }
 
         void Update()

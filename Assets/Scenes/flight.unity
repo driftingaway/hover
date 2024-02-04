@@ -5490,7 +5490,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450897855}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -11085,7 +11085,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876421726}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -11109,7 +11109,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 895
+    m_Bits: 3967
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -11594,7 +11594,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617988277}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -11809,6 +11809,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: b9a9f2851c408d945bf776d20442bd48,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b9a9f2851c408d945bf776d20442bd48,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7620e0d02220e9a4894da682b336e8b1, type: 2}
@@ -11853,15 +11858,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ae2dcead737c34c90c8834919f388b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StraightDistance: 200
-  m_VerticalCurvature: 1.2
+  m_StraightDistance: 25
+  m_VerticalCurvature: 0
   m_HorizontalCurvature: 0
-  horizontalSpeed: 6
-  verticalSpeed: 10
+  horizontalSpeed: 50
+  verticalSpeed: 20
   minH: -0.8
-  minV: -0.8
+  minV: 0.1
   maxH: 0.8
-  maxV: 0.8
+  maxV: 1.2
+  camera: {fileID: 876421727}
 --- !u!4 &1677077238
 Transform:
   m_ObjectHideFlags: 0
@@ -11892,17 +11898,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: cc4cf81839e11d946a4ef6f53cf38ae7,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cc4cf81839e11d946a4ef6f53cf38ae7,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cc4cf81839e11d946a4ef6f53cf38ae7,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cc4cf81839e11d946a4ef6f53cf38ae7,
         type: 3}
@@ -12226,15 +12232,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiles:
-  - {fileID: 5245754685462649979, guid: 2ea0bf94e0af8d84f87651b9184df406, type: 3}
-  - {fileID: 5245754685462649979, guid: f1ee3743f292b3b4796ab658097b6d87, type: 3}
-  - {fileID: 5245754685462649979, guid: 2ea0bf94e0af8d84f87651b9184df406, type: 3}
-  - {fileID: 5245754685462649979, guid: f1ee3743f292b3b4796ab658097b6d87, type: 3}
+  - {fileID: 4724907480127962609, guid: ff6c3bfa6f4c61743a8747da118fa4ab, type: 3}
+  - {fileID: 4724907480127962609, guid: ff6c3bfa6f4c61743a8747da118fa4ab, type: 3}
+  - {fileID: 4724907480127962609, guid: ff6c3bfa6f4c61743a8747da118fa4ab, type: 3}
+  - {fileID: 4724907480127962609, guid: ff6c3bfa6f4c61743a8747da118fa4ab, type: 3}
   instObjects: {fileID: 28894595}
   backInstObjects: {fileID: 1939377827}
   player: {fileID: 1887498119}
   am: {fileID: 435850311}
-  lineMaterial: {fileID: 2100000, guid: d5685d0f7e1ce4a48b8165bbcd179b30, type: 2}
+  lineMaterial: {fileID: 2100000, guid: 74c2c7c3ef9290b43911e09249f7b7e4, type: 2}
   notePos: []
   notes: []
   curve:
