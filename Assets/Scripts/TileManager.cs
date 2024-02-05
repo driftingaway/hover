@@ -67,20 +67,16 @@ public class TileManager : MonoBehaviour
 
     private void SpawnLine(GameObject newTile, Note note)
     {
-        //draw held note line
         LineRenderer lRend = newTile.AddComponent<LineRenderer>();
         lRend.material = lineMaterial;
         lRend.useWorldSpace = false;
         lRend.startWidth = 3f;
         lRend.endWidth = 3f;
-        //lRend.alignment = LineAlignment.TransformZ;
-
-        float end = speed * secPerBeat * note.end;
-        Debug.Log(end);
         lRend.positionCount = 20;
-        //Debug.Log(lRend.positionCount);
+        
+        float end = speed * secPerBeat * note.end;
         float increment = end / (lRend.positionCount - 1);
-        //Debug.Log(end);
+
         for(int i = 0; i < lRend.positionCount; i++)
         {
             lRend.SetPosition(i, new Vector3(0, 0, i*increment));

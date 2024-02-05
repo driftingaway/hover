@@ -20,9 +20,7 @@ public class WormholeController : MonoBehaviour
 
     public void Strobe(int count, float duration, float strength)
     {
-        Debug.Log(duration);
         float fixedDuration = duration / count;
-        Debug.Log(fixedDuration);
 
         Sequence mySequence = DOTween.Sequence();
         mySequence.Append(worm.DOFade(strength, "_Details_1_colour", 0));

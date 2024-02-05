@@ -8,7 +8,6 @@ public class AudioManager : MonoBehaviour
     public TileManager tileManager;
     public ShipController playerController;
     public WormholeController worm;
-    public ScoreManager score;
     public TMP_Text text;
     public Midi2Text midi;
 
@@ -39,10 +38,12 @@ public class AudioManager : MonoBehaviour
     public List<Note> beatMap;
     public List<Updates> updateMap;
     public List<Projectiles> projectileMap;
+    private bool[] hitMap;
     public int startBeat;
-    private bool hit = false;
+    private int score;
 
     private float health = 1;
+    private float startHoldTime, endHoldTime;
 
     void Start()
     {
@@ -53,6 +54,7 @@ public class AudioManager : MonoBehaviour
         beatMap = currentSong.song;
         updateMap = currentSong.updates;
         projectileMap = currentSong.projectiles;
+        hitMap = new bool[currentSong.song.Count];
         timeSig = currentSong.timeSig;
         BPM = currentSong.BPM;
 
@@ -124,32 +126,64 @@ public class AudioManager : MonoBehaviour
             projectileSpawnIndex++;
         }
 
+        if(Input.GetButtonDown("Hit"))
+        {
+            startHoldTime = songPositionInBeatsPrecise;
+        }
+
+        if(Input.GetButtonUp("Hit"))
+        {
+            endHoldTime = songPositionInBeatsPrecise - startHoldTime;
+        }
+
         // if timing is close enough to a note, check input for a potential hit 
         if((Mathf.Abs(songPositionInBeatsPrecise - beatMap[noteIndex].beat)) < timingThreshold)
         {
-            if (validInput && Input.GetButtonDown("Left")) //&& noteIndex % 2 == 0) || (Input.GetButtonDown("Right") && noteIndex % 2 == 1)))
+            if(noteIndex == 0)
             {
+                if(Input.GetButtonDown("Hit"))
+                {
+                    Debug.Log("HIT!");
+                    FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);
+                    hitMap[noteIndex] = true;
+                    if(health < 1f) {
+                        health += .25f;
+                        //eventInstance.setParameterByName("Health", health);
+                    }
+                }   
+            }
+            else if(hitMap[noteIndex-1] && beatMap[noteIndex - 1].type == 2)
+            {
+                //Debug.Log("HOLD: " + endHoldTime);
+                //Debug.Log("LENGTH: " + (beatMap[noteIndex-1].end - timingThreshold));
+                if((endHoldTime >= (beatMap[noteIndex-1].end - timingThreshold)) && !hitMap[noteIndex])
+                {
+                    Debug.Log("HELD NOTE!!");
+                    hitMap[noteIndex] = true;
+                    endHoldTime = 0;
+                }
+            }
+            else if(Input.GetButtonDown("Hit"))
+            {
+                Debug.Log("HIT!");
                 FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);
-                hit = true;
+                hitMap[noteIndex] = true;
                 if(health < 1f) {
                     health += .25f;
                     //eventInstance.setParameterByName("Health", health);
                 }
-                validInput = false;
-            } 
+            }   
         } 
 
         // if timing for hitting a note has elapsed, check for miss, move to next note and re-enable input
         if(noteIndex < beatMap.Count - 1 && (songPositionInBeatsPrecise - beatMap[noteIndex].beat) > timingThreshold)
         {
             // check for missed note
-            if (hit == false && health > 0) {
+            if (!hitMap[noteIndex] && health > 0) {
                 health -= .25f;
                 //eventInstance.setParameterByName("Health", health);
             }
-            hit = false;
             noteIndex++;
-            validInput = true;
         }
 
         // color pulsing to each beat

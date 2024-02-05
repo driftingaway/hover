@@ -40,20 +40,22 @@ public class Midi2Text : MonoBehaviour
             {
                 retNotes.Add(new Note(fixedStartTime, 0, 0));
             } 
+            /*
             else if (note.NoteName.ToString() == "A")
             {
                 retNotes.Add(new Note(fixedStartTime, 1, 0));
-            } 
+            } */
             else if (note.NoteName.ToString() == "CSharp")
             {
                 retNotes.Add(new Note(fixedStartTime, 2, noteLength));
                 retNotes.Add(new Note(fixedEndTime, 2, 0));
             } 
+            /*
             else if (note.NoteName.ToString() == "ASharp")
             {
                 retNotes.Add(new Note(fixedStartTime, 3, noteLength));
                 retNotes.Add(new Note(fixedEndTime, 3, 0));
-            } 
+            } */
             //print(fixedTime);
         }
 

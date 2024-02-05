@@ -395,7 +395,8 @@ MonoBehaviour:
     type: 0
     end: 0
   updates:
-  - beat: 8
+  - name: 
+    beat: 8
     state: 67
     color1: {r: 0.043137252, g: 0.9454591, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -403,7 +404,9 @@ MonoBehaviour:
     strobe:
       count: 0
       duration: 0
-  - beat: 9
+      strength: 10
+  - name: 
+    beat: 9
     state: 67
     color1: {r: 0.043137252, g: 0.9454591, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -411,7 +414,9 @@ MonoBehaviour:
     strobe:
       count: 16
       duration: 2.5
-  - beat: 11.75
+      strength: 10
+  - name: 
+    beat: 11.75
     state: 67
     color1: {r: 1, g: 0.10361839, b: 0.043137252, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -419,7 +424,9 @@ MonoBehaviour:
     strobe:
       count: 0
       duration: 0
-  - beat: 12
+      strength: 10
+  - name: 
+    beat: 12
     state: 67
     color1: {r: 0.043137252, g: 1, b: 0.848166, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -427,7 +434,9 @@ MonoBehaviour:
     strobe:
       count: 0
       duration: 0
-  - beat: 13
+      strength: 10
+  - name: 
+    beat: 13
     state: 67
     color1: {r: 0.043137252, g: 1, b: 0.848166, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -435,7 +444,9 @@ MonoBehaviour:
     strobe:
       count: 4
       duration: 1
-  - beat: 14
+      strength: 10
+  - name: 
+    beat: 14
     state: 67
     color1: {r: 1, g: 0.13937008, b: 0.043137252, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -443,7 +454,9 @@ MonoBehaviour:
     strobe:
       count: 4
       duration: 1
-  - beat: 15
+      strength: 10
+  - name: 
+    beat: 15
     state: 67
     color1: {r: 0.043137252, g: 1, b: 0.9323679, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -451,7 +464,9 @@ MonoBehaviour:
     strobe:
       count: 0
       duration: 0
-  - beat: 15.25
+      strength: 10
+  - name: 
+    beat: 15.25
     state: 67
     color1: {r: 1, g: 0.16216326, b: 0.043137252, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -459,7 +474,9 @@ MonoBehaviour:
     strobe:
       count: 0
       duration: 0
-  - beat: 15.5
+      strength: 10
+  - name: 
+    beat: 15.5
     state: 67
     color1: {r: 0.043137252, g: 1, b: 0.8982769, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -467,7 +484,9 @@ MonoBehaviour:
     strobe:
       count: 0
       duration: 0
-  - beat: 15.75
+      strength: 10
+  - name: 
+    beat: 15.75
     state: 67
     color1: {r: 1, g: 0.18794398, b: 0.043137252, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -475,7 +494,9 @@ MonoBehaviour:
     strobe:
       count: 0
       duration: 0
-  - beat: 16
+      strength: 10
+  - name: 
+    beat: 16
     state: 67
     color1: {r: 0.043137252, g: 1, b: 0.9734968, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -483,14 +504,10 @@ MonoBehaviour:
     strobe:
       count: 0
       duration: 0
+      strength: 10
   projectiles: []
   songTitle: Interluden
   FMODSongName: Interluden
   color1: {r: 0.3018868, g: 0.0011391729, b: 0.0011391729, a: 1}
   color2: {r: 0, g: 0, b: 0, a: 1}
-  speed1: 0.4
-  speed2: 0.4
-  tiling_x1: 0.1
-  tiling_y1: 0.1
-  tiling_x2: 0.1
-  tiling_y2: 0.1
+  pattern: {fileID: 11400000, guid: 936ad5056018970479b2581e4008d222, type: 2}

@@ -5326,7 +5326,6 @@ MonoBehaviour:
   tileManager: {fileID: 2000082241}
   playerController: {fileID: 1887498126}
   worm: {fileID: 2121735293}
-  score: {fileID: 1417051559}
   text: {fileID: 641031015}
   midi: {fileID: 435850313}
   BPM: 147
@@ -5338,8 +5337,8 @@ MonoBehaviour:
   songPositionInBeatsPrecise: 0
   songs:
   - {fileID: 11400000, guid: f4f6d045086fd2847b5a022fb3a72479, type: 2}
-  - {fileID: 11400000, guid: 89ef961aa01938d4da89e0007c8e34b4, type: 2}
   - {fileID: 11400000, guid: f9b9ed85979ee074f8e19fb3c6c832df, type: 2}
+  - {fileID: 11400000, guid: 89ef961aa01938d4da89e0007c8e34b4, type: 2}
   - {fileID: 11400000, guid: 9dbb0731d1d6b8c42b79bec880e2e86a, type: 2}
   - {fileID: 11400000, guid: 468f884090622cf439c97a573bf770b5, type: 2}
   - {fileID: 11400000, guid: 70a55ee3e70bb7945ab0891b1916fa59, type: 2}
