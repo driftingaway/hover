@@ -97,7 +97,7 @@ public class AudioManager : MonoBehaviour
         }
 
         // alternative case for timing camera switches and visual updates
-        if (updateSpawnIndex < updateMap.Count && updates.beat-1 <= songPositionInBeatsPrecise)
+        if (updateSpawnIndex < updateMap.Count && updates.beat <= songPositionInBeatsPrecise)
         {
             playerController.Switch(updates.state);
             worm.SetPattern(updates.pattern.speed1, updates.pattern.speed2, updates.pattern.tiling_x1, updates.pattern.tiling_y1, updates.pattern.tiling_x2, updates.pattern.tiling_y2);

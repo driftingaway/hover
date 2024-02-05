@@ -26,6 +26,7 @@ public class TileManager : MonoBehaviour
     void Start()
     {
         speed = am.BPM;
+        secPerBeat = am.secPerBeat;
     }
 
     // move obstacles forward, everything else stays fixed
@@ -74,7 +75,8 @@ public class TileManager : MonoBehaviour
         lRend.endWidth = 3f;
         //lRend.alignment = LineAlignment.TransformZ;
 
-        float end = speed * 0.6f * note.end;
+        float end = speed * secPerBeat * note.end;
+        Debug.Log(end);
         lRend.positionCount = 20;
         //Debug.Log(lRend.positionCount);
         float increment = end / (lRend.positionCount - 1);

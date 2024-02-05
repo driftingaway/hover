@@ -5337,6 +5337,7 @@ MonoBehaviour:
   prevSongPositionInBeats: 0
   songPositionInBeatsPrecise: 0
   songs:
+  - {fileID: 11400000, guid: f4f6d045086fd2847b5a022fb3a72479, type: 2}
   - {fileID: 11400000, guid: 89ef961aa01938d4da89e0007c8e34b4, type: 2}
   - {fileID: 11400000, guid: f9b9ed85979ee074f8e19fb3c6c832df, type: 2}
   - {fileID: 11400000, guid: 9dbb0731d1d6b8c42b79bec880e2e86a, type: 2}
@@ -11039,14 +11040,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876421726}
-  m_LocalRotation: {x: -0.21395472, y: -0.15580536, z: -0.2615914, w: 0.92818004}
+  m_LocalRotation: {x: -0.117813885, y: -0.13348295, z: -0.25673202, w: 0.9499425}
   m_LocalPosition: {x: 0, y: 10, z: -20}
   m_LocalScale: {x: 0.01, y: 0.010000001, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1887498119}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -28.6, y: -11.65, z: -28.5}
+  m_LocalEulerAnglesHint: {x: -17, y: -11.65, z: -28.5}
 --- !u!114 &876421728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11866,7 +11867,7 @@ MonoBehaviour:
   horizontalSpeed: 50
   verticalSpeed: 20
   minH: -0.8
-  minV: 0.1
+  minV: 0.5
   maxH: 0.8
   maxV: 1.2
   camera: {fileID: 876421727}

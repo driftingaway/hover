@@ -1,5 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Melanchall.DryWetMidi.Common;
+using Melanchall.DryWetMidi.Composing;
+using Melanchall.DryWetMidi.Core;
+using Melanchall.DryWetMidi.Interaction;
+using Melanchall.DryWetMidi.Multimedia;
+using Melanchall.DryWetMidi.Standards;
 
 [System.Serializable]
 public struct Note
@@ -19,19 +25,39 @@ public struct Note
 [System.Serializable]
 public struct Updates
 {
+    public string name;
     public float beat;
     public int state;
     public Color color1, color2;
     public Pattern pattern;
     public Strobe strobe;
+
+    public Updates(float beat, int state, Color color1, Color color2, Pattern pattern, Strobe strobe, string name)
+    {
+        this.beat = beat;
+        this.state = state;
+        this.color1 = color1;
+        this.color2 = color2;
+        this.pattern = pattern;
+        this.strobe = strobe;
+        this.name = name;
+    }
 }
 
 [System.Serializable]
 public class Strobe
 {
-    public int count = 0;
+    public int count = 1;
     public float duration = 1;
-    public float strength = 1;
+    public float strength = 10;
+
+    public Strobe() {}
+    public Strobe(int count, float duration, float strength)
+    {
+        this.count = count;
+        this.duration = duration;
+        this.strength = strength;
+    }
 }
 
 [System.Serializable]
@@ -54,4 +80,28 @@ public class Song : ScriptableObject
     public string FMODSongName = "Song";
     public Color color1, color2;
     public Pattern pattern;
+
+    public void generateLighting(string midiPath, int timeSig) {
+        updates.Clear();
+        MidiFile midi = MidiFile.Read(midiPath);
+        IEnumerable<Melanchall.DryWetMidi.Interaction.Note> notes = midi.GetNotes();
+        TempoMap tempoMap = midi.GetTempoMap();
+
+        foreach (Melanchall.DryWetMidi.Interaction.Note note in notes) {
+            BarBeatFractionTimeSpan startTime = note.TimeAs<BarBeatFractionTimeSpan>(tempoMap);
+            BarBeatFractionTimeSpan endTime = startTime + note.LengthAs<BarBeatFractionTimeSpan>(tempoMap);
+            float fixedStartTime = timeSig * startTime.Bars + (float)startTime.Beats;
+            float fixedEndTime = timeSig * endTime.Bars + (float)endTime.Beats;
+            float noteLength = fixedEndTime - fixedStartTime;
+
+            if (note.NoteName.ToString() == "F")
+            {
+                updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(), "FLASH"));
+            } 
+            if (note.NoteName.ToString() == "FSharp")
+            {
+                updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(6,noteLength,25), "STROBE"));
+            } 
+        }
+    }
 }
