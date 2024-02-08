@@ -12,10 +12,7 @@ public class TileManager : MonoBehaviour
     public Transform player;
     public AudioManager am;
     public Material lineMaterial;
-    float speed, secPerBeat;
-
-    float songPos;
-    float songPositionInBeatsPrecise;
+    float speed, secPerBeat, speedMult;
 
     private List<GameObject> activeTiles = new List<GameObject>();
     public List<float> notePos = new List<float>();
@@ -27,13 +24,14 @@ public class TileManager : MonoBehaviour
     {
         speed = am.BPM;
         secPerBeat = am.secPerBeat;
+        speedMult = am.speedMult;
     }
 
     // move obstacles forward, everything else stays fixed
     void FixedUpdate()
     {
         //print(speed);
-        Vector3 forwardMove = instObjects.transform.forward * speed * Time.fixedDeltaTime;
+        Vector3 forwardMove = instObjects.transform.forward * speed * speedMult * Time.fixedDeltaTime;
         //Vector3 backwardMove = backInstObjects.transform.forward * speed * Time.fixedDeltaTime;
         instObjects.transform.position = instObjects.transform.position - forwardMove;
         //backInstObjects.transform.position = backInstObjects.transform.position + backwardMove;
@@ -41,7 +39,7 @@ public class TileManager : MonoBehaviour
 
     void Update()
     {
-        //print(instObjects.transform.position.z);
+        print(instObjects.transform.position.z);
     }
 
     public void Bezier(float pos, float duration) {
@@ -50,7 +48,7 @@ public class TileManager : MonoBehaviour
 
     public void SpawnNote(Note note)
     {
-        GameObject newTile = Instantiate(tiles[note.type], new Vector3(0f, 0f, 0f) + (transform.forward * 60f * 8f), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
+        GameObject newTile = Instantiate(tiles[note.type], new Vector3(0f, 0f, 0f) + (transform.forward * 60f * 8f * speedMult), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
         if(note.type == 2 || note.type == 3)
         {
             SpawnLine(newTile, note);
@@ -74,7 +72,7 @@ public class TileManager : MonoBehaviour
         lRend.endWidth = 3f;
         lRend.positionCount = 20;
         
-        float end = speed * secPerBeat * note.end;
+        float end = speed * speedMult * secPerBeat * note.end;
         float increment = end / (lRend.positionCount - 1);
 
         for(int i = 0; i < lRend.positionCount; i++)

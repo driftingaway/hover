@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 public class AudioManager : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class AudioManager : MonoBehaviour
     int spawnIndex, updateSpawnIndex, projectileSpawnIndex,bezierIndex = 0;
     int noteIndex = 0;
     bool validInput = true;
-    float timingThreshold = .25f;
+    float timingThreshold = .15f;
 
     public List<Song> songs = new List<Song>();
     public Song currentSong;
@@ -39,11 +40,16 @@ public class AudioManager : MonoBehaviour
     public List<Updates> updateMap;
     public List<Projectiles> projectileMap;
     private bool[] hitMap;
+    private int streak = 0;
     public int startBeat;
-    private int score;
+    public float speedMult = 1;
 
     private float health = 1;
     private float startHoldTime, endHoldTime;
+
+    public ScoreManager scoreRef;
+    public Material noteMaterial;
+    public Material playerMaterial;
 
     void Start()
     {
@@ -129,11 +135,15 @@ public class AudioManager : MonoBehaviour
         if(Input.GetButtonDown("Hit"))
         {
             startHoldTime = songPositionInBeatsPrecise;
+            noteMaterial.DOColor(Color.white * 2, "_Wormhole_colour", 0);
+            playerMaterial.DOColor(Color.white * 10, "_Details_1_colour", 0);
         }
 
         if(Input.GetButtonUp("Hit"))
         {
             endHoldTime = songPositionInBeatsPrecise - startHoldTime;
+            noteMaterial.DOColor(Color.white, "_Wormhole_colour", 0);
+            playerMaterial.DOColor(Color.white * 5, "_Details_1_colour", 0);
         }
 
         // if timing is close enough to a note, check input for a potential hit 
@@ -143,13 +153,7 @@ public class AudioManager : MonoBehaviour
             {
                 if(Input.GetButtonDown("Hit"))
                 {
-                    Debug.Log("HIT!");
-                    FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);
-                    hitMap[noteIndex] = true;
-                    if(health < 1f) {
-                        health += .25f;
-                        //eventInstance.setParameterByName("Health", health);
-                    }
+                    HitNote();
                 }   
             }
             else if(hitMap[noteIndex-1] && beatMap[noteIndex - 1].type == 2)
@@ -158,20 +162,12 @@ public class AudioManager : MonoBehaviour
                 //Debug.Log("LENGTH: " + (beatMap[noteIndex-1].end - timingThreshold));
                 if((endHoldTime >= (beatMap[noteIndex-1].end - timingThreshold)) && !hitMap[noteIndex])
                 {
-                    Debug.Log("HELD NOTE!!");
-                    hitMap[noteIndex] = true;
-                    endHoldTime = 0;
+                    HitNote();
                 }
             }
             else if(Input.GetButtonDown("Hit"))
             {
-                Debug.Log("HIT!");
-                FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);
-                hitMap[noteIndex] = true;
-                if(health < 1f) {
-                    health += .25f;
-                    //eventInstance.setParameterByName("Health", health);
-                }
+                HitNote();
             }   
         } 
 
@@ -182,6 +178,10 @@ public class AudioManager : MonoBehaviour
             if (!hitMap[noteIndex] && health > 0) {
                 health -= .25f;
                 //eventInstance.setParameterByName("Health", health);
+                streak = 0;
+                scoreRef.ResetCombo();
+                noteMaterial.DOColor(Color.red * 2, "_Wormhole_colour", 0.1f);
+                playerMaterial.DOColor(Color.red * 10, "_Details_1_colour", 0.1f);
             }
             noteIndex++;
         }
@@ -202,5 +202,21 @@ public class AudioManager : MonoBehaviour
             tileManager.Bezier(pos, duration);
             bezierIndex++;
         }*/
+    }
+
+    private void HitNote()
+    {
+        Debug.Log("HIT!");
+        FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);
+        hitMap[noteIndex] = true;
+        if(health < 1f) {
+            health += .25f;
+            //eventInstance.setParameterByName("Health", health);
+        }
+        scoreRef.IncreaseScore();
+        streak += 1;
+        if(streak % 5 == 0) {
+            scoreRef.IncreaseCombo();
+        }
     }
 }
