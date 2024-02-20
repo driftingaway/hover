@@ -36,27 +36,15 @@ public class Midi2Text : MonoBehaviour
             float fixedEndTime = timeSig * endTime.Bars + (float)endTime.Beats;
             float noteLength = fixedEndTime - fixedStartTime;
 
-            if (note.NoteName.ToString() == "C")
+            if (note.NoteName.ToString() == "C" || note.NoteName.ToString() == "A")
             {
                 retNotes.Add(new Note(fixedStartTime, 0, 0));
             } 
-            /*
-            else if (note.NoteName.ToString() == "A")
+            else if (note.NoteName.ToString() == "CSharp" || note.NoteName.ToString() == "ASharp")
             {
-                retNotes.Add(new Note(fixedStartTime, 1, 0));
-            } */
-            else if (note.NoteName.ToString() == "CSharp")
-            {
-                retNotes.Add(new Note(fixedStartTime, 2, noteLength));
+                retNotes.Add(new Note(fixedStartTime, 1, noteLength));
                 retNotes.Add(new Note(fixedEndTime, 2, 0));
             } 
-            /*
-            else if (note.NoteName.ToString() == "ASharp")
-            {
-                retNotes.Add(new Note(fixedStartTime, 3, noteLength));
-                retNotes.Add(new Note(fixedEndTime, 3, 0));
-            } */
-            //print(fixedTime);
         }
 
         retNotes.Sort((x, y) => x.beat.CompareTo(y.beat));

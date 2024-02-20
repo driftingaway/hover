@@ -39,7 +39,7 @@ public class TileManager : MonoBehaviour
 
     void Update()
     {
-        print(instObjects.transform.position.z);
+        //print(instObjects.transform.position.z);
     }
 
     public void Bezier(float pos, float duration) {
@@ -49,7 +49,7 @@ public class TileManager : MonoBehaviour
     public void SpawnNote(Note note)
     {
         GameObject newTile = Instantiate(tiles[note.type], new Vector3(0f, 0f, 0f) + (transform.forward * 60f * 8f * speedMult), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
-        if(note.type == 2 || note.type == 3)
+        if(note.type == 1)
         {
             SpawnLine(newTile, note);
         }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed1: 1
   speed2: 1
-  tiling_x1: 10
-  tiling_y1: 0.5
-  tiling_x2: 10
-  tiling_y2: 0.5
+  tiling_x1: 1
+  tiling_y1: 1
+  tiling_x2: 1
+  tiling_y2: 1

@@ -12,28 +12,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 486308d83d1f68146b74a34747d44483, type: 3}
   m_Name: test
   m_EditorClassIdentifier: 
+  midiPath: Assets/Audio/midi/test.mid
+  BPM: 130
+  timeSig: 4
   song:
+  - beat: 8
+    type: 0
+    end: 0
+  - beat: 10
+    type: 0
+    end: 0
+  - beat: 12
+    type: 0
+    end: 0
+  - beat: 14
+    type: 0
+    end: 0
   - beat: 16
-    type: Score
-    rotation: 0
-    lane: Left
-    turn: 
+    type: 0
+    end: 0
+  - beat: 17
+    type: 0
+    end: 0
+  - beat: 18
+    type: 0
+    end: 0
+  - beat: 19
+    type: 0
+    end: 0
   - beat: 20
-    type: Score
-    rotation: 0
-    lane: Right
-    turn: 
+    type: 0
+    end: 0
   - beat: 21
-    type: Death
-    rotation: 0
-    lane: Right
-    turn: 
+    type: 0
+    end: 0
   - beat: 22
-    type: Score
-    rotation: 0
-    lane: 
-    turn: 
-  audioClip: {fileID: 0}
-  BPM: 145
-  color1: {r: 1, g: 0, b: 0, a: 0}
+    type: 0
+    end: 0
+  - beat: 23
+    type: 0
+    end: 0
+  - beat: 26
+    type: 2
+    end: 2.010416
+  - beat: 28.010416
+    type: 2
+    end: 0
+  - beat: 30
+    type: 2
+    end: 2.010418
+  - beat: 32.010418
+    type: 2
+    end: 0
+  - beat: 34
+    type: 2
+    end: 2.010418
+  - beat: 36.010418
+    type: 2
+    end: 0
+  - beat: 38
+    type: 2
+    end: 2.010418
+  - beat: 40.010418
+    type: 2
+    end: 0
+  updates: []
+  projectiles: []
+  songTitle: test
+  FMODSongName: test
+  color1: {r: 1, g: 1, b: 1, a: 0}
   color2: {r: 1, g: 1, b: 1, a: 0}
+  pattern: {fileID: 11400000, guid: 936ad5056018970479b2581e4008d222, type: 2}

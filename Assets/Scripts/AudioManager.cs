@@ -16,13 +16,15 @@ public class AudioManager : MonoBehaviour
     public float secPerBeat;
     public float songPosition;
     public int songPositionInt, songPositionInBeats, prevSongPositionInBeats = 0;
-    public float songPositionInBeatsPrecise;
+    public float songPositionInBeatsPrecise, currentNoteBeat;
+    private bool isHolding;
+    private bool hitLastNote;
     
     private float noteOffset = 8f;
-    int spawnIndex, updateSpawnIndex, projectileSpawnIndex,bezierIndex = 0;
+    int spawnIndex, updateSpawnIndex, projectileSpawnIndex, bezierIndex = 0;
     int noteIndex = 0;
     bool validInput = true;
-    float timingThreshold = .15f;
+    float timingThreshold = .25f;
 
     public List<Song> songs = new List<Song>();
     public Song currentSong;
@@ -35,6 +37,7 @@ public class AudioManager : MonoBehaviour
     public float dspSongTime;
     FMOD.Studio.EventInstance eventInstance;
     public FMODUnity.EventReference NoteEvent;
+    public FMODUnity.EventReference TickEvent;
 
     public List<Note> beatMap;
     public List<Updates> updateMap;
@@ -91,6 +94,10 @@ public class AudioManager : MonoBehaviour
         songPositionInBeats = (int)songPositionInBeatsPrecise;
         //print(songPositionInBeatsPrecise);
 
+        if(noteIndex != beatMap.Count)
+        {
+            currentNoteBeat = beatMap[noteIndex].beat;
+        }
         if(spawnIndex != beatMap.Count)
         {
             note = beatMap[spawnIndex];
@@ -107,7 +114,7 @@ public class AudioManager : MonoBehaviour
         // alternative case for timing camera switches and visual updates
         if (updateSpawnIndex < updateMap.Count && updates.beat <= songPositionInBeatsPrecise)
         {
-            playerController.Switch(updates.state);
+            //playerController.Switch(updates.state);
             worm.SetPattern(updates.pattern.speed1, updates.pattern.speed2, updates.pattern.tiling_x1, updates.pattern.tiling_y1, updates.pattern.tiling_x2, updates.pattern.tiling_y2);
             worm.InitColor(updates.color1, updates.color2);
             if(updates.strobe.count != 0)
@@ -132,6 +139,52 @@ public class AudioManager : MonoBehaviour
             projectileSpawnIndex++;
         }
 
+        if(Input.GetButtonDown("Hit") && beatMap[noteIndex].type != 2)
+        {
+            float acc = Mathf.Abs(songPositionInBeatsPrecise - currentNoteBeat);
+            if (acc < timingThreshold)
+            {
+                if(beatMap[noteIndex].type == 1)
+                {
+                    isHolding = true;
+                }
+                HitNote();
+            }
+            else
+            {
+                MissNote();
+            }
+        }
+
+        if(Input.GetButtonUp("Hit") && isHolding)
+        {
+            float acc = Mathf.Abs(songPositionInBeatsPrecise - currentNoteBeat);
+            if (acc < timingThreshold)
+            {
+                HitNote();
+            }   
+            else
+            {
+                MissNote();
+            } 
+            isHolding = false;
+        }
+
+        if(songPositionInBeatsPrecise > (timingThreshold + currentNoteBeat))
+        {
+            if(!hitLastNote)
+            {
+                Debug.Log("miss");
+                MissNote();
+            }
+            hitLastNote = false;
+            if(noteIndex != beatMap.Count - 1)
+            {
+                noteIndex++;
+            }
+        }
+
+        /*
         if(Input.GetButtonDown("Hit"))
         {
             startHoldTime = songPositionInBeatsPrecise;
@@ -185,14 +238,16 @@ public class AudioManager : MonoBehaviour
             }
             noteIndex++;
         }
+        */
 
         // color pulsing to each beat
-        /*
         if(songPositionInBeats == prevSongPositionInBeats + 1)
         {
             prevSongPositionInBeats = songPositionInBeats;
-            worm.Flash(1f, 0f, secPerBeat);
-        }*/
+            FMODUnity.RuntimeManager.PlayOneShot(TickEvent, transform.position);
+            Debug.Log("tick");
+            //worm.Flash(1f, 0f, secPerBeat);
+        }
 
         // bezier curves
         /*
@@ -207,8 +262,8 @@ public class AudioManager : MonoBehaviour
     private void HitNote()
     {
         Debug.Log("HIT!");
+        hitLastNote = true;
         FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);
-        hitMap[noteIndex] = true;
         if(health < 1f) {
             health += .25f;
             //eventInstance.setParameterByName("Health", health);
@@ -217,6 +272,21 @@ public class AudioManager : MonoBehaviour
         streak += 1;
         if(streak % 5 == 0) {
             scoreRef.IncreaseCombo();
+        }
+        noteMaterial.DOColor(Color.white * 2, "_Wormhole_colour", 0);
+        playerMaterial.DOColor(Color.white * 10, "_Details_1_colour", 0);
+    }
+
+    private void MissNote()
+    {
+        if (health > 0) {
+            health -= .25f;
+            hitLastNote = false;
+            //eventInstance.setParameterByName("Health", health);
+            streak = 0;
+            scoreRef.ResetCombo();
+            noteMaterial.DOColor(Color.red * 2, "_Wormhole_colour", 0.1f);
+            playerMaterial.DOColor(Color.red * 10, "_Details_1_colour", 0.1f);
         }
     }
 }

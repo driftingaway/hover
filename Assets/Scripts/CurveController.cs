@@ -68,6 +68,7 @@ namespace AIEngineTest
             //camera.rotation = Quaternion.Euler(camera.eulerAngles.x, camera.eulerAngles.y, h*20);
         }
 
+        /*
         void Update()
         {
             v = Mathf.Lerp(minV, maxV, timeV);
@@ -93,7 +94,7 @@ namespace AIEngineTest
             }
 
             SetValues(h, v);
-        }
+        }*/
 
         public float straightDistance
         {
