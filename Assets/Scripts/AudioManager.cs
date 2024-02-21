@@ -18,13 +18,13 @@ public class AudioManager : MonoBehaviour
     public int songPositionInt, songPositionInBeats, prevSongPositionInBeats = 0;
     public float songPositionInBeatsPrecise, currentNoteBeat;
     private bool isHolding;
-    private bool hitLastNote;
+    private bool hitLastNote = false;
     
     private float noteOffset = 8f;
     int spawnIndex, updateSpawnIndex, projectileSpawnIndex, bezierIndex = 0;
     int noteIndex = 0;
     bool validInput = true;
-    float timingThreshold = .25f;
+    float timingThreshold; 
 
     public List<Song> songs = new List<Song>();
     public Song currentSong;
@@ -63,12 +63,12 @@ public class AudioManager : MonoBehaviour
         beatMap = currentSong.song;
         updateMap = currentSong.updates;
         projectileMap = currentSong.projectiles;
-        hitMap = new bool[currentSong.song.Count];
         timeSig = currentSong.timeSig;
         BPM = currentSong.BPM;
 
         //calculate how many seconds is one beat
         secPerBeat = 60f / BPM;
+        timingThreshold = 0.1f * (1/secPerBeat);
 
         //init wormhole color from song
         worm.InitColor(currentSong.color1, currentSong.color2);
@@ -159,6 +159,8 @@ public class AudioManager : MonoBehaviour
         if(Input.GetButtonUp("Hit") && isHolding)
         {
             float acc = Mathf.Abs(songPositionInBeatsPrecise - currentNoteBeat);
+            Debug.Log(acc);
+            Debug.Log(timingThreshold);
             if (acc < timingThreshold)
             {
                 HitNote();
@@ -170,18 +172,14 @@ public class AudioManager : MonoBehaviour
             isHolding = false;
         }
 
-        if(songPositionInBeatsPrecise > (timingThreshold + currentNoteBeat))
+        if(songPositionInBeatsPrecise > (timingThreshold + currentNoteBeat) && noteIndex != beatMap.Count - 1)
         {
             if(!hitLastNote)
             {
-                Debug.Log("miss");
                 MissNote();
             }
             hitLastNote = false;
-            if(noteIndex != beatMap.Count - 1)
-            {
-                noteIndex++;
-            }
+            noteIndex++;
         }
 
         /*
@@ -245,7 +243,6 @@ public class AudioManager : MonoBehaviour
         {
             prevSongPositionInBeats = songPositionInBeats;
             FMODUnity.RuntimeManager.PlayOneShot(TickEvent, transform.position);
-            Debug.Log("tick");
             //worm.Flash(1f, 0f, secPerBeat);
         }
 
@@ -261,8 +258,8 @@ public class AudioManager : MonoBehaviour
 
     private void HitNote()
     {
-        Debug.Log("HIT!");
         hitLastNote = true;
+        Debug.Log("HIT!");
         FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);
         if(health < 1f) {
             health += .25f;
@@ -279,9 +276,11 @@ public class AudioManager : MonoBehaviour
 
     private void MissNote()
     {
+        Debug.Log("MISS!");
         if (health > 0) {
-            health -= .25f;
+            isHolding = false;
             hitLastNote = false;
+            health -= .25f;
             //eventInstance.setParameterByName("Health", health);
             streak = 0;
             scoreRef.ResetCombo();

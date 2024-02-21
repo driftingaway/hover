@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 919dd825c62d6e34c83ce1e712909214, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: d8c0d4010f9416945912d97b9e581cf6, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,8 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: -0.40207323, g: -0.013533458, b: -0.011249747, a: 1}
+  m_IndirectSpecularColor: {r: 0.000103299164, g: 0.000084545325, b: 0.00008021791,
+    a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11032,7 +11033,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871126757}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 90, z: 0}
+  m_LocalPosition: {x: 0, y: 26.7, z: 0}
   m_LocalScale: {x: 0.01, y: 0.010000001, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11082,14 +11083,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876421726}
-  m_LocalRotation: {x: 0.1621205, y: 0, z: 0, w: 0.986771}
-  m_LocalPosition: {x: 0, y: 15, z: -13.24}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 10, z: -20}
   m_LocalScale: {x: 0.01, y: 0.010000001, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1887498119}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 18.66, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &876421728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11235,7 +11236,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031452239}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -11961,7 +11962,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: cc4cf81839e11d946a4ef6f53cf38ae7,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: cc4cf81839e11d946a4ef6f53cf38ae7,
         type: 3}
