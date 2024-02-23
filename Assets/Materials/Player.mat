@@ -87,6 +87,7 @@ Material:
     - _Details_scroll_speed: 0.6
     - _Details_tiling_vertical: 0
     - _Fresnel_power: 6
+    - _HorizontalCurve: 0.01
     - _Manual_time: 0
     - _Noise_colour_magnitude: 0.3
     - _Noise_magnitude: 0
@@ -104,9 +105,10 @@ Material:
     - _USE_DETAILS_1: 1
     - _USE_DETAILS_2: 1
     - _USE_MANUAL_TIME: 0
+    - _VerticalCurve: 0.01
     m_Colors:
     - _Colour: {r: 0.34117648, g: 0.854902, b: 0.9176471, a: 1}
-    - _Details_1_colour: {r: 10, g: 0, b: 0, a: 10}
+    - _Details_1_colour: {r: 10, g: 10, b: 10, a: 10}
     - _Details_1_tiling: {r: 1, g: 1, b: 0, a: 0}
     - _Details_2_colour: {r: 50, g: 50, b: 50, a: 0.95094794}
     - _Details_2_tiling: {r: 1, g: 2.32, b: 0, a: 0}

@@ -51,7 +51,9 @@ public class Strobe
     public float duration = 1;
     public float strength = 10;
 
-    public Strobe() {}
+    public Strobe(float strength) {
+        this.strength = strength;
+    }
     public Strobe(int count, float duration, float strength)
     {
         this.count = count;
@@ -80,6 +82,7 @@ public class Song : ScriptableObject
     public string FMODSongName = "Song";
     public Color color1, color2;
     public Pattern pattern;
+    public float lightingIntensity = 10f;
 
     public void generateLighting(string midiPath, int timeSig) {
         updates.Clear();
@@ -96,11 +99,11 @@ public class Song : ScriptableObject
 
             if (note.NoteName.ToString() == "F")
             {
-                updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(), "FLASH"));
+                updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(lightingIntensity), "FLASH"));
             } 
             if (note.NoteName.ToString() == "FSharp")
             {
-                updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(6,noteLength,25), "STROBE"));
+                updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(6,noteLength,lightingIntensity*2.5f), "STROBE"));
             } 
         }
     }

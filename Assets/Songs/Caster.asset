@@ -119,7 +119,7 @@ MonoBehaviour:
     type: 0
     end: 0
   - beat: 25
-    type: 2
+    type: 1
     end: 2
   - beat: 27
     type: 2
@@ -128,7 +128,7 @@ MonoBehaviour:
     type: 0
     end: 0
   - beat: 29
-    type: 2
+    type: 1
     end: 2
   - beat: 31
     type: 2
@@ -230,7 +230,7 @@ MonoBehaviour:
     type: 0
     end: 0
   - beat: 58
-    type: 2
+    type: 1
     end: 1
   - beat: 59
     type: 2
@@ -242,7 +242,7 @@ MonoBehaviour:
     type: 0
     end: 0
   - beat: 60
-    type: 2
+    type: 1
     end: 1
   - beat: 61
     type: 2
@@ -269,7 +269,7 @@ MonoBehaviour:
     type: 0
     end: 0
   - beat: 64
-    type: 2
+    type: 1
     end: 1
   - beat: 65
     type: 2
@@ -278,7 +278,7 @@ MonoBehaviour:
     type: 0
     end: 0
   - beat: 66
-    type: 2
+    type: 1
     end: 1
   - beat: 67
     type: 2
@@ -290,7 +290,7 @@ MonoBehaviour:
     type: 0
     end: 0
   - beat: 68
-    type: 2
+    type: 1
     end: 1
   - beat: 69
     type: 2
@@ -302,7 +302,7 @@ MonoBehaviour:
     type: 0
     end: 0
   - beat: 70
-    type: 2
+    type: 1
     end: 2
   - beat: 72
     type: 2
@@ -344,7 +344,7 @@ MonoBehaviour:
     type: 0
     end: 0
   - beat: 80
-    type: 2
+    type: 1
     end: 1
   - beat: 81
     type: 0
@@ -365,7 +365,7 @@ MonoBehaviour:
     type: 0
     end: 0
   - beat: 83.458336
-    type: 2
+    type: 1
     end: 0.5416641
   - beat: 84
     type: 2
@@ -380,7 +380,7 @@ MonoBehaviour:
     type: 0
     end: 0
   - beat: 85.458336
-    type: 2
+    type: 1
     end: 0.5416641
   - beat: 86
     type: 2
@@ -1751,3 +1751,4 @@ MonoBehaviour:
   color1: {r: 1, g: 0, b: 0, a: 1}
   color2: {r: 1, g: 1, b: 1, a: 1}
   pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+  lightingIntensity: 10
