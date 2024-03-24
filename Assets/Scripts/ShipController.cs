@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class ShipController : MonoBehaviour
 {
@@ -8,9 +9,11 @@ public class ShipController : MonoBehaviour
     public Camera trailingCam, overheadCam, backwardsCam;
     public float speed = 200f;
     public Rigidbody rb;
+    public RectTransform topBar, bottomBar;
 
     float rotationAmount = 100f;
     float horizontalInput;
+    private float defaultFOV;
 
     public enum State {Trailing, Overhead, Backwards};
     State state;
@@ -28,6 +31,7 @@ public class ShipController : MonoBehaviour
         speed = am.BPM;
         state = State.Trailing;
         chargeParticles = gameObject.GetComponentInChildren<ParticleSystem>();
+        ShipRotation();
     }
 
     // Update is called once per frame
@@ -92,5 +96,35 @@ public class ShipController : MonoBehaviour
             overheadCam.enabled = false;
             backwardsCam.enabled = true;
         }
+    }
+
+    public void ChangeFOV(float duration)
+    {
+        Sequence mySequence = DOTween.Sequence();
+        mySequence.Append(trailingCam.DOFieldOfView(155, duration));
+        mySequence.Append(trailingCam.DOFieldOfView(150, 0.1f));
+
+        Sequence mySequence2 = DOTween.Sequence();
+        mySequence2.Append(topBar.DOAnchorPosY(60, duration));
+        mySequence2.Append(topBar.DOAnchorPosY(100, 0.1f));
+
+        Sequence mySequence3 = DOTween.Sequence();
+        mySequence3.Append(bottomBar.DOAnchorPosY(-60, duration));
+        mySequence3.Append(bottomBar.DOAnchorPosY(-100, 0.1f));
+
+        mySequence.Play();
+        mySequence2.Play();
+        mySequence3.Play();
+    }
+
+    private void ShipRotation()
+    {
+        Sequence mySequence = DOTween.Sequence();
+        mySequence.Append(trailingCam.transform.DORotate(new Vector3(0, 0, 0), 20f));
+        mySequence.Append(trailingCam.transform.DORotate(new Vector3(0, 0, -35), 20f));
+        mySequence.Append(trailingCam.transform.DORotate(new Vector3(0, 0, 0), 20f));
+        mySequence.Append(trailingCam.transform.DORotate(new Vector3(0, 0, 35), 20f));
+        mySequence.Append(trailingCam.transform.DORotate(new Vector3(0, 0, 0), 20f));
+        mySequence.SetLoops(-1, LoopType.Yoyo);
     }
 }

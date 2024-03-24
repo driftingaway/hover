@@ -72,7 +72,7 @@ public class TileManager : MonoBehaviour
         lRend.endWidth = 3f;
         lRend.positionCount = 20;
         
-        float end = speed * speedMult * secPerBeat * note.end;
+        float end = speed * speedMult * secPerBeat * note.length;
         float increment = end / (lRend.positionCount - 1);
 
         for(int i = 0; i < lRend.positionCount; i++)

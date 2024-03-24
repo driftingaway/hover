@@ -12,13 +12,13 @@ public struct Note
 {
     public float beat;
     public int type;
-    public float end;
+    public float length;
 
-    public Note(float beat, int type, float end)
+    public Note(float beat, int type, float length)
     {
         this.beat = beat;
         this.type = type;
-        this.end = end;
+        this.length = length;
     }
 }
 

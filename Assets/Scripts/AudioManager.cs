@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public WormholeController worm;
     public TMP_Text text;
     public Midi2Text midi;
+    public Camera cam;
 
     public float BPM;
     public float secPerBeat;
@@ -71,8 +72,8 @@ public class AudioManager : MonoBehaviour
         timingThreshold = 0.1f * (1/secPerBeat);
 
         //init wormhole color from song
-        worm.InitColor(currentSong.color1, currentSong.color2);
-        worm.SetPattern(currentSong.pattern.speed1, currentSong.pattern.speed2, currentSong.pattern.tiling_x1, currentSong.pattern.tiling_y1, currentSong.pattern.tiling_x2, currentSong.pattern.tiling_y2);
+        //worm.InitColor(currentSong.color1, currentSong.color2);
+        //worm.SetPattern(currentSong.pattern.speed1, currentSong.pattern.speed2, currentSong.pattern.tiling_x1, currentSong.pattern.tiling_y1, currentSong.pattern.tiling_x2, currentSong.pattern.tiling_y2);
 
         //set song title
         text.SetText(currentSong.songTitle);
@@ -139,7 +140,7 @@ public class AudioManager : MonoBehaviour
             projectileSpawnIndex++;
         }
 
-        if(Input.GetButtonDown("Hit") && beatMap[noteIndex].type != 2)
+        if(Input.GetButtonDown("Hit") && !isHolding && beatMap[noteIndex].type != 2)
         {
             float acc = Mathf.Abs(songPositionInBeatsPrecise - currentNoteBeat);
             if (acc < timingThreshold)
@@ -147,6 +148,7 @@ public class AudioManager : MonoBehaviour
                 if(beatMap[noteIndex].type == 1)
                 {
                     isHolding = true;
+                    playerController.ChangeFOV(beatMap[noteIndex].length * secPerBeat);
                 }
                 HitNote();
             }
@@ -159,8 +161,8 @@ public class AudioManager : MonoBehaviour
         if(Input.GetButtonUp("Hit") && isHolding)
         {
             float acc = Mathf.Abs(songPositionInBeatsPrecise - currentNoteBeat);
-            Debug.Log(acc);
-            Debug.Log(timingThreshold);
+            //Debug.Log(acc);
+            //Debug.Log(timingThreshold);
             if (acc < timingThreshold)
             {
                 HitNote();
@@ -259,7 +261,7 @@ public class AudioManager : MonoBehaviour
     private void HitNote()
     {
         hitLastNote = true;
-        Debug.Log("HIT!");
+        //Debug.Log("HIT!");
         FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);
         if(health < 1f) {
             health += .25f;
@@ -270,13 +272,13 @@ public class AudioManager : MonoBehaviour
         if(streak % 5 == 0) {
             scoreRef.IncreaseCombo();
         }
-        noteMaterial.DOColor(Color.white * 2, "_Wormhole_colour", 0);
-        playerMaterial.DOColor(Color.white * 10, "_Details_1_colour", 0);
+        cam.DOShakeRotation(.15f, 2, 1, 45, true);
+        HitFlash(Color.white);
     }
 
     private void MissNote()
     {
-        Debug.Log("MISS!");
+        //Debug.Log("MISS!");
         if (health > 0) {
             isHolding = false;
             hitLastNote = false;
@@ -284,8 +286,15 @@ public class AudioManager : MonoBehaviour
             //eventInstance.setParameterByName("Health", health);
             streak = 0;
             scoreRef.ResetCombo();
-            noteMaterial.DOColor(Color.red * 2, "_Wormhole_colour", 0.1f);
-            playerMaterial.DOColor(Color.red * 10, "_Details_1_colour", 0.1f);
+            HitFlash(Color.red);
         }
+    }
+
+    private void HitFlash(Color color)
+    {
+        noteMaterial.DOColor(color * 10, "_Wormhole_colour", 0f);
+        playerMaterial.DOColor(color * 25, "_Details_1_colour", 0f);
+        noteMaterial.DOColor(color * 2, "_Wormhole_colour", 0.15f);
+        playerMaterial.DOColor(color * 10, "_Details_1_colour", 0.15f);
     }
 }
