@@ -1,0 +1,2358 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486308d83d1f68146b74a34747d44483, type: 3}
+  m_Name: hysteria
+  m_EditorClassIdentifier: 
+  midiPath: Assets/Audio/midi/hysteria.mid
+  BPM: 150
+  timeSig: 4
+  song:
+  - beat: 33.989582
+    type: 0
+    length: 0
+  - beat: 34.8125
+    type: 0
+    length: 0
+  - beat: 35.385418
+    type: 0
+    length: 0
+  - beat: 38.9375
+    type: 0
+    length: 0
+  - beat: 39.4375
+    type: 0
+    length: 0
+  - beat: 42.864582
+    type: 0
+    length: 0
+  - beat: 43.375
+    type: 0
+    length: 0
+  - beat: 46.84375
+    type: 0
+    length: 0
+  - beat: 47.333332
+    type: 0
+    length: 0
+  - beat: 51.989582
+    type: 1
+    length: 11.989586
+  - beat: 63.979168
+    type: 2
+    length: 0
+  - beat: 64
+    type: 0
+    length: 0
+  - beat: 65
+    type: 0
+    length: 0
+  - beat: 66
+    type: 0
+    length: 0
+  - beat: 67
+    type: 0
+    length: 0
+  - beat: 68
+    type: 0
+    length: 0
+  - beat: 69
+    type: 0
+    length: 0
+  - beat: 70
+    type: 0
+    length: 0
+  - beat: 70.552086
+    type: 0
+    length: 0
+  - beat: 71
+    type: 0
+    length: 0
+  - beat: 71.260414
+    type: 0
+    length: 0
+  - beat: 71.583336
+    type: 0
+    length: 0
+  - beat: 72
+    type: 0
+    length: 0
+  - beat: 73
+    type: 0
+    length: 0
+  - beat: 74
+    type: 0
+    length: 0
+  - beat: 75
+    type: 0
+    length: 0
+  - beat: 76
+    type: 0
+    length: 0
+  - beat: 77
+    type: 0
+    length: 0
+  - beat: 78
+    type: 1
+    length: 0.59375
+  - beat: 78.59375
+    type: 2
+    length: 0
+  - beat: 79
+    type: 0
+    length: 0
+  - beat: 79.3125
+    type: 0
+    length: 0
+  - beat: 79.71875
+    type: 0
+    length: 0
+  - beat: 80
+    type: 0
+    length: 0
+  - beat: 81
+    type: 0
+    length: 0
+  - beat: 82
+    type: 0
+    length: 0
+  - beat: 83
+    type: 0
+    length: 0
+  - beat: 84
+    type: 0
+    length: 0
+  - beat: 85
+    type: 0
+    length: 0
+  - beat: 86
+    type: 0
+    length: 0
+  - beat: 86.552086
+    type: 0
+    length: 0
+  - beat: 87
+    type: 0
+    length: 0
+  - beat: 87.260414
+    type: 0
+    length: 0
+  - beat: 87.583336
+    type: 0
+    length: 0
+  - beat: 88
+    type: 0
+    length: 0
+  - beat: 89
+    type: 0
+    length: 0
+  - beat: 90
+    type: 0
+    length: 0
+  - beat: 91
+    type: 0
+    length: 0
+  - beat: 92
+    type: 0
+    length: 0
+  - beat: 93
+    type: 0
+    length: 0
+  - beat: 96
+    type: 0
+    length: 0
+  - beat: 98
+    type: 0
+    length: 0
+  - beat: 100
+    type: 0
+    length: 0
+  - beat: 102
+    type: 0
+    length: 0
+  - beat: 102.416664
+    type: 0
+    length: 0
+  - beat: 102.864586
+    type: 0
+    length: 0
+  - beat: 103.166664
+    type: 0
+    length: 0
+  - beat: 103.5625
+    type: 0
+    length: 0
+  - beat: 104
+    type: 0
+    length: 0
+  - beat: 106
+    type: 0
+    length: 0
+  - beat: 108
+    type: 0
+    length: 0
+  - beat: 110
+    type: 1
+    length: 0.5625
+  - beat: 110.5625
+    type: 2
+    length: 0
+  - beat: 110.739586
+    type: 0
+    length: 0
+  - beat: 111.072914
+    type: 0
+    length: 0
+  - beat: 111.59375
+    type: 0
+    length: 0
+  - beat: 112
+    type: 0
+    length: 0
+  - beat: 113
+    type: 0
+    length: 0
+  - beat: 114
+    type: 0
+    length: 0
+  - beat: 115
+    type: 0
+    length: 0
+  - beat: 116
+    type: 0
+    length: 0
+  - beat: 117
+    type: 0
+    length: 0
+  - beat: 118
+    type: 0
+    length: 0
+  - beat: 119
+    type: 0
+    length: 0
+  - beat: 120
+    type: 0
+    length: 0
+  - beat: 120.5
+    type: 0
+    length: 0
+  - beat: 121
+    type: 0
+    length: 0
+  - beat: 121.5
+    type: 0
+    length: 0
+  - beat: 122
+    type: 0
+    length: 0
+  - beat: 122.489586
+    type: 0
+    length: 0
+  - beat: 123
+    type: 0
+    length: 0
+  - beat: 123.510414
+    type: 0
+    length: 0
+  - beat: 124
+    type: 1
+    length: 28.020828
+  - beat: 152.02083
+    type: 2
+    length: 0
+  updates:
+  - name: FLASH
+    beat: 33.989582
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.6770847
+      strength: 10
+  - name: FLASH
+    beat: 34.8125
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.5
+      strength: 10
+  - name: FLASH
+    beat: 35.385418
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.4999988
+      strength: 10
+  - name: FLASH
+    beat: 38.9375
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.48958325
+      strength: 10
+  - name: FLASH
+    beat: 39.4375
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 1.0520835
+      strength: 10
+  - name: FLASH
+    beat: 42.864582
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.45833468
+      strength: 10
+  - name: FLASH
+    beat: 43.375
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 1.09375
+      strength: 10
+  - name: FLASH
+    beat: 46.84375
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.46875
+      strength: 10
+  - name: FLASH
+    beat: 47.333332
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 16.218752
+      strength: 10
+  - name: FLASH
+    beat: 64
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.7291667
+      strength: 10
+  - name: FLASH
+    beat: 65
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.7291666
+      strength: 10
+  - name: FLASH
+    beat: 66
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.72916675
+      strength: 10
+  - name: FLASH
+    beat: 67
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.72916675
+      strength: 10
+  - name: FLASH
+    beat: 68
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.7291667
+      strength: 10
+  - name: FLASH
+    beat: 69
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.7291666
+      strength: 10
+  - name: FLASH
+    beat: 70
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.40625
+      strength: 10
+  - name: FLASH
+    beat: 70.552086
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.30208087
+      strength: 10
+  - name: FLASH
+    beat: 71
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.17708325
+      strength: 10
+  - name: FLASH
+    beat: 71.260414
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.17708588
+      strength: 10
+  - name: FLASH
+    beat: 71.583336
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.23958087
+      strength: 10
+  - name: FLASH
+    beat: 72
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8229167
+      strength: 10
+  - name: FLASH
+    beat: 73
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8229166
+      strength: 10
+  - name: FLASH
+    beat: 74
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.82291675
+      strength: 10
+  - name: FLASH
+    beat: 75
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.82291675
+      strength: 10
+  - name: FLASH
+    beat: 76
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8229167
+      strength: 10
+  - name: FLASH
+    beat: 77
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8229166
+      strength: 10
+  - name: FLASH
+    beat: 78
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.072916746
+      strength: 10
+  - name: FLASH
+    beat: 78.145836
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.07291412
+      strength: 10
+  - name: FLASH
+    beat: 78.28125
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.072916746
+      strength: 10
+  - name: FLASH
+    beat: 78.697914
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.18750262
+      strength: 10
+  - name: FLASH
+    beat: 79
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      strength: 10
+  - name: FLASH
+    beat: 79.3125
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.30208325
+      strength: 10
+  - name: FLASH
+    beat: 79.71875
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.22916675
+      strength: 10
+  - name: FLASH
+    beat: 80
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8125
+      strength: 10
+  - name: FLASH
+    beat: 81
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8125
+      strength: 10
+  - name: FLASH
+    beat: 82
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8125
+      strength: 10
+  - name: FLASH
+    beat: 83
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8125
+      strength: 10
+  - name: FLASH
+    beat: 84
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8125
+      strength: 10
+  - name: FLASH
+    beat: 85
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8125
+      strength: 10
+  - name: FLASH
+    beat: 86
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.40625
+      strength: 10
+  - name: FLASH
+    beat: 86.552086
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.30208087
+      strength: 10
+  - name: FLASH
+    beat: 87
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.17708325
+      strength: 10
+  - name: FLASH
+    beat: 87.260414
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.17708588
+      strength: 10
+  - name: FLASH
+    beat: 87.583336
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.23958087
+      strength: 10
+  - name: FLASH
+    beat: 88
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8229167
+      strength: 10
+  - name: FLASH
+    beat: 89
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8229166
+      strength: 10
+  - name: FLASH
+    beat: 90
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.82291675
+      strength: 10
+  - name: FLASH
+    beat: 91
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.82291675
+      strength: 10
+  - name: FLASH
+    beat: 92
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8229167
+      strength: 10
+  - name: FLASH
+    beat: 93
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8229166
+      strength: 10
+  - name: FLASH
+    beat: 94
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.82291675
+      strength: 10
+  - name: FLASH
+    beat: 95
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.82291675
+      strength: 10
+  - name: FLASH
+    beat: 96
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.7916667
+      strength: 10
+  - name: FLASH
+    beat: 97
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.7395834
+      strength: 10
+  - name: FLASH
+    beat: 98
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.79166675
+      strength: 10
+  - name: FLASH
+    beat: 99
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.73958325
+      strength: 10
+  - name: FLASH
+    beat: 100
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.7916667
+      strength: 10
+  - name: FLASH
+    beat: 101
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.7395834
+      strength: 10
+  - name: FLASH
+    beat: 102
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.22916675
+      strength: 10
+  - name: FLASH
+    beat: 102.416664
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.22916913
+      strength: 10
+  - name: FLASH
+    beat: 102.864586
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.22916412
+      strength: 10
+  - name: FLASH
+    beat: 103.166664
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.22916913
+      strength: 10
+  - name: FLASH
+    beat: 103.5625
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.22916675
+      strength: 10
+  - name: FLASH
+    beat: 104
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8541667
+      strength: 10
+  - name: FLASH
+    beat: 105
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8020834
+      strength: 10
+  - name: FLASH
+    beat: 106
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.85416675
+      strength: 10
+  - name: FLASH
+    beat: 107
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.80208325
+      strength: 10
+  - name: FLASH
+    beat: 108
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8541667
+      strength: 10
+  - name: FLASH
+    beat: 109
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8020834
+      strength: 10
+  - name: FLASH
+    beat: 110
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.114583254
+      strength: 10
+  - name: FLASH
+    beat: 110.177086
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.11458087
+      strength: 10
+  - name: FLASH
+    beat: 110.34375
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.114583254
+      strength: 10
+  - name: FLASH
+    beat: 110.739586
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.22916412
+      strength: 10
+  - name: FLASH
+    beat: 111.072914
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.27083588
+      strength: 10
+  - name: FLASH
+    beat: 111.59375
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.27083325
+      strength: 10
+  - name: FLASH
+    beat: 112
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8229167
+      strength: 10
+  - name: FLASH
+    beat: 113
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8229166
+      strength: 10
+  - name: FLASH
+    beat: 114
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.82291675
+      strength: 10
+  - name: FLASH
+    beat: 115
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.82291675
+      strength: 10
+  - name: FLASH
+    beat: 116
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8229167
+      strength: 10
+  - name: FLASH
+    beat: 117
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.8229166
+      strength: 10
+  - name: FLASH
+    beat: 118
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.82291675
+      strength: 10
+  - name: FLASH
+    beat: 119
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.82291675
+      strength: 10
+  - name: FLASH
+    beat: 120
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.27083334
+      strength: 10
+  - name: FLASH
+    beat: 120.5
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.2708333
+      strength: 10
+  - name: FLASH
+    beat: 121
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.27083337
+      strength: 10
+  - name: FLASH
+    beat: 121.5
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.27083337
+      strength: 10
+  - name: FLASH
+    beat: 122
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.27083325
+      strength: 10
+  - name: FLASH
+    beat: 122.489586
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.27083087
+      strength: 10
+  - name: FLASH
+    beat: 123
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.27083325
+      strength: 10
+  - name: FLASH
+    beat: 123.510414
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.27083588
+      strength: 10
+  - name: STROBE
+    beat: 124
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 12
+      duration: 3.84375
+      strength: 10
+  - name: STROBE
+    beat: 128
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 96
+      duration: 24.010416
+      strength: 10
+  - name: FLASH
+    beat: 156
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 157
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 158
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 159
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 160
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: STROBE
+    beat: 161
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 20
+      duration: 5
+      strength: 10
+  - name: FLASH
+    beat: 166
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 166.5
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 167.25
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 168
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: STROBE
+    beat: 169
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 20
+      duration: 5.010417
+      strength: 10
+  - name: FLASH
+    beat: 174
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 174.26042
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.0416615
+      strength: 10
+  - name: FLASH
+    beat: 174.33333
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.041671753
+      strength: 10
+  - name: FLASH
+    beat: 174.41667
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.0416615
+      strength: 10
+  - name: FLASH
+    beat: 174.54167
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.218745
+      strength: 10
+  - name: FLASH
+    beat: 175.08333
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.250005
+      strength: 10
+  - name: FLASH
+    beat: 175.625
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      strength: 10
+  - name: FLASH
+    beat: 176
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: STROBE
+    beat: 177
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 20
+      duration: 5
+      strength: 10
+  - name: FLASH
+    beat: 182
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 182.5
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 183.25
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 184
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: STROBE
+    beat: 185
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 16
+      duration: 4.4375
+      strength: 10
+  - name: FLASH
+    beat: 189.5
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 189.76042
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.062494874
+      strength: 10
+  - name: FLASH
+    beat: 189.85417
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.062494874
+      strength: 10
+  - name: FLASH
+    beat: 190
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 190.26042
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.0416615
+      strength: 10
+  - name: FLASH
+    beat: 190.33333
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.041671753
+      strength: 10
+  - name: FLASH
+    beat: 190.41667
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.0416615
+      strength: 10
+  - name: FLASH
+    beat: 190.60417
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.187495
+      strength: 10
+  - name: FLASH
+    beat: 190.82292
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.14582825
+      strength: 10
+  - name: FLASH
+    beat: 191
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.19791675
+      strength: 10
+  - name: FLASH
+    beat: 191.26042
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.249995
+      strength: 10
+  - name: FLASH
+    beat: 192
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      strength: 10
+  - name: FLASH
+    beat: 193
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20833337
+      strength: 10
+  - name: FLASH
+    beat: 193.25
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 193.5
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 193.76042
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20832825
+      strength: 10
+  - name: FLASH
+    beat: 194
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      strength: 10
+  - name: FLASH
+    beat: 195
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20833325
+      strength: 10
+  - name: FLASH
+    beat: 195.25
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 195.5
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 195.76042
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20832825
+      strength: 10
+  - name: FLASH
+    beat: 196
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      strength: 10
+  - name: FLASH
+    beat: 197
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20833337
+      strength: 10
+  - name: FLASH
+    beat: 197.25
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 197.5
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 197.76042
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20832825
+      strength: 10
+  - name: FLASH
+    beat: 198
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      strength: 10
+  - name: FLASH
+    beat: 198.625
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 199
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20833325
+      strength: 10
+  - name: FLASH
+    beat: 199.5
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 200
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      strength: 10
+  - name: FLASH
+    beat: 201
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20833337
+      strength: 10
+  - name: FLASH
+    beat: 201.25
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 201.5
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 201.76042
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20832825
+      strength: 10
+  - name: FLASH
+    beat: 202
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      strength: 10
+  - name: FLASH
+    beat: 203
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20833325
+      strength: 10
+  - name: FLASH
+    beat: 203.25
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 203.5
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 203.76042
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20832825
+      strength: 10
+  - name: FLASH
+    beat: 204
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      strength: 10
+  - name: FLASH
+    beat: 205
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20833337
+      strength: 10
+  - name: FLASH
+    beat: 205.25
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 205.5
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 205.76042
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20832825
+      strength: 10
+  - name: FLASH
+    beat: 206
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.09375
+      strength: 10
+  - name: FLASH
+    beat: 206.15625
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.083333254
+      strength: 10
+  - name: FLASH
+    beat: 206.3125
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.072916746
+      strength: 10
+  - name: FLASH
+    beat: 206.5625
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.26041675
+      strength: 10
+  - name: FLASH
+    beat: 207.08333
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.2083385
+      strength: 10
+  - name: FLASH
+    beat: 207.53125
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 208
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      strength: 10
+  - name: FLASH
+    beat: 209
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20833337
+      strength: 10
+  - name: FLASH
+    beat: 209.25
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 209.5
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 209.76042
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20832825
+      strength: 10
+  - name: FLASH
+    beat: 210
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      strength: 10
+  - name: FLASH
+    beat: 211
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20833325
+      strength: 10
+  - name: FLASH
+    beat: 211.25
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 211.5
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 211.76042
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20832825
+      strength: 10
+  - name: FLASH
+    beat: 212
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      strength: 10
+  - name: FLASH
+    beat: 213
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20833337
+      strength: 10
+  - name: FLASH
+    beat: 213.25
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 213.5
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 213.76042
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20832825
+      strength: 10
+  - name: FLASH
+    beat: 214
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      strength: 10
+  - name: FLASH
+    beat: 214.67708
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.218755
+      strength: 10
+  - name: FLASH
+    beat: 215
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20833325
+      strength: 10
+  - name: FLASH
+    beat: 215.5
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 216
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      strength: 10
+  - name: FLASH
+    beat: 217
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20833337
+      strength: 10
+  - name: FLASH
+    beat: 217.25
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 217.5
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 217.76042
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20832825
+      strength: 10
+  - name: FLASH
+    beat: 218
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      strength: 10
+  - name: FLASH
+    beat: 219
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20833325
+      strength: 10
+  - name: FLASH
+    beat: 219.25
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 219.5
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 219.76042
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20832825
+      strength: 10
+  - name: FLASH
+    beat: 220
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      strength: 10
+  - name: FLASH
+    beat: 220.63542
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21874493
+      strength: 10
+  - name: FLASH
+    beat: 221.28125
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 222
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.09375
+      strength: 10
+  - name: FLASH
+    beat: 222.15625
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.083333254
+      strength: 10
+  - name: FLASH
+    beat: 222.3125
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.072916746
+      strength: 10
+  - name: FLASH
+    beat: 222.5625
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.26041675
+      strength: 10
+  - name: FLASH
+    beat: 223.08333
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.2083385
+      strength: 10
+  - name: FLASH
+    beat: 223.53125
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.21875
+      strength: 10
+  - name: FLASH
+    beat: 224
+    state: 0
+    color1: {r: 1, g: 0, b: 0, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+    strobe:
+      count: 1
+      duration: 0.7291667
+      strength: 10
+  projectiles: []
+  songTitle: Hysteria
+  FMODSongName: Hysteria
+  color1: {r: 1, g: 0, b: 0, a: 1}
+  color2: {r: 1, g: 1, b: 1, a: 1}
+  pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
+  lightingIntensity: 10

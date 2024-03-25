@@ -22,7 +22,7 @@ public class Midi2Text : MonoBehaviour
     }
 
     public List<Note> readMidi(string midiPath, int timeSig) {
-        if(midiPath == "") { return new List<Note>{new Note(0, 0, 0)}; }
+        if(midiPath == "") { return new List<Note>{new Note(0, 0, 0, 0)}; }
 
         MidiFile midi = MidiFile.Read(midiPath);
         IEnumerable<Melanchall.DryWetMidi.Interaction.Note> notes = midi.GetNotes();
@@ -36,14 +36,49 @@ public class Midi2Text : MonoBehaviour
             float fixedEndTime = timeSig * endTime.Bars + (float)endTime.Beats;
             float noteLength = fixedEndTime - fixedStartTime;
 
-            if (note.NoteName.ToString() == "C" || note.NoteName.ToString() == "A")
+            if (note.NoteName.ToString() == "C")
             {
-                retNotes.Add(new Note(fixedStartTime, 0, 0));
+                retNotes.Add(new Note(fixedStartTime, 0, 0, 0));
             } 
-            else if (note.NoteName.ToString() == "CSharp" || note.NoteName.ToString() == "ASharp")
+            else if (note.NoteName.ToString() == "CSharp")
             {
-                retNotes.Add(new Note(fixedStartTime, 1, noteLength));
-                retNotes.Add(new Note(fixedEndTime, 2, 0));
+                retNotes.Add(new Note(fixedStartTime, 1, noteLength, 0));
+                retNotes.Add(new Note(fixedEndTime, 2, 0, 0));
+            } 
+            else if (note.NoteName.ToString() == "G")
+            {
+                retNotes.Add(new Note(fixedStartTime, 3, noteLength, -15));
+                retNotes.Add(new Note(fixedStartTime, 3, noteLength, 0));
+                retNotes.Add(new Note(fixedStartTime, 3, noteLength, 15));
+                retNotes.Add(new Note(fixedStartTime, 3, noteLength, 30));
+            } 
+            else if (note.NoteName.ToString() == "GSharp")
+            {
+                retNotes.Add(new Note(fixedStartTime, 3, noteLength, -30));
+                retNotes.Add(new Note(fixedStartTime, 3, noteLength, 0));
+                retNotes.Add(new Note(fixedStartTime, 3, noteLength, 15));
+                retNotes.Add(new Note(fixedStartTime, 3, noteLength, 30));
+            } 
+            else if (note.NoteName.ToString() == "A")
+            {
+                retNotes.Add(new Note(fixedStartTime, 3, noteLength, -30));
+                retNotes.Add(new Note(fixedStartTime, 3, noteLength, -15));
+                retNotes.Add(new Note(fixedStartTime, 3, noteLength, 15));
+                retNotes.Add(new Note(fixedStartTime, 3, noteLength, 30));
+            } 
+            else if (note.NoteName.ToString() == "ASharp")
+            {
+                retNotes.Add(new Note(fixedStartTime, 3, noteLength, -30));
+                retNotes.Add(new Note(fixedStartTime, 3, noteLength, -15));
+                retNotes.Add(new Note(fixedStartTime, 3, noteLength, 0));
+                retNotes.Add(new Note(fixedStartTime, 3, noteLength, 30));
+            } 
+            else if (note.NoteName.ToString() == "B")
+            {
+                retNotes.Add(new Note(fixedStartTime, 3, noteLength, -30));
+                retNotes.Add(new Note(fixedStartTime, 3, noteLength, -15));
+                retNotes.Add(new Note(fixedStartTime, 3, noteLength, 0));
+                retNotes.Add(new Note(fixedStartTime, 3, noteLength, 15));
             } 
         }
 

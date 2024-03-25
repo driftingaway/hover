@@ -48,7 +48,7 @@ public class TileManager : MonoBehaviour
 
     public void SpawnNote(Note note)
     {
-        GameObject newTile = Instantiate(tiles[note.type], new Vector3(0f, 0f, 0f) + (transform.forward * 60f * 8f * speedMult), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
+        GameObject newTile = Instantiate(tiles[note.type], new Vector3(note.xPos, 0f, 0f) + (transform.forward * 60f * 8f * speedMult), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
         if(note.type == 1)
         {
             SpawnLine(newTile, note);
@@ -56,7 +56,7 @@ public class TileManager : MonoBehaviour
         newTile.transform.parent = instObjects.transform;
         activeTiles.Add(newTile);
 
-        if(activeTiles.Count > 50)
+        if(activeTiles.Count > 5000)
         {
             Destroy(activeTiles[0]);
             activeTiles.RemoveAt(0);
@@ -70,7 +70,7 @@ public class TileManager : MonoBehaviour
         lRend.useWorldSpace = false;
         lRend.startWidth = 3f;
         lRend.endWidth = 3f;
-        lRend.positionCount = 20;
+        lRend.positionCount = 1000;
         
         float end = speed * speedMult * secPerBeat * note.length;
         float increment = end / (lRend.positionCount - 1);

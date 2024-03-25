@@ -13,12 +13,14 @@ public struct Note
     public float beat;
     public int type;
     public float length;
+    public float xPos;
 
-    public Note(float beat, int type, float length)
+    public Note(float beat, int type, float length, float xPos)
     {
         this.beat = beat;
         this.type = type;
         this.length = length;
+        this.xPos = xPos;
     }
 }
 
@@ -51,14 +53,11 @@ public class Strobe
     public float duration = 1;
     public float strength = 10;
 
-    public Strobe(float strength) {
-        this.strength = strength;
-    }
-    public Strobe(int count, float duration, float strength)
+    public Strobe(float strength, float duration, int count)
     {
-        this.count = count;
-        this.duration = duration;
         this.strength = strength;
+        this.duration = duration;
+        this.count = count;
     }
 }
 
@@ -99,12 +98,16 @@ public class Song : ScriptableObject
 
             if (note.NoteName.ToString() == "F")
             {
-                updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(lightingIntensity), "FLASH"));
+                updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(lightingIntensity, noteLength, 1), "FLASH"));
             } 
             if (note.NoteName.ToString() == "FSharp")
             {
-                updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(6,noteLength,lightingIntensity*2.5f), "STROBE"));
-            } 
+                updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(lightingIntensity, noteLength, 4*(int)noteLength), "STROBE"));
+            }
+            if (note.NoteName.ToString() == "D")
+            {
+                updates.Add(new Updates(fixedStartTime, 1, color1, color2, pattern, new Strobe(lightingIntensity, noteLength, 4*(int)noteLength), "OVERDRIVE"));
+            }
         }
     }
 }
