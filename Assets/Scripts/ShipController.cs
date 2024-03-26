@@ -10,6 +10,7 @@ public class ShipController : MonoBehaviour
     public float speed = 200f;
     public Rigidbody rb;
     public HUDController HUD;
+    public CurveController curve;
 
     float horizontalInput;
     private float defaultFOV;
@@ -70,7 +71,7 @@ public class ShipController : MonoBehaviour
                 {
                     lane = Ideology.Right;
                 }
-                SwitchLane(lane);
+                SwitchLane(lane, .2f);
             }
 
             if(Input.GetKeyDown(KeyCode.D))
@@ -91,32 +92,32 @@ public class ShipController : MonoBehaviour
                 {
                     lane = Ideology.FarRight;
                 }
-                SwitchLane(lane);
+                SwitchLane(lane, .2f);
             }
         }
     }
 
-    private void SwitchLane(Ideology lane)
+    private void SwitchLane(Ideology lane, float duration)
     {
         if(lane == Ideology.FarLeft)
         {
-            rb.DOMoveX(-30, .2f);
+            rb.DOMoveX(-30, duration);
         }
         else if(lane == Ideology.Left)
         {
-            rb.DOMoveX(-15, .2f);
+            rb.DOMoveX(-15, duration);
         }
         else if(lane == Ideology.Center)
         {
-            rb.DOMoveX(0, .2f);
+            rb.DOMoveX(0, duration);
         }
         else if(lane == Ideology.Right)
         {
-            rb.DOMoveX(15, .2f);
+            rb.DOMoveX(15, duration);
         }
         else if(lane == Ideology.FarRight)
         {
-            rb.DOMoveX(30, .2f);
+            rb.DOMoveX(30, duration);
         }
     }
 
@@ -128,21 +129,27 @@ public class ShipController : MonoBehaviour
             borders.SetActive(true);
             floor.SetActive(true);
             HUD.ChangeFOV(155, duration);
-            HUD.BlackBars(40, duration);
+            HUD.BlackBars(50, duration);
             HUD.rotateSeq.Kill();
-            cam.transform.DORotate(new Vector3(0, 0, 0), duration);
-            cam.transform.DOMove(new Vector3(0, 15f, -16.3f), duration);
+            cam.transform.DORotate(new Vector3(50, 0, 0), duration);
+            cam.transform.DOMove(new Vector3(0, 8f, -6f), duration);
+            curve.SetValues(.2f, duration);
             overdriveParticles.Play();
+            am.HitFlash(Color.white);
         }
         else if(state == State.Overdrive)
         {
             state = State.Trailing;
-            lane = Ideology.Center;
-            SwitchLane(lane);
             borders.SetActive(false);
+            floor.SetActive(false);
             HUD.ChangeFOV(150, duration);
             HUD.BlackBars(100, duration);
-            HUD.RotateCamera();
+            cam.transform.DORotate(new Vector3(0, 0, 0), duration).OnComplete(() => HUD.RotateCamera());
+            cam.transform.DOMove(new Vector3(0, 4.5f, -8.15f), duration);
+            lane = Ideology.Center;
+            SwitchLane(lane, duration);
+            curve.SetValues(.8f, duration);
+            overdriveParticles.Stop();
         }
     }
 }

@@ -246,7 +246,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void HitFlash(Color color)
+    public void HitFlash(Color color)
     {
         noteMaterial.DOColor(color * 10, "_Wormhole_colour", 0f);
         playerMaterial.DOColor(color * 25, "_Details_1_colour", 0f);
