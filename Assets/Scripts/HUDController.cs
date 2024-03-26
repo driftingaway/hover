@@ -7,7 +7,7 @@ public class HUDController : MonoBehaviour
 {
     public RectTransform topBar, bottomBar;
     public Camera cam;
-    private Sequence mySequence, mySequence2, fovSequence;
+    public Sequence barSequence, barSequence2, fovSequence, rotateSeq;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,20 +22,20 @@ public class HUDController : MonoBehaviour
 
     public void BlackBars(float size, float duration)
     {
-        if(mySequence != null)
+        if(barSequence != null)
         {
-            mySequence.Kill();
-            mySequence2.Kill();
+            barSequence.Kill();
+            barSequence2.Kill();
         }
 
-        mySequence = DOTween.Sequence();
-        mySequence2 = DOTween.Sequence();
+        barSequence = DOTween.Sequence();
+        barSequence2 = DOTween.Sequence();
 
-        mySequence.Append(topBar.DOAnchorPosY(size, duration));
-        mySequence2.Append(bottomBar.DOAnchorPosY(-size, duration));
+        barSequence.Append(topBar.DOAnchorPosY(size, duration));
+        barSequence2.Append(bottomBar.DOAnchorPosY(-size, duration));
 
-        mySequence.Play();
-        mySequence2.Play();
+        barSequence.Play();
+        barSequence2.Play();
     }
 
     public void ChangeFOV(float fov, float duration)
@@ -47,5 +47,20 @@ public class HUDController : MonoBehaviour
         fovSequence = DOTween.Sequence();
         fovSequence.Append(cam.DOFieldOfView(fov, duration));
         fovSequence.Play();
+    }
+
+    public void RotateCamera()
+    {
+        if(rotateSeq != null)
+        {
+            rotateSeq.Kill();
+        }
+        rotateSeq = DOTween.Sequence();
+        rotateSeq.Append(cam.transform.DORotate(new Vector3(0, 0, 0), 20f));
+        rotateSeq.Append(cam.transform.DORotate(new Vector3(0, 0, -35), 20f));
+        rotateSeq.Append(cam.transform.DORotate(new Vector3(0, 0, 0), 20f));
+        rotateSeq.Append(cam.transform.DORotate(new Vector3(0, 0, 35), 20f));
+        rotateSeq.Append(cam.transform.DORotate(new Vector3(0, 0, 0), 20f));
+        rotateSeq.SetLoops(-1, LoopType.Yoyo);
     }
 }

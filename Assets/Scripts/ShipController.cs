@@ -23,11 +23,13 @@ public class ShipController : MonoBehaviour
     Quaternion targetRotation, overheadTargetRotation;
 
     public bool charging = false;
-    public ParticleSystem chargeParticles;
+    public ParticleSystem overdriveParticles;
     public GameObject borders;
 
     private Sequence shipRotSeq;
     public CameraShake cameraShake;
+    private float od;
+    public GameObject floor;
 
     // Start is called before the first frame update
     void Start()
@@ -35,9 +37,9 @@ public class ShipController : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
         speed = am.BPM;
         state = State.Trailing;
-        chargeParticles = gameObject.GetComponentInChildren<ParticleSystem>();
         lane = Ideology.Center;
-        ShipRotation();
+        od = overdriveParticles.main.startLifetime.constant;
+        HUD.RotateCamera();
     }
 
     // Update is called once per frame
@@ -48,14 +50,6 @@ public class ShipController : MonoBehaviour
 
     void Update()
     {
-        if(charging)
-        {
-            chargeParticles.Play();
-        }
-        else
-        {
-            chargeParticles.Stop();
-        }
         if(state == State.Overdrive)
         {
             if(Input.GetKeyDown(KeyCode.A))
@@ -102,21 +96,6 @@ public class ShipController : MonoBehaviour
         }
     }
 
-    private void ShipRotation()
-    {
-        if(shipRotSeq != null)
-        {
-            shipRotSeq.Kill();
-        }
-        shipRotSeq = DOTween.Sequence();
-        shipRotSeq.Append(cam.transform.DORotate(new Vector3(0, 0, 0), 20f));
-        shipRotSeq.Append(cam.transform.DORotate(new Vector3(0, 0, -35), 20f));
-        shipRotSeq.Append(cam.transform.DORotate(new Vector3(0, 0, 0), 20f));
-        shipRotSeq.Append(cam.transform.DORotate(new Vector3(0, 0, 35), 20f));
-        shipRotSeq.Append(cam.transform.DORotate(new Vector3(0, 0, 0), 20f));
-        shipRotSeq.SetLoops(-1, LoopType.Yoyo);
-    }
-
     private void SwitchLane(Ideology lane)
     {
         if(lane == Ideology.FarLeft)
@@ -143,15 +122,17 @@ public class ShipController : MonoBehaviour
 
     public void OverdriveChange(float duration)
     {
-        Debug.Log("OVERDRIVE!");
         if(state == State.Trailing)
         {
             state = State.Overdrive;
             borders.SetActive(true);
+            floor.SetActive(true);
             HUD.ChangeFOV(155, duration);
             HUD.BlackBars(40, duration);
-            shipRotSeq.Kill();
+            HUD.rotateSeq.Kill();
             cam.transform.DORotate(new Vector3(0, 0, 0), duration);
+            cam.transform.DOMove(new Vector3(0, 15f, -16.3f), duration);
+            overdriveParticles.Play();
         }
         else if(state == State.Overdrive)
         {
@@ -161,7 +142,7 @@ public class ShipController : MonoBehaviour
             borders.SetActive(false);
             HUD.ChangeFOV(150, duration);
             HUD.BlackBars(100, duration);
-            ShipRotation();
+            HUD.RotateCamera();
         }
     }
 }
