@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine;
 using DG.Tweening;
 
@@ -8,10 +10,12 @@ public class HUDController : MonoBehaviour
     public RectTransform topBar, bottomBar;
     public Camera cam;
     public Sequence barSequence, barSequence2, fovSequence, rotateSeq;
+    public CanvasGroup canvas;
+    public GameObject invertColor;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -56,11 +60,23 @@ public class HUDController : MonoBehaviour
             rotateSeq.Kill();
         }
         rotateSeq = DOTween.Sequence();
-        rotateSeq.Append(cam.transform.DORotate(new Vector3(0, 0, 0), 20f));
-        rotateSeq.Append(cam.transform.DORotate(new Vector3(0, 0, -35), 20f));
-        rotateSeq.Append(cam.transform.DORotate(new Vector3(0, 0, 0), 20f));
-        rotateSeq.Append(cam.transform.DORotate(new Vector3(0, 0, 35), 20f));
-        rotateSeq.Append(cam.transform.DORotate(new Vector3(0, 0, 0), 20f));
+        rotateSeq.Append(cam.transform.DORotate(new Vector3(-12, 0, -20), 1.3f));
+        rotateSeq.Append(cam.transform.DORotate(new Vector3(-12, 0, -25), 1.1f));
+        rotateSeq.Append(cam.transform.DORotate(new Vector3(-12, 0, -20), 1.7f));
+        rotateSeq.Append(cam.transform.DORotate(new Vector3(-12, 0, -15), 1.2f));
+        rotateSeq.Append(cam.transform.DORotate(new Vector3(-12, 0, -25), 1.5f));
         rotateSeq.SetLoops(-1, LoopType.Yoyo);
     }
+
+    public IEnumerator ImpactFrame()
+    {
+        invertColor.SetActive(true);
+        yield return new WaitForSeconds(0.02f);
+        invertColor.SetActive(false);
+        yield return new WaitForSeconds(0.02f);
+        invertColor.SetActive(true);
+        yield return new WaitForSeconds(0.02f);
+        invertColor.SetActive(false);
+    }
+
 }

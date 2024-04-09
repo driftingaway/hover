@@ -223,8 +223,8 @@ public class AudioManager : MonoBehaviour
         if(streak % 5 == 0) {
             scoreRef.IncreaseCombo();
         }
-        cam.DOShakeRotation(.15f, 2, 1, 45, true);
-        HitFlash(Color.white);
+        cam.DOShakeRotation(.15f, 3, 3, 45, true);
+        HitFlash(Color.white, .15f);
     }
 
     private void MissNote()
@@ -239,18 +239,19 @@ public class AudioManager : MonoBehaviour
             scoreRef.ResetCombo();
             if(shipController.state != ShipController.State.Overdrive)
             {
-                HitFlash(Color.red);
+                HitFlash(Color.red, 0.5f);
             }
             HUD.ChangeFOV(150, .1f);
             HUD.BlackBars(100, .1f);
         }
     }
 
-    public void HitFlash(Color color)
+    public void HitFlash(Color color, float length)
     {
-        noteMaterial.DOColor(color * 10, "_Wormhole_colour", 0f);
-        playerMaterial.DOColor(color * 25, "_Details_1_colour", 0f);
-        noteMaterial.DOColor(color * 2, "_Wormhole_colour", 0.15f);
-        playerMaterial.DOColor(color * 10, "_Details_1_colour", 0.15f);
+        StartCoroutine(HUD.ImpactFrame());
+        noteMaterial.DOColor(color * currentSong.lightingIntensity, "_Wormhole_colour", 0f);
+        playerMaterial.DOColor(color * currentSong.lightingIntensity, "_Details_1_colour", 0f);
+        noteMaterial.DOColor(Color.white * 5, "_Wormhole_colour", length);
+        playerMaterial.DOColor(Color.white * 10, "_Details_1_colour", length);
     }
 }

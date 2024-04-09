@@ -46,11 +46,12 @@ public class ShipController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
+        transform.Rotate(Vector3.back * horizontalInput * 100f * Time.fixedDeltaTime);
     }
 
     void Update()
     {
+        horizontalInput = Input.GetAxis("Horizontal");
         if(state == State.Overdrive)
         {
             if(Input.GetKeyDown(KeyCode.A))
@@ -130,12 +131,12 @@ public class ShipController : MonoBehaviour
             floor.SetActive(true);
             HUD.ChangeFOV(155, duration);
             HUD.BlackBars(50, duration);
-            HUD.rotateSeq.Kill();
+            //HUD.rotateSeq.Kill();
             cam.transform.DORotate(new Vector3(50, 0, 0), duration);
             cam.transform.DOMove(new Vector3(0, 8f, -6f), duration);
             curve.SetValues(.2f, duration);
             overdriveParticles.Play();
-            am.HitFlash(Color.white);
+            am.HitFlash(Color.white, .15f);
         }
         else if(state == State.Overdrive)
         {
