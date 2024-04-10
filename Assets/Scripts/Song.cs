@@ -51,11 +51,13 @@ public class Strobe
 {
     public int count = 1;
     public float duration = 1;
-    public float strength = 10;
+    public float startIntensity = 10;
+    public float endIntensity = 0;
 
-    public Strobe(float strength, float duration, int count)
+    public Strobe(float startIntensity, float endIntensity, float duration, int count)
     {
-        this.strength = strength;
+        this.startIntensity = startIntensity;
+        this.endIntensity = endIntensity;
         this.duration = duration;
         this.count = count;
     }
@@ -81,7 +83,8 @@ public class Song : ScriptableObject
     public string FMODSongName = "Song";
     public Color color1, color2;
     public Pattern pattern;
-    public float lightingIntensity = 10f;
+    public float startIntensity = 10f;
+    public float endIntensity = 0f;
 
     public void generateLighting(string midiPath, int timeSig) {
         updates.Clear();
@@ -98,15 +101,15 @@ public class Song : ScriptableObject
 
             if (note.NoteName.ToString() == "F")
             {
-                updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(lightingIntensity, noteLength, 1), "FLASH"));
+                updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 1), "FLASH"));
             } 
             if (note.NoteName.ToString() == "FSharp")
             {
-                updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(lightingIntensity, noteLength, 4*(int)noteLength), "STROBE"));
+                updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, (int)noteLength), "STROBE"));
             }
             if (note.NoteName.ToString() == "D")
             {
-                updates.Add(new Updates(fixedStartTime, 1, color1, color2, pattern, new Strobe(lightingIntensity, noteLength, 4*(int)noteLength), "OVERDRIVE"));
+                updates.Add(new Updates(fixedStartTime, 1, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 4*(int)noteLength), "OVERDRIVE"));
             }
         }
     }

@@ -55,6 +55,7 @@ public class AudioManager : MonoBehaviour
     public ScoreManager scoreRef;
     public Material noteMaterial;
     public Material playerMaterial;
+    public ParticleSystem shield;
 
     void Start()
     {
@@ -124,7 +125,7 @@ public class AudioManager : MonoBehaviour
             worm.InitColor(updates.color1, updates.color2);
             if(updates.strobe.count != 0)
             {
-                worm.Strobe(updates.strobe.count, updates.strobe.duration*secPerBeat, updates.strobe.strength);
+                worm.Strobe(updates.strobe.count, updates.strobe.duration*secPerBeat, updates.strobe.startIntensity, updates.strobe.endIntensity);
             }
             updateSpawnIndex++;
         }
@@ -248,9 +249,10 @@ public class AudioManager : MonoBehaviour
 
     public void HitFlash(Color color, float length)
     {
-        StartCoroutine(HUD.ImpactFrame());
-        noteMaterial.DOColor(color * currentSong.lightingIntensity, "_Wormhole_colour", 0f);
-        playerMaterial.DOColor(color * currentSong.lightingIntensity, "_Details_1_colour", 0f);
+        //StartCoroutine(HUD.ImpactFrame());
+        shield.Play();
+        noteMaterial.DOColor(color * currentSong.startIntensity, "_Wormhole_colour", 0f);
+        playerMaterial.DOColor(color * currentSong.startIntensity, "_Details_1_colour", 0f);
         noteMaterial.DOColor(Color.white * 5, "_Wormhole_colour", length);
         playerMaterial.DOColor(Color.white * 10, "_Details_1_colour", length);
     }

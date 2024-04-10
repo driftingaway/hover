@@ -71,11 +71,7 @@ public class HUDController : MonoBehaviour
     public IEnumerator ImpactFrame()
     {
         invertColor.SetActive(true);
-        yield return new WaitForSeconds(0.02f);
-        invertColor.SetActive(false);
-        yield return new WaitForSeconds(0.02f);
-        invertColor.SetActive(true);
-        yield return new WaitForSeconds(0.02f);
+        yield return new WaitForSeconds(0.03f);
         invertColor.SetActive(false);
     }
 

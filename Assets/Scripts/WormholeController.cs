@@ -18,17 +18,17 @@ public class WormholeController : MonoBehaviour
         worm.SetVector("_Details_2_tiling", new Vector2(tiling_x1, tiling_y1));
     }
 
-    public void Strobe(int count, float duration, float strength)
+    public void Strobe(int count, float duration, float startIntensity, float endIntensity)
     {
         float fixedDuration = duration / count;
 
         Sequence mySequence = DOTween.Sequence();
-        mySequence.Append(worm.DOFade(strength, "_Details_1_colour", 0));
-        mySequence.Append(worm.DOFade(-strength, "_Details_1_colour", fixedDuration));
+        mySequence.Append(worm.DOFade(startIntensity, "_Details_1_colour", 0));
+        mySequence.Append(worm.DOFade(endIntensity, "_Details_1_colour", fixedDuration));
 
         Sequence mySequence2 = DOTween.Sequence();
-        mySequence2.Append(worm.DOFade(strength, "_Details_2_colour", 0));
-        mySequence2.Append(worm.DOFade(-strength, "_Details_2_colour", fixedDuration));
+        mySequence2.Append(worm.DOFade(startIntensity, "_Details_2_colour", 0));
+        mySequence2.Append(worm.DOFade(endIntensity, "_Details_2_colour", fixedDuration));
 
         mySequence.SetLoops(count, LoopType.Restart);
         mySequence2.SetLoops(count, LoopType.Restart);
