@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Wormhole Material
-  m_Shader: {fileID: -6465566751694194690, guid: 35a387bd7d6b1ed4890f385540c35273,
+  m_Name: Player 1
+  m_Shader: {fileID: -6465566751694194690, guid: 5b38e2a35b24dba4ab1a2e7113ee27ad,
     type: 3}
   m_ValidKeywords:
   - _USE_DETAILS_1
@@ -73,17 +73,17 @@ Material:
     - _Ambient_colour_magnitude: 0.35
     - _Details_1_distortion_density: 11.99
     - _Details_1_distortion_frequency: 0.1
-    - _Details_1_distortion_jaggedness: 8.6
-    - _Details_1_distortion_jiggle_speed: 0.237
-    - _Details_1_distortion_magnitude: 0.0206
+    - _Details_1_distortion_jaggedness: 1.2
+    - _Details_1_distortion_jiggle_speed: 0.266
+    - _Details_1_distortion_magnitude: 0.0263
     - _Details_1_intensity: 0.8
-    - _Details_1_scroll_speed: 1
+    - _Details_1_scroll_speed: 1.0375432
     - _Details_2_distortion_frequency: 0.1
     - _Details_2_distortion_jaggedness: 10
-    - _Details_2_distortion_jiggle_speed: 0.729
-    - _Details_2_distortion_magnitude: 0.065
-    - _Details_2_distortion_wobblyness: 13.34
-    - _Details_2_scroll_speed: 1
+    - _Details_2_distortion_jiggle_speed: 0.69
+    - _Details_2_distortion_magnitude: 0.0719
+    - _Details_2_distortion_wobblyness: 14.5
+    - _Details_2_scroll_speed: 1.0375432
     - _Details_scroll_speed: 0.6
     - _Details_tiling_vertical: 0
     - _Fresnel_power: 6
@@ -108,11 +108,11 @@ Material:
     - _VerticalCurve: 0.01
     m_Colors:
     - _Colour: {r: 0.34117648, g: 0.854902, b: 0.9176471, a: 1}
-    - _Details_1_colour: {r: 5, g: 0, b: 0, a: 0}
-    - _Details_1_tiling: {r: 10, g: 0.5, b: 0, a: 0}
-    - _Details_2_colour: {r: 5, g: 5, b: 5, a: 0}
-    - _Details_2_tiling: {r: 10, g: 0.5, b: 0, a: 0}
+    - _Details_1_colour: {r: 10, g: 10, b: 10, a: 10}
+    - _Details_1_tiling: {r: 1, g: 1, b: 0, a: 0}
+    - _Details_2_colour: {r: 50, g: 50, b: 50, a: 0.95094794}
+    - _Details_2_tiling: {r: 1, g: 2.32, b: 0, a: 0}
     - _Details_colour: {r: 0.7924528, g: 0.20558919, b: 0.20558919, a: 1}
-    - _Noise_tiling: {r: 1, g: 1, b: 0, a: 0}
+    - _Noise_tiling: {r: 3, g: 1, b: 0, a: 0}
     - _Wormhole_colour: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
