@@ -46,7 +46,7 @@ public class ShipController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.Rotate(Vector3.back * horizontalInput * 100f * Time.fixedDeltaTime);
+        transform.Rotate(Vector3.back * -horizontalInput * 100f * Time.fixedDeltaTime);
     }
 
     void Update()
@@ -134,7 +134,7 @@ public class ShipController : MonoBehaviour
             //HUD.rotateSeq.Kill();
             cam.transform.DORotate(new Vector3(50, 0, 0), duration);
             cam.transform.DOMove(new Vector3(0, 8f, -6f), duration);
-            curve.SetValues(.2f, duration);
+            curve.SetValues(.2f, .2f, duration);
             overdriveParticles.Play();
             am.HitFlash(Color.white, .15f);
         }
@@ -149,7 +149,7 @@ public class ShipController : MonoBehaviour
             cam.transform.DOMove(new Vector3(0, 4.5f, -8.15f), duration);
             lane = Ideology.Center;
             SwitchLane(lane, duration);
-            curve.SetValues(.8f, duration);
+            curve.SetValues(.8f, .8f, duration);
             overdriveParticles.Stop();
         }
     }

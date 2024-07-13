@@ -20,12 +20,12 @@ RenderSettings:
   m_FogDensity: 1
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 1024, g: 1024, b: 1024, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_AmbientMode: 3
+  m_SubtractiveShadowColor: {r: 0.5164827, g: 0.57856745, b: 0.735849, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: d8c0d4010f9416945912d97b9e581cf6, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -5190,6 +5190,7 @@ MonoBehaviour:
   cam: {fileID: 876421730}
   canvas: {fileID: 1960867279}
   invertColor: {fileID: 1310162141}
+  songTitle: {fileID: 641031014}
 --- !u!1 &434063791
 GameObject:
   m_ObjectHideFlags: 0
@@ -10051,9 +10052,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f4f6d045086fd2847b5a022fb3a72479, type: 2}
   - {fileID: 11400000, guid: f62f6a40284d1eb4f908ee5705c98c6b, type: 2}
   - {fileID: 11400000, guid: e4739c4f365068e46a24ea9e7aa55bf5, type: 2}
+  - {fileID: 11400000, guid: f9b9ed85979ee074f8e19fb3c6c832df, type: 2}
   - {fileID: 11400000, guid: 7d7c47647f033bd4a94ef51aaeb3c2f0, type: 2}
   - {fileID: 11400000, guid: c683ffda49740be4691ad594ca7f7559, type: 2}
-  - {fileID: 11400000, guid: f9b9ed85979ee074f8e19fb3c6c832df, type: 2}
   - {fileID: 11400000, guid: 89ef961aa01938d4da89e0007c8e34b4, type: 2}
   - {fileID: 11400000, guid: 9dbb0731d1d6b8c42b79bec880e2e86a, type: 2}
   - {fileID: 11400000, guid: 468f884090622cf439c97a573bf770b5, type: 2}
@@ -10082,7 +10083,7 @@ MonoBehaviour:
   updateMap: []
   projectileMap: []
   startBeat: 0
-  speedMult: 4
+  speedMult: 3
   scoreRef: {fileID: 1417051559}
   noteMaterial: {fileID: 2100000, guid: 74c2c7c3ef9290b43911e09249f7b7e4, type: 2}
   playerMaterial: {fileID: 2100000, guid: 269c20e617408034f82837862a76fee5, type: 2}
@@ -10350,17 +10351,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 641031014}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -47.96}
+  m_LocalRotation: {x: -0.10452837, y: 0, z: 0, w: 0.9945219}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 140291567}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -12, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.5199995, y: -8.5}
+  m_AnchoredPosition: {x: 8, y: 7.54}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &649810521
@@ -15880,7 +15881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1031452241
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16454,8 +16455,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_StraightDistance: 0
-  m_VerticalCurvature: 0.9
-  m_HorizontalCurvature: 0
+  m_VerticalCurvature: 1
+  m_HorizontalCurvature: 0.3
   horizontalSpeed: 7
   verticalSpeed: 10
   minH: -0.1

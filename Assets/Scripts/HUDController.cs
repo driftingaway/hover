@@ -12,6 +12,7 @@ public class HUDController : MonoBehaviour
     public Sequence barSequence, barSequence2, fovSequence, rotateSeq;
     public CanvasGroup canvas;
     public GameObject invertColor;
+    public GameObject songTitle;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +74,11 @@ public class HUDController : MonoBehaviour
         invertColor.SetActive(true);
         yield return new WaitForSeconds(0.03f);
         invertColor.SetActive(false);
+    }
+
+    public void ClearSongTitle()
+    {
+        songTitle.SetActive(false);
     }
 
 }

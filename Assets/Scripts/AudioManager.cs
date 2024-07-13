@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour
     public float songPositionInBeatsPrecise, currentNoteBeat;
     private bool isHolding;
     private bool hitLastNote = false;
+    private bool notCleared = true;
     
     private float noteOffset = 8f;
     int spawnIndex, updateSpawnIndex, projectileSpawnIndex, bezierIndex = 0;
@@ -208,11 +209,17 @@ public class AudioManager : MonoBehaviour
             tileManager.Bezier(pos, duration);
             bezierIndex++;
         }*/
+
+        if(notCleared && songPositionInBeatsPrecise >= currentNoteBeat - 1) {
+            HUD.ClearSongTitle();
+            notCleared = false;
+        }
     }
 
     private void HitNote()
     {
         hitLastNote = true;
+        shield.Play();
         //Debug.Log("HIT!");
         FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);
         if(health < 1f) {
@@ -224,7 +231,7 @@ public class AudioManager : MonoBehaviour
         if(streak % 5 == 0) {
             scoreRef.IncreaseCombo();
         }
-        cam.DOShakeRotation(.15f, 3, 3, 45, true);
+        //cam.DOShakeRotation(.15f, 1, 1, 25, true);
         HitFlash(Color.white, .15f);
     }
 
@@ -250,7 +257,6 @@ public class AudioManager : MonoBehaviour
     public void HitFlash(Color color, float length)
     {
         //StartCoroutine(HUD.ImpactFrame());
-        shield.Play();
         noteMaterial.DOColor(color * currentSong.startIntensity, "_Wormhole_colour", 0f);
         playerMaterial.DOColor(color * currentSong.startIntensity, "_Details_1_colour", 0f);
         noteMaterial.DOColor(Color.white * 5, "_Wormhole_colour", length);

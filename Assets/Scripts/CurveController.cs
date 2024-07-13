@@ -60,9 +60,9 @@ public class CurveController : MonoBehaviour
         verticalCurvature = m_VerticalCurvature;
     }
 
-    public void SetValues(float v, float duration)
+    public void SetValues(float h, float v, float duration)
     {
-        //horizontalCurvature = h;
+        DOTween.To(() => horizontalCurvature, x => horizontalCurvature = x, h, duration);
         DOTween.To(() => verticalCurvature, x => verticalCurvature = x, v, duration);
     }
 
