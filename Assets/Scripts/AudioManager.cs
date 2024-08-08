@@ -21,7 +21,6 @@ public class AudioManager : MonoBehaviour
     public float songPositionInBeatsPrecise, currentNoteBeat;
     private bool isHolding;
     private bool hitLastNote = false;
-    private bool notCleared = true;
     
     private float noteOffset = 8f;
     int spawnIndex, updateSpawnIndex, projectileSpawnIndex, bezierIndex = 0;
@@ -123,6 +122,14 @@ public class AudioManager : MonoBehaviour
             {
                 shipController.OverdriveChange(updates.strobe.duration*secPerBeat);
             }
+            if(updates.state == 2)
+            {
+                worm.SceneTransition();
+            }
+            if(updates.state == 3)
+            {
+                StartCoroutine(HUD.TitleDrop(updates.strobe.duration*secPerBeat));
+            }
             worm.SetPattern(updates.pattern.speed1, updates.pattern.speed2, updates.pattern.tiling_x1, updates.pattern.tiling_y1, updates.pattern.tiling_x2, updates.pattern.tiling_y2);
             worm.InitColor(updates.color1, updates.color2);
             if(updates.strobe.count != 0)
@@ -210,11 +217,6 @@ public class AudioManager : MonoBehaviour
             tileManager.Bezier(pos, duration);
             bezierIndex++;
         }*/
-
-        if(notCleared && songPositionInBeatsPrecise >= currentNoteBeat - 1) {
-            HUD.ClearSongTitle();
-            notCleared = false;
-        }
     }
 
     private void HitNote()

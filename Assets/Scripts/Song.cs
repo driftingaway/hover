@@ -27,14 +27,13 @@ public struct Note
 [System.Serializable]
 public struct Updates
 {
-    public string name;
     public float beat;
     public int state;
     public Color color1, color2;
     public Pattern pattern;
     public Strobe strobe;
 
-    public Updates(float beat, int state, Color color1, Color color2, Pattern pattern, Strobe strobe, string name)
+    public Updates(float beat, int state, Color color1, Color color2, Pattern pattern, Strobe strobe)
     {
         this.beat = beat;
         this.state = state;
@@ -42,7 +41,6 @@ public struct Updates
         this.color2 = color2;
         this.pattern = pattern;
         this.strobe = strobe;
-        this.name = name;
     }
 }
 
@@ -102,15 +100,23 @@ public class Song : ScriptableObject
 
             if (note.NoteName.ToString() == "F")
             {
-                updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 1), "FLASH"));
+                updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 1)));
             } 
             if (note.NoteName.ToString() == "FSharp")
             {
-                updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, (int)noteLength), "STROBE"));
+                updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, (int)noteLength)));
             }
             if (note.NoteName.ToString() == "D")
             {
-                updates.Add(new Updates(fixedStartTime, 1, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 4*(int)noteLength), "OVERDRIVE"));
+                updates.Add(new Updates(fixedStartTime, 1, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 4*(int)noteLength)));
+            }
+            if (note.NoteName.ToString() == "DSharp")
+            {
+                updates.Add(new Updates(fixedStartTime, 2, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 1)));
+            }
+            if (note.NoteName.ToString() == "E")
+            {
+                updates.Add(new Updates(fixedStartTime, 3, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 1)));
             }
         }
     }

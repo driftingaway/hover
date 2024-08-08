@@ -1081,8 +1081,7 @@ MonoBehaviour:
     length: 0
     xPos: 0
   updates:
-  - name: FLASH
-    beat: 0
+  - beat: 0
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1090,10 +1089,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.5
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 1
+  - beat: 1
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1101,10 +1099,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.5
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 2
+  - beat: 2
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1112,10 +1109,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.5
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 3
+  - beat: 3
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1123,10 +1119,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.5
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 4
+  - beat: 4
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1134,10 +1129,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.5
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 5
+  - beat: 5
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1145,10 +1139,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.5
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 6
+  - beat: 6
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1156,10 +1149,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.5
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 7
+  - beat: 7
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1167,10 +1159,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.5
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 8
+  - beat: 8
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1178,10 +1169,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.5
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 9
+  - beat: 9
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1189,10 +1179,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.5
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 10
+  - beat: 10
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1200,10 +1189,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.5
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 11
+  - beat: 11
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1211,10 +1199,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.5
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 12
+  - beat: 12
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1222,10 +1209,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.5
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 13
+  - beat: 13
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1233,10 +1219,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.5
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 14
+  - beat: 14
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1244,10 +1229,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.5
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 15
+  - beat: 15
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1255,10 +1239,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.5
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 16
+  - beat: 16
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1266,10 +1249,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 16.5
+  - beat: 16.5
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1277,10 +1259,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 17
+  - beat: 17
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1288,10 +1269,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 17.5
+  - beat: 17.5
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1299,10 +1279,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 18
+  - beat: 18
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1310,10 +1289,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 18.5
+  - beat: 18.5
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1321,10 +1299,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 19
+  - beat: 19
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1332,10 +1309,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 19.5
+  - beat: 19.5
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1343,10 +1319,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 20
+  - beat: 20
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1354,10 +1329,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 20.5
+  - beat: 20.5
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1365,10 +1339,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 21
+  - beat: 21
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1376,10 +1349,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 21.5
+  - beat: 21.5
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1387,10 +1359,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 22
+  - beat: 22
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1398,10 +1369,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 22.5
+  - beat: 22.5
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1409,10 +1379,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 23
+  - beat: 23
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1420,10 +1389,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 23.5
+  - beat: 23.5
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1431,10 +1399,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 24
+  - beat: 24
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1442,10 +1409,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 24.5
+  - beat: 24.5
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1453,10 +1419,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 25
+  - beat: 25
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1464,10 +1429,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 25.5
+  - beat: 25.5
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1475,10 +1439,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 26
+  - beat: 26
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1486,10 +1449,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 26.5
+  - beat: 26.5
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1497,10 +1459,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 27
+  - beat: 27
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1508,10 +1469,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 27.5
+  - beat: 27.5
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1519,10 +1479,9 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: STROBE
-    beat: 32
+  - beat: 32
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1530,10 +1489,9 @@ MonoBehaviour:
     strobe:
       count: 256
       duration: 256
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
-  - name: FLASH
-    beat: 288
+  - beat: 288
     state: 0
     color1: {r: 0, g: 0.9515178, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
@@ -1541,7 +1499,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 1
-      startIntensity: 10
+      startIntensity: 2
       endIntensity: 0
   projectiles: []
   songTitle: On
@@ -1549,5 +1507,6 @@ MonoBehaviour:
   color1: {r: 0, g: 0.9515178, b: 1, a: 1}
   color2: {r: 1, g: 1, b: 1, a: 1}
   pattern: {fileID: 11400000, guid: 48e538af490546d40ac1a2b2764b7b18, type: 2}
-  startIntensity: 10
+  startIntensity: 2
   endIntensity: 0
+  noteSpeed: 2

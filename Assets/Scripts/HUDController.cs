@@ -77,10 +77,12 @@ public class HUDController : MonoBehaviour
         invertColor.SetActive(false);
     }
 
-    public void ClearSongTitle()
+    public IEnumerator TitleDrop(float duration)
     {
+        songTitle.SetActive(true);
+        worm.SetActive(false);
+        yield return new WaitForSeconds(duration);
         songTitle.SetActive(false);
         worm.SetActive(true);
     }
-
 }
