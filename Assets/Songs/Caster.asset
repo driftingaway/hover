@@ -1954,3 +1954,4 @@ MonoBehaviour:
   pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
   startIntensity: 10
   endIntensity: 0
+  noteSpeed: 8

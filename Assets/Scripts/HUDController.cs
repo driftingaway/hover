@@ -13,6 +13,7 @@ public class HUDController : MonoBehaviour
     public CanvasGroup canvas;
     public GameObject invertColor;
     public GameObject songTitle;
+    public GameObject worm;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,11 +62,11 @@ public class HUDController : MonoBehaviour
             rotateSeq.Kill();
         }
         rotateSeq = DOTween.Sequence();
-        rotateSeq.Append(cam.transform.DORotate(new Vector3(-12, 0, -20), 1.3f));
-        rotateSeq.Append(cam.transform.DORotate(new Vector3(-12, 0, -25), 1.1f));
-        rotateSeq.Append(cam.transform.DORotate(new Vector3(-12, 0, -20), 1.7f));
-        rotateSeq.Append(cam.transform.DORotate(new Vector3(-12, 0, -15), 1.2f));
-        rotateSeq.Append(cam.transform.DORotate(new Vector3(-12, 0, -25), 1.5f));
+        rotateSeq.Append(cam.transform.DORotate(new Vector3(0, 0, -20), 1.3f));
+        rotateSeq.Append(cam.transform.DORotate(new Vector3(0, 0, -25), 1.1f));
+        rotateSeq.Append(cam.transform.DORotate(new Vector3(0, 0, -20), 1.7f));
+        rotateSeq.Append(cam.transform.DORotate(new Vector3(0, 0, -15), 1.2f));
+        rotateSeq.Append(cam.transform.DORotate(new Vector3(0, 0, -25), 1.5f));
         rotateSeq.SetLoops(-1, LoopType.Yoyo);
     }
 
@@ -79,6 +80,7 @@ public class HUDController : MonoBehaviour
     public void ClearSongTitle()
     {
         songTitle.SetActive(false);
+        worm.SetActive(true);
     }
 
 }

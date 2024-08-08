@@ -69,6 +69,7 @@ public class AudioManager : MonoBehaviour
         projectileMap = currentSong.projectiles;
         timeSig = currentSong.timeSig;
         BPM = currentSong.BPM;
+        speedMult = currentSong.noteSpeed;
 
         //calculate how many seconds is one beat
         secPerBeat = 60f / BPM;
@@ -219,9 +220,9 @@ public class AudioManager : MonoBehaviour
     private void HitNote()
     {
         hitLastNote = true;
-        shield.Play();
-        //Debug.Log("HIT!");
         FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);
+        shield.Play();
+        Debug.Log("HIT!");
         if(health < 1f) {
             health += .25f;
             //eventInstance.setParameterByName("Health", health);

@@ -85,6 +85,7 @@ public class Song : ScriptableObject
     public Pattern pattern;
     public float startIntensity = 10f;
     public float endIntensity = 0f;
+    public float noteSpeed = 2f;
 
     public void generateLighting(string midiPath, int timeSig) {
         updates.Clear();

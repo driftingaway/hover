@@ -2506,3 +2506,4 @@ MonoBehaviour:
   pattern: {fileID: 11400000, guid: d99d5b9efb3ae6240a2956cb67c5dbd8, type: 2}
   startIntensity: 50
   endIntensity: -20
+  noteSpeed: 8
