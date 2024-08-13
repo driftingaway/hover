@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 486308d83d1f68146b74a34747d44483, type: 3}
   m_Name: Interluden
   m_EditorClassIdentifier: 
-  midiPath: Assets/Audio/midi/Interluden_short.mid
+  midiPath: Assets/Audio/midi/Interluden.mid
   BPM: 100
   timeSig: 4
   song:
@@ -28,90 +28,26 @@ MonoBehaviour:
     type: 2
     length: 0
     xPos: 0
-  - beat: 11.5
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 11.5
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 11.5
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 11.5
-    type: 3
-    length: 0.25
-    xPos: 30
   - beat: 12
     type: 0
     length: 0
     xPos: 0
   - beat: 13
     type: 1
-    length: 1
+    length: 2
     xPos: 0
-  - beat: 14
+  - beat: 15
     type: 2
     length: 0
     xPos: 0
-  - beat: 14
-    type: 3
-    length: 1
-    xPos: -30
-  - beat: 14
-    type: 3
-    length: 1
-    xPos: -15
-  - beat: 14
-    type: 3
-    length: 1
-    xPos: 0
-  - beat: 14
-    type: 3
-    length: 1
-    xPos: 30
-  - beat: 15
+  - beat: 15.333333
     type: 0
     length: 0
     xPos: 0
-  - beat: 15.25
-    type: 3
-    length: 0.25
-    xPos: 30
-  - beat: 15.25
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 15.25
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 15.25
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 15.5
+  - beat: 15.666667
     type: 0
     length: 0
     xPos: 0
-  - beat: 15.75
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 15.75
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 15.75
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 15.75
-    type: 3
-    length: 0.25
-    xPos: 30
   - beat: 16
     type: 0
     length: 0
@@ -121,25 +57,9 @@ MonoBehaviour:
     length: 2.5
     xPos: 0
   - beat: 19.5
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 19.5
     type: 2
     length: 0
     xPos: 0
-  - beat: 19.5
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 19.5
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 19.5
-    type: 3
-    length: 0.25
-    xPos: 30
   - beat: 20
     type: 0
     length: 0
@@ -157,21 +77,13 @@ MonoBehaviour:
     length: 0
     xPos: 0
   - beat: 27
-    type: 3
-    length: 1
-    xPos: -30
-  - beat: 27
-    type: 3
-    length: 1
-    xPos: -15
-  - beat: 27
-    type: 3
+    type: 1
     length: 1
     xPos: 0
-  - beat: 27
-    type: 3
-    length: 1
-    xPos: 30
+  - beat: 28
+    type: 2
+    length: 0
+    xPos: 0
   - beat: 28
     type: 0
     length: 0
@@ -185,93 +97,33 @@ MonoBehaviour:
     length: 0
     xPos: 0
   - beat: 31
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 31
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 31
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 31
-    type: 3
-    length: 0.25
-    xPos: 30
+    type: 0
+    length: 0
+    xPos: 0
   - beat: 31.25
-    type: 3
-    length: 0.25
-    xPos: 30
-  - beat: 31.25
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 31.25
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 31.25
-    type: 3
-    length: 0.25
-    xPos: -30
+    type: 0
+    length: 0
+    xPos: 0
   - beat: 31.5
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 31.5
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 31.5
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 31.5
-    type: 3
-    length: 0.25
-    xPos: 30
+    type: 0
+    length: 0
+    xPos: 0
   - beat: 32
     type: 0
     length: 0
     xPos: 0
   - beat: 33
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 33
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 33
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 33
-    type: 3
-    length: 0.25
-    xPos: 30
+    type: 0
+    length: 0
+    xPos: 0
   - beat: 34
     type: 0
     length: 0
     xPos: 0
   - beat: 35
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 35
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 35
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 35
-    type: 3
-    length: 0.25
-    xPos: 30
+    type: 0
+    length: 0
+    xPos: 0
   - beat: 36
     type: 0
     length: 0
@@ -281,57 +133,17 @@ MonoBehaviour:
     length: 0
     xPos: 0
   - beat: 38
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 38
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 38
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 38
-    type: 3
-    length: 0.25
-    xPos: 30
+    type: 0
+    length: 0
+    xPos: 0
   - beat: 39
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 39
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 39
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 39
-    type: 3
-    length: 0.25
-    xPos: 30
+    type: 0
+    length: 0
+    xPos: 0
   - beat: 40
     type: 1
     length: 3.010418
     xPos: 0
-  - beat: 43
-    type: 3
-    length: 0.26041794
-    xPos: -30
-  - beat: 43
-    type: 3
-    length: 0.26041794
-    xPos: -15
-  - beat: 43
-    type: 3
-    length: 0.26041794
-    xPos: 15
-  - beat: 43
-    type: 3
-    length: 0.26041794
-    xPos: 30
   - beat: 43.010418
     type: 2
     length: 0
@@ -340,22 +152,6 @@ MonoBehaviour:
     type: 1
     length: 3.010418
     xPos: 0
-  - beat: 47
-    type: 3
-    length: 0.26041794
-    xPos: -30
-  - beat: 47
-    type: 3
-    length: 0.26041794
-    xPos: -15
-  - beat: 47
-    type: 3
-    length: 0.26041794
-    xPos: 15
-  - beat: 47
-    type: 3
-    length: 0.26041794
-    xPos: 30
   - beat: 47.010418
     type: 2
     length: 0
@@ -365,42 +161,26 @@ MonoBehaviour:
     length: 0
     xPos: 0
   - beat: 48
-    type: 3
-    length: 3.010418
-    xPos: -30
-  - beat: 48
-    type: 3
-    length: 3.010418
-    xPos: -15
-  - beat: 48
-    type: 3
+    type: 1
     length: 3.010418
     xPos: 0
-  - beat: 48
-    type: 3
-    length: 3.010418
-    xPos: 30
-  - beat: 51
-    type: 0
+  - beat: 51.010418
+    type: 2
     length: 0
     xPos: 0
   - beat: 52
-    type: 3
-    length: 1.0104179
-    xPos: -30
-  - beat: 52
-    type: 3
-    length: 1.0104179
-    xPos: -15
-  - beat: 52
-    type: 3
+    type: 1
     length: 1.0104179
     xPos: 0
-  - beat: 52
-    type: 3
-    length: 1.0104179
-    xPos: 30
-  - beat: 53
+  - beat: 53.010418
+    type: 2
+    length: 0
+    xPos: 0
+  - beat: 53.333332
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 53.666668
     type: 0
     length: 0
     xPos: 0
@@ -408,22 +188,6 @@ MonoBehaviour:
     type: 1
     length: 1.0104179
     xPos: 0
-  - beat: 55
-    type: 3
-    length: 0.26041794
-    xPos: -30
-  - beat: 55
-    type: 3
-    length: 0.26041794
-    xPos: -15
-  - beat: 55
-    type: 3
-    length: 0.26041794
-    xPos: 15
-  - beat: 55
-    type: 3
-    length: 0.26041794
-    xPos: 30
   - beat: 55.010418
     type: 2
     length: 0
@@ -432,43 +196,19 @@ MonoBehaviour:
     type: 1
     length: 3.010418
     xPos: 0
-  - beat: 59
-    type: 3
-    length: 0.26041794
-    xPos: -30
-  - beat: 59
-    type: 3
-    length: 0.26041794
-    xPos: -15
-  - beat: 59
-    type: 3
-    length: 0.26041794
-    xPos: 15
-  - beat: 59
-    type: 3
-    length: 0.26041794
-    xPos: 30
   - beat: 59.010418
     type: 2
     length: 0
     xPos: 0
   - beat: 60
-    type: 3
+    type: 1
     length: 3.010418
     xPos: 0
-  - beat: 60
-    type: 3
-    length: 3.010418
-    xPos: 30
-  - beat: 60
-    type: 3
-    length: 3.010418
-    xPos: -30
-  - beat: 60
-    type: 3
-    length: 3.010418
-    xPos: -15
-  - beat: 63
+  - beat: 63.010418
+    type: 2
+    length: 0
+    xPos: 0
+  - beat: 63.541668
     type: 0
     length: 0
     xPos: 0
@@ -476,42 +216,26 @@ MonoBehaviour:
     type: 1
     length: 3.0104141
     xPos: 0
-  - beat: 67
-    type: 3
-    length: 0.26041412
-    xPos: 15
-  - beat: 67
-    type: 3
-    length: 0.26041412
-    xPos: -15
-  - beat: 67
-    type: 3
-    length: 0.26041412
-    xPos: 30
-  - beat: 67
-    type: 3
-    length: 0.26041412
-    xPos: -30
   - beat: 67.010414
     type: 2
     length: 0
     xPos: 0
   - beat: 68
-    type: 3
-    length: 1.0104141
-    xPos: -30
-  - beat: 68
-    type: 3
-    length: 1.0104141
-    xPos: -15
-  - beat: 68
-    type: 3
+    type: 1
     length: 1.0104141
     xPos: 0
-  - beat: 68
-    type: 3
-    length: 1.0104141
-    xPos: 30
+  - beat: 69.010414
+    type: 2
+    length: 0
+    xPos: 0
+  - beat: 69.333336
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 69.666664
+    type: 0
+    length: 0
+    xPos: 0
   - beat: 70
     type: 1
     length: 1.0104141
@@ -524,22 +248,6 @@ MonoBehaviour:
     type: 1
     length: 3.0104141
     xPos: 0
-  - beat: 76
-    type: 3
-    length: 0.25
-    xPos: 30
-  - beat: 76
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 76
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 76
-    type: 3
-    length: 0.25
-    xPos: -30
   - beat: 76.010414
     type: 2
     length: 0
@@ -549,37 +257,13 @@ MonoBehaviour:
     length: 0
     xPos: 0
   - beat: 76.666664
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 76.666664
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 76.666664
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 76.666664
-    type: 3
-    length: 0.25
-    xPos: 30
+    type: 0
+    length: 0
+    xPos: 0
   - beat: 77
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 77
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 77
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 77
-    type: 3
-    length: 0.25
-    xPos: 30
+    type: 0
+    length: 0
+    xPos: 0
   - beat: 77.25
     type: 1
     length: 0.75
@@ -588,174 +272,38 @@ MonoBehaviour:
     type: 2
     length: 0
     xPos: 0
-  - beat: 78
+  - beat: 78.25
     type: 0
     length: 0
     xPos: 0
-  - beat: 78.25
-    type: 3
-    length: 0.25
-    xPos: 30
-  - beat: 78.25
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 78.25
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 78.25
-    type: 3
-    length: 0.25
-    xPos: -30
   - beat: 78.5
     type: 0
     length: 0
     xPos: 0
-  - beat: 78.822914
+  - beat: 78.802086
     type: 0
     length: 0
     xPos: 0
   - beat: 79
-    type: 3
-    length: 0.5
-    xPos: -30
-  - beat: 79
-    type: 3
-    length: 0.5
-    xPos: -15
-  - beat: 79
-    type: 3
-    length: 0.5
+    type: 0
+    length: 0
     xPos: 0
-  - beat: 79
-    type: 3
-    length: 0.5
-    xPos: 30
-  - beat: 80
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 80
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 80
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 80
-    type: 3
-    length: 0.25
-    xPos: 30
   - beat: 80
     type: 1
     length: 4
     xPos: 0
-  - beat: 81
-    type: 3
-    length: 0.25
-    xPos: 30
-  - beat: 81
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 81
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 81
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 82
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 82
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 82
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 82
-    type: 3
-    length: 0.25
-    xPos: 30
-  - beat: 83
-    type: 3
-    length: 0.25
-    xPos: 30
-  - beat: 83
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 83
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 83
-    type: 3
-    length: 0.25
-    xPos: -30
   - beat: 84
     type: 2
     length: 0
     xPos: 0
-  - beat: 84
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 84
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 84
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 84
-    type: 3
-    length: 0.25
-    xPos: 30
   - beat: 84.333336
     type: 0
     length: 0
     xPos: 0
   - beat: 84.666664
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 84.666664
-    type: 3
-    length: 0.25
-    xPos: 30
-  - beat: 84.666664
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 84.666664
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 85
-    type: 3
-    length: 2
-    xPos: -30
-  - beat: 85
-    type: 3
-    length: 2
-    xPos: -15
-  - beat: 85
-    type: 3
-    length: 2
+    type: 0
+    length: 0
     xPos: 0
-  - beat: 85
-    type: 3
-    length: 2
-    xPos: 30
   - beat: 85
     type: 0
     length: 0
@@ -765,43 +313,15 @@ MonoBehaviour:
     length: 0
     xPos: 0
   - beat: 87
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 88
     type: 1
-    length: 1
-    xPos: 0
-  - beat: 88
-    type: 3
     length: 4
     xPos: 0
-  - beat: 88
-    type: 3
-    length: 4
-    xPos: -15
-  - beat: 88
-    type: 3
-    length: 4
-    xPos: 30
-  - beat: 88
-    type: 0
-    length: 0
-    xPos: 0
-  - beat: 88
+  - beat: 92
     type: 2
-    length: 0
-    xPos: 0
-  - beat: 88
-    type: 3
-    length: 4
-    xPos: -30
-  - beat: 89
-    type: 0
-    length: 0
-    xPos: 0
-  - beat: 90
-    type: 0
-    length: 0
-    xPos: 0
-  - beat: 91
-    type: 0
     length: 0
     xPos: 0
   - beat: 92
@@ -813,21 +333,9 @@ MonoBehaviour:
     length: 0
     xPos: 0
   - beat: 92.65625
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 92.65625
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 92.65625
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 92.65625
-    type: 3
-    length: 0.25
-    xPos: 30
+    type: 0
+    length: 0
+    xPos: 0
   - beat: 93
     type: 0
     length: 0
@@ -837,235 +345,874 @@ MonoBehaviour:
     length: 0
     xPos: 0
   - beat: 93.65625
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 93.65625
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 93.65625
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 93.65625
-    type: 3
-    length: 0.25
-    xPos: 30
+    type: 0
+    length: 0
+    xPos: 0
   - beat: 94
     type: 0
     length: 0
     xPos: 0
   - beat: 94.34375
-    type: 3
-    length: 0.25
-    xPos: 30
-  - beat: 94.34375
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 94.34375
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 94.34375
-    type: 3
-    length: 0.25
-    xPos: -15
+    type: 0
+    length: 0
+    xPos: 0
   - beat: 94.65625
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 94.65625
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 94.65625
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 94.65625
-    type: 3
-    length: 0.25
-    xPos: 30
+    type: 0
+    length: 0
+    xPos: 0
   - beat: 95
     type: 0
     length: 0
     xPos: 0
   - beat: 96
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 96
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 96
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 96
-    type: 3
-    length: 0.25
-    xPos: 30
-  - beat: 96
     type: 1
     length: 7
     xPos: 0
-  - beat: 97
-    type: 3
-    length: 0.25
-    xPos: 30
-  - beat: 97
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 97
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 97
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 98
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 98
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 98
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 98
-    type: 3
-    length: 0.25
-    xPos: 30
-  - beat: 99
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 99
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 99
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 99
-    type: 3
-    length: 0.25
-    xPos: 30
-  - beat: 100
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 100
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 100
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 100
-    type: 3
-    length: 0.25
-    xPos: 30
-  - beat: 101
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 101
-    type: 3
-    length: 0.25
-    xPos: 30
-  - beat: 101
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 101
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 102
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 102
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 102
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 102
-    type: 3
-    length: 0.25
-    xPos: 30
   - beat: 103
     type: 2
     length: 0
     xPos: 0
-  - beat: 103
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 103
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 103
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 103
-    type: 3
-    length: 0.25
-    xPos: 30
   - beat: 104
-    type: 3
-    length: 0.25
-    xPos: -30
-  - beat: 104
-    type: 3
-    length: 0.25
-    xPos: -15
-  - beat: 104
-    type: 3
-    length: 0.25
-    xPos: 15
-  - beat: 104
-    type: 3
-    length: 0.25
-    xPos: 30
-  - beat: 116
     type: 0
     length: 0
     xPos: 0
-  - beat: 117
-    type: 0
-    length: 0
-    xPos: 0
-  - beat: 118
-    type: 0
-    length: 0
-    xPos: 0
-  - beat: 119
-    type: 0
-    length: 0
-    xPos: 0
-  updates: []
+  updates:
+  - beat: 8
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 9
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 2
+      duration: 2.5
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 12
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 13
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 2
+      duration: 2
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 15.333333
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.08333373
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 15.666667
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.083333015
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 16
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.083333336
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 17
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 2
+      duration: 2.5
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 20
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 21
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 3
+      duration: 3
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 24
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 25
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 26
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 27
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 1
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 28
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 29
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 30
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 31
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 31.25
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 31.5
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 32
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 33
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 34
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 35
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 36
+    state: 3
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 4
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 36
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 37
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 38
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 39
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 40
+    state: 2
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 3
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 40
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 3
+      duration: 3.0104167
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 44
+    state: 2
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 3
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 44
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 3
+      duration: 3.0104167
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 47.5
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.26041675
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 48
+    state: 2
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 3
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 48
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 3
+      duration: 3.0104167
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 52
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 1.0104166
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 53.333332
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.18750131
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 53.666668
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.17708206
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 54
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 1.0104167
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 56
+    state: 2
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 3
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 56
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 3
+      duration: 3.0104167
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 60
+    state: 2
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 3
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 60
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 3
+      duration: 3.0104167
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 63.541668
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.24999881
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 64
+    state: 2
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 3
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 64
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 3
+      duration: 3.0104167
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 68
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 1.0104166
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 69.333336
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.1874975
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 69.666664
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.17708588
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 70
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 1.0104167
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 73
+    state: 2
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 3
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 73
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 3
+      duration: 3.0104165
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 76.333336
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.24999744
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 76.666664
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25000256
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 77
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 77.25
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 0
+      duration: 0.75
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 78.25
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.20833325
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 78.5
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 78.802086
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.14583087
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 79
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.5
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 80
+    state: 2
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 3
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 80
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 4
+      duration: 4
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 84.333336
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.24999744
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 84.666664
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25000256
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 85
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 86
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 87
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 1
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 88
+    state: 2
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 3
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 88
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 4
+      duration: 4
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 92
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 92.34375
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 92.65625
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 93
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 93.34375
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 93.65625
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 94
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 94.34375
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 94.65625
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 95
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 96
+    state: 2
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 3
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 96
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 7
+      duration: 7
+      startIntensity: 20
+      endIntensity: 5
+  - beat: 104
+    state: 0
+    color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+    color2: {r: 1, g: 1, b: 1, a: 1}
+    pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+    strobe:
+      count: 1
+      duration: 0.25
+      startIntensity: 20
+      endIntensity: 5
   projectiles: []
   songTitle: Interluden
   FMODSongName: Interluden
-  color1: {r: 0, g: 0.93102497, b: 0.9811321, a: 1}
-  color2: {r: 0, g: 0, b: 0, a: 1}
-  pattern: {fileID: 11400000, guid: 936ad5056018970479b2581e4008d222, type: 2}
-  startIntensity: 10
-  endIntensity: 0
+  color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
+  color2: {r: 1, g: 1, b: 1, a: 1}
+  pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+  startIntensity: 20
+  endIntensity: 5
+  noteSpeed: 2

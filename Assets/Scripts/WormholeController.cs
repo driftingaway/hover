@@ -49,7 +49,7 @@ public class WormholeController : MonoBehaviour
         worm.SetColor("_Details_1_colour", color1*5);
         worm.SetColor("_Details_2_colour", color2*5);
         walls.SetColor("_Color", color1*2);
-        bg.SetColor("_Color",color1*2);
+        bg.SetColor("_Color",color1);
     }
 
     public void SceneTransition() 
