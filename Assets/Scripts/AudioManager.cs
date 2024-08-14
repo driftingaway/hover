@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
+using System;
 
 public class AudioManager : MonoBehaviour
 {
@@ -17,20 +18,19 @@ public class AudioManager : MonoBehaviour
     public float BPM;
     public float secPerBeat;
     public float songPosition;
-    public int songPositionInt, songPositionInBeats, prevSongPositionInBeats = 0;
+    public int songPositionInt, songPositionInBeats = 0;
     public float songPositionInBeatsPrecise, currentNoteBeat;
+    public float prevSongPositionInBeatsPrecise = 0;
     private bool isHolding;
     private bool hitLastNote = false;
     
     private float noteOffset = 8f;
-    int spawnIndex, updateSpawnIndex, projectileSpawnIndex, bezierIndex = 0;
+    int spawnIndex, updateSpawnIndex, projectileSpawnIndex = 0;
     int noteIndex = 0;
-    bool validInput = true;
     float timingThreshold; 
 
     public List<Song> songs = new List<Song>();
     public Song currentSong;
-    float timeSig;
     Note note;
     Updates updates;
     Projectiles projectiles;
@@ -44,13 +44,11 @@ public class AudioManager : MonoBehaviour
     public List<Note> beatMap;
     public List<Updates> updateMap;
     public List<Projectiles> projectileMap;
-    private bool[] hitMap;
     private int streak = 0;
     public int startBeat;
     public float speedMult = 1;
 
     private float health = 1;
-    private float startHoldTime, endHoldTime;
 
     public ScoreManager scoreRef;
     public Material noteMaterial;
@@ -62,11 +60,16 @@ public class AudioManager : MonoBehaviour
         //UniversalRenderPipelineUtils.SetRendererFeatureActive("Bozo", false);
 
         currentSong = songs[GameValues.songIndex];
+
+        // set up fmod instance
+        eventInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/" + currentSong.FMODSongName);
+        //eventInstance.setTimelinePosition(startBeat);
+        eventInstance.start();
+
         currentSong.song = midi.readMidi(currentSong.midiPath, currentSong.timeSig);
         beatMap = currentSong.song;
         updateMap = currentSong.updates;
         projectileMap = currentSong.projectiles;
-        timeSig = currentSong.timeSig;
         BPM = currentSong.BPM;
         speedMult = currentSong.noteSpeed;
 
@@ -74,17 +77,8 @@ public class AudioManager : MonoBehaviour
         secPerBeat = 60f / BPM;
         timingThreshold = 0.1f * (1/secPerBeat);
 
-        //init wormhole color from song
-        //worm.InitColor(currentSong.color1, currentSong.color2);
-        //worm.SetPattern(currentSong.pattern.speed1, currentSong.pattern.speed2, currentSong.pattern.tiling_x1, currentSong.pattern.tiling_y1, currentSong.pattern.tiling_x2, currentSong.pattern.tiling_y2);
-
         //set song title
         text.SetText(currentSong.songTitle);
-    
-        // set up fmod instance
-        eventInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/" + currentSong.FMODSongName);
-        //eventInstance.setTimelinePosition(startBeat);
-        eventInstance.start();
     }
 
     void Update()
@@ -201,22 +195,15 @@ public class AudioManager : MonoBehaviour
             noteIndex++;
         }
 
-        // color pulsing to each beat
-        if(songPositionInBeats == prevSongPositionInBeats + 1)
+        // shoot
+        if(songPositionInBeatsPrecise >= prevSongPositionInBeatsPrecise + .25f)
         {
-            prevSongPositionInBeats = songPositionInBeats;
-            //FMODUnity.RuntimeManager.PlayOneShot(TickEvent, transform.position);
-            //worm.Flash(1f, 0f, secPerBeat);
-        }
+            prevSongPositionInBeatsPrecise = (float)(Math.Round (songPositionInBeatsPrecise * 4f, MidpointRounding.ToEven) / 4);
+            shipController.canFire = true;
 
-        // bezier curves
-        /*
-        if(bezierIndex < beatMap.Count - 1 && beatMap[bezierIndex].beat <= songPositionInBeatsPrecise) {
-            float pos = -beatMap[bezierIndex + 1].beat;
-            float duration = (beatMap[bezierIndex + 1].beat - beatMap[bezierIndex].beat) * secPerBeat;
-            tileManager.Bezier(pos, duration);
-            bezierIndex++;
-        }*/
+            //metronome
+            //FMODUnity.RuntimeManager.PlayOneShot(TickEvent, transform.position);
+        }
     }
 
     private void HitNote()

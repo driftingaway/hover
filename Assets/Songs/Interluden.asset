@@ -385,7 +385,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 9
     state: 0
@@ -395,7 +395,7 @@ MonoBehaviour:
     strobe:
       count: 2
       duration: 2.5
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 12
     state: 0
@@ -405,7 +405,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 13
     state: 0
@@ -415,7 +415,7 @@ MonoBehaviour:
     strobe:
       count: 2
       duration: 2
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 15.333333
     state: 0
@@ -425,7 +425,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.08333373
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 15.666667
     state: 0
@@ -435,7 +435,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.083333015
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 16
     state: 0
@@ -445,7 +445,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.083333336
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 17
     state: 0
@@ -455,7 +455,7 @@ MonoBehaviour:
     strobe:
       count: 2
       duration: 2.5
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 20
     state: 0
@@ -465,7 +465,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 21
     state: 0
@@ -475,7 +475,7 @@ MonoBehaviour:
     strobe:
       count: 3
       duration: 3
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 24
     state: 0
@@ -485,7 +485,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 25
     state: 0
@@ -495,7 +495,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 26
     state: 0
@@ -505,7 +505,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 27
     state: 0
@@ -515,7 +515,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 1
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 28
     state: 0
@@ -525,7 +525,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 29
     state: 0
@@ -535,7 +535,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 30
     state: 0
@@ -545,7 +545,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 31
     state: 0
@@ -555,7 +555,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 31.25
     state: 0
@@ -565,7 +565,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 31.5
     state: 0
@@ -575,7 +575,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 32
     state: 0
@@ -585,7 +585,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 33
     state: 0
@@ -595,7 +595,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 34
     state: 0
@@ -605,7 +605,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 35
     state: 0
@@ -615,7 +615,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 36
     state: 3
@@ -625,7 +625,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 4
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 36
     state: 0
@@ -635,7 +635,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 37
     state: 0
@@ -645,7 +645,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 38
     state: 0
@@ -655,7 +655,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 39
     state: 0
@@ -665,7 +665,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 40
     state: 2
@@ -675,7 +675,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 3
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 40
     state: 0
@@ -685,7 +685,7 @@ MonoBehaviour:
     strobe:
       count: 3
       duration: 3.0104167
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 44
     state: 2
@@ -695,7 +695,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 3
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 44
     state: 0
@@ -705,7 +705,7 @@ MonoBehaviour:
     strobe:
       count: 3
       duration: 3.0104167
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 47.5
     state: 0
@@ -715,7 +715,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.26041675
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 48
     state: 2
@@ -725,7 +725,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 3
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 48
     state: 0
@@ -735,7 +735,7 @@ MonoBehaviour:
     strobe:
       count: 3
       duration: 3.0104167
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 52
     state: 0
@@ -745,7 +745,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 1.0104166
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 53.333332
     state: 0
@@ -755,7 +755,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.18750131
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 53.666668
     state: 0
@@ -765,7 +765,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.17708206
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 54
     state: 0
@@ -775,7 +775,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 1.0104167
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 56
     state: 2
@@ -785,7 +785,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 3
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 56
     state: 0
@@ -795,7 +795,7 @@ MonoBehaviour:
     strobe:
       count: 3
       duration: 3.0104167
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 60
     state: 2
@@ -805,7 +805,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 3
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 60
     state: 0
@@ -815,7 +815,7 @@ MonoBehaviour:
     strobe:
       count: 3
       duration: 3.0104167
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 63.541668
     state: 0
@@ -825,7 +825,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.24999881
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 64
     state: 2
@@ -835,7 +835,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 3
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 64
     state: 0
@@ -845,7 +845,7 @@ MonoBehaviour:
     strobe:
       count: 3
       duration: 3.0104167
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 68
     state: 0
@@ -855,7 +855,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 1.0104166
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 69.333336
     state: 0
@@ -865,7 +865,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.1874975
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 69.666664
     state: 0
@@ -875,7 +875,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.17708588
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 70
     state: 0
@@ -885,7 +885,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 1.0104167
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 73
     state: 2
@@ -895,7 +895,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 3
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 73
     state: 0
@@ -905,7 +905,7 @@ MonoBehaviour:
     strobe:
       count: 3
       duration: 3.0104165
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 76.333336
     state: 0
@@ -915,7 +915,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.24999744
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 76.666664
     state: 0
@@ -925,7 +925,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25000256
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 77
     state: 0
@@ -935,7 +935,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 77.25
     state: 0
@@ -945,7 +945,7 @@ MonoBehaviour:
     strobe:
       count: 0
       duration: 0.75
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 78.25
     state: 0
@@ -955,7 +955,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.20833325
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 78.5
     state: 0
@@ -965,7 +965,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 78.802086
     state: 0
@@ -975,7 +975,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.14583087
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 79
     state: 0
@@ -985,7 +985,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.5
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 80
     state: 2
@@ -995,7 +995,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 3
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 80
     state: 0
@@ -1005,7 +1005,7 @@ MonoBehaviour:
     strobe:
       count: 4
       duration: 4
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 84.333336
     state: 0
@@ -1015,7 +1015,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.24999744
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 84.666664
     state: 0
@@ -1025,7 +1025,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25000256
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 85
     state: 0
@@ -1035,7 +1035,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 86
     state: 0
@@ -1045,7 +1045,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 87
     state: 0
@@ -1055,7 +1055,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 1
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 88
     state: 2
@@ -1065,7 +1065,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 3
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 88
     state: 0
@@ -1075,7 +1075,7 @@ MonoBehaviour:
     strobe:
       count: 4
       duration: 4
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 92
     state: 0
@@ -1085,7 +1085,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 92.34375
     state: 0
@@ -1095,7 +1095,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 92.65625
     state: 0
@@ -1105,7 +1105,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 93
     state: 0
@@ -1115,7 +1115,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 93.34375
     state: 0
@@ -1125,7 +1125,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 93.65625
     state: 0
@@ -1135,7 +1135,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 94
     state: 0
@@ -1145,7 +1145,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 94.34375
     state: 0
@@ -1155,7 +1155,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 94.65625
     state: 0
@@ -1165,7 +1165,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 95
     state: 0
@@ -1175,7 +1175,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 96
     state: 2
@@ -1185,7 +1185,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 3
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 96
     state: 0
@@ -1195,7 +1195,7 @@ MonoBehaviour:
     strobe:
       count: 7
       duration: 7
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   - beat: 104
     state: 0
@@ -1205,7 +1205,7 @@ MonoBehaviour:
     strobe:
       count: 1
       duration: 0.25
-      startIntensity: 20
+      startIntensity: 40
       endIntensity: 5
   projectiles: []
   songTitle: Interluden
@@ -1213,6 +1213,6 @@ MonoBehaviour:
   color1: {r: 0, g: 0.5211923, b: 0.9137255, a: 1}
   color2: {r: 1, g: 1, b: 1, a: 1}
   pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
-  startIntensity: 20
+  startIntensity: 40
   endIntensity: 5
-  noteSpeed: 2
+  noteSpeed: 4

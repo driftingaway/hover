@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
 public class ShipController : MonoBehaviour
 {
@@ -31,6 +32,10 @@ public class ShipController : MonoBehaviour
     public CameraShake cameraShake;
     private float od;
     public GameObject floor;
+    public Projectile projectile;
+
+    public bool canFire;
+    public FMODUnity.EventReference FireEvent;
 
     // Start is called before the first frame update
     void Start()
@@ -96,6 +101,9 @@ public class ShipController : MonoBehaviour
                 SwitchLane(lane, .2f);
             }
         }
+        if(Input.GetButton("Fire") && canFire) {
+            FIRE();
+        }
     }
 
     private void SwitchLane(Ideology lane, float duration)
@@ -152,5 +160,12 @@ public class ShipController : MonoBehaviour
             curve.SetValues(.8f, .8f, duration);
             overdriveParticles.Stop();
         }
+    }
+
+    private void FIRE() {
+        var projectileInst = Instantiate(projectile, transform);
+        projectileInst.Fire(2, new Vector3(0,0,90));
+        FMODUnity.RuntimeManager.PlayOneShot(FireEvent, transform.position);
+        canFire = false;
     }
 }

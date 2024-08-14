@@ -10046,13 +10046,13 @@ MonoBehaviour:
   songPosition: 0
   songPositionInt: 0
   songPositionInBeats: 0
-  prevSongPositionInBeats: 0
   songPositionInBeatsPrecise: 0
   currentNoteBeat: 0
+  prevSongPositionInBeatsPrecise: 0
   songs:
-  - {fileID: 11400000, guid: e4739c4f365068e46a24ea9e7aa55bf5, type: 2}
   - {fileID: 11400000, guid: f9b9ed85979ee074f8e19fb3c6c832df, type: 2}
   - {fileID: 11400000, guid: f62f6a40284d1eb4f908ee5705c98c6b, type: 2}
+  - {fileID: 11400000, guid: e4739c4f365068e46a24ea9e7aa55bf5, type: 2}
   - {fileID: 11400000, guid: f4f6d045086fd2847b5a022fb3a72479, type: 2}
   - {fileID: 11400000, guid: 7d7c47647f033bd4a94ef51aaeb3c2f0, type: 2}
   - {fileID: 11400000, guid: c683ffda49740be4691ad594ca7f7559, type: 2}
@@ -10209,7 +10209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &553799898
 Transform:
   m_ObjectHideFlags: 0
@@ -17152,6 +17152,16 @@ MonoBehaviour:
   borders: {fileID: 55053365}
   cameraShake: {fileID: 0}
   floor: {fileID: 1031452239}
+  projectile: {fileID: -6435815293007779104, guid: 2587b2181821c7a47a52890ed57b100a,
+    type: 3}
+  canFire: 0
+  FireEvent:
+    Guid:
+      Data1: -606882800
+      Data2: 1301280440
+      Data3: 353420708
+      Data4: -1880306285
+    Path: event:/UI/Fire
 --- !u!114 &1887498128
 MonoBehaviour:
   m_ObjectHideFlags: 0
