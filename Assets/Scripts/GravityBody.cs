@@ -5,12 +5,12 @@ using System.Collections;
 public class GravityBody : MonoBehaviour {
 	
 	GravityAttractor planet;
-	Rigidbody rigidbody;
+	Rigidbody rb;
 	public bool gravityEnabled = false;
 	
 	void Awake () {
 		planet = GameObject.FindGameObjectWithTag("Planet").GetComponent<GravityAttractor>();
-		rigidbody = GetComponent<Rigidbody>();
+		rb = GetComponent<Rigidbody>();
 
 		// Disable rigidbody gravity and rotation as this is simulated in GravityAttractor script
 		//rigidbody.useGravity = false;
@@ -21,7 +21,7 @@ public class GravityBody : MonoBehaviour {
 		// Allow this body to be influenced by planet's gravity
 		if(gravityEnabled)
 		{
-			planet.Attract(rigidbody);
+			planet.Attract(rb);
 		}
 	}
 }

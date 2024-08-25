@@ -16,199 +16,629 @@ MonoBehaviour:
   BPM: 197
   timeSig: 3
   song:
-  - 24
-  - 27
-  - 30
-  - 33
-  - 34
-  - 35
-  - 36
-  - 39
-  - 42
-  - 45
-  - 48
-  - 51
-  - 54
-  - 57
-  - 58
-  - 59
-  - 60
-  - 63
-  - 65
-  - 67
-  - 69
-  - 70
-  - 71
-  - 72
-  - 75
-  - 78
-  - 81
-  - 83
-  - 84
-  - 85
-  - 87
-  - 90
-  - 93
-  - 94
-  - 95
-  - 96
-  - 99
-  - 102
-  - 106
-  - 107
-  - 108
-  - 111
-  - 114
-  - 117
-  - 123
-  - 129
-  - 131
-  - 147
-  - 152
-  - 153
-  - 155
-  - 171
-  - 174
-  - 177
-  - 183
-  - 186
-  - 189
-  - 195
-  - 200
-  - 201
-  - 203
-  - 207
-  - 217
-  - 218
-  - 219
-  - 223
-  - 224
-  - 225
-  - 230
-  - 232
-  - 234
-  - 236
-  - 238
-  - 240
-  - 243
-  - 247
-  - 248
-  - 249
-  - 253
-  - 254
-  - 255
-  - 259
-  - 260
-  - 261
-  - 263
-  - 265
-  - 266
-  - 267
-  - 271
-  - 272
-  - 273
-  - 278
-  - 280
-  - 282
-  - 284
-  - 286
-  - 289
-  - 290
-  - 291
-  - 295
-  - 296
-  - 297
-  - 300
-  - 303
-  - 304
-  - 305
-  - 306
-  - 308
-  - 310
-  - 312
-  - 315
-  - 318
-  - 321
-  - 323
-  - 324
-  - 327
-  - 330
-  - 333
-  - 334
-  - 335
-  - 336
-  - 339
-  - 342
-  - 345
-  - 346
-  - 347
-  - 348
-  - 350
-  - 351
-  - 354
-  - 357
-  - 358
-  - 359
-  - 360
-  - 362
-  - 364
-  - 366
-  - 369
-  - 372
-  - 375
-  - 378
-  - 381
-  - 382
-  - 383
-  - 384
-  - 387
-  - 390
-  - 393
-  - 394
-  - 395
-  - 396
-  - 399
-  - 402
-  - 405
-  updates:
-  - beat: 120
-    state: 0
-    color1: {r: 0.098039225, g: 0.52156866, b: 0.6039216, a: 1}
-    color2: {r: 0.12941177, g: 0.4431373, b: 0.69803923, a: 1}
-    speed1: 0.7
-    speed2: 0.7
-    tiling_x1: 5
-    tiling_y1: 0.1
-    tiling_x2: 5
-    tiling_y2: 0.1
+  - beat: 24
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 27
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 30
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 33
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 34
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 35
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 36
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 39
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 42
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 45
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 48
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 51
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 54
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 57
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 58
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 59
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 60
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 63
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 65
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 67
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 69
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 70
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 71
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 72
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 75
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 78
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 81
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 83
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 84
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 85
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 87
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 90
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 93
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 94
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 95
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 96
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 99
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 102
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 106
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 107
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 108
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 111
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 114
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 117
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 123
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 129
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 131
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 147
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 152
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 153
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 155
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 171
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 174
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 177
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 183
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 186
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 189
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 195
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 200
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 201
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 203
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 207
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 217
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 218
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 219
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 223
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 224
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 225
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 230
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 232
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 234
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 236
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 238
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 240
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 243
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 247
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 248
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 249
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 253
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 254
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 255
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 259
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 260
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 261
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 263
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 265
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 266
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 267
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 271
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 272
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 273
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 278
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 280
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 282
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 284
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 286
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 289
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 290
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 291
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 295
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 296
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 297
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 300
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 303
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 304
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 305
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 306
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 308
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 310
+    type: 0
+    length: 0
+    xPos: 0
   - beat: 312
-    state: 0
-    color1: {r: 0.098039225, g: 0.52156866, b: 0.6039216, a: 1}
-    color2: {r: 0.12941177, g: 0.4431373, b: 0.69803923, a: 1}
-    speed1: 0.7
-    speed2: 0.7
-    tiling_x1: 10
-    tiling_y1: 1
-    tiling_x2: 10
-    tiling_y2: 1
-  - beat: 508
-    state: 0
-    color1: {r: 0.098039225, g: 0.52156866, b: 0.6039216, a: 1}
-    color2: {r: 0.12941177, g: 0.4431373, b: 0.69803923, a: 1}
-    speed1: 0.7
-    speed2: 0.7
-    tiling_x1: 5
-    tiling_y1: 0.1
-    tiling_x2: 5
-    tiling_y2: 0.1
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 315
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 318
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 321
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 323
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 324
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 327
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 330
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 333
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 334
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 335
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 336
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 339
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 342
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 345
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 346
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 347
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 348
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 350
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 351
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 354
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 357
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 358
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 359
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 360
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 362
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 364
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 366
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 369
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 372
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 375
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 378
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 381
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 382
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 383
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 384
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 387
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 390
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 393
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 394
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 395
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 396
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 399
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 402
+    type: 0
+    length: 0
+    xPos: 0
+  - beat: 405
+    type: 0
+    length: 0
+    xPos: 0
+  updates: []
   projectiles: []
   songTitle: Is It Really You
   FMODSongName: really_you
   color1: {r: 0.09910998, g: 0.5218764, b: 0.6037736, a: 1}
   color2: {r: 0.12776785, g: 0.44147775, b: 0.6981132, a: 1}
-  speed1: 0.5
-  speed2: 0.5
-  tiling_x1: 0.1
-  tiling_y1: 0.1
-  tiling_x2: 0.1
-  tiling_y2: 0.1
+  pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+  startIntensity: 10
+  endIntensity: 0
+  noteSpeed: 2

@@ -5,15 +5,29 @@ using DG.Tweening;
 
 public class WormholeController : MonoBehaviour
 {
-    public GameObject scene1;
-    public GameObject scene2;
     public Material worm;
     public Material player;
     public Material circle;
     public Material walls;
     public Material bg;
     public AudioManager am;
-    private int scene = 0; 
+    public List<GameObject> sceneList = new List<GameObject>();
+    private int sceneId = 0; 
+
+    public void InitWormhole() {
+        ToggleScene(false, true);
+        sceneList[0].SetActive(true);
+    }
+
+    public void ToggleScene(bool toggle, bool all) {
+        if(all) {
+            foreach(GameObject scene in sceneList) {
+                scene.SetActive(toggle);
+            }
+        } else {
+            sceneList[sceneId].SetActive(toggle);
+        }
+    }
 
     public void SetPattern(float speed1, float speed2, float tiling_x1, float tiling_y1, float tiling_x2, float tiling_y2)
     {
@@ -44,7 +58,7 @@ public class WormholeController : MonoBehaviour
         mySequence3.SetLoops(count, LoopType.Restart);
     }
 
-    public void InitColor(Color color1, Color color2)
+    public void SetColor(Color color1, Color color2)
     {
         worm.SetColor("_Details_1_colour", color1*5);
         worm.SetColor("_Details_2_colour", color2*5);
@@ -54,15 +68,10 @@ public class WormholeController : MonoBehaviour
 
     public void SceneTransition() 
     {
-        if(scene == 0) {
-            scene = 1;
-            scene1.SetActive(false);
-            scene2.SetActive(true);
-        } else if(scene == 1) {
-            scene = 0;
-            scene1.SetActive(true);
-            scene2.SetActive(false);
-        }
+        sceneList[sceneId].SetActive(false);
+        sceneId += 1;
+        sceneId = sceneId % sceneList.Count;
+        sceneList[sceneId].SetActive(true);
     }
 
     

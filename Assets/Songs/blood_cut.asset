@@ -12,22 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 486308d83d1f68146b74a34747d44483, type: 3}
   m_Name: blood_cut
   m_EditorClassIdentifier: 
+  midiPath: Assets/Audio/midi/really_you.mid
+  BPM: 164
+  timeSig: 4
   song:
   - beat: 16
+    type: 0
+    length: 0
+    xPos: 0
   - beat: 16.5
+    type: 0
+    length: 0
+    xPos: 0
   - beat: 24
+    type: 0
+    length: 0
+    xPos: 0
   - beat: 24.5
-  updates:
-  - beat: 40
-    state: 2
-    color1: {r: 1, g: 0, b: 0, a: 0}
-    color2: {r: 1, g: 0, b: 0, a: 0}
-    speed1: 1
-    speed2: 1
-    tiling_x1: 1
-    tiling_y1: 1
-    tiling_x2: 1
-    tiling_y2: 1
+    type: 0
+    length: 0
+    xPos: 0
+  updates: []
   projectiles:
   - beat: 48
   - beat: 48.25
@@ -39,12 +44,9 @@ MonoBehaviour:
   - beat: 49.75
   songTitle: blood
   FMODSongName: blood_cut
-  BPM: 164
-  color1: {r: 1, g: 0, b: 0, a: 0}
-  color2: {r: 0.8679245, g: 0.10971874, b: 0.10971874, a: 0}
-  speed1: 1
-  speed2: 1
-  tiling_x1: 1
-  tiling_y1: 1
-  tiling_x2: 1
-  tiling_y2: 1
+  color1: {r: 1, g: 0, b: 0, a: 1}
+  color2: {r: 0.8679245, g: 0.10971874, b: 0.10971874, a: 1}
+  pattern: {fileID: 11400000, guid: 71c15b3604b5edf4d887d3e2f625b6f0, type: 2}
+  startIntensity: 10
+  endIntensity: 0
+  noteSpeed: 2

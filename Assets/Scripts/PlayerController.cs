@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour {
 	Vector3 smoothMoveVelocity;
 	float verticalLookRotation;
 	Transform cameraTransform;
-	Rigidbody rigidbody;
+	Rigidbody rb;
     Camera cam;
 	
 	
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour {
 		Cursor.visible = false;
         cam = GetComponentInChildren<Camera>();
 		cameraTransform = cam.transform;
-		rigidbody = GetComponent<Rigidbody>();
+		rb = GetComponent<Rigidbody>();
 		ring = GameObject.FindGameObjectWithTag("Planet");
 	}
 	
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour {
 		// Jump
 		if (Input.GetButtonDown("Jump")) {
 			if (grounded) {
-				rigidbody.AddForce(transform.up * jumpForce);
+				rb.AddForce(transform.up * jumpForce);
 			}
 		}
 		
@@ -75,6 +75,6 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate() {
 		// Apply movement to rigidbody
 		Vector3 localMove = transform.TransformDirection(moveAmount) * Time.fixedDeltaTime;
-		rigidbody.MovePosition(rigidbody.position + localMove);
+		rb.MovePosition(rb.position + localMove);
 	}
 }

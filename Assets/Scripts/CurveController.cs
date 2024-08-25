@@ -13,13 +13,11 @@ public class CurveController : MonoBehaviour
     [SerializeField] [Range(0f, k_StraightDistanceClamp)] private float m_StraightDistance = 10f;
     [SerializeField] [Range(-k_CurvatureClamp, k_CurvatureClamp)] private float m_VerticalCurvature = 0f;
     [SerializeField] [Range(-k_CurvatureClamp, k_CurvatureClamp)] private float m_HorizontalCurvature = 0f;
-    [SerializeField] private float horizontalSpeed = 7f;
-    [SerializeField] private float verticalSpeed = 10f;
+    //[SerializeField] private float horizontalSpeed = 7f;
+    //[SerializeField] private float verticalSpeed = 10f;
 
-    private float h, v, timeH, timeV = 0f;
     public float minH = -.1f, minV = -.1f;
     public float maxH = .1f, maxV = .1f;
-    public Transform camera;
 
     private static readonly int s_StraightRenderDistanceID = Shader.PropertyToID("_CURVER_STRAIGHT_RENDER_DISTANCE");
     private static readonly int s_HorizontalCurvatureID = Shader.PropertyToID("_CURVER_HORIZONTAL_CURVATURE");

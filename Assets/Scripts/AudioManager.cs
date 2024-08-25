@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using DG.Tweening;
 using System;
+using FMODUnity;
+using FMOD.Studio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -25,25 +27,22 @@ public class AudioManager : MonoBehaviour
     private bool hitLastNote = false;
     
     private float noteOffset = 8f;
-    int spawnIndex, updateSpawnIndex, projectileSpawnIndex = 0;
-    int noteIndex = 0;
+    int noteIndex, spawnIndex, updateSpawnIndex = 0;
     float timingThreshold; 
 
     public List<Song> songs = new List<Song>();
     public Song currentSong;
     Note note;
     Updates updates;
-    Projectiles projectiles;
 
     //How many seconds have passed since the song started
     public float dspSongTime;
-    FMOD.Studio.EventInstance eventInstance;
-    public FMODUnity.EventReference NoteEvent;
-    public FMODUnity.EventReference TickEvent;
+    EventInstance eventInstance;
+    public EventReference NoteEvent;
+    public EventReference TickEvent;
 
     public List<Note> beatMap;
     public List<Updates> updateMap;
-    public List<Projectiles> projectileMap;
     private int streak = 0;
     public int startBeat;
     public float speedMult = 1;
@@ -54,22 +53,24 @@ public class AudioManager : MonoBehaviour
     public Material noteMaterial;
     public Material playerMaterial;
     public ParticleSystem shield;
+    private bool allowNextSongPlayback = true;
+    private PLAYBACK_STATE state;
 
     void Start()
     {
-        //UniversalRenderPipelineUtils.SetRendererFeatureActive("Bozo", false);
+        PlaySong();
+    }
 
+    void PlaySong() {
         currentSong = songs[GameValues.songIndex];
 
         // set up fmod instance
-        eventInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/" + currentSong.FMODSongName);
-        //eventInstance.setTimelinePosition(startBeat);
+        eventInstance = RuntimeManager.CreateInstance("event:/Music/" + currentSong.FMODSongName);
         eventInstance.start();
 
         currentSong.song = midi.readMidi(currentSong.midiPath, currentSong.timeSig);
         beatMap = currentSong.song;
         updateMap = currentSong.updates;
-        projectileMap = currentSong.projectiles;
         BPM = currentSong.BPM;
         speedMult = currentSong.noteSpeed;
 
@@ -77,12 +78,27 @@ public class AudioManager : MonoBehaviour
         secPerBeat = 60f / BPM;
         timingThreshold = 0.1f * (1/secPerBeat);
 
+        tileManager.InitChart();
+        worm.InitWormhole();
+
+        noteIndex = spawnIndex = updateSpawnIndex = 0;
+        prevSongPositionInBeatsPrecise = 0f;
+        isHolding = false;
+
         //set song title
         text.SetText(currentSong.songTitle);
+
+        allowNextSongPlayback = true;
     }
 
     void Update()
     {
+        eventInstance.getPlaybackState(out state);
+        if(state == PLAYBACK_STATE.STOPPED && allowNextSongPlayback) {
+            allowNextSongPlayback = false;
+            GameValues.songIndex += 1;
+            PlaySong();
+        }
         //calculate the position in seconds
         eventInstance.getTimelinePosition(out songPositionInt); 
         songPosition = (float) songPositionInt / 1000f;
@@ -104,10 +120,6 @@ public class AudioManager : MonoBehaviour
         {
             updates = updateMap[updateSpawnIndex];
         }
-        if(projectileSpawnIndex != projectileMap.Count)
-        {
-            projectiles = projectileMap[projectileSpawnIndex];
-        }
 
         // alternative case for timing camera switches and visual updates
         if (updateSpawnIndex < updateMap.Count && updates.beat <= songPositionInBeatsPrecise)
@@ -124,8 +136,8 @@ public class AudioManager : MonoBehaviour
             {
                 StartCoroutine(HUD.TitleDrop(updates.strobe.duration*secPerBeat));
             }
+            worm.SetColor(updates.color1, updates.color2);
             worm.SetPattern(updates.pattern.speed1, updates.pattern.speed2, updates.pattern.tiling_x1, updates.pattern.tiling_y1, updates.pattern.tiling_x2, updates.pattern.tiling_y2);
-            worm.InitColor(updates.color1, updates.color2);
             if(updates.strobe.count != 0)
             {
                 worm.Strobe(updates.strobe.count, updates.strobe.duration*secPerBeat, updates.strobe.startIntensity, updates.strobe.endIntensity);
@@ -138,14 +150,6 @@ public class AudioManager : MonoBehaviour
         {
             tileManager.SpawnNote(note);
             spawnIndex++;
-        }
-
-        // spawn projectile
-        if (projectileSpawnIndex < projectileMap.Count && projectiles.beat <= songPositionInBeatsPrecise)
-        {
-            tileManager.SpawnTile(2, -1, -5f);
-            tileManager.SpawnTile(2, -1, 5f);
-            projectileSpawnIndex++;
         }
 
         if(Input.GetButtonDown("Hit") && !isHolding && beatMap[noteIndex].type != 2)
@@ -211,7 +215,7 @@ public class AudioManager : MonoBehaviour
         hitLastNote = true;
         FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);
         shield.Play();
-        Debug.Log("HIT!");
+        //Debug.Log("HIT!");
         if(health < 1f) {
             health += .25f;
             //eventInstance.setParameterByName("Health", health);
