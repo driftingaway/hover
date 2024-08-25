@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Custom_Glitch
+  m_Name: Walls
   m_Shader: {fileID: 4800000, guid: 9db503deb2cc45d4b9803cc88562056f, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -29,5 +29,5 @@ Material:
     - _Amount: 0.832
     - _Speed: 3.88
     m_Colors:
-    - _Color: {r: 0, g: 1.0423846, b: 1.8274511, a: 5}
+    - _Color: {r: 2, g: 0.05926826, b: 0, a: 8.7788315}
   m_BuildTextureStacks: []

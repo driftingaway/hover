@@ -77,13 +77,13 @@ Material:
     - _Details_1_distortion_jiggle_speed: 0.237
     - _Details_1_distortion_magnitude: 0.0206
     - _Details_1_intensity: 0.8
-    - _Details_1_scroll_speed: 0.6
+    - _Details_1_scroll_speed: 1
     - _Details_2_distortion_frequency: 0.1
     - _Details_2_distortion_jaggedness: 10
     - _Details_2_distortion_jiggle_speed: 0.729
     - _Details_2_distortion_magnitude: 0.065
     - _Details_2_distortion_wobblyness: 13.34
-    - _Details_2_scroll_speed: 0.6
+    - _Details_2_scroll_speed: 1
     - _Details_scroll_speed: 0.6
     - _Details_tiling_vertical: 0
     - _Fresnel_power: 6
@@ -108,10 +108,10 @@ Material:
     - _VerticalCurve: 0.01
     m_Colors:
     - _Colour: {r: 0.34117648, g: 0.854902, b: 0.9176471, a: 1}
-    - _Details_1_colour: {r: 0, g: 2.6059616, b: 4.5686274, a: 5}
-    - _Details_1_tiling: {r: 10, g: 0.1, b: 0, a: 0}
-    - _Details_2_colour: {r: 5, g: 5, b: 5, a: 5}
-    - _Details_2_tiling: {r: 10, g: 0.1, b: 0, a: 0}
+    - _Details_1_colour: {r: 5, g: 0.1482269, b: 0, a: -1.2101871}
+    - _Details_1_tiling: {r: 10, g: 0.5, b: 0, a: 0}
+    - _Details_2_colour: {r: 5, g: 5, b: 5, a: -1.2101871}
+    - _Details_2_tiling: {r: 10, g: 0.5, b: 0, a: 0}
     - _Details_colour: {r: 0.7924528, g: 0.20558919, b: 0.20558919, a: 1}
     - _Noise_tiling: {r: 1, g: 1, b: 0, a: 0}
     - _Wormhole_colour: {r: 0, g: 0, b: 0, a: 1}

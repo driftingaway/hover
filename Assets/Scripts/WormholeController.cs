@@ -10,6 +10,7 @@ public class WormholeController : MonoBehaviour
     public Material circle;
     public Material walls;
     public Material bg;
+    public Material code;
     public AudioManager am;
     public List<GameObject> sceneList = new List<GameObject>();
     private int sceneId = 0; 
@@ -53,9 +54,14 @@ public class WormholeController : MonoBehaviour
         mySequence3.Append(walls.DOFade(startIntensity, "_Color", 0));
         mySequence3.Append(walls.DOFade(endIntensity, "_Color", fixedDuration*2f));
 
+        Sequence mySequence4 = DOTween.Sequence();
+        mySequence4.Append(code.DOFade(startIntensity, "_Color", 0));
+        mySequence4.Append(code.DOFade(endIntensity, "_Color", fixedDuration*2f));
+
         mySequence.SetLoops(count, LoopType.Restart);
         mySequence2.SetLoops(count, LoopType.Restart);
         mySequence3.SetLoops(count, LoopType.Restart);
+        mySequence4.SetLoops(count, LoopType.Restart);
     }
 
     public void SetColor(Color color1, Color color2)
@@ -63,6 +69,7 @@ public class WormholeController : MonoBehaviour
         worm.SetColor("_Details_1_colour", color1*5);
         worm.SetColor("_Details_2_colour", color2*5);
         walls.SetColor("_Color", color1*2);
+        code.SetColor("_Color", color1*2);
         bg.SetColor("_Color",color1);
     }
 
