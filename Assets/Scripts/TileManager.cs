@@ -8,6 +8,7 @@ using DG.Tweening;
 public class TileManager : MonoBehaviour
 {
     public GameObject[] tiles;
+    public GameObject[] terrainTiles;
     public GameObject instObjects;
     public Transform player;
     public AudioManager am;
@@ -19,6 +20,8 @@ public class TileManager : MonoBehaviour
     public List<float> notePos = new List<float>();
     public List<float> notes = new List<float>();
     public AnimationCurve curve;
+
+    private float prevSpawnPoint = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +36,7 @@ public class TileManager : MonoBehaviour
         Destroy(instObjects);
         instObjects = new GameObject("instObjects");
         activeTiles.Clear();
+        SpawnTerrain(terrainTiles[0]);
     }
 
     // move obstacles forward, everything else stays fixed
@@ -44,7 +48,9 @@ public class TileManager : MonoBehaviour
 
     void Update()
     {
-
+        if(instObjects.transform.position.z <= prevSpawnPoint - 2900f) {
+            SpawnTerrain(terrainTiles[0]);
+        }
     }
 
     public void SpawnNote(Note note)
@@ -81,5 +87,11 @@ public class TileManager : MonoBehaviour
         {
             lRend.SetPosition(i, new Vector3(0, 0, i*increment));
         }
+    }
+
+    private void SpawnTerrain(GameObject terrain) {
+        GameObject newTile = Instantiate(terrainTiles[0], new Vector3(0f, 0f, 1000f), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
+        newTile.transform.parent = instObjects.transform;
+        prevSpawnPoint = instObjects.transform.position.z + 1000;
     }
 }

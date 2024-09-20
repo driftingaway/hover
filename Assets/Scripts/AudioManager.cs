@@ -126,11 +126,12 @@ public class AudioManager : MonoBehaviour
         {
             if(updates.state == 1)
             {
-                shipController.OverdriveChange(updates.strobe.duration*secPerBeat);
+                shipController.Boss();
+                worm.SceneTransition(true);
             }
             if(updates.state == 2)
             {
-                worm.SceneTransition();
+                worm.SceneTransition(false);
             }
             if(updates.state == 3)
             {
@@ -157,13 +158,15 @@ public class AudioManager : MonoBehaviour
             float acc = Mathf.Abs(songPositionInBeatsPrecise - currentNoteBeat);
             if (acc < timingThreshold)
             {
+                float length = 0.15f;
                 if(beatMap[noteIndex].type == 1)
                 {
                     isHolding = true;
-                    HUD.ChangeFOV(155, beatMap[noteIndex].length * secPerBeat);
-                    HUD.BlackBars(60, beatMap[noteIndex].length * secPerBeat);
+                    length = beatMap[noteIndex].length * secPerBeat;
+                    HUD.ChangeFOV(155, length);
+                    HUD.BlackBars(60, length);
                 }
-                HitNote();
+                HitNote(length);
             }
             else
             {
@@ -178,7 +181,7 @@ public class AudioManager : MonoBehaviour
             //Debug.Log(timingThreshold);
             if (acc < timingThreshold)
             {
-                HitNote();
+                HitNote(0.15f);
             }   
             else
             {
@@ -210,7 +213,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void HitNote()
+    private void HitNote(float length)
     {
         hitLastNote = true;
         FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);
@@ -226,7 +229,7 @@ public class AudioManager : MonoBehaviour
             scoreRef.IncreaseCombo();
         }
         //cam.DOShakeRotation(.15f, 1, 1, 25, true);
-        HitFlash(Color.white, .15f);
+        HitFlash(Color.white, length);
     }
 
     private void MissNote()

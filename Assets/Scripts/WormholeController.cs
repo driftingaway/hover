@@ -73,13 +73,13 @@ public class WormholeController : MonoBehaviour
         bg.SetColor("_Color",color1);
     }
 
-    public void SceneTransition() 
+    public void SceneTransition(bool boss) 
     {
-        sceneList[sceneId].SetActive(false);
-        sceneId += 1;
-        sceneId = sceneId % sceneList.Count;
-        sceneList[sceneId].SetActive(true);
-    }
-
-    
+        if(!boss) {
+            sceneList[sceneId].SetActive(false);
+            sceneId += 1;
+            sceneId = sceneId % sceneList.Count;
+            sceneList[sceneId].SetActive(true);
+        }
+    } 
 }
