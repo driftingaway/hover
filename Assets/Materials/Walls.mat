@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Walls
   m_Shader: {fileID: 4800000, guid: 9db503deb2cc45d4b9803cc88562056f, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -17,6 +19,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -29,5 +32,5 @@ Material:
     - _Amount: 0.832
     - _Speed: 3.88
     m_Colors:
-    - _Color: {r: 2, g: 0.0592755, b: 0, a: 9.5040455}
+    - _Color: {r: 0, g: 1.0423846, b: 1.8274511, a: 23.017538}
   m_BuildTextureStacks: []

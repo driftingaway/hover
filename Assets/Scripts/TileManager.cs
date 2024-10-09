@@ -36,7 +36,7 @@ public class TileManager : MonoBehaviour
         Destroy(instObjects);
         instObjects = new GameObject("instObjects");
         activeTiles.Clear();
-        SpawnTerrain(terrainTiles[0]);
+        //SpawnTerrain(terrainTiles[0]);
     }
 
     // move obstacles forward, everything else stays fixed
@@ -48,9 +48,11 @@ public class TileManager : MonoBehaviour
 
     void Update()
     {
+        /*
         if(instObjects.transform.position.z <= prevSpawnPoint - 2900f) {
             SpawnTerrain(terrainTiles[0]);
         }
+        */
     }
 
     public void SpawnNote(Note note)
