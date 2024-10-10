@@ -111,9 +111,9 @@ Material:
     - _VerticalCurve: 0.01
     m_Colors:
     - _Colour: {r: 0.34117648, g: 0.854902, b: 0.9176471, a: 1}
-    - _Details_1_colour: {r: 0, g: 2.6059616, b: 4.5686274, a: 11.622049}
+    - _Details_1_colour: {r: 0, g: 2.6059616, b: 4.5686274, a: 9.444963}
     - _Details_1_tiling: {r: 10, g: 0.1, b: 0, a: 0}
-    - _Details_2_colour: {r: 5, g: 5, b: 5, a: 11.622049}
+    - _Details_2_colour: {r: 5, g: 5, b: 5, a: 9.444963}
     - _Details_2_tiling: {r: 10, g: 0.1, b: 0, a: 0}
     - _Details_colour: {r: 0.7924528, g: 0.20558919, b: 0.20558919, a: 1}
     - _Noise_tiling: {r: 1, g: 1, b: 0, a: 0}
