@@ -111,7 +111,7 @@ Material:
     - _VerticalCurve: 0.01
     m_Colors:
     - _Colour: {r: 0.34117648, g: 0.854902, b: 0.9176471, a: 1}
-    - _Details_1_colour: {r: 15.306098, g: 15.306098, b: 15.306098, a: 15.306098}
+    - _Details_1_colour: {r: 10, g: 10, b: 10, a: 10}
     - _Details_1_tiling: {r: 1, g: 1, b: 0, a: 0}
     - _Details_2_colour: {r: 50, g: 50, b: 50, a: 0.95094794}
     - _Details_2_tiling: {r: 1, g: 2.32, b: 0, a: 0}
