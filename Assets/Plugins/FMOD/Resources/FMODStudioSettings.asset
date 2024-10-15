@@ -382,12 +382,8 @@ MonoBehaviour:
   RealChannelSettings: []
   Plugins: []
   MasterBanks:
-  - Master
   - HTML5/Master
   Banks:
-  - Dialogue_CN
-  - Dialogue_EN
-  - Dialogue_JP
   - HTML5/Dialogue_CN
   - HTML5/Dialogue_EN
   - HTML5/Dialogue_JP
@@ -395,10 +391,6 @@ MonoBehaviour:
   - HTML5/SFX
   - HTML5/Vehicles
   - HTML5/VO
-  - Music
-  - SFX
-  - Vehicles
-  - VO
   BanksToLoad:
   - Master
   - Music

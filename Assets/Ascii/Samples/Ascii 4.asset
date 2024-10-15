@@ -47,7 +47,7 @@ MonoBehaviour:
     m_Value: 120
   m_Palette:
     m_OverrideState: 1
-    m_Value: {fileID: 2800000, guid: 6c1ac0e2166921341ba44515750c711d, type: 3}
+    m_Value: {fileID: 2800000, guid: fff323118d4c4aa42aaf584b74e2956f, type: 3}
   m_Impact:
     m_OverrideState: 1
     m_Value: 1
