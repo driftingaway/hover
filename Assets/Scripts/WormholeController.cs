@@ -68,11 +68,11 @@ public class WormholeController : MonoBehaviour
 
     public void SetColor(Color color1, Color color2)
     {
-        worm.SetColor("_Details_1_colour", color1*5);
-        worm.SetColor("_Details_2_colour", color2*5);
-        walls.SetColor("_Color", color1*5);
-        code.SetColor("_Color", color1*5);
-        bg.SetColor("_Color",color1*5);
+        worm.SetColor("_Details_1_colour", color1*2);
+        worm.SetColor("_Details_2_colour", color2*2);
+        walls.SetColor("_Color", color1*2);
+        code.SetColor("_Color", color1*2);
+        bg.SetColor("_Color",color1*2);
     }
 
     public void SceneTransition(bool fuck) 
