@@ -14,6 +14,7 @@ public class HUDController : MonoBehaviour
     public GameObject invertColor;
     public GameObject songTitle;
     public GameObject code;
+    public GameObject cursor;
     public WormholeController worm;
 
     // Start is called before the first frame update
@@ -81,11 +82,14 @@ public class HUDController : MonoBehaviour
     public IEnumerator TitleDrop(float duration)
     {
         songTitle.SetActive(true);
-        worm.ToggleScene(false, true);
-        code.SetActive(true);
+        cam.enabled = true;
+        ToggleCursor(false);
+        worm.SceneTransition(2);
         yield return new WaitForSeconds(duration);
-        code.SetActive(false);
         songTitle.SetActive(false);
-        worm.ToggleScene(true, false);
+    }
+
+    public void ToggleCursor(bool on) {
+        cursor.SetActive(on);
     }
 }

@@ -127,13 +127,16 @@ public class AudioManager : MonoBehaviour
             if(updates.state == 1)
             {
                 shipController.Boss();
-                worm.SceneTransition(true);
             }
             if(updates.state == 2)
             {
-                worm.SceneTransition(false);
+                shipController.Trailing();
             }
             if(updates.state == 3)
+            {
+                shipController.Shooter();
+            }
+            if(updates.state == 4)
             {
                 StartCoroutine(HUD.TitleDrop(updates.strobe.duration*secPerBeat));
             }
@@ -242,10 +245,6 @@ public class AudioManager : MonoBehaviour
             //eventInstance.setParameterByName("Health", health);
             streak = 0;
             scoreRef.ResetCombo();
-            if(shipController.state != ShipController.State.Overdrive)
-            {
-                HitFlash(Color.red, 0.5f);
-            }
             HUD.ChangeFOV(150, .1f);
             HUD.BlackBars(100, .1f);
         }

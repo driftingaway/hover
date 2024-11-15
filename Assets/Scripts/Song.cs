@@ -106,17 +106,21 @@ public class Song : ScriptableObject
             {
                 updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, (int)noteLength)));
             }
-            if (note.NoteName.ToString() == "D")
+            if (note.NoteName.ToString() == "B")
             {
                 updates.Add(new Updates(fixedStartTime, 1, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 4*(int)noteLength)));
             }
-            if (note.NoteName.ToString() == "DSharp")
+            if (note.NoteName.ToString() == "D")
             {
                 updates.Add(new Updates(fixedStartTime, 2, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 1)));
             }
-            if (note.NoteName.ToString() == "E")
+            if (note.NoteName.ToString() == "DSharp")
             {
                 updates.Add(new Updates(fixedStartTime, 3, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 1)));
+            }
+            if (note.NoteName.ToString() == "E")
+            {
+                updates.Add(new Updates(fixedStartTime, 4, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 1)));
             }
         }
     }

@@ -32,5 +32,5 @@ Material:
     - _Amount: 0.832
     - _Speed: 3.88
     m_Colors:
-    - _Color: {r: 0, g: 0.24127752, b: 2, a: 4.1681323}
+    - _Color: {r: 2, g: 0.1059647, b: 0, a: 14.27059}
   m_BuildTextureStacks: []

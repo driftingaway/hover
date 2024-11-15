@@ -13,23 +13,11 @@ public class WormholeController : MonoBehaviour
     public Material code;
     public AudioManager am;
     public List<GameObject> sceneList = new List<GameObject>();
-    private int sceneId = 0; 
     public Camera trailingCam;
     public Camera topDownCam;
 
     public void InitWormhole() {
-        ToggleScene(false, true);
-        sceneList[0].SetActive(true);
-    }
-
-    public void ToggleScene(bool toggle, bool all) {
-        if(all) {
-            foreach(GameObject scene in sceneList) {
-                scene.SetActive(toggle);
-            }
-        } else {
-            sceneList[sceneId].SetActive(toggle);
-        }
+        SceneTransition(0);
     }
 
     public void SetPattern(float speed1, float speed2, float tiling_x1, float tiling_y1, float tiling_x2, float tiling_y2)
@@ -75,18 +63,11 @@ public class WormholeController : MonoBehaviour
         bg.SetColor("_Color",color1*2);
     }
 
-    public void SceneTransition(bool fuck) 
+    public void SceneTransition(int sceneId) 
     {
-        sceneList[sceneId].SetActive(false);
-        sceneId += 1;
-        sceneId = sceneId % sceneList.Count;
-        sceneList[sceneId].SetActive(true);
-        if(sceneId == 2) {
-            trailingCam.enabled = false;
-            topDownCam.enabled = true;
-        } else {
-            trailingCam.enabled = true;
-            topDownCam.enabled = false;
+        foreach(GameObject scene in sceneList) {
+            scene.SetActive(false);
         }
+        sceneList[sceneId].SetActive(true);
     } 
 }
