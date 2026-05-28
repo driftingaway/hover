@@ -7,6 +7,11 @@ using System;
 using FMODUnity;
 using FMOD.Studio;
 
+/*
+This is the core of my rhythm game: it mainly handles FMOD integration, tracks note positions and timings for visual updates, and calls into a lot of other scripts. Hopefully a lot of this is self explanatory but I added some more comments to clarify
+If I had more time to fix this further, I would probably clean up the way I'm tracking notes (I'm not sure having all of this in Update is the best way to do it) and I would also probably break the scoring functions off into their own script
+*/
+
 public class AudioManager : MonoBehaviour
 {
     public TileManager tileManager;
@@ -27,7 +32,7 @@ public class AudioManager : MonoBehaviour
     private bool hitLastNote = false;
     
     private float noteOffset = 8f;
-    int noteIndex, spawnIndex, updateSpawnIndex = 0;
+    int noteIndex, spawnIndex, updateIndex = 0;
     float timingThreshold; 
 
     public List<Song> songs = new List<Song>();
@@ -68,6 +73,7 @@ public class AudioManager : MonoBehaviour
         eventInstance = RuntimeManager.CreateInstance("event:/Music/" + currentSong.FMODSongName);
         eventInstance.start();
 
+        // i'm using midi to handle all of the information needed for each song
         currentSong.song = midi.readMidi(currentSong.midiPath, currentSong.timeSig);
         beatMap = currentSong.song;
         updateMap = currentSong.updates;
@@ -78,10 +84,11 @@ public class AudioManager : MonoBehaviour
         secPerBeat = 60f / BPM;
         timingThreshold = 0.1f * (1/secPerBeat);
 
+        //begin spawning notes and environment updates
         tileManager.InitChart();
         worm.InitWormhole();
 
-        noteIndex = spawnIndex = updateSpawnIndex = 0;
+        noteIndex = spawnIndex = updateIndex = 0;
         prevSongPositionInBeatsPrecise = 0f;
         isHolding = false;
 
@@ -94,11 +101,13 @@ public class AudioManager : MonoBehaviour
     void Update()
     {
         eventInstance.getPlaybackState(out state);
+        // transition into next song in queue when first song finishes
         if(state == PLAYBACK_STATE.STOPPED && allowNextSongPlayback) {
             allowNextSongPlayback = false;
             GameValues.songIndex += 1;
             PlaySong();
         }
+
         //calculate the position in seconds
         eventInstance.getTimelinePosition(out songPositionInt); 
         songPosition = (float) songPositionInt / 1000f;
@@ -106,47 +115,55 @@ public class AudioManager : MonoBehaviour
         //calculate the position in beats
         songPositionInBeatsPrecise = songPosition / secPerBeat;
         songPositionInBeats = (int)songPositionInBeatsPrecise;
-        //print(songPositionInBeatsPrecise);
 
+        // initialize indices: noteIndex tracks which note the player is next to hit, spawnIndex tracks which note will be spawned next, updateSpawnIndex tracks which environment update should happen next
         if(noteIndex != beatMap.Count)
         {
             currentNoteBeat = beatMap[noteIndex].beat;
         }
+
         if(spawnIndex != beatMap.Count)
         {
             note = beatMap[spawnIndex];
         }
-        if(updateSpawnIndex != updateMap.Count)
+
+        if(updateIndex != updateMap.Count)
         {
-            updates = updateMap[updateSpawnIndex];
+            updates = updateMap[updateIndex];
         }
 
-        // alternative case for timing camera switches and visual updates
-        if (updateSpawnIndex < updateMap.Count && updates.beat <= songPositionInBeatsPrecise)
+        // timing camera switches and visual updates
+        if (updateIndex < updateMap.Count && updates.beat <= songPositionInBeatsPrecise)
         {
-            if(updates.state == 1)
+            // these are various camera and movement states handled by the ship controller
+            if(updates.state == "Boss")
             {
                 shipController.Boss();
             }
-            if(updates.state == 2)
+            else if(updates.state == "Trailing")
             {
                 shipController.Trailing();
             }
-            if(updates.state == 3)
+            else if(updates.state == "Shooter")
             {
                 shipController.Shooter();
             }
-            if(updates.state == 4)
+            else if(updates.state == "TitleDrop")
             {
                 StartCoroutine(HUD.TitleDrop(updates.strobe.duration*secPerBeat));
             }
+
+            // update color and pattern of background visuals
             worm.SetColor(updates.color1, updates.color2);
             worm.SetPattern(updates.pattern.speed1, updates.pattern.speed2, updates.pattern.tiling_x1, updates.pattern.tiling_y1, updates.pattern.tiling_x2, updates.pattern.tiling_y2);
+
+            // strobe light effects
             if(updates.strobe.count != 0)
             {
                 worm.Strobe(updates.strobe.count, updates.strobe.duration*secPerBeat, updates.strobe.startIntensity, updates.strobe.endIntensity);
             }
-            updateSpawnIndex++;
+
+            updateIndex++;
         }
 
         // spawn note
@@ -156,16 +173,19 @@ public class AudioManager : MonoBehaviour
             spawnIndex++;
         }
 
-        if(Input.GetButtonDown("Hit") && !isHolding && beatMap[noteIndex].type != 2)
+        // handle hitting notes   
+        if(Input.GetButtonDown("Hit") && !isHolding)
         {
             float acc = Mathf.Abs(songPositionInBeatsPrecise - currentNoteBeat);
             if (acc < timingThreshold)
             {
                 float length = 0.15f;
-                if(beatMap[noteIndex].type == 1)
+                // check held notes too
+                if(beatMap[noteIndex].type == "Held")
                 {
                     isHolding = true;
                     length = beatMap[noteIndex].length * secPerBeat;
+                    // extra dramatic camera effects for holding a held note
                     HUD.ChangeFOV(155, length);
                     HUD.BlackBars(60, length);
                 }
@@ -177,12 +197,12 @@ public class AudioManager : MonoBehaviour
             }
         }
 
+        // handle scoring letting go of a held note at the end of the note
         if(Input.GetButtonUp("Hit") && isHolding)
         {
-            float acc = Mathf.Abs(songPositionInBeatsPrecise - currentNoteBeat);
-            //Debug.Log(acc);
-            //Debug.Log(timingThreshold);
-            if (acc < timingThreshold)
+            float hitAcc = Mathf.Abs(songPositionInBeatsPrecise - currentNoteBeat);
+
+            if (hitAcc < timingThreshold)
             {
                 HitNote(0.15f);
             }   
@@ -190,48 +210,35 @@ public class AudioManager : MonoBehaviour
             {
                 MissNote();
             } 
+            // reset FOV and black bars after letting go of held note
             HUD.ChangeFOV(150, .1f);
             HUD.BlackBars(100, .1f);
             isHolding = false;
         }
 
-        if(songPositionInBeatsPrecise > (timingThreshold + currentNoteBeat) && noteIndex != beatMap.Count - 1)
-        {
-            if(!hitLastNote && beatMap[noteIndex].type != 3)
-            {
-                MissNote();
-            }
-            hitLastNote = false;
-            noteIndex++;
-        }
-
-        // shoot
+        // handle firing projectiles (wip), can only fire on downbeats
         if(songPositionInBeatsPrecise >= prevSongPositionInBeatsPrecise + .25f)
         {
             prevSongPositionInBeatsPrecise = (float)(Math.Round (songPositionInBeatsPrecise * 4f, MidpointRounding.ToEven) / 4);
             shipController.canFire = true;
-
-            //metronome
-            //FMODUnity.RuntimeManager.PlayOneShot(TickEvent, transform.position);
         }
     }
 
     private void HitNote(float length)
     {
+        //Debug.Log("HIT!");
         hitLastNote = true;
         FMODUnity.RuntimeManager.PlayOneShot(NoteEvent, transform.position);
         shield.Play();
-        //Debug.Log("HIT!");
         if(health < 1f) {
             health += .25f;
-            //eventInstance.setParameterByName("Health", health);
         }
-        scoreRef.IncreaseScore();
         streak += 1;
+        scoreRef.IncreaseScore();
         if(streak % 5 == 0) {
             scoreRef.IncreaseCombo();
         }
-        //cam.DOShakeRotation(.15f, 1, 1, 25, true);
+        // flash to signify hit
         HitFlash(Color.white, length);
     }
 
@@ -239,10 +246,9 @@ public class AudioManager : MonoBehaviour
     {
         //Debug.Log("MISS!");
         if (health > 0) {
-            isHolding = false;
             hitLastNote = false;
+            isHolding = false;
             health -= .25f;
-            //eventInstance.setParameterByName("Health", health);
             streak = 0;
             scoreRef.ResetCombo();
             HUD.ChangeFOV(150, .1f);
@@ -252,7 +258,7 @@ public class AudioManager : MonoBehaviour
 
     public void HitFlash(Color color, float length)
     {
-        //StartCoroutine(HUD.ImpactFrame());
+        StartCoroutine(HUD.ImpactFrame());
         noteMaterial.DOColor(color * currentSong.startIntensity, "_Wormhole_colour", 0f);
         playerMaterial.DOColor(color * currentSong.startIntensity, "_Details_1_colour", 0f);
         noteMaterial.DOColor(Color.white * 5, "_Wormhole_colour", length);

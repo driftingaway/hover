@@ -11,7 +11,7 @@ using Melanchall.DryWetMidi.Standards;
 public struct Note
 {
     public float beat;
-    public int type;
+    public Type type;
     public float length;
     public float xPos;
 
@@ -28,7 +28,7 @@ public struct Note
 public struct Updates
 {
     public float beat;
-    public int state;
+    public State state;
     public Color color1, color2;
     public Pattern pattern;
     public Strobe strobe;

@@ -13,6 +13,7 @@ public class TileManager : MonoBehaviour
     public Transform player;
     public AudioManager am;
     public Material lineMaterial;
+    public GameObject heart;
     float speed, secPerBeat, speedMult;
     Vector3 forwardMove;
 
@@ -59,6 +60,7 @@ public class TileManager : MonoBehaviour
     {
         //Debug.Log("Spawn Note");
         GameObject newTile = Instantiate(tiles[note.type], new Vector3(note.xPos, 0f, 0f) + (transform.forward * 60f * 8f * speedMult), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
+        GameObject newHeart = Instantiate(heart, new Vector3(0,0,0), Quaternion.Euler(new Vector3(0f, 0f, 0f)));
         if(note.type == 1)
         {
             SpawnLine(newTile, note);

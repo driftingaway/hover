@@ -99,7 +99,7 @@ Material:
     - _marchDistance: 3
     - _numSteps: 4
     m_Colors:
-    - _Color: {r: 2, g: 0.1059647, b: 0, a: 14.27059}
+    - _Color: {r: 2, g: 0.059246942, b: 0, a: 3.6855845}
     - _EdgeColor1: {r: 1, g: 1, b: 1, a: 1}
     - _Emission: {r: 0, g: 0, b: 0, a: 0}
     - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}
