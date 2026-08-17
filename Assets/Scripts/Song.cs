@@ -6,12 +6,13 @@ using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
 using Melanchall.DryWetMidi.Multimedia;
 using Melanchall.DryWetMidi.Standards;
+using static ShipController;
 
 [System.Serializable]
 public struct Note
 {
     public float beat;
-    public Type type;
+    public int type;
     public float length;
     public float xPos;
 
@@ -33,7 +34,7 @@ public struct Updates
     public Pattern pattern;
     public Strobe strobe;
 
-    public Updates(float beat, int state, Color color1, Color color2, Pattern pattern, Strobe strobe)
+    public Updates(float beat, State state, Color color1, Color color2, Pattern pattern, Strobe strobe)
     {
         this.beat = beat;
         this.state = state;
@@ -100,27 +101,27 @@ public class Song : ScriptableObject
 
             if (note.NoteName.ToString() == "F")
             {
-                updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 1)));
+                updates.Add(new Updates(fixedStartTime, State.None, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 1)));
             } 
             if (note.NoteName.ToString() == "FSharp")
             {
-                updates.Add(new Updates(fixedStartTime, 0, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, (int)noteLength)));
+                updates.Add(new Updates(fixedStartTime, State.None, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, (int)noteLength)));
             }
             if (note.NoteName.ToString() == "B")
             {
-                updates.Add(new Updates(fixedStartTime, 1, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 4*(int)noteLength)));
+                updates.Add(new Updates(fixedStartTime, State.TopDown, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 4*(int)noteLength)));
             }
             if (note.NoteName.ToString() == "D")
             {
-                updates.Add(new Updates(fixedStartTime, 2, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 1)));
+                updates.Add(new Updates(fixedStartTime, State.Trailing, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 1)));
             }
             if (note.NoteName.ToString() == "DSharp")
             {
-                updates.Add(new Updates(fixedStartTime, 3, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 1)));
+                updates.Add(new Updates(fixedStartTime, State.Rail, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 1)));
             }
             if (note.NoteName.ToString() == "E")
             {
-                updates.Add(new Updates(fixedStartTime, 4, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 1)));
+                updates.Add(new Updates(fixedStartTime, State.TitleDrop, color1, color2, pattern, new Strobe(startIntensity, endIntensity, noteLength, 1)));
             }
         }
     }

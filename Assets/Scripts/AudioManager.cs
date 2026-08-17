@@ -6,6 +6,7 @@ using DG.Tweening;
 using System;
 using FMODUnity;
 using FMOD.Studio;
+using static ShipController;
 
 /*
 This is the core of my rhythm game: it mainly handles FMOD integration, tracks note positions and timings for visual updates, and calls into a lot of other scripts. Hopefully a lot of this is self explanatory but I added some more comments to clarify
@@ -136,21 +137,17 @@ public class AudioManager : MonoBehaviour
         if (updateIndex < updateMap.Count && updates.beat <= songPositionInBeatsPrecise)
         {
             // these are various camera and movement states handled by the ship controller
-            if(updates.state == "Boss")
-            {
-                shipController.Boss();
-            }
-            else if(updates.state == "Trailing")
+            if(updates.state == State.Trailing)
             {
                 shipController.Trailing();
             }
-            else if(updates.state == "Shooter")
+            else if(updates.state == State.TopDown)
+            {
+                shipController.Boss();
+            }
+            else if(updates.state == State.Rail)
             {
                 shipController.Shooter();
-            }
-            else if(updates.state == "TitleDrop")
-            {
-                StartCoroutine(HUD.TitleDrop(updates.strobe.duration*secPerBeat));
             }
 
             // update color and pattern of background visuals
@@ -181,7 +178,7 @@ public class AudioManager : MonoBehaviour
             {
                 float length = 0.15f;
                 // check held notes too
-                if(beatMap[noteIndex].type == "Held")
+                if(beatMap[noteIndex].type == 1)
                 {
                     isHolding = true;
                     length = beatMap[noteIndex].length * secPerBeat;

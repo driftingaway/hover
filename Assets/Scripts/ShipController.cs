@@ -19,7 +19,7 @@ public class ShipController : MonoBehaviour
     float horizontalInput;
     private float defaultFOV;
 
-    public enum State {Trailing, TopDown, Rail}
+    public enum State {None, Trailing, TopDown, Rail, TitleDrop}
     public State state;
 
     public CameraShake cameraShake;
@@ -75,6 +75,7 @@ public class ShipController : MonoBehaviour
     }
 
     public void Shooter() {
+        Debug.Log("Rail");
         state = State.Rail;
         cam.enabled = false;
         railCam.enabled = true;
