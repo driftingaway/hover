@@ -117,6 +117,8 @@ public class AudioManager : MonoBehaviour
         songPositionInBeatsPrecise = songPosition / secPerBeat;
         songPositionInBeats = (int)songPositionInBeatsPrecise;
 
+        Debug.Log(noteIndex);
+
         // initialize indices: noteIndex tracks which note the player is next to hit, spawnIndex tracks which note will be spawned next, updateSpawnIndex tracks which environment update should happen next
         if(noteIndex != beatMap.Count)
         {
@@ -173,9 +175,12 @@ public class AudioManager : MonoBehaviour
         // handle hitting notes   
         if(Input.GetButtonDown("Hit") && !isHolding)
         {
+            //Debug.Log("Hit");
             float acc = Mathf.Abs(songPositionInBeatsPrecise - currentNoteBeat);
+            Debug.Log(currentNoteBeat);
             if (acc < timingThreshold)
             {
+                //Debug.Log(beatMap[noteIndex].type);
                 float length = 0.15f;
                 // check held notes too
                 if(beatMap[noteIndex].type == 1)
@@ -211,6 +216,16 @@ public class AudioManager : MonoBehaviour
             HUD.ChangeFOV(150, .1f);
             HUD.BlackBars(100, .1f);
             isHolding = false;
+        }
+
+        if(songPositionInBeatsPrecise > (timingThreshold + currentNoteBeat) && noteIndex != beatMap.Count - 1)
+        {
+            if(!hitLastNote && beatMap[noteIndex].type != 3)
+            {
+                MissNote();
+            }
+            hitLastNote = false;
+            noteIndex++;
         }
 
         // handle firing projectiles (wip), can only fire on downbeats

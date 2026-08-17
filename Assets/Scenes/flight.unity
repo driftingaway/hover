@@ -10516,11 +10516,11 @@ MonoBehaviour:
   prevSongPositionInBeatsPrecise: 0
   songs:
   - {fileID: 11400000, guid: e4739c4f365068e46a24ea9e7aa55bf5, type: 2}
+  - {fileID: 11400000, guid: 17f295c46eaea364d9f4073dc1d3405a, type: 2}
+  - {fileID: 11400000, guid: f9b9ed85979ee074f8e19fb3c6c832df, type: 2}
   - {fileID: 11400000, guid: 89ef961aa01938d4da89e0007c8e34b4, type: 2}
   - {fileID: 11400000, guid: f4f6d045086fd2847b5a022fb3a72479, type: 2}
-  - {fileID: 11400000, guid: 17f295c46eaea364d9f4073dc1d3405a, type: 2}
   - {fileID: 11400000, guid: 9dbb0731d1d6b8c42b79bec880e2e86a, type: 2}
-  - {fileID: 11400000, guid: f9b9ed85979ee074f8e19fb3c6c832df, type: 2}
   - {fileID: 11400000, guid: 7d7c47647f033bd4a94ef51aaeb3c2f0, type: 2}
   - {fileID: 11400000, guid: 6a60378930cb1ea43a391fd1785baf5c, type: 2}
   - {fileID: 11400000, guid: c683ffda49740be4691ad594ca7f7559, type: 2}
@@ -16352,7 +16352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camTransform: {fileID: 0}
   shakeDuration: 100000
-  shakeAmount: 1
+  shakeAmount: 0.25
   decreaseFactor: 0
   originalPos: {x: 0, y: 0, z: 0}
 --- !u!1 &866881132

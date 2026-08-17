@@ -18,6 +18,6 @@ public class FPCursor : MonoBehaviour
         mousePos.y -= Screen.height / 2;
         transform.position = (mousePos / (1 + (transform.localScale.z / 30)));
         transform.position = new Vector3(transform.position.x + Screen.width / 2, transform.position.y + Screen.height / 2, transform.position.z);
-        Debug.Log(transform.position);
+        //Debug.Log(transform.position);
     }
 }
